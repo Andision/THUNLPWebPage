@@ -4,5 +4,15 @@
     "FAQ":"FAQ",
     "Paper":"Paper",
     "Submit":"Submit",
-    "Download":"Download"
+    "Download":"Download",
+    "Username":"Username",
+    "Email":"Email",
+    "Password":"Password",
+    "Login":"Login",
+    "SignUp":"Sign Up",
+    "Remeberme":"Remeber me",
+    "Forgetpassword":"Forget password",
+    "WelcomeToJoinUs":"Welcome To Join Us",
+    "Notamember":"Not a member",
+    "Alreadyhaveanaccount":"Already have an account"
 }
