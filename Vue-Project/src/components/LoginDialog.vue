@@ -6,7 +6,8 @@
     </el-tabs>
   </el-dialog>
 </template>
-
+<!-- <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog> -->
+<!-- import LoginDoalog from '@/components/LoginDialog.vue' -->
 <script>
 export default {
   data () {
