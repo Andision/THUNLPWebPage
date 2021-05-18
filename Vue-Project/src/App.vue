@@ -12,8 +12,8 @@
           mode="horizontal"
           @select="handleMenuSelect"
         >
-          <div style="float: left; margin-left:50px; padding:5px;">
-            <img src="./assets/logo.png" style="height:45px;">
+          <div style="float: left; margin-left: 50px; padding: 5px">
+            <img src="./assets/logo.png" style="height: 45px" />
           </div>
 
           <el-menu-item class="menu-item" index="6" style="float: right">{{
@@ -37,7 +37,55 @@
         </el-menu>
       </el-header>
       <el-main class="main"><router-view /></el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer class="footer">
+        <div class="footer-div">
+          <el-row>
+            <el-col :span="4">
+              <div
+                class="grid-content bg-purple"
+                style="text-align: center; padding: 20px"
+              >
+                <img src="./assets/logo.png" style="height: 100px" />
+              </div>
+            </el-col>
+            <el-col :span="4" :offset="1">
+              <div
+                class="grid-content bg-purple"
+                style="text-align: center; padding: 20px"
+              >
+                Welcome to contact us.
+              </div>
+            </el-col>
+            <el-col :span="8" :offset="10">
+              <div>
+                <el-row>
+                  <el-col :span="8">
+                    <div
+                      style="text-align: center; padding: 20px"
+                    >
+                      LINK
+                    </div>
+                  </el-col>
+                  <el-col :span="8">
+                    <div
+                      style="text-align: center; padding: 20px"
+                    >
+                      FEEDBACK
+                    </div>
+                  </el-col>
+                  <el-col :span="8">
+                    <div
+                      style="text-align: center; padding: 20px"
+                    >
+                      HELP
+                    </div>
+                  </el-col>
+                </el-row>
+              </div>
+            </el-col>
+          </el-row>
+        </div>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -65,30 +113,41 @@ export default {
   position: relative;
 }
 
-html,body,#app{
+html,
+body,
+#app {
   height: 100%;
   width: 100%;
 }
 
-body,#app{
+body,
+#app {
   min-height: 99%;
   min-width: 99%;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   margin: 0;
 }
 
-.el-menu{
+.el-menu {
   margin: 0;
   width: 100%;
   font-weight: bolder;
 }
 
-.header{
+.header,
+.footer {
   width: 100%;
   padding: 0;
 }
 
-.container,.main{
+.container,
+.main {
   min-height: 100%;
+}
+
+.footer-div {
+  height: 150px;
+  background-color: black;
+  color: white;
 }
 </style>
