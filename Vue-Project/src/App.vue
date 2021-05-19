@@ -16,6 +16,9 @@
             <img src="./assets/logo.png" style="height: 45px" />
           </div>
 
+          <el-menu-item class="menu-item" index="7" style="float: right">{{
+            language.User
+          }}</el-menu-item>
           <el-menu-item class="menu-item" index="6" style="float: right">{{
             language.Download
           }}</el-menu-item>

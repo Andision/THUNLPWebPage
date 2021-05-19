@@ -127,6 +127,9 @@ export default {
       } else {
         document.getElementById('tab-1').click()
       }
+    },
+    doLogin () {
+      console.log('LOGIN')
     }
   }
 }
