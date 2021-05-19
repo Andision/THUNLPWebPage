@@ -31,7 +31,11 @@
       </div>
       <hr class="second-hr" color="#ECEAFF" />
       <div class="second-logo">
-        123
+        <ul>
+          <li class="second-logo-item" v-for="item in logo" :key="item">
+            <img :src="item"/>
+          </li>
+        </ul>
       </div>
     </div>
     <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog>
@@ -75,6 +79,10 @@ export default {
           zh: '京东',
           en: 'JD.COM'
         }
+      ],
+      logo: [
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png'
       ]
     }
   },
@@ -151,6 +159,10 @@ export default {
 }
 
 .second-logo{
-  
+  margin: 0;
+}
+.second-logo-item{
+  list-style-type: none;
+  float:left;
 }
 </style>
