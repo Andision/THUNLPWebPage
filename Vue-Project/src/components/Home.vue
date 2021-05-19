@@ -1,59 +1,81 @@
 <template>
-  <div class="hello">
-    <el-button type="text" @click="handleLogin(true)"
+  <div class="all">
+    <!-- <el-button type="text" @click="handleLogin(true)"
       >打开嵌套表格的 Dialog</el-button
-    >
+    > -->
+    <div class="home-title">
+      <div class="title1">
+        {{language.home_title1}}
+      </div>
+      <div class="title2">
+        {{language.home_title2}}
+      </div>
+      <div class="titledetail">
+        {{language.home_titledetail}}
+      </div>
+    </div>
 
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank"> Core Docs </a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank"> Forum </a>
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank"> Community Chat </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank"> Twitter </a>
-      </li>
-      <br />
-      <li>
-        <a href="http://vuejs-templates.github.io/webpack/" target="_blank">
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a href="http://router.vuejs.org/" target="_blank"> vue-router </a>
-      </li>
-      <li>
-        <a href="http://vuex.vuejs.org/" target="_blank"> vuex </a>
-      </li>
-      <li>
-        <a href="http://vue-loader.vuejs.org/" target="_blank"> vue-loader </a>
-      </li>
-      <li>
-        <a href="https://github.com/vuejs/awesome-vue" target="_blank">
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-
+    <div class="home-second">
+      <div class="second-title">
+        {{language.home_secondtitle}}
+      </div>
+      <hr class="second-hr">
+      <div class="second-list">
+        <ul>
+          <li class="second-list-item" v-for="item in org" :key="item.en">
+            ● 　　{{ item.zh }}
+            <br>
+            　　　{{ item.en }}
+          </li>
+        </ul>
+      </div>
+      <hr class="second-hr" color="#ECEAFF" />
+      <div class="second-logo">
+        123
+      </div>
+    </div>
     <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog>
   </div>
 </template>
 
 <script>
 import LoginDoalog from '@/components/LoginDialog.vue'
+import en from '@/components/en.json'
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      dialogLoginVisible: false
+      language: en,
+      dialogLoginVisible: false,
+      org: [
+        {
+          zh: '清华大学',
+          en: 'Tsinghua University'
+        },
+        {
+          zh: '北京大学',
+          en: 'Peking University'
+        },
+        {
+          zh: '中国科学院',
+          en: 'Chinese Academy of Sciences'
+        },
+        {
+          zh: '中国人民大学',
+          en: 'Renmin University'
+        },
+        {
+          zh: '北京语言大学',
+          en: 'Beijing Language and Culture University'
+        },
+        {
+          zh: '哈尔滨工业大学',
+          en: 'Harbin Institute of Technology'
+        },
+        {
+          zh: '京东',
+          en: 'JD.COM'
+        }
+      ]
     }
   },
   components: { LoginDoalog },
@@ -72,19 +94,63 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
+.all{
+  background-color: #ECEAFF;
+  min-height: 700px;
+}
+.home-title{
+  text-align: center;
+  background-color: #f1f1f1;
+  padding: 50px;
+}
+.home-second{
+  padding: 50px;
+  text-align: center;
+}
+.title1{
+  color: #7857A1;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 20px;
+}
+.title2{
+  color: #7857A1;
+  font-weight: bold;
+  margin: 20px;
+}
+.titledetail{
   font-weight: normal;
+  padding-left: 20%;
+  padding-right: 20%;
 }
-ul {
+.second-title{
+  color: #062A4E;
+  font-size: larger;
+  font-weight: bold;
+}
+.second-hr{
+  width: 90%;
+}
+
+.second-list{
+  margin: 30px;
+}
+
+.second-list ul {
+  columns: 3;
+}
+.second-list li {
+  padding: 10px;
   list-style-type: none;
-  padding: 0;
+  text-align: left;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.second-list-item{
+  color: #062A4E;
+  font-size: small;
+  font-weight: bold;
 }
-a {
-  color: #42b983;
+
+.second-logo{
+  
 }
 </style>
