@@ -131,6 +131,14 @@ export default {
     doLogin () {
       console.log('LOGIN')
     }
+    // handleLogin (isLocal) {
+    //   if (isLocal) {
+    //     this.dialogLoginVisible = true
+    //   } else {
+    //     this.dialogLoginVisible = false
+    //   }
+    //   console.log(this.dialogLoginVisible)
+    // }
   }
 }
 </script>

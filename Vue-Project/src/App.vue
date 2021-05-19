@@ -11,30 +11,31 @@
           class="el-menu"
           mode="horizontal"
           @select="handleMenuSelect"
+          style="background-color:#64438D;"
         >
           <div style="float: left; margin-left: 50px; padding: 5px">
             <img src="./assets/logo.png" style="height: 45px" />
           </div>
 
-          <el-menu-item class="menu-item" index="7" style="float: right">{{
+          <el-menu-item class="menu-item" index="7" style="float: right;">{{
             language.User
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="6" style="float: right">{{
+          <el-menu-item class="menu-item" index="6" style="float: right;">{{
             language.Download
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="5" style="float: right">{{
+          <el-menu-item class="menu-item" index="5" style="float: right;">{{
             language.Submit
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="4" style="float: right">{{
+          <el-menu-item class="menu-item" index="4" style="float: right;">{{
             language.Paper
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="3" style="float: right">{{
+          <el-menu-item class="menu-item" index="3" style="float: right;">{{
             language.FAQ
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="2" style="float: right">{{
+          <el-menu-item class="menu-item" index="2" style="float: right;">{{
             language.Leaderboard
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="1" style="float: right">{{
+          <el-menu-item class="menu-item" index="1" style="float: right;">{{
             language.Tasks
           }}</el-menu-item>
         </el-menu>
@@ -135,6 +136,9 @@ body,
   margin: 0;
   width: 100%;
   font-weight: bolder;
+}
+.menu-item{
+  color: white;
 }
 
 .header,
