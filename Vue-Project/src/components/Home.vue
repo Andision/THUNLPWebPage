@@ -22,17 +22,17 @@
       <hr class="second-hr">
       <div class="second-list">
         <ul>
-          <li class="second-list-item" v-for="item in org" :key="item.en">
-            ● 　　{{ item.zh }}
+          <li class="second-list-item" v-for="(item,index) in org" :key="index">
+            ●{{kb}} {{kb}}{{ item.zh }}
             <br>
-            　　　{{ item.en }}
+            {{kb}}{{kb}}{{kb}}{{ item.en }}
           </li>
         </ul>
       </div>
       <hr class="second-hr" color="#ECEAFF" />
       <div class="second-logo">
         <ul>
-          <li class="second-logo-item" v-for="item in logo" :key="item">
+          <li class="second-logo-item" v-for="(item,index) in logo" :key="index">
             <img :src="item"/>
           </li>
         </ul>
@@ -50,6 +50,7 @@ export default {
     return {
       language: en,
       dialogLoginVisible: false,
+      kb: '　',
       org: [
         {
           zh: '清华大学',
@@ -82,6 +83,11 @@ export default {
       ],
       logo: [
         'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
+        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
         'https://z3.ax1x.com/2021/05/19/g5FLgx.png'
       ]
     }
@@ -104,7 +110,7 @@ export default {
 <style scoped>
 .all{
   background-color: #ECEAFF;
-  min-height: 700px;
+  min-height: 800px;
 }
 .home-title{
   text-align: center;
@@ -159,10 +165,12 @@ export default {
 }
 
 .second-logo{
-  margin: 0;
+  margin: 30px;
 }
 .second-logo-item{
   list-style-type: none;
   float:left;
+  margin-left: 50px;
+  margin-bottom: 10px;
 }
 </style>
