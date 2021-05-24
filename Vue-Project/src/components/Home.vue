@@ -109,12 +109,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .all{
-  background-color: #ECEAFF;
+  background-color: #F5F4FE;
   min-height: 800px;
 }
 .home-title{
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: white;
   padding: 50px;
 }
 .home-second{
