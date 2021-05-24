@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Test from '@/components/Test'
 import LeaderBoard from '@/components/LeaderBoard'
+import FAQ from '@/components/FAQ'
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/leaderboard',
       name: 'LeaderBoard',
       component: LeaderBoard
+    },
+    {
+      path: '/faq',
+      name: 'FAQ',
+      component: FAQ
     },
     {
       path: '/test',
