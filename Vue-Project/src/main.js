@@ -21,8 +21,11 @@ Vue.prototype.handleMenuSelect = function (key, keyPath) {
   // }
 
   switch (key) {
-    case '2':
+    case '1':
       router.push({path: '/'})
+      break
+    case '2':
+      router.push({path: '/leaderboard'})
       break
     case '3':
       router.push({path: '/about'})
