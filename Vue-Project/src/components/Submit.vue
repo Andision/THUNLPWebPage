@@ -81,9 +81,9 @@ export default {
         para: '',
         link: '',
         github: '',
-        public: false,
-        check: false
-      }
+        public: false
+      },
+      check: false
     }
   },
   methods: {}
