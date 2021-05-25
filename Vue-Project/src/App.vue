@@ -67,18 +67,21 @@
       </el-footer>
     </el-container>
     <LoginDialog v-bind:v="dialogLoginVisible" v-on:close="handleLoginStatus"></LoginDialog>
+    <ForgetDialog v-bind:v="dialogForgetVisible" v-on:close="handleForgetStatus"></ForgetDialog>
   </div>
 </template>
 
 <script>
 import en from '@/components/en.json'
 import LoginDialog from '@/components/LoginDialog.vue'
+import ForgetDialog from '@/components/ForgetDialog.vue'
 export default {
   name: 'App',
   data () {
     return {
       language: en,
       dialogLoginVisible: false,
+      dialogForgetVisible: false,
       token: ''
     }
   },
@@ -132,15 +135,26 @@ export default {
       this.$router.push({path: '/'})
     },
     handleLoginStatus (isLocal) {
-      if (isLocal) {
+      if (isLocal === true) {
         this.dialogLoginVisible = true
+      } else if (isLocal === false) {
+        this.dialogLoginVisible = false
       } else {
         this.dialogLoginVisible = false
+        this.handleForgetStatus(true)
       }
       console.log(this.dialogLoginVisible)
+    },
+    handleForgetStatus (isLocal) {
+      if (isLocal) {
+        this.dialogForgetVisible = true
+      } else {
+        this.dialogForgetVisible = false
+      }
+      console.log(this.dialogForgetVisible)
     }
   },
-  components: { LoginDialog }
+  components: { LoginDialog, ForgetDialog }
 }
 </script>
 

@@ -29,7 +29,8 @@
               <el-checkbox v-model="user.remeber" style="float:left;">{{language.Remeberme}}</el-checkbox>
             </el-col>
             <el-col :span="12">
-              <div style="float:right;">{{language.Forgetpassword}}?</div>
+              <!-- <div style="float:right;">{{language.Forgetpassword}}?</div> -->
+              <el-button type="text" @click="handleClickLink('forget')">{{language.Forgetpassword}}?</el-button>
             </el-col>
           </el-row>
         </el-row>
@@ -123,10 +124,12 @@ export default {
   },
   methods: {
     handleClickLink (isLogin) {
-      if (isLogin) {
+      if (isLogin === true) {
         document.getElementById('tab-0').click()
-      } else {
+      } else if (isLogin === false) {
         document.getElementById('tab-1').click()
+      } else {
+        this.$emit('close', 'forget')
       }
     },
     doLogin () {
