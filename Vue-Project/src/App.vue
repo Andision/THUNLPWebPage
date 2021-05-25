@@ -4,8 +4,8 @@
     <router-view/>
   </div> -->
   <div id="app">
-    <el-container class="container">
-      <el-header class="header">
+    <el-container class="container" style="padding: 0;">
+      <el-header class="header" style="padding: 0;">
         <el-menu
           class="el-menu"
           mode="horizontal"
@@ -44,8 +44,8 @@
           }}</el-menu-item>
         </el-menu>
       </el-header>
-      <el-main class="main"><router-view /></el-main>
-      <el-footer class="footer">
+      <el-main class="main" style="padding: 0;"><router-view /></el-main>
+      <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
           <el-row>
             <el-col :span="4">
