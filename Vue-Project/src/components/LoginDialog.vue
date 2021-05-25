@@ -77,7 +77,7 @@
           ></el-input>
         </el-row>
         <el-row class="input" style="vertical-align: bottom;">
-          <el-button style="width: 100%" type="primary" @click="doLogin">
+          <el-button style="width: 100%" type="primary" @click="doSignup">
             {{language.SignUp}}
           </el-button>
         </el-row>
@@ -94,6 +94,7 @@
 <!-- import LoginDoalog from '@/components/LoginDialog.vue' -->
 <script>
 import en from '@/components/en.json'
+import config from '@/components/config.json'
 export default {
   data () {
     return {
@@ -130,6 +131,83 @@ export default {
     },
     doLogin () {
       console.log('LOGIN')
+      let formData = new FormData()
+      formData.append('nickname', this.user.username)
+      formData.append('password', this.user.password)
+      this.$axios.post(config.API + config.toLogin, formData).then(res => {
+        console.log('LOGIN RES', res, res.status)
+        if (res.status === 200) {
+          console.log('LOGIN666', res.data)
+          if (res.data.re_code === '0') {
+            document.cookie = JSON.stringify({token: res.data.token})
+            this.$message({
+              message: '登录成功',
+              type: 'success'
+            })
+            this.$emit('close', false)
+          } else if (res.data.re_code === '4002') {
+            this.$message({
+              message: res.data.msg,
+              type: 'warning'
+            })
+          } else if (res.data.re_code === '4106') {
+            this.user.password = ''
+            this.$message({
+              message: res.data.msg,
+              type: 'error'
+            })
+          } else if (res.data.re_code === '4103') {
+            this.$message({
+              message: '请填写用户名或密码',
+              type: 'warning'
+            })
+          } else {
+            this.$message({
+              message: '网络故障，请稍后再试。',
+              type: 'warning'
+            })
+          }
+        }
+      }).catch(error => {
+        console.log(error)
+      })
+    },
+    doSignup () {
+      console.log('SIGN')
+      let formData = new FormData()
+      formData.append('nickname', this.user.username)
+      formData.append('password', this.user.password)
+      formData.append('institution', 'webpage')
+      this.$axios.post(config.API + config.toSignup, formData).then(res => {
+        console.log('SIGN RES', res, res.status)
+        if (res.status === 200) {
+          if (res.data.re_code === '0') {
+            this.$message({
+              message: '注册成功',
+              type: 'success'
+            })
+            this.$emit('close', false)
+          } else if (res.data.re_code === '4003') {
+            this.$message({
+              message: res.data.msg,
+              type: 'warning'
+            })
+            this.user.password = ''
+          } else if (res.data.re_code === '4103') {
+            this.$message({
+              message: '请填写所有信息',
+              type: 'warning'
+            })
+          } else {
+            this.$message({
+              message: '网络故障，请稍后再试。',
+              type: 'warning'
+            })
+          }
+        }
+      }).catch(error => {
+        console.log(error)
+      })
     }
     // handleLogin (isLocal) {
     //   if (isLocal) {

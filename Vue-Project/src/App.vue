@@ -7,14 +7,18 @@
     <el-container class="container">
       <el-header class="header">
         <el-menu
-          :default-active="activeIndex"
           class="el-menu"
           mode="horizontal"
           @select="handleMenuSelect"
-          style="background-color:#64438D;"
+          background-color="#64438D"
+          text-color="#FFFFFF"
+          active-text-color="#FFFFFF"
         >
-          <div style="float: left; margin-left: 50px; padding: 5px">
-            <img src="./assets/logo.png" style="height: 45px" />
+          <div
+            style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
+            @click="handleGoHomePage"
+          >
+            {{language.wyzs}}
           </div>
 
           <el-menu-item class="menu-item" index="7" style="float: right;">{{
@@ -91,25 +95,87 @@
         </div>
       </el-footer>
     </el-container>
+    <LoginDialog v-bind:v="dialogLoginVisible" v-on:close="handleLoginStatus"></LoginDialog>
   </div>
 </template>
 
 <script>
 import en from '@/components/en.json'
+import LoginDialog from '@/components/LoginDialog.vue'
 export default {
   name: 'App',
   data () {
     return {
       language: en,
-      activeIndex: '0'
+      dialogLoginVisible: false,
+      token: ''
     }
-  }
+  },
+  methods: {
+    checkLogin () {
+      console.log('HH')
+      var cookieOri = document.cookie
+      var cookie = ''
+      if (cookieOri !== '') {
+        cookie = JSON.parse(document.cookie)
+      }
+      console.log('cookie:', cookie)
+      if (cookieOri === '' || cookie.token === '') {
+        this.handleLoginStatus(true)
+      } else {
+        this.token = cookie.token
+        this.$router.push({path: '/user'})
+      }
+    },
+    handleMenuSelect (key, keyPath) {
+      console.log(key, keyPath)
+      switch (key) {
+        case '1':
+          this.$router.push({path: '/'})
+          break
+        case '2':
+          this.$router.push({path: '/leaderboard'})
+          break
+        case '3':
+          this.$router.push({path: '/about'})
+          break
+        case '4-1':
+          this.$router.push({path: '/submit/attack'})
+          break
+        case '5-1':
+          this.$router.push({path: '/leaderboard/attack'})
+          break
+        case '6-1':
+          this.$router.push({path: '/judging'})
+          break
+        case '6-2':
+          this.$router.push({path: '/judging'})
+          break
+        case '7':
+          // this.$router.push({path: '/user'})
+          this.checkLogin()
+          break
+      }
+    },
+    handleGoHomePage () {
+      this.$router.push({path: '/'})
+    },
+    handleLoginStatus (isLocal) {
+      if (isLocal) {
+        this.dialogLoginVisible = true
+      } else {
+        this.dialogLoginVisible = false
+      }
+      console.log(this.dialogLoginVisible)
+    }
+  },
+  components: { LoginDialog }
 }
 </script>
 
 <style>
 #app {
-  font-family: "Verdana", Helvetica, Arial, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -128,7 +194,6 @@ body,
 #app {
   min-height: 99%;
   min-width: 99%;
-  background-color: #f1f1f1;
   margin: 0;
 }
 
@@ -157,5 +222,9 @@ body,
   height: 150px;
   background-color: black;
   color: white;
+}
+
+.el-menu--horizontal>.el-menu-item.is-active {
+    border-bottom: none;
 }
 </style>

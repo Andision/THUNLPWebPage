@@ -38,18 +38,15 @@
         </ul>
       </div>
     </div>
-    <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog>
   </div>
 </template>
 
 <script>
-import LoginDoalog from '@/components/LoginDialog.vue'
 import en from '@/components/en.json'
 export default {
   data () {
     return {
       language: en,
-      dialogLoginVisible: false,
       kb: '　',
       org: [
         {
@@ -91,17 +88,6 @@ export default {
         'https://z3.ax1x.com/2021/05/19/g5FLgx.png'
       ]
     }
-  },
-  components: { LoginDoalog },
-  methods: {
-    handleLogin (isLocal) {
-      if (isLocal) {
-        this.dialogLoginVisible = true
-      } else {
-        this.dialogLoginVisible = false
-      }
-      console.log(this.dialogLoginVisible)
-    }
   }
 }
 </script>
@@ -109,12 +95,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .all{
-  background-color: #ECEAFF;
+  background-color: #F5F4FE;
   min-height: 800px;
 }
 .home-title{
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: white;
   padding: 50px;
 }
 .home-second{

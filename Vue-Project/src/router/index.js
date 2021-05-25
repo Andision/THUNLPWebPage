@@ -3,7 +3,7 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
 import Test from '@/components/Test'
-import LeaderBoard from '@/components/LeaderBoard'
+import User from '@/components/User'
 import FAQ from '@/components/FAQ'
 import DataDownload from '@/components/DataDownload'
 
@@ -17,9 +17,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/leaderboard',
-      name: 'LeaderBoard',
-      component: LeaderBoard
+      path: '/User',
+      name: 'User',
+      component: User
     },
     {
       path: '/faq',
