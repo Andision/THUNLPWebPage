@@ -7,6 +7,7 @@ import User from '@/components/User'
 import FAQ from '@/components/FAQ'
 import DataDownload from '@/components/DataDownload'
 import Submit from '@/components/Submit'
+import MoreInfo from '@/components/MoreInfo'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/submit',
       name: 'Submit',
       component: Submit
+    },
+    {
+      path: '/more',
+      name: 'MoreInfo',
+      component: MoreInfo
     }
   ]
 })
