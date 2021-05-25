@@ -48,46 +48,17 @@
       <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
           <el-row>
-            <el-col :span="4">
-              <div
-                class="grid-content bg-purple"
-                style="text-align: center; padding: 20px"
-              >
-                <img src="./assets/logo.png" style="height: 100px" />
-              </div>
+            <el-col :span="6"><div>LOGO</div></el-col>
+            <el-col :span="6" style="text-align: left;">
+              <div>联系我们</div>
+              <div>123@tsinghua.edu.cn</div>
             </el-col>
-            <el-col :span="4" :offset="1">
-              <div
-                class="grid-content bg-purple"
-                style="text-align: center; padding: 20px"
-              >
-                Welcome to contact us.
-              </div>
-            </el-col>
-            <el-col :span="8" :offset="10">
+            <el-col :span="12">
               <div>
                 <el-row>
-                  <el-col :span="8">
-                    <div
-                      style="text-align: center; padding: 20px"
-                    >
-                      LINK
-                    </div>
-                  </el-col>
-                  <el-col :span="8">
-                    <div
-                      style="text-align: center; padding: 20px"
-                    >
-                      FEEDBACK
-                    </div>
-                  </el-col>
-                  <el-col :span="8">
-                    <div
-                      style="text-align: center; padding: 20px"
-                    >
-                      HELP
-                    </div>
-                  </el-col>
+                  <el-col :span="5" :offset="9"><div>链接</div></el-col>
+                  <el-col :span="5"><div>反馈</div></el-col>
+                  <el-col :span="5"><div>帮助</div></el-col>
                 </el-row>
               </div>
             </el-col>
@@ -219,9 +190,10 @@ body,
 }
 
 .footer-div {
-  height: 150px;
+  height: 100px;
   background-color: black;
   color: white;
+  padding-top: 60px;
 }
 
 .el-menu--horizontal>.el-menu-item.is-active {
