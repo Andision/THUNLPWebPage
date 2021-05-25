@@ -145,8 +145,8 @@ export default {
         case '5':
           this.$router.push({path: '/submit'})
           break
-        case '6-1':
-          this.$router.push({path: '/judging'})
+        case '6':
+          this.$router.push({path: '/download'})
           break
         case '6-2':
           this.$router.push({path: '/judging'})

@@ -93,9 +93,6 @@ export default {
       language: en
     }
   },
-  mounted: function () {
-    this.getDisplayData()
-  },
   methods: {
     // 每页条数改变时触发 选择一页显示多少行
     handleSizeChange (val) {
