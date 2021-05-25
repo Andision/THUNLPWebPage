@@ -95,23 +95,81 @@
         </div>
       </el-footer>
     </el-container>
+    <LoginDialog v-bind:v="dialogLoginVisible" v-on:close="handleLoginStatus"></LoginDialog>
   </div>
 </template>
 
 <script>
 import en from '@/components/en.json'
+import LoginDialog from '@/components/LoginDialog.vue'
 export default {
   name: 'App',
   data () {
     return {
-      language: en
+      language: en,
+      dialogLoginVisible: false,
+      token: ''
     }
   },
   methods: {
+    checkLogin () {
+      console.log('HH')
+      var cookieOri = document.cookie
+      var cookie = ''
+      if (cookieOri !== '') {
+        cookie = JSON.parse(document.cookie)
+      }
+      console.log('cookie:', cookie)
+      if (cookieOri === '' || cookie.token === '') {
+        this.handleLoginStatus(true)
+      } else {
+        this.token = cookie.token
+        this.$router.push({path: '/user'})
+      }
+    },
+    handleMenuSelect (key, keyPath) {
+      console.log(key, keyPath)
+      switch (key) {
+        case '1':
+          this.$router.push({path: '/'})
+          break
+        case '2':
+          this.$router.push({path: '/leaderboard'})
+          break
+        case '3':
+          this.$router.push({path: '/about'})
+          break
+        case '4-1':
+          this.$router.push({path: '/submit/attack'})
+          break
+        case '5-1':
+          this.$router.push({path: '/leaderboard/attack'})
+          break
+        case '6-1':
+          this.$router.push({path: '/judging'})
+          break
+        case '6-2':
+          this.$router.push({path: '/judging'})
+          break
+        case '7':
+          // this.$router.push({path: '/user'})
+          this.checkLogin()
+          break
+      }
+    },
     handleGoHomePage () {
       this.$router.push({path: '/'})
+    },
+    handleLoginStatus (isLocal) {
+      if (isLocal) {
+        this.dialogLoginVisible = true
+      } else {
+        this.dialogLoginVisible = false
+      }
+      console.log(this.dialogLoginVisible)
     }
-  }
+  },
+  components: { LoginDialog }
 }
 </script>
 
