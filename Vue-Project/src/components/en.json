@@ -1,5 +1,6 @@
 {
     "wyzs": "文 源 指 数",
+    "sjxz": "数据下载",
     "home_title1": "文源指数",
     "home_title2": "中文语言理解和生成评测基准",
     "home_titledetail": "文源指数包含高质量中文自然语言处理数据集、排行榜与在线评测平台,旨在构建全面系统的中文机器语言能力评测体系,形成多层次维度的评测方案,力求更加科学、规范、高质量地推进中文自然语言处理技术的标准评测。",
@@ -33,5 +34,6 @@
     "Model": "Model",
     "Parameter": "Parameter",
     "More": "More",
-    "Information": "Information"
+    "Information": "Information",
+    "Info": "Info"
 }
