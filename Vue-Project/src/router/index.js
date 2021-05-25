@@ -6,6 +6,7 @@ import Test from '@/components/Test'
 import User from '@/components/User'
 import FAQ from '@/components/FAQ'
 import DataDownload from '@/components/DataDownload'
+import Submit from '@/components/Submit'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/download',
       name: 'DataDownload',
       component: DataDownload
+    },
+    {
+      path: '/submit',
+      name: 'Submit',
+      component: Submit
     }
   ]
 })
