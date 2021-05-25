@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Test from '@/components/Test'
 import User from '@/components/User'
+import FAQ from '@/components/FAQ'
+import DataDownload from '@/components/DataDownload'
 
 Vue.use(Router)
 
@@ -20,9 +22,19 @@ export default new Router({
       component: User
     },
     {
+      path: '/faq',
+      name: 'FAQ',
+      component: FAQ
+    },
+    {
       path: '/test',
       name: 'Test',
       component: Test
+    },
+    {
+      path: '/download',
+      name: 'DataDownload',
+      component: DataDownload
     }
   ]
 })
