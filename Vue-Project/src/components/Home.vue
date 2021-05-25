@@ -38,18 +38,15 @@
         </ul>
       </div>
     </div>
-    <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog>
   </div>
 </template>
 
 <script>
-import LoginDoalog from '@/components/LoginDialog.vue'
 import en from '@/components/en.json'
 export default {
   data () {
     return {
       language: en,
-      dialogLoginVisible: false,
       kb: '　',
       org: [
         {
@@ -90,17 +87,6 @@ export default {
         'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
         'https://z3.ax1x.com/2021/05/19/g5FLgx.png'
       ]
-    }
-  },
-  components: { LoginDoalog },
-  methods: {
-    handleLogin (isLocal) {
-      if (isLocal) {
-        this.dialogLoginVisible = true
-      } else {
-        this.dialogLoginVisible = false
-      }
-      console.log(this.dialogLoginVisible)
     }
   }
 }
