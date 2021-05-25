@@ -4,6 +4,7 @@
   "description": "A Vue.js project",
   "author": "Andision <andision@outlook.com>",
   "private": true,
+  "homepage": "https://[github用户名].github.io/[项目名]",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
