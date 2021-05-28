@@ -105,7 +105,7 @@ export default {
       console.log(key, keyPath)
       switch (key) {
         case '1':
-          this.$router.push({path: '/'})
+          this.$router.push({path: '/task'})
           break
         case '2':
           this.$router.push({path: '/leaderboard'})
@@ -173,6 +173,7 @@ body,
 #app {
   height: 100%;
   width: 100%;
+  min-width: 1500px;
 }
 
 body,

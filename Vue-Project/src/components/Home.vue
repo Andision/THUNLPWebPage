@@ -29,7 +29,7 @@
           </li>
         </ul>
       </div>
-      <hr class="second-hr" color="#ECEAFF" />
+      <hr class="second-hr" color="#F5F4FE" />
       <div class="second-logo">
         <ul>
           <li class="second-logo-item" v-for="(item,index) in logo" :key="index">
