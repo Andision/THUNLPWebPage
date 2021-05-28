@@ -77,11 +77,11 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             },
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -91,7 +91,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -101,7 +101,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -111,7 +111,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -121,7 +121,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -131,7 +131,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -141,7 +141,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -151,7 +151,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -161,7 +161,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         },
@@ -171,7 +171,7 @@ export default {
           link: [
             {
               title: 'data1',
-              link: 'www.baidu.com'
+              link: 'http://www.baidu.com'
             }
           ]
         }
@@ -184,7 +184,7 @@ export default {
             link: [
               {
                 title: 'data1',
-                link: 'www.baidu.com'
+                link: 'http://www.baidu.com'
               }
             ]
           },
@@ -194,7 +194,7 @@ export default {
             link: [
               {
                 title: 'data1',
-                link: 'www.baidu.com'
+                link: 'http://www.baidu.com'
               }
             ]
           },
@@ -204,7 +204,7 @@ export default {
             link: [
               {
                 title: 'data1',
-                link: 'www.baidu.com'
+                link: 'http://www.baidu.com'
               }
             ]
           },
@@ -214,7 +214,7 @@ export default {
             link: [
               {
                 title: 'data1',
-                link: 'www.baidu.com'
+                link: 'http://www.baidu.com'
               }
             ]
           },
@@ -224,7 +224,7 @@ export default {
             link: [
               {
                 title: 'data1',
-                link: 'www.baidu.com'
+                link: 'http://www.baidu.com'
               }
             ]
           },
@@ -234,7 +234,7 @@ export default {
             link: [
               {
                 title: 'data1',
-                link: 'www.baidu.com'
+                link: 'http://www.baidu.com'
               }
             ]
           }

@@ -9,6 +9,7 @@ import DataDownload from '@/components/DataDownload'
 import Submit from '@/components/Submit'
 import MoreInfo from '@/components/MoreInfo'
 import Task from '@/components/Task'
+import Leaderboard from '@/components/Leaderboard'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/task',
       name: 'Task',
       component: Task
+    },
+    {
+      path: '/leaderboard',
+      name: 'Leaderboard',
+      component: Leaderboard
     }
   ]
 })

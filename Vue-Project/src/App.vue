@@ -114,7 +114,7 @@ export default {
           this.$router.push({path: '/faq'})
           break
         case '4-1':
-          this.$router.push({path: '/submit/attack'})
+          this.$router.push({path: '/paper'})
           break
         case '5':
           this.$router.push({path: '/submit'})
