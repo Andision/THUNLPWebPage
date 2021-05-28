@@ -7,7 +7,7 @@
           <div class="title-title">
             {{language.task_synl}}
             <el-switch
-              v-model="s.all"
+              v-model="showAll"
               active-color="#64438D"
             >
             </el-switch>
@@ -15,12 +15,12 @@
           <hr>
           <div class="title-sub">
             <el-row :gutter="20">
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><el-switch v-model="s.all" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><el-switch v-model="s.all" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><el-switch v-model="s.all" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><el-switch v-model="s.all" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><el-switch v-model="s.all" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><el-switch v-model="s.all" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></el-col>
             </el-row>
           </div>
           <hr>
@@ -38,11 +38,11 @@
         </div>
       </div>
       <div class="main-content">
-        <div class="main-section">
+        <div class="main-section" v-if="s.sj">
           <TaskSection :data="show"></TaskSection>
         </div>
-        <div class="main-section">
-          <TaskSection :data="show"></TaskSection>
+        <div class="main-section" v-if="s.lj">
+          <TaskSection :data="data.lj"></TaskSection>
         </div>
       </div>
     </el-card>
@@ -57,8 +57,14 @@ export default {
   data () {
     return {
       language: en,
+      showAll: true,
       s: {
-        all: true
+        sj: true,
+        lj: true,
+        js: true,
+        szjs: true,
+        sc: true,
+        dyy: true
       },
       c: [
         'NENGLI',
@@ -169,12 +175,96 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      data: {
+        lj: [
+          {
+            index: '02',
+            title: 'LJ',
+            link: [
+              {
+                title: 'data1',
+                link: 'www.baidu.com'
+              }
+            ]
+          },
+          {
+            index: '02',
+            title: 'qwe',
+            link: [
+              {
+                title: 'data1',
+                link: 'www.baidu.com'
+              }
+            ]
+          },
+          {
+            index: '02',
+            title: 'qwe',
+            link: [
+              {
+                title: 'data1',
+                link: 'www.baidu.com'
+              }
+            ]
+          },
+          {
+            index: '02',
+            title: 'qwe',
+            link: [
+              {
+                title: 'data1',
+                link: 'www.baidu.com'
+              }
+            ]
+          },
+          {
+            index: '02',
+            title: 'qwe',
+            link: [
+              {
+                title: 'data1',
+                link: 'www.baidu.com'
+              }
+            ]
+          },
+          {
+            index: '02',
+            title: 'qwe',
+            link: [
+              {
+                title: 'data1',
+                link: 'www.baidu.com'
+              }
+            ]
+          }
+        ]
+
+      }
     }
   },
   methods: {
   },
-  components: { TaskSection }
+  components: { TaskSection },
+  watch: {
+    showAll (curVal, oldVal) {
+      if (curVal) {
+        this.s.sj = true
+        this.s.lj = true
+        this.s.js = true
+        this.s.szjs = true
+        this.s.sc = true
+        this.s.dyy = true
+      } else {
+        this.s.sj = false
+        this.s.lj = false
+        this.s.js = false
+        this.s.szjs = false
+        this.s.sc = false
+        this.s.dyy = false
+      }
+    }
+  }
 }
 </script>
 
