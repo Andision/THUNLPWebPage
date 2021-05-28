@@ -9,6 +9,9 @@ import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import axios from 'axios'
 
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
 Vue.prototype.$axios = axios
 
 Vue.use(ElementUI, {locale})
