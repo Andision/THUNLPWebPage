@@ -1,54 +1,95 @@
 <template>
-  <div class="hello">
-    <ForgetDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></ForgetDoalog>
-    <el-button @click="handleLogin(true)">HAHA</el-button>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+  <div class="all">
+    <div class="title">
+      识记能力
+    </div>
+    <div class="sub">
+      识别和记忆世界知识
+    </div>
+    <div class="content">
+      <el-row :gutter="12">
+        <el-col :span="6">
+          <el-card class="box-card">
+            <el-row>
+              <el-col :span="6"><div class="card-left">01</div></el-col>
+              <el-col :span="18"><div class="card-right">456</div></el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="box-card">
+            <el-row>
+              <el-col :span="6"><div class="card-left">01</div></el-col>
+              <el-col :span="18"><div class="card-right">456</div></el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="box-card">
+            <el-row>
+              <el-col :span="6"><div class="card-left">01</div></el-col>
+              <el-col :span="18"><div class="card-right">456</div></el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="box-card">
+            <el-row>
+              <el-col :span="6"><div class="card-left">01</div></el-col>
+              <el-col :span="18"><div class="card-right">456</div></el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
 <script>
-import LoginDoalog from '@/components/LoginDialog.vue'
-import ForgetDoalog from '@/components/ForgetDialog.vue'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      dialogLoginVisible: false
     }
-  },
-  components: {
-    LoginDoalog,
-    ForgetDoalog
   },
   methods: {
-    handleLogin (isLocal) {
-      if (isLocal) {
-        this.dialogLoginVisible = true
-      } else {
-        this.dialogLoginVisible = false
-      }
-      console.log(this.dialogLoginVisible)
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.all{
+  width: 80%;
+  margin: auto;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.title{
+  font-size: xx-large;
+  text-align: left;
+  margin-top: 20px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.sub{
+  font-size: large;
+  text-align: left;
+  margin-top: 20px;
 }
-a {
-  color: #42b983;
+.content{
+  margin-top: 20px;
+}
+.box-card{
+  background-color: #7857A1;
+  width: 250px;
+}
+.card-left{
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+}
+.card-right{
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
 }
 </style>
