@@ -78,6 +78,7 @@
 import en from '@/components/en.json'
 import LoginDialog from '@/components/LoginDialog.vue'
 import ForgetDialog from '@/components/ForgetDialog.vue'
+import config from '@/components/config.json'
 export default {
   name: 'App',
   data () {
@@ -119,6 +120,21 @@ export default {
         this.handleLoginStatus(true)
       }
     },
+    toLogout () {
+      let formData = new FormData()
+      this.$axios.post(config.API + config.toLogout, formData).then(res => {
+        if (res.status === 200) {
+          if (res.data.re_code === '0') {
+            this.isLogin = false
+            document.cookie = ''
+            this.$message({
+              message: '登出成功',
+              type: 'success'
+            })
+          }
+        }
+      })
+    },
     handleMenuSelect (key, keyPath) {
       console.log(key, keyPath)
       switch (key) {
@@ -146,6 +162,10 @@ export default {
         case '7':
           // this.$router.push({path: '/user'})
           this.toLogin()
+          break
+        case '8':
+          // this.$router.push({path: '/user'})
+          this.toLogout()
           break
       }
     },
