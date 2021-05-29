@@ -21,6 +21,9 @@
             {{language.wyzs}}
           </div>
 
+          <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
+            language.Logout
+          }}</el-menu-item>
           <el-menu-item class="menu-item" index="7" style="float: right;">{{
             language.User
           }}</el-menu-item>
@@ -75,6 +78,7 @@
 import en from '@/components/en.json'
 import LoginDialog from '@/components/LoginDialog.vue'
 import ForgetDialog from '@/components/ForgetDialog.vue'
+import config from '@/components/config.json'
 export default {
   name: 'App',
   data () {
@@ -82,8 +86,12 @@ export default {
       language: en,
       dialogLoginVisible: false,
       dialogForgetVisible: false,
-      token: ''
+      token: '',
+      isLogin: false
     }
+  },
+  mounted: function () {
+    this.checkLogin()
   },
   methods: {
     checkLogin () {
@@ -95,11 +103,37 @@ export default {
       }
       console.log('cookie:', cookie)
       if (cookieOri === '' || cookie.token === '') {
-        this.handleLoginStatus(true)
+        // this.handleLoginStatus(true)
+        this.isLogin = false
       } else {
+        this.isLogin = true
         this.token = cookie.token
-        this.$router.push({path: '/user'})
+        // this.token = cookie.token
+        // this.$router.push({path: '/user'})
       }
+    },
+    toLogin () {
+      this.checkLogin()
+      if (this.isLogin) {
+        this.$router.push({path: '/user'})
+      } else {
+        this.handleLoginStatus(true)
+      }
+    },
+    toLogout () {
+      let formData = new FormData()
+      this.$axios.post(config.API + config.toLogout, formData).then(res => {
+        if (res.status === 200) {
+          if (res.data.re_code === '0') {
+            this.isLogin = false
+            document.cookie = ''
+            this.$message({
+              message: '登出成功',
+              type: 'success'
+            })
+          }
+        }
+      })
     },
     handleMenuSelect (key, keyPath) {
       console.log(key, keyPath)
@@ -114,7 +148,7 @@ export default {
           this.$router.push({path: '/faq'})
           break
         case '4-1':
-          this.$router.push({path: '/submit/attack'})
+          this.$router.push({path: '/paper'})
           break
         case '5':
           this.$router.push({path: '/submit'})
@@ -127,7 +161,11 @@ export default {
           break
         case '7':
           // this.$router.push({path: '/user'})
-          this.checkLogin()
+          this.toLogin()
+          break
+        case '8':
+          // this.$router.push({path: '/user'})
+          this.toLogout()
           break
       }
     },
