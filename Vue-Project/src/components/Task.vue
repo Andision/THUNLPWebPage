@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <h1 class="title">{{language.sjxz}}</h1>
+    <h1 class="title">{{language.task_wyzskj}}</h1>
     <el-card class="main">
       <div slot="header">
         <div class="main-title">
@@ -38,22 +38,22 @@
         </div>
       </div>
       <div class="main-content">
-        <div class="main-section" v-if="s.sj">
+        <div class="main-section" v-show="s.sj">
           <TaskSection :data="show.识记能力" title="识记能力"></TaskSection>
         </div>
-        <div class="main-section" v-if="s.lj">
+        <div class="main-section" v-show="s.lj">
           <TaskSection :data="show.理解能力" title="理解能力"></TaskSection>
         </div>
-        <div class="main-section" v-if="s.js">
+        <div class="main-section" v-show="s.js">
           <TaskSection :data="show.检索能力" title="检索能力"></TaskSection>
         </div>
-        <div class="main-section" v-if="s.szjs">
+        <div class="main-section" v-show="s.szjs">
           <TaskSection :data="show.数值计算能力" title="数值计算能力"></TaskSection>
         </div>
-        <div class="main-section" v-if="s.sc">
+        <div class="main-section" v-show="s.sc">
           <TaskSection :data="show.生成能力" title="生成能力"></TaskSection>
         </div>
-        <div class="main-section" v-if="s.dyy">
+        <div class="main-section" v-show="s.dyy">
           <TaskSection :data="show.多语言能力" title="多语言能力"></TaskSection>
         </div>
       </div>

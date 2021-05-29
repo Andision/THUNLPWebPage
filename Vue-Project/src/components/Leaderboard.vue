@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <h1 class="title">{{ language.sjxz }}</h1>
+    <h1 class="title">{{ language.leaderboard_phb }}</h1>
     <el-card class="main">
       <div slot="header">
         <div class="main-title">
