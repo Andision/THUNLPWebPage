@@ -1,7 +1,7 @@
 <template>
   <el-card class="all">
     <div class="title">
-      识记能力
+      {{title}}
     </div>
     <div class="sub">
       识别和记忆世界知识
@@ -43,16 +43,42 @@ export default {
     }
   },
   methods: {
+    makeData () {
+      console.log('TASKSECTION1', this.data)
+      var count = 1
+      for (var key in this.data) {
+        console.log(this.data[key])
+        var tlist = []
+        for (var k in this.data[key]) {
+          console.log('ADS', this.data[key][k])
+          tlist.push({
+            title: this.data[key][k].dataset_name,
+            link: this.data[key][k].dataset_id
+          })
+        }
+        this.show.push({
+          index: count,
+          title: key,
+          link: tlist
+        })
+        count++
+      }
+      console.log('TASKSECTION', this.show)
+      // this.show = this.data
+      var l = this.show.length
+      var s = Math.ceil(l / 4)
+      for (var i = 0; i < s; i++) {
+        this.num.push(i)
+      }
+    }
   },
   props: {
-    data: Array
+    data: Array,
+    title: String
   },
-  mounted: function () {
-    this.show = this.data
-    var l = this.show.length
-    var s = Math.ceil(l / 4)
-    for (var i = 0; i < s; i++) {
-      this.num.push(i)
+  watch: {
+    data (curVal, oldVal) {
+      this.makeData()
     }
   }
 }

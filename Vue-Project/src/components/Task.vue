@@ -39,10 +39,22 @@
       </div>
       <div class="main-content">
         <div class="main-section" v-if="s.sj">
-          <TaskSection :data="show"></TaskSection>
+          <TaskSection :data="show.识记能力" title="识记能力"></TaskSection>
         </div>
         <div class="main-section" v-if="s.lj">
-          <TaskSection :data="data.lj"></TaskSection>
+          <TaskSection :data="show.理解能力" title="理解能力"></TaskSection>
+        </div>
+        <div class="main-section" v-if="s.js">
+          <TaskSection :data="show.检索能力" title="检索能力"></TaskSection>
+        </div>
+        <div class="main-section" v-if="s.szjs">
+          <TaskSection :data="show.数值计算能力" title="数值计算能力"></TaskSection>
+        </div>
+        <div class="main-section" v-if="s.sc">
+          <TaskSection :data="show.生成能力" title="生成能力"></TaskSection>
+        </div>
+        <div class="main-section" v-if="s.dyy">
+          <TaskSection :data="show.多语言能力" title="多语言能力"></TaskSection>
         </div>
       </div>
     </el-card>
@@ -71,177 +83,7 @@ export default {
         'NENGLI',
         'JINJIAN'
       ],
-      show: [
-        {
-          index: '01',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            },
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '01',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        },
-        {
-          index: '02',
-          title: 'qwe',
-          link: [
-            {
-              title: 'data1',
-              link: 'http://www.baidu.com'
-            }
-          ]
-        }
-      ],
-      data: {
-        lj: [
-          {
-            index: '02',
-            title: 'LJ',
-            link: [
-              {
-                title: 'data1',
-                link: 'http://www.baidu.com'
-              }
-            ]
-          },
-          {
-            index: '02',
-            title: 'qwe',
-            link: [
-              {
-                title: 'data1',
-                link: 'http://www.baidu.com'
-              }
-            ]
-          },
-          {
-            index: '02',
-            title: 'qwe',
-            link: [
-              {
-                title: 'data1',
-                link: 'http://www.baidu.com'
-              }
-            ]
-          },
-          {
-            index: '02',
-            title: 'qwe',
-            link: [
-              {
-                title: 'data1',
-                link: 'http://www.baidu.com'
-              }
-            ]
-          },
-          {
-            index: '02',
-            title: 'qwe',
-            link: [
-              {
-                title: 'data1',
-                link: 'http://www.baidu.com'
-              }
-            ]
-          },
-          {
-            index: '02',
-            title: 'qwe',
-            link: [
-              {
-                title: 'data1',
-                link: 'http://www.baidu.com'
-              }
-            ]
-          }
-        ]
-
-      }
+      show: {}
     }
   },
   methods: {
@@ -251,16 +93,11 @@ export default {
     let data = {
       'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力']
     }
-    this.$axios.get(config.API + config.getDataDownload, data).then(res => {
-      console.log('TASK', res)
+    this.$axios.post(config.API + config.getTaskAll, data).then(res => {
       if (res.status === 200) {
         if (res.data.re_code === '0') {
-          this.isLogin = false
-          document.cookie = ''
-          this.$message({
-            message: '登出成功',
-            type: 'success'
-          })
+          console.log('TASK', res.data.ability_datasets_dic)
+          this.show = res.data.ability_datasets_dic
         }
       }
     })
