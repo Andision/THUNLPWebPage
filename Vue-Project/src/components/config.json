@@ -2,5 +2,6 @@
     "API": "http://8.130.26.94/api",
     "toSignup": "/register",
     "toLogin": "/login",
-    "toLogout": "/logout"
+    "toLogout": "/logout",
+    "getDataDownload": "/get_full_dataset"
 }

@@ -398,7 +398,7 @@ export default {
           name: {
             textStyle: {
               color: '#fff',
-              backgroundColor: '#999',
+              backgroundColor: '#64438D',
               borderRadius: 3,
               padding: [3, 5]
             }

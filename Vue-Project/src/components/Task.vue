@@ -52,6 +52,7 @@
 <script>
 import en from '@/components/en.json'
 import TaskSection from '@/components/TaskSection.vue'
+import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
@@ -244,6 +245,25 @@ export default {
     }
   },
   methods: {
+  },
+  mounted: function () {
+    console.log('In MOUNT')
+    let data = {
+      'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力']
+    }
+    this.$axios.post(config.API + config.getDataDownload, data).then(res => {
+      console.log('TASK', res)
+      if (res.status === 200) {
+        if (res.data.re_code === '0') {
+          this.isLogin = false
+          document.cookie = ''
+          this.$message({
+            message: '登出成功',
+            type: 'success'
+          })
+        }
+      }
+    })
   },
   components: { TaskSection },
   watch: {
