@@ -251,7 +251,7 @@ export default {
     let data = {
       'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力']
     }
-    this.$axios.post(config.API + config.getDataDownload, data).then(res => {
+    this.$axios.get(config.API + config.getDataDownload, data).then(res => {
       console.log('TASK', res)
       if (res.status === 200) {
         if (res.data.re_code === '0') {
