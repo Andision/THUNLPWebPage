@@ -21,6 +21,9 @@
             {{language.wyzs}}
           </div>
 
+          <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
+            language.Logout
+          }}</el-menu-item>
           <el-menu-item class="menu-item" index="7" style="float: right;">{{
             language.User
           }}</el-menu-item>
@@ -82,8 +85,12 @@ export default {
       language: en,
       dialogLoginVisible: false,
       dialogForgetVisible: false,
-      token: ''
+      token: '',
+      isLogin: false
     }
+  },
+  mounted: function () {
+    this.checkLogin()
   },
   methods: {
     checkLogin () {
@@ -95,10 +102,21 @@ export default {
       }
       console.log('cookie:', cookie)
       if (cookieOri === '' || cookie.token === '') {
-        this.handleLoginStatus(true)
+        // this.handleLoginStatus(true)
+        this.isLogin = false
       } else {
+        this.isLogin = true
         this.token = cookie.token
+        // this.token = cookie.token
+        // this.$router.push({path: '/user'})
+      }
+    },
+    toLogin () {
+      this.checkLogin()
+      if (this.isLogin) {
         this.$router.push({path: '/user'})
+      } else {
+        this.handleLoginStatus(true)
       }
     },
     handleMenuSelect (key, keyPath) {
@@ -127,7 +145,7 @@ export default {
           break
         case '7':
           // this.$router.push({path: '/user'})
-          this.checkLogin()
+          this.toLogin()
           break
       }
     },
