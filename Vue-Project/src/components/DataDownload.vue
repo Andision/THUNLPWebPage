@@ -18,12 +18,12 @@
         <el-table-column prop="more" :label="language.More+' '+language.Info" width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
-              <el-link icon="el-icon-more" :href="scope.row.more" :underline="false"></el-link>
+              <el-link icon="el-icon-more" :href="'/#/more?id='+scope.row.more" :underline="false"></el-link>
             </div>
           </template>
         </el-table-column>
-        <el-table-column prop="score" :label="language.Score" width="100" align="center">
-        </el-table-column>
+        <!-- <el-table-column prop="score" :label="language.Score" width="100" align="center">
+        </el-table-column> -->
       </el-table>
 
       <div class="block" style="margin-top:15px;">

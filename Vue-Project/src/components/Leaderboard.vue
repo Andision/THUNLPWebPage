@@ -379,11 +379,46 @@ export default {
           name: 'data3',
           score: '90'
         }
-      ]
+      ],
+      pic: {
+        indicator: [
+          {
+            name: '识记能力',
+            max: 6500
+          },
+          {
+            name: '理解能力',
+            max: 16000
+          },
+          {
+            name: '多语言能力',
+            max: 30000
+          },
+          {
+            name: '数值计算能力',
+            max: 38000
+          },
+          {
+            name: '检索能力',
+            max: 52000
+          },
+          {
+            name: '生成能力',
+            max: 25000
+          }
+        ],
+        data: [
+          {
+            value: [5000, 14000, 28000, 31000, 42000, 21000],
+            name: '实际开销（Actual Spending）'
+          }
+        ]
+      }
     }
   },
   methods: {
-    waitToDraw () {
+    waitToDraw (row, rowList) {
+      console.log(row)
       this.$nextTick(() => {
         this.drawChart()
       })
@@ -403,42 +438,12 @@ export default {
               padding: [3, 5]
             }
           },
-          indicator: [
-            {
-              name: '识记能力',
-              max: 6500
-            },
-            {
-              name: '理解能力',
-              max: 16000
-            },
-            {
-              name: '多语言能力',
-              max: 30000
-            },
-            {
-              name: '数值计算能力',
-              max: 38000
-            },
-            {
-              name: '检索能力',
-              max: 52000
-            },
-            {
-              name: '生成能力',
-              max: 25000
-            }
-          ]
+          indicator: this.pic.indicator
         },
         series: [
           {
             type: 'radar',
-            data: [
-              {
-                value: [5000, 14000, 28000, 31000, 42000, 21000],
-                name: '实际开销（Actual Spending）'
-              }
-            ]
+            data: this.pic.data
           }
         ]
       }

@@ -110,6 +110,7 @@ export default {
   data () {
     return {
       language: en,
+      id: '',
       show: {
         title: '金融领域关系抽取数据集FinRE',
         label: '识记能力 | 开放域问答',
@@ -140,7 +141,11 @@ export default {
       }
     }
   },
-  methods: {}
+  methods: {},
+  mounted: function () {
+    this.id = this.$route.query.id
+    console.log(this.id)
+  }
 }
 </script>
 <style scoped>
