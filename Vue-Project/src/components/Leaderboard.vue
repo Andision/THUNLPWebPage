@@ -424,14 +424,9 @@ export default {
       'end': -1
     }
     this.$axios.post(config.API + config.getRanklist, data).then(res => {
+      console.log(res)
       if (res.status === 200) {
         if (res.data.re_code === '0') {
-          this.isLogin = false
-          document.cookie = ''
-          this.$message({
-            message: '登出成功',
-            type: 'success'
-          })
         }
       }
     })
