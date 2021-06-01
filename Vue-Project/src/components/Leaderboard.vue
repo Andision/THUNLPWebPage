@@ -385,32 +385,32 @@ export default {
         indicator: [
           {
             name: '识记能力',
-            max: 6500
+            max: 100
           },
           {
             name: '理解能力',
-            max: 16000
+            max: 100
           },
           {
             name: '多语言能力',
-            max: 30000
+            max: 100
           },
           {
             name: '数值计算能力',
-            max: 38000
+            max: 100
           },
           {
             name: '检索能力',
-            max: 52000
+            max: 100
           },
           {
             name: '生成能力',
-            max: 25000
+            max: 100
           }
         ],
         data: [
           {
-            value: [5000, 14000, 28000, 31000, 42000, 21000],
+            value: [90, 90, 90, 90, 90, 90],
             name: '实际开销（Actual Spending）'
           }
         ]
