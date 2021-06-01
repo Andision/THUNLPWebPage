@@ -45,65 +45,33 @@ import config from '@/components/config.json'
 export default {
   data () {
     return {
-      tableData: [
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '1',
-          download: '12345',
-          more: '12345'
-        },
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '2',
-          download: '12345',
-          more: '12345'
-        },
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '3',
-          download: '12345',
-          more: '12345'
-        },
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '4',
-          download: '12345',
-          more: '12345'
-        },
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '5',
-          download: '12345',
-          more: '12345'
-        },
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '6',
-          download: '12345',
-          more: '12345'
-        },
-        {
-          name: 'The Corpus of Linguistic Acceptability',
-          score: '7',
-          download: '12345',
-          more: '12345'
-        }
-      ],
+      tableData: [],
       currentPage: 1, // 当前页码
       pageSize: 10, // 每页的数据条数
       language: en
     }
   },
   mounted: function () {
-    this.$axios.post(config.API + config.getDataDownload).then(res => {
+    // {
+    //   name: 'The Corpus of Linguistic Acceptability',
+    //   score: '7',
+    //   download: '12345',
+    //   more: '12345'
+    // }
+    this.$axios.get(config.API + config.getDataDownload).then(res => {
+      // console.log(res.data.dataset_list)
       if (res.status === 200) {
         if (res.data.re_code === '0') {
-          this.isLogin = false
-          document.cookie = ''
-          this.$message({
-            message: '登出成功',
-            type: 'success'
-          })
+          for (var i = 0; i < res.data.dataset_list.length; i++) {
+            var t = res.data.dataset_list[i]
+            // console.log(t)
+            this.tableData.push({
+              name: t.dataset_name,
+              score: t.dataset_id,
+              download: t.dataset_id,
+              more: t.dataset_id
+            })
+          }
         }
       }
     })
