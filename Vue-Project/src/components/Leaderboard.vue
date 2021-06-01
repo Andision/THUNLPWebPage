@@ -215,6 +215,7 @@
 
 <script>
 import en from '@/components/en.json'
+import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
@@ -415,6 +416,25 @@ export default {
         ]
       }
     }
+  },
+  mounted: function () {
+    let data = {
+      'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+      'start': 1,
+      'end': -1
+    }
+    this.$axios.post(config.API + config.getRanklist, data).then(res => {
+      if (res.status === 200) {
+        if (res.data.re_code === '0') {
+          this.isLogin = false
+          document.cookie = ''
+          this.$message({
+            message: '登出成功',
+            type: 'success'
+          })
+        }
+      }
+    })
   },
   methods: {
     waitToDraw (row, rowList) {
