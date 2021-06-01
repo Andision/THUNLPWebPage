@@ -11,7 +11,7 @@
         <el-table-column prop="download" :label="language.Download" width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
-              <el-link icon="el-icon-download" :href="scope.row.download" :underline="false"></el-link>
+              <el-link icon="el-icon-download" :href="'/api/download_dataset?dataset_id='+scope.row.download" :underline="false"></el-link>
             </div>
           </template>
         </el-table-column>
@@ -41,6 +41,7 @@
 
 <script>
 import en from '@/components/en.json'
+import config from '@/components/config.json'
 export default {
   data () {
     return {
@@ -92,6 +93,20 @@ export default {
       pageSize: 10, // 每页的数据条数
       language: en
     }
+  },
+  mounted: function () {
+    this.$axios.post(config.API + config.getDataDownload).then(res => {
+      if (res.status === 200) {
+        if (res.data.re_code === '0') {
+          this.isLogin = false
+          document.cookie = ''
+          this.$message({
+            message: '登出成功',
+            type: 'success'
+          })
+        }
+      }
+    })
   },
   methods: {
     // 每页条数改变时触发 选择一页显示多少行
