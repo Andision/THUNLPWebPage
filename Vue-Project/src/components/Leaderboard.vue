@@ -10,7 +10,15 @@
           </div>
           <hr />
           <div class="title-sub">
-            <el-row :gutter="20">
+            <div style="display:flex;flex-direction:row;justify-content: space-between;">
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div>
+            </div>
+            <!-- <el-row :gutter="20">
               <el-col :span="4"
                 ><div class="title-sub-section">
                   <div class="title-sub-section-text">
@@ -71,11 +79,11 @@
                     active-color="#64438D"
                   ></el-switch></div
               ></el-col>
-            </el-row>
+            </el-row> -->
           </div>
           <hr />
           <div class="title-select">
-            <el-checkbox-group v-model="c" :min="0" :max="1">
+            <!-- <el-checkbox-group v-model="c" :min="0" :max="1">
               <el-checkbox label="NENGLI" v-model="c.nl"
                 ><div class="title-select-text">
                   {{ language.task_nlb }}
@@ -86,9 +94,9 @@
                   {{ language.task_jjb }}
                 </div></el-checkbox
               >
-            </el-checkbox-group>
+            </el-checkbox-group> -->
           </div>
-          <hr />
+          <!-- <hr /> -->
         </div>
       </div>
       <div class="main-content">
