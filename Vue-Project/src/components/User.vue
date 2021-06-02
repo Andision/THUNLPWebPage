@@ -74,57 +74,58 @@ export default {
         parameter: '',
         more: ''
       },
-      tableData: [
-        {
-          rank: '1',
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5',
-          link: 'LINK',
-          model: 'xxxxxxxxxxx',
-          parameter: 'xxxxxxxxxxxxx',
-          more: 'xxxxxxxxxxxxxxx'
-        },
-        {
-          rank: '2',
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5'
-        },
-        {
-          rank: '3',
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5'
-        },
-        {
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5'
-        },
-        {
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5'
-        },
-        {
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5'
-        },
-        {
-          date: '19-02-01',
-          name: 'The Corpus of Linguistic Acceptability',
-          time: '00:30',
-          score: '90.5'
-        }
-      ]
+      tableData: []
+      // tableData: [
+      //   {
+      //     rank: '1',
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5',
+      //     link: 'LINK',
+      //     model: 'xxxxxxxxxxx',
+      //     parameter: 'xxxxxxxxxxxxx',
+      //     more: 'xxxxxxxxxxxxxxx'
+      //   },
+      //   {
+      //     rank: '2',
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5'
+      //   },
+      //   {
+      //     rank: '3',
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5'
+      //   },
+      //   {
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5'
+      //   },
+      //   {
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5'
+      //   },
+      //   {
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5'
+      //   },
+      //   {
+      //     date: '19-02-01',
+      //     name: 'The Corpus of Linguistic Acceptability',
+      //     time: '00:30',
+      //     score: '90.5'
+      //   }
+      // ]
     }
   },
   methods: {
