@@ -22,28 +22,28 @@
           </div>
 
           <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
-            language.Logout
+            language.app_Logout
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="7" style="float: right;">{{
-            language.User
+            language.app_User
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="6" style="float: right;">{{
-            language.Download
+            language.app_Download
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="5" style="float: right;">{{
-            language.Submit
+            language.app_Submit
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="4" style="float: right;">{{
-            language.Paper
+            language.app_Paper
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="3" style="float: right;">{{
-            language.FAQ
+            language.app_FAQ
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="2" style="float: right;">{{
-            language.Leaderboard
+            language.app_Leaderboard
           }}</el-menu-item>
           <el-menu-item class="menu-item" index="1" style="float: right;">{{
-            language.Tasks
+            language.app_Tasks
           }}</el-menu-item>
         </el-menu>
       </el-header>
