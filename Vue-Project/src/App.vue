@@ -50,7 +50,7 @@
       <el-main class="main" style="padding: 0;"><router-view /></el-main>
       <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
-          <el-row>
+          <!-- <el-row>
             <el-col :span="6"><div>LOGO</div></el-col>
             <el-col :span="6" style="text-align: left;">
               <div>联系我们</div>
@@ -65,7 +65,7 @@
                 </el-row>
               </div>
             </el-col>
-          </el-row>
+          </el-row> -->
         </div>
       </el-footer>
     </el-container>
