@@ -240,4 +240,7 @@ export default {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+pre {
+  width: 60%;
+}
 </style>
