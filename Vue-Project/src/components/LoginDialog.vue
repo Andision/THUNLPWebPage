@@ -148,6 +148,7 @@ export default {
               type: 'success'
             })
             this.$emit('close', false)
+            location.reload()
           } else if (res.data.re_code === '4002') {
             this.$message({
               message: res.data.msg,
