@@ -31,11 +31,11 @@
       </div>
       <hr class="second-hr" color="#F5F4FE" />
       <div class="second-logo">
-        <ul>
-          <li class="second-logo-item" v-for="(item,index) in logo" :key="index">
-            <img class="pic-logo" :src="item"/>
-          </li>
-        </ul>
+        <!-- <ul> -->
+        <div class="second-logo-item" v-for="(item,index) in logo" :key="index">
+          <img class="pic-logo" :src="item"/>
+        </div>
+        <!-- </ul> -->
       </div>
     </div>
   </div>
@@ -183,5 +183,7 @@ export default {
 }
 .pic-logo{
   width: 100px;
+  display: flex;
+
 }
 </style>
