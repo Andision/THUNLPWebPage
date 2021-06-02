@@ -60,8 +60,8 @@
           </el-row>
 
         <el-row style="text-align: right; margin-top: 50px; margin-bottom: 50px;">
-          <el-button type="primary">{{language.Select + ' ZIP'}}</el-button>
-          <el-button type="primary">{{language.Submit}}</el-button>
+          <el-button type="primary" @click="notOpen">{{language.Select + ' ZIP'}}</el-button>
+          <el-button type="primary" @click="notOpen">{{language.Submit}}</el-button>
         </el-row>
 
       </div>
@@ -86,7 +86,16 @@ export default {
       check: false
     }
   },
-  methods: {}
+  mounted: function () {
+    this.notOpen()
+  },
+  methods: {
+    notOpen () {
+      this.$alert('参与测评暂未开放，敬请期待', '暂未开放', {
+        confirmButtonText: '确定'
+      })
+    }
+  }
 }
 </script>
 <style scoped>
