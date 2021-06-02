@@ -25,14 +25,15 @@
           </div>
           <hr>
           <div class="title-select">
-            <el-checkbox-group
+            <!-- <el-checkbox-group
               v-model="c"
               :min="0"
               :max="1"
             >
               <el-checkbox label="NENGLI" v-model="c.nl"><div class="title-select-text">{{language.task_nlb}}</div></el-checkbox>
-              <el-checkbox label="JINJIAN" v-model="c.jj"><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox>
-            </el-checkbox-group>
+            </el-checkbox-group> -->
+              <!-- <el-checkbox label="JINJIAN" :v-model="true" disabled><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox> -->
+              <el-checkbox v-model="checked2" disabled>{{language.task_jjb}}</el-checkbox>
           </div>
           <hr>
         </div>
@@ -71,6 +72,7 @@ export default {
     return {
       language: en,
       showAll: true,
+      checked2: true,
       s: {
         sj: true,
         lj: true,
