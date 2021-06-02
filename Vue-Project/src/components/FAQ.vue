@@ -25,24 +25,24 @@ export default {
     return {
       language: en,
       tableData: [{
-        title: 'How do I use XXX?',
-        detail: 'To evaluate on GLUE, collect your system"s predictions on the nine primary tasks and the one auxiliary task.<br>• Get data for all tasks (with the exception of MRPC, see below) from the "Tasks" section. For the auxiliary task, you only need the TSV from "Diagnostic Main". Each primary<br>task comes as a zip folder containin a standardized train, dev, and (unlabeled) test split.<br>• Use the IDs and labels present in the unlabeled test TSVS to generate one TSV of predictions for each of the eleven TSVS (separate test split for MNLI matched and<br>mismatched), where each TSV has a header and each line follows the format "id [TAB] label".<br>• Make sure that each prediction TSV is named according to the following:<br>• Corpus of Linguistic Acceptability: COLA.tsv<br>• Stanford Sentiment Treebank: SST-2.tsv<br>• Microsoft Research Paraphrase Corpus: MRPC.tsv<br>• Semantic Textual Similarity Benchmark: STS-B.tsv<br>• Quora Question Pairs: QQP.tsv<br>• MultiNLI Matched: MNLI-m.tsv<br>• MultiNLI Mismatched: MNLI-mm.tsv<br>• Question NLI: QNLI.tsv<br>• Recognizing Textual Entailment: RTE.tsv<br>• Winograd NLI: WNLI.tsv<br>• Diagnostic: AX.tsv<br>• Create a zip of the prediction TSVS, e.g. using "zip -r submission.zip *.tsv".<br>The zip can contain subfolders but should not contain nested zips.<br>• Upload this zip using the "Submit" section, filling in details of the method used to generate the predictions.<br>You may upload at most two submissions a day. A sample submission with the necessary formatting is available here. You can use the code for the baselines as a starting point.<br>See below if you are running into issues submitting.'
+        title: '● 如何参与智源指数评测？',
+        detail: '○ 在智源指数框架介绍页面一键下载所有数据集，或在数据下载页面下载某个特定数据集<br>○ 生成测试集的预测结果文件。预测结果文件格式和训练集相同。<br>○ 将预测结果文件按照“能力-任务-数据集”的文件夹结构组织（在智源指数框架介绍页面一键下载的数据集已经按照该结构整理），压缩成zip格式。登录个人账号后即可在参与评测页面提交。'
       },
       {
-        title: '123',
-        detail: '123'
+        title: '● 参与评测需要遵守哪些规范？',
+        detail: '○ 我们禁止任何形式的在模型训练和提交结果中使用测试集标签信息，包括通过自己人工标注测试集标签。<br>○ 我们鼓励评测参与者分享论文/技术报告/模型代码，共同推进自然语言处理社区积极健康发展。'
       },
       {
-        title: '123',
-        detail: '123'
+        title: '● 如何下载获得数据集',
+        detail: '○ 在智源指数任务框架介绍页面可以一键下载所有数据集；在数据集列表可以下载某个特定数据集'
       },
       {
-        title: '123',
-        detail: '123'
+        title: '● 智源指数的数据使用许可是什么？',
+        detail: '○ 智源指数提供的数据仅供个人研究用途使用，禁止商业用途使用。'
       },
       {
-        title: '123',
-        detail: '123'
+        title: '● 如何反馈对智源指数的建议？',
+        detail: '○ 智源指数体系和评测平台仍在不断建设和完善中，未来我们会在智源社区开放用户反馈意见论坛。'
       }]
     }
   }

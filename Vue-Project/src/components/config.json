@@ -1,5 +1,5 @@
 {
-    "API": "http://8.130.26.94/api",
+    "API": "/api",
     "toSignup": "/register",
     "toLogin": "/login",
     "toLogout": "/logout",
