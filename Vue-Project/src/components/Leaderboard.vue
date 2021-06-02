@@ -418,8 +418,7 @@ export default {
         ],
         data: [
           {
-            value: [90, 90, 90, 90, 90, 90],
-            name: '实际开销（Actual Spending）'
+            value: [90, 90, 90, 90, 90, 90]
           }
         ]
       }
@@ -435,6 +434,10 @@ export default {
       console.log(res)
       if (res.status === 200) {
         console.log(res)
+        var t = res.data
+        this.pic.data = [{
+          value: [t.ability_score.识记能力.ability_sum, t.ability_score.理解能力.ability_sum, t.ability_score.多语言能力.ability_sum, t.ability_score.数值计算能力.ability_sum, t.ability_score.检索能力.ability_sum, t.ability_score.生成能力.ability_sum]
+        }]
       }
     })
   },
