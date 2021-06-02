@@ -18,45 +18,72 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      meta: {
+        title: '智源指数'
+      },
       component: Home
     },
     {
       path: '/User',
+      meta: {
+        title: '智源指数'
+      },
       name: 'User',
       component: User
     },
     {
       path: '/faq',
+      meta: {
+        title: '智源指数'
+      },
       name: 'FAQ',
       component: FAQ
     },
     {
       path: '/test',
+      meta: {
+        title: '智源指数'
+      },
       name: 'Test',
       component: Test
     },
     {
       path: '/download',
+      meta: {
+        title: '智源指数'
+      },
       name: 'DataDownload',
       component: DataDownload
     },
     {
       path: '/submit',
+      meta: {
+        title: '智源指数'
+      },
       name: 'Submit',
       component: Submit
     },
     {
       path: '/more',
+      meta: {
+        title: '智源指数'
+      },
       name: 'MoreInfo',
       component: MoreInfo
     },
     {
       path: '/task',
+      meta: {
+        title: '智源指数'
+      },
       name: 'Task',
       component: Task
     },
     {
       path: '/leaderboard',
+      meta: {
+        title: '智源指数'
+      },
       name: 'Leaderboard',
       component: Leaderboard
     }
