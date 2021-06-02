@@ -33,7 +33,7 @@
       <div class="second-logo">
         <ul>
           <li class="second-logo-item" v-for="(item,index) in logo" :key="index">
-            <img :src="item"/>
+            <img class="pic-logo" :src="item"/>
           </li>
         </ul>
       </div>
@@ -76,16 +76,36 @@ export default {
         {
           zh: '京东',
           en: 'JD.COM'
+        },
+        {
+          zh: '复旦大学',
+          en: 'Fudan University'
+        },
+        {
+          zh: '苏州大学',
+          en: 'Soochow University'
+        },
+        {
+          zh: '大连理工大学',
+          en: 'Dalian University of Technology'
+        },
+        {
+          zh: '山西大学',
+          en: 'Shanxi University'
         }
       ],
       logo: [
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png',
-        'https://z3.ax1x.com/2021/05/19/g5FLgx.png'
+        'https://z3.ax1x.com/2021/06/02/2ltLAx.png',
+        'https://z3.ax1x.com/2021/06/02/2ltON6.png',
+        'https://z3.ax1x.com/2021/06/02/2ltv9O.png',
+        'https://z3.ax1x.com/2021/06/02/2ltx3D.png',
+        'https://z3.ax1x.com/2021/06/02/2lNSjH.png',
+        'https://z3.ax1x.com/2021/06/02/2lN9ud.png',
+        'https://z3.ax1x.com/2021/06/02/2lNCDA.png',
+        'https://z3.ax1x.com/2021/06/02/2lNKDs.png',
+        'https://z3.ax1x.com/2021/06/02/2lNuuj.png',
+        'https://z3.ax1x.com/2021/06/02/2lNlEq.png',
+        'https://z3.ax1x.com/2021/06/02/2lNMbn.png'
       ]
     }
   }
@@ -158,5 +178,8 @@ export default {
   float:left;
   margin-left: 50px;
   margin-bottom: 10px;
+}
+.pic-logo{
+  width: 100px;
 }
 </style>

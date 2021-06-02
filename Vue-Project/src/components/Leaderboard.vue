@@ -214,7 +214,7 @@
           <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
           <el-table-column label="生成能力" prop="sc"> </el-table-column>
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
-          <el-table-column label="总分" prop="score"> </el-table-column>
+          <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
     </el-card>
@@ -223,7 +223,7 @@
 
 <script>
 import en from '@/components/en.json'
-import config from '@/components/config.json'
+// import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
@@ -242,114 +242,16 @@ export default {
       tableData: [
         {
           rank: '1',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '2',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '3',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '4',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '5',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '6',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '7',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
-          score: '99'
-        },
-        {
-          rank: '8',
-          name: 'Name',
-          org: 'THU',
-          plink: '123',
-          clink: '123',
-          sj: '99',
-          lj: '99',
-          js: '99',
-          szjs: '99',
-          sc: '99',
-          dyy: '99',
+          name: '"mT5-XXL"',
+          org: '"CUGE Team"',
+          plink: 'https://arxiv.org/abs/2010.11934',
+          clink: 'https://github.com/google-research/multilingual-t5',
+          sj: '90.62',
+          lj: '86.36',
+          js: '35.37',
+          szjs: '59.27',
+          sc: '34.8',
+          dyy: '23.98',
           score: '99'
         }
       ],
@@ -375,20 +277,7 @@ export default {
           score: '90'
         }
       ],
-      dataData: [
-        {
-          name: 'data1',
-          score: '90'
-        },
-        {
-          name: 'data2',
-          score: '90'
-        },
-        {
-          name: 'data3',
-          score: '90'
-        }
-      ],
+      dataData: [],
       pic: {
         indicator: [
           {
@@ -418,28 +307,28 @@ export default {
         ],
         data: [
           {
-            value: [90, 90, 90, 90, 90, 90]
+            value: [90.62, 86.36, 23.98, 59.27, 35.37, 34.8]
           }
         ]
       }
     }
   },
   mounted: function () {
-    let data = {
-      'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
-      'start': 1,
-      'end': -1
-    }
-    this.$axios.post(config.API + '/test_rank', data).then(res => {
-      console.log(res)
-      if (res.status === 200) {
-        console.log(res)
-        var t = res.data
-        this.pic.data = [{
-          value: [t.ability_score.识记能力.ability_sum, t.ability_score.理解能力.ability_sum, t.ability_score.多语言能力.ability_sum, t.ability_score.数值计算能力.ability_sum, t.ability_score.检索能力.ability_sum, t.ability_score.生成能力.ability_sum]
-        }]
-      }
-    })
+    // let data = {
+    //   'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+    //   'start': 1,
+    //   'end': -1
+    // }
+    // this.$axios.post(config.API + '/test_rank', data).then(res => {
+    //   console.log(res)
+    //   if (res.status === 200) {
+    //     console.log(res)
+    //     var t = res.data
+    //     this.pic.data = [{
+    //       value: [t.ability_score.识记能力.ability_sum, t.ability_score.理解能力.ability_sum, t.ability_score.多语言能力.ability_sum, t.ability_score.数值计算能力.ability_sum, t.ability_score.检索能力.ability_sum, t.ability_score.生成能力.ability_sum]
+    //     }]
+    //   }
+    // })
   },
   methods: {
     waitToDraw (row, rowList) {
