@@ -122,7 +122,7 @@ export default {
     },
     toLogout () {
       let formData = new FormData()
-      this.$axios.post(config.API + config.toLogout, formData).then(res => {
+      this.$axios.get(config.API + config.toLogout, formData).then(res => {
         if (res.status === 200) {
           if (res.data.re_code === '0') {
             this.isLogin = false
@@ -131,6 +131,7 @@ export default {
               message: '登出成功',
               type: 'success'
             })
+            location.reload()
           }
         }
       })
