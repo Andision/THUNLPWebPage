@@ -4,7 +4,7 @@
       {{title}}
     </div>
     <div class="sub">
-      识别和记忆世界知识
+      <!-- 识别和记忆世界知识 -->
     </div>
     <div class="content">
       <el-row :gutter="12" v-for="i in num" :key="i">
@@ -119,6 +119,7 @@ export default {
   font-weight: bold;
   text-align: left;
   padding-left: 20px;
+  vertical-align: middle;
 }
 .link{
   margin-right: 20px;

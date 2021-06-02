@@ -167,4 +167,7 @@ export default {
 .title-title, .title-sub, .title-select{
   margin-top: 20px;
 }
+.title-sub, .title-sub-section{
+  vertical-align: middle;
+}
 </style>
