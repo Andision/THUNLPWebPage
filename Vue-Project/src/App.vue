@@ -211,7 +211,7 @@ body,
 #app {
   height: 100%;
   width: 100%;
-  min-width: 1500px;
+  min-width: 1000px;
 }
 
 body,

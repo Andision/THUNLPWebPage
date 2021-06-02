@@ -105,7 +105,7 @@ export default {
 }
 .box-card{
   background-color: #7857A1;
-  width: 250px;
+  width: 200px;
   margin-top: 20px;
 }
 .card-left{
