@@ -536,4 +536,7 @@ export default {
 .title-select {
   margin-top: 20px;
 }
+.title-sub-section-btn{
+  display: inline;
+}
 </style>
