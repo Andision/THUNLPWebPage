@@ -91,21 +91,40 @@ export default {
         'NENGLI',
         'JINJIAN'
       ],
-      show: {}
+      show: {},
+      alldata: {
+        all: {},
+        jj: {}
+      }
     }
   },
   methods: {
   },
   mounted: function () {
     console.log('In MOUNT')
-    let data = {
-      'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力']
+    let data0 = {
+      'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+      'sample': 0
     }
-    this.$axios.post(config.API + config.getTaskAll, data).then(res => {
+    this.$axios.post(config.API + config.getTaskAll, data0).then(res => {
       if (res.status === 200) {
         if (res.data.re_code === '0') {
           console.log('TASK', res.data.ability_datasets_dic)
           this.show = res.data.ability_datasets_dic
+          this.alldata.all = res.data.ability_datasets_dic
+        }
+      }
+    })
+
+    let data1 = {
+      'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+      'sample': 1
+    }
+    this.$axios.post(config.API + config.getTaskAll, data1).then(res => {
+      if (res.status === 200) {
+        if (res.data.re_code === '0') {
+          console.log('TASK1', res.data.ability_datasets_dic)
+          this.alldata.jj = res.data.ability_datasets_dic
         }
       }
     })
