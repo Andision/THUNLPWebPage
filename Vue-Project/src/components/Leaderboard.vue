@@ -423,11 +423,10 @@ export default {
       'start': 1,
       'end': -1
     }
-    this.$axios.post(config.API + config.getRanklist, data).then(res => {
+    this.$axios.post(config.API + '/test_rank', data).then(res => {
       console.log(res)
       if (res.status === 200) {
-        if (res.data.re_code === '0') {
-        }
+        console.log(res)
       }
     })
   },
