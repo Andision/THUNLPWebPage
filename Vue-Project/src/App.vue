@@ -131,7 +131,7 @@ export default {
               message: '登出成功',
               type: 'success'
             })
-            location.reload()
+            // location.reload()
           }
         }
       })
