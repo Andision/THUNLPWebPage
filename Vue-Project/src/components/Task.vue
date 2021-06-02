@@ -15,12 +15,12 @@
           <hr>
           <div class="title-sub">
             <el-row :gutter="20">
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div></el-col>
+              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div></el-col>
             </el-row>
           </div>
           <hr>
@@ -167,7 +167,10 @@ export default {
 .title-title, .title-sub, .title-select{
   margin-top: 20px;
 }
-.title-sub, .title-sub-section{
+.title-sub, .title-sub-section .title-sub-section-text .title-sub-section-btn{
   vertical-align: middle;
+}
+.title-sub-section-btn{
+  display: inline;
 }
 </style>
