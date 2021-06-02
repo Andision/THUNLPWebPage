@@ -101,7 +101,7 @@ export default {
       if (cookieOri !== '') {
         cookie = JSON.parse(document.cookie)
       }
-      console.log('cookie:', cookie)
+      console.log('cookie:', cookieOri)
       if (cookieOri === '' || cookie.token === '') {
         // this.handleLoginStatus(true)
         this.isLogin = false

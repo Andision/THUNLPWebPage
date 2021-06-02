@@ -32,7 +32,7 @@
         {{show.org}}
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.intr!=''">
         <div class="section-title">
           {{language.more_intro}}
           <i class="el-icon-question"></i>
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.paper!=''">
         <div class="section-title">
           {{language.more_paper}}
           <i class="el-icon-document"></i>
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.more_ref!=''">
         <div class="section-title">
           {{language.more_ref}}
           <i class="el-icon-document"></i>
@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.more_size!=''">
         <div class="section-title">
           {{language.more_size}}
           <i class="el-icon-s-data"></i>
@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.more_download!=''">
         <div class="section-title">
           {{language.more_download}}
           <i class="el-icon-download"></i>
@@ -88,7 +88,7 @@
         </div>
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.more_form!=''">
         <div class="section-title">
           {{language.more_form}}
           <i class="el-icon-tickets"></i>
@@ -100,7 +100,7 @@
         </div>
       </div>
 
-      <div class="content-section">
+      <div class="content-section" v-if="show.more_sample!=''">
         <div class="section-title">
           {{language.more_sample}}
           <i class="el-icon-edit"></i>
