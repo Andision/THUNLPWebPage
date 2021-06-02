@@ -142,6 +142,8 @@ export default {
   font-weight: normal;
   padding-left: 20%;
   padding-right: 20%;
+  margin: auto;
+  text-align: left;
 }
 .second-title{
   color: #062A4E;
