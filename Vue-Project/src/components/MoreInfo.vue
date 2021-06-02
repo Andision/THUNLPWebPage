@@ -58,7 +58,9 @@
           <i class="el-icon-document"></i>
         </div>
         <div class="section-content section-color">
-          {{show.ref}}
+          <pre class="section-content section-color" v-html="show.ref">
+          </pre>
+          <!-- {{show.ref}} -->
         </div>
       </div>
 
@@ -68,7 +70,9 @@
           <i class="el-icon-s-data"></i>
         </div>
         <div class="section-content">
-          {{show.size}}
+          <pre class="section-content section-color" v-html="show.size">
+          </pre>
+          <!-- {{show.size}} -->
         </div>
       </div>
 
@@ -78,7 +82,9 @@
           <i class="el-icon-download"></i>
         </div>
         <div class="section-content">
-          {{show.download}}
+          <pre class="section-content section-color" v-html="show.download">
+          </pre>
+          <!-- {{show.download}} -->
         </div>
       </div>
 
@@ -88,7 +94,9 @@
           <i class="el-icon-tickets"></i>
         </div>
         <div class="section-content">
-          {{show.form}}
+          <pre class="section-content section-color" v-html="show.form">
+          </pre>
+          <!-- {{show.form}} -->
         </div>
       </div>
 

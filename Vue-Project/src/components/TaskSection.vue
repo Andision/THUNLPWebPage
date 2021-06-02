@@ -16,7 +16,7 @@
         >
           <div slot="content">
             <div class="bubble">
-              <el-link class="link" v-for="(k,kindex) in j.link" :key="k.link+kindex" :href="k.link">{{k.title}}</el-link>
+              <el-link class="link" v-for="(k,kindex) in j.link" :key="k.link+kindex" :href="'/#/more?id='+k.link">{{k.title}}</el-link>
             </div>
           </div>
           <el-col :span="6">
