@@ -115,6 +115,59 @@ export default {
       alldata: {
         all: {},
         jj: {}
+      },
+      test_data: {
+        'ability_datasets_dic': {
+          '多语言能力': {
+            '机器翻译': [
+              {
+                'dataset_id': 1,
+                'dataset_name': 'WMT20中英平行语料'
+              }
+            ]
+          },
+          '数值计算能力': {
+            '数值计算': [
+              {
+                'dataset_id': 6,
+                'dataset_name': 'Math23K'
+              }
+            ]
+          },
+          '检索能力': {
+            '文档检索': [
+              {
+                'dataset_id': 2,
+                'dataset_name': 'Sogou-Log'
+              }
+            ]
+          },
+          '理解能力': {
+            '阅读理解': [
+              {
+                'dataset_id': 5,
+                'dataset_name': 'C3'
+              }
+            ]
+          },
+          '生成能力': {
+            '评论生成': [
+              {
+                'dataset_id': 7,
+                'dataset_name': 'LCSTS'
+              }
+            ]
+          },
+          '识记能力': {
+            '古诗文识记': [
+              {
+                'dataset_id': 8,
+                'dataset_name': 'CCPR'
+              }
+            ]
+          }
+        },
+        're_code': '0'
       }
     }
   },
@@ -182,12 +235,19 @@ export default {
         this.alldata.jj = res.data.ability_datasets_dic
       }
     })
+
+    this.alldata.all = this.test_data.ability_datasets_dic
   },
   components: { TaskSection }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+.el-link--inner{
+  color: white;
+}
+</style>
 <style scoped>
 .all{
   width: 80%;
