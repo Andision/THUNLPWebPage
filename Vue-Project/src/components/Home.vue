@@ -101,7 +101,7 @@ export default {
         'https://z3.ax1x.com/2021/06/02/2ltx3D.png',
         'https://z3.ax1x.com/2021/06/02/2lNSjH.png',
         'https://z3.ax1x.com/2021/06/02/2lN9ud.png',
-        'https://z3.ax1x.com/2021/06/02/2lNCDA.png',
+        'https://z3.ax1x.com/2021/06/04/2GUQeg.png',
         'https://z3.ax1x.com/2021/06/02/2lNKDs.png',
         'https://z3.ax1x.com/2021/06/02/2lNuuj.png',
         'https://z3.ax1x.com/2021/06/02/2lNlEq.png',

@@ -108,7 +108,7 @@
                   ><div id="main" style="width: 400px; height: 300px"></div
                 ></el-aside>
                 <el-main>
-                  <el-row>
+                  <!-- <el-row>
                     <el-row>
                       <el-col :span="4"
                         ><div class="">
@@ -154,11 +154,11 @@
                       >
                     </el-row>
                   </el-row>
-                  <hr />
+                  <hr /> -->
                   <el-row>
                     <el-row>
                       <el-col
-                        v-for="(i, index) in taskData"
+                        v-for="(i, index) in ads"
                         :key="index"
                         :span="Math.floor(24 / taskData.length)"
                         ><div class="">
@@ -169,7 +169,7 @@
                     <hr />
                     <el-row>
                       <el-col
-                        v-for="(i, index) in taskData"
+                        v-for="(i, index) in ads"
                         :key="index"
                         :span="Math.floor(24 / taskData.length)"
                         ><div class="">{{ i.score }}</div></el-col
@@ -177,7 +177,7 @@
                     </el-row>
                     <hr />
                   </el-row>
-                  <el-row>
+                  <!-- <el-row>
                     <el-row>
                       <el-col
                         v-for="(i, index) in dataData"
@@ -198,7 +198,7 @@
                       >
                     </el-row>
                     <hr />
-                  </el-row>
+                  </el-row> -->
                 </el-main>
               </el-container>
             </template>
@@ -206,8 +206,20 @@
           <el-table-column label="排行" prop="rank"> </el-table-column>
           <el-table-column label="模型名" prop="name"> </el-table-column>
           <el-table-column label="机构" prop="org"> </el-table-column>
-          <el-table-column label="论文链接" prop="plink"> </el-table-column>
-          <el-table-column label="代码链接" prop="clink"> </el-table-column>
+          <el-table-column label="论文链接" prop="plink">
+            <template slot-scope="scope">
+              <el-link :href="scope.row.plink">
+                <i class="el-icon-paperclip"></i>
+              </el-link>
+            </template>
+          </el-table-column>
+          <el-table-column label="代码链接" prop="clink">
+            <template slot-scope="scope">
+              <el-link :href="scope.row.clink">
+                <i class="el-icon-paperclip"></i>
+              </el-link>
+            </template>
+          </el-table-column>
           <el-table-column label="识记能力" prop="sj"> </el-table-column>
           <el-table-column label="理解能力" prop="lj"> </el-table-column>
           <el-table-column label="检索能力" prop="js"> </el-table-column>
@@ -230,6 +242,32 @@ export default {
     return {
       language: en,
       showAll: true,
+      ads: [
+        {
+          name: 'WMT20',
+          score: 23.98
+        },
+        {
+          name: 'Math23K',
+          score: 59.27
+        },
+        {
+          name: 'Sogou-Log',
+          score: 35.37
+        },
+        {
+          name: 'C3',
+          score: 86.36
+        },
+        {
+          name: 'LCSTS',
+          score: 34.8
+        },
+        {
+          name: 'CCPR',
+          score: 90.62
+        }
+      ],
       s: {
         sj: true,
         lj: true,
@@ -390,7 +428,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .all {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 .title {

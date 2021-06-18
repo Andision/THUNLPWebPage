@@ -87,7 +87,7 @@ export default {
     }
   },
   mounted: function () {
-    this.notOpen()
+    // this.notOpen()
   },
   methods: {
     notOpen () {

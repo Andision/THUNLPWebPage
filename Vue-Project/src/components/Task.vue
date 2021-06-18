@@ -39,29 +39,49 @@
               <el-checkbox label="NENGLI" v-model="c.nl"><div class="title-select-text">{{language.task_nlb}}</div></el-checkbox>
             </el-checkbox-group> -->
               <!-- <el-checkbox label="JINJIAN" :v-model="true" disabled><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox> -->
-              <el-checkbox v-model="checked2" disabled>{{language.task_jjb}}</el-checkbox>
+              <el-checkbox v-model="checked2">{{language.task_jjb}}</el-checkbox>
           </div>
           <hr>
         </div>
       </div>
-      <div class="main-content">
+      <div class="main-content" v-show="!checked2">
         <div class="main-section" v-show="s.sj">
-          <TaskSection :data="show.识记能力" title="识记能力"></TaskSection>
+          <TaskSection :data="alldata.all.识记能力" title="识记能力"></TaskSection>
         </div>
         <div class="main-section" v-show="s.lj">
-          <TaskSection :data="show.理解能力" title="理解能力"></TaskSection>
+          <TaskSection :data="alldata.all.理解能力" title="理解能力"></TaskSection>
         </div>
         <div class="main-section" v-show="s.js">
-          <TaskSection :data="show.检索能力" title="检索能力"></TaskSection>
+          <TaskSection :data="alldata.all.检索能力" title="检索能力"></TaskSection>
         </div>
         <div class="main-section" v-show="s.szjs">
-          <TaskSection :data="show.数值计算能力" title="数值计算能力"></TaskSection>
+          <TaskSection :data="alldata.all.数值计算能力" title="数值计算能力"></TaskSection>
         </div>
         <div class="main-section" v-show="s.sc">
-          <TaskSection :data="show.生成能力" title="生成能力"></TaskSection>
+          <TaskSection :data="alldata.all.生成能力" title="生成能力"></TaskSection>
         </div>
         <div class="main-section" v-show="s.dyy">
-          <TaskSection :data="show.多语言能力" title="多语言能力"></TaskSection>
+          <TaskSection :data="alldata.all.多语言能力" title="多语言能力"></TaskSection>
+        </div>
+      </div>
+      <div class="main-content" v-show="checked2">
+        <div class="main-section" v-show="s.sj">
+          <TaskSection :data="alldata.jj.识记能力" title="识记能力"></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.lj">
+          <TaskSection :data="alldata.jj.理解能力" title="理解能力"></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.js">
+          <TaskSection :data="alldata.jj.检索能力" title="检索能力"></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.szjs">
+          <TaskSection :data="alldata.jj.数值计算能力" title="数值计算能力"></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.sc">
+          <TaskSection :data="alldata.jj.生成能力" title="生成能力"></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.dyy">
+          <TaskSection :data="alldata.jj.多语言能力" title="多语言能力"></TaskSection>
         </div>
       </div>
     </el-card>
@@ -78,7 +98,7 @@ export default {
     return {
       language: en,
       showAll: true,
-      checked2: true,
+      checked2: false,
       s: {
         sj: true,
         lj: true,
@@ -100,36 +120,6 @@ export default {
   },
   methods: {
   },
-  mounted: function () {
-    console.log('In MOUNT')
-    let data0 = {
-      'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
-      'sample': 0
-    }
-    this.$axios.post(config.API + config.getTaskAll, data0).then(res => {
-      if (res.status === 200) {
-        if (res.data.re_code === '0') {
-          console.log('TASK', res.data.ability_datasets_dic)
-          this.show = res.data.ability_datasets_dic
-          this.alldata.all = res.data.ability_datasets_dic
-        }
-      }
-    })
-
-    let data1 = {
-      'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
-      'sample': 1
-    }
-    this.$axios.post(config.API + config.getTaskAll, data1).then(res => {
-      if (res.status === 200) {
-        if (res.data.re_code === '0') {
-          console.log('TASK1', res.data.ability_datasets_dic)
-          this.alldata.jj = res.data.ability_datasets_dic
-        }
-      }
-    })
-  },
-  components: { TaskSection },
   watch: {
     showAll (curVal, oldVal) {
       if (curVal) {
@@ -148,7 +138,52 @@ export default {
         this.s.dyy = false
       }
     }
-  }
+  },
+  mounted: function () {
+    console.log('In MOUNT')
+    // let data0 = {
+    //   'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+    //   'sample': 0
+    // }
+    // this.$axios.post(config.API + config.getTaskAll, JSON.stringify(data0)).then(res => {
+    //   if (res.status === 200) {
+    //     if (res.data.re_code === '0') {
+    //       console.log('TASK', res.data.ability_datasets_dic)
+    //       this.show = res.data.ability_datasets_dic
+    //       this.alldata.all = res.data.ability_datasets_dic
+    //     }
+    //   }
+    // })
+    this.$axios.request({
+      url: config.API + config.getTaskAll,
+      method: 'POST',
+      data: {
+        'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+        'simple': 0
+      }
+    }).then((res) => {
+      console.log('new tasl', res)
+      if (res.status === 200) {
+        this.show = res.data.ability_datasets_dic
+        this.alldata.all = res.data.ability_datasets_dic
+      }
+    })
+
+    this.$axios.request({
+      url: config.API + config.getTaskAll,
+      method: 'POST',
+      data: {
+        'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+        'simple': 1
+      }
+    }).then((res) => {
+      console.log('s tasl', res)
+      if (res.status === 200) {
+        this.alldata.jj = res.data.ability_datasets_dic
+      }
+    })
+  },
+  components: { TaskSection }
 }
 </script>
 

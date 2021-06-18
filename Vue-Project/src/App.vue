@@ -148,8 +148,9 @@ export default {
         case '3':
           this.$router.push({path: '/faq'})
           break
-        case '4-1':
-          this.$router.push({path: '/paper'})
+        case '4':
+          // this.$router.push({path: 'http://www.baidu.com'})
+          window.open('/api/get_paper')
           break
         case '5':
           this.$router.push({path: '/submit'})

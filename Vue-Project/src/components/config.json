@@ -6,5 +6,5 @@
     "getDataDownload": "/get_full_dataset",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
-    "getMoreInfo": "/parsing_readme"
+    "getMoreInfo": "/parser"
 }

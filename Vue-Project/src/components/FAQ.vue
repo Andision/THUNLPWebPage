@@ -54,7 +54,7 @@ export default {
   margin: 100px;
 }
 .table {
-  background-color: aqua;
+  /* background-color: aqua; */
   font-weight: bold;
 }
 .draw {
