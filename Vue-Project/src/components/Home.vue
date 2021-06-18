@@ -113,6 +113,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+.el-main{
+  background-color: #F5F4FE;
+}
+</style>
 <style scoped>
 .all{
   background-color: #F5F4FE;
@@ -122,6 +127,8 @@ export default {
   text-align: center;
   background-color: white;
   padding: 50px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 .home-second{
   padding: 50px;
