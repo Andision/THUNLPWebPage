@@ -7,27 +7,30 @@
       <!-- 识别和记忆世界知识 -->
     </div>
     <div class="content">
-      <el-row :gutter="12" v-for="i in num" :key="i">
-        <el-tooltip
-          class="item"
-          effect="dark"
-          placement="bottom"
-          v-for="(j,index) in show.slice(i*4,(i+1)*4)" :key="i+index"
-        >
-          <div slot="content">
-            <div class="bubble">
-              <el-link class="link" v-for="(k,kindex) in j.link" :key="k.link+kindex" :href="'/#/more?id='+k.link">{{k.title}}</el-link>
+      <el-row :gutter="12" v-for="i in num" :key="i" style="margin-top: 50px;">
+        <el-col :span="6" v-for="(j,index) in show.slice(i*4,(i+1)*4)" :key="i+index">
+          <el-tooltip
+            class="item"
+            effect="dark"
+            placement="bottom"
+          >
+            <div slot="content">
+              <div class="bubble">
+                <el-link class="link" v-for="(k,kindex) in j.link" :key="k.link+kindex" :href="'/#/more?id='+k.link">{{k.title}}</el-link>
+              </div>
             </div>
-          </div>
-          <el-col :span="6">
-            <el-card class="box-card">
-              <el-row>
-                <el-col :span="6"><div class="card-left">{{j.index}}</div></el-col>
-                <el-col :span="18"><div class="card-right">{{j.title}}</div></el-col>
-              </el-row>
-            </el-card>
-          </el-col>
-        </el-tooltip>
+            <el-col :span="6">
+              <el-card class="box-card">
+                <el-row style="height:100%; vertical-align: -webkit-baseline-middle;">
+                  <el-col :span="6"><div class="card-left">{{j.index}}</div></el-col>
+                  <el-col :span="18" style="height:100%; vertical-align: -webkit-baseline-middle;"><div class="card-right">{{j.title}}</div></el-col>
+                  <!-- <el-col :span="6" class="card-left">{{j.index}}</el-col>
+                  <el-col :span="18" class="card-right">{{j.title}}</el-col> -->
+                </el-row>
+              </el-card>
+            </el-col>
+          </el-tooltip>
+        </el-col>
       </el-row>
     </div>
   </el-card>
@@ -85,6 +88,17 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+.box-card .el-card__body{
+  /* background-color: aqua; */
+  height: 65px;
+  padding: 0;
+  vertical-align: -webkit-baseline-middle;
+  padding-right: 10px;
+  border: white;
+}
+</style>
+
 <style scoped>
 .all{
   margin: auto;
@@ -105,21 +119,28 @@ export default {
 }
 .box-card{
   background-color: #7857A1;
-  width: 200px;
-  margin-top: 20px;
+  width: 230px;
+  height: 65px;
+  /* margin-top: 20px; */
+  margin: auto;
 }
 .card-left{
-  font-size: 50px;
+  font-size: xx-large;
   color: white;
   font-weight: bold;
+  margin-top: 10px;
 }
 .card-right{
-  font-size: x-large;
+  margin: auto;
+  font-size: large;
   color: white;
   font-weight: bold;
   text-align: left;
-  padding-left: 20px;
-  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+  padding-top: 20px;
+  /* margin: auto; */
+  /* padding-left: 20px;
+  vertical-align: middle; */
 }
 .link{
   margin-right: 20px;

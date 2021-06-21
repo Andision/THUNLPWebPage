@@ -1,35 +1,82 @@
 <template>
   <div class="all">
-    <h1 class="title">{{language.task_wyzskj}}</h1>
+    <h1 class="title">{{ language.task_wyzskj }}</h1>
     <el-card class="main">
       <div slot="header">
         <div class="main-title">
           <div class="title-title">
-            {{language.task_synl}}
-            <el-switch
-              v-model="showAll"
-              active-color="#64438D"
-            >
-            </el-switch>
+            {{ language.task_synl }}
+            <el-switch v-model="showAll" active-color="#64438D"> </el-switch>
           </div>
-          <hr>
+          <hr />
           <div class="title-sub">
-            <div style="display:flex;flex-direction:row;justify-content: space-between;">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
               <!-- <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div></el-col>
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div></el-col>
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div></el-col>
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div></el-col>
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div></el-col>
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div></el-col> -->
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div>
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div>
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div>
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div>
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div>
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  {{ language.task_sjnl }}
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.sj" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  {{ language.task_ljnl }}
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.lj" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  {{ language.task_jsnl }}
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.js" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  {{ language.task_szjsnl }}
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch
+                    v-model="s.szjs"
+                    active-color="#64438D"
+                  ></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  {{ language.task_scnl }}
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.sc" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  {{ language.task_dyynl }}
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
+                </div>
+              </div>
             </div>
           </div>
-          <hr>
+          <hr />
           <div class="title-select">
             <!-- <el-checkbox-group
               v-model="c"
@@ -38,50 +85,88 @@
             >
               <el-checkbox label="NENGLI" v-model="c.nl"><div class="title-select-text">{{language.task_nlb}}</div></el-checkbox>
             </el-checkbox-group> -->
-              <!-- <el-checkbox label="JINJIAN" :v-model="true" disabled><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox> -->
-              <el-checkbox v-model="checked2">{{language.task_jjb}}</el-checkbox>
+            <!-- <el-checkbox label="JINJIAN" :v-model="true" disabled><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox> -->
+            <el-checkbox v-model="checked2">{{
+              language.task_jjb
+            }}</el-checkbox>
           </div>
-          <hr>
+          <hr />
         </div>
       </div>
       <div class="main-content" v-show="!checked2">
         <div class="main-section" v-show="s.sj">
-          <TaskSection :data="alldata.all.识记能力" title="识记能力"></TaskSection>
+          <TaskSection
+            :data="alldata.all.识记能力"
+            title="识记能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.lj">
-          <TaskSection :data="alldata.all.理解能力" title="理解能力"></TaskSection>
+          <TaskSection
+            :data="alldata.all.理解能力"
+            title="理解能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.js">
-          <TaskSection :data="alldata.all.检索能力" title="检索能力"></TaskSection>
+          <TaskSection
+            :data="alldata.all.检索能力"
+            title="检索能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.szjs">
-          <TaskSection :data="alldata.all.数值计算能力" title="数值计算能力"></TaskSection>
+          <TaskSection
+            :data="alldata.all.数值计算能力"
+            title="数值计算能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.sc">
-          <TaskSection :data="alldata.all.生成能力" title="生成能力"></TaskSection>
+          <TaskSection
+            :data="alldata.all.生成能力"
+            title="生成能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dyy">
-          <TaskSection :data="alldata.all.多语言能力" title="多语言能力"></TaskSection>
+          <TaskSection
+            :data="alldata.all.多语言能力"
+            title="多语言能力"
+          ></TaskSection>
         </div>
       </div>
       <div class="main-content" v-show="checked2">
         <div class="main-section" v-show="s.sj">
-          <TaskSection :data="alldata.jj.识记能力" title="识记能力"></TaskSection>
+          <TaskSection
+            :data="alldata.jj.识记能力"
+            title="识记能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.lj">
-          <TaskSection :data="alldata.jj.理解能力" title="理解能力"></TaskSection>
+          <TaskSection
+            :data="alldata.jj.理解能力"
+            title="理解能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.js">
-          <TaskSection :data="alldata.jj.检索能力" title="检索能力"></TaskSection>
+          <TaskSection
+            :data="alldata.jj.检索能力"
+            title="检索能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.szjs">
-          <TaskSection :data="alldata.jj.数值计算能力" title="数值计算能力"></TaskSection>
+          <TaskSection
+            :data="alldata.jj.数值计算能力"
+            title="数值计算能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.sc">
-          <TaskSection :data="alldata.jj.生成能力" title="生成能力"></TaskSection>
+          <TaskSection
+            :data="alldata.jj.生成能力"
+            title="生成能力"
+          ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dyy">
-          <TaskSection :data="alldata.jj.多语言能力" title="多语言能力"></TaskSection>
+          <TaskSection
+            :data="alldata.jj.多语言能力"
+            title="多语言能力"
+          ></TaskSection>
         </div>
       </div>
     </el-card>
@@ -164,7 +249,44 @@ export default {
                 'dataset_id': 8,
                 'dataset_name': 'CCPR'
               }
+            ],
+            '诗文识记': [
+              {
+                'dataset_id': 8,
+                'dataset_name': 'CCPR'
+              }
+            ],
+            '古文识记': [
+              {
+                'dataset_id': 8,
+                'dataset_name': 'CCPR'
+              }
+            ],
+            '机器翻译': [
+              {
+                'dataset_id': 1,
+                'dataset_name': 'WMT20中英平行语料'
+              }
+            ],
+            '机器翻译机器翻译机': [
+              {
+                'dataset_id': 1,
+                'dataset_name': 'WMT20中英平行语料'
+              }
+            ],
+            '机器翻机器翻译': [
+              {
+                'dataset_id': 1,
+                'dataset_name': 'WMT20中英平行语料'
+              }
+            ],
+            '机器机器翻译': [
+              {
+                'dataset_id': 1,
+                'dataset_name': 'WMT20中英平行语料'
+              }
             ]
+
           }
         },
         're_code': '0'
@@ -190,6 +312,15 @@ export default {
         this.s.sc = false
         this.s.dyy = false
       }
+    },
+    checked2 (curVal, oldVal) {
+      this.showAll = true
+      this.s.sj = true
+      this.s.lj = true
+      this.s.js = true
+      this.s.szjs = true
+      this.s.sc = true
+      this.s.dyy = true
     }
   },
   mounted: function () {
@@ -244,55 +375,58 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.el-link--inner{
+.el-link--inner {
   color: white;
 }
 </style>
 <style scoped>
-.all{
+.all {
   width: 80%;
   margin: auto;
 }
-.title{
+.title {
   text-align: left;
   margin: 50px;
-  color: #64438D;
+  color: #64438d;
   font-size: 40px;
 }
-.main{
+.main {
   margin: 50px;
 }
-.main-section{
+.main-section {
   margin-top: 50px;
 }
-.title-title{
+.title-title {
   text-align: left;
   font-size: x-large;
   font-weight: bold;
 }
-.title-sub-section{
+.title-sub-section {
   text-align: left;
 }
-.title-sub-section-text{
+.title-sub-section-text {
   margin-right: 10px;
   display: inline;
   font-size: large;
   font-weight: bold;
 }
-.title-select{
+.title-select {
   text-align: right;
 }
-.title-select-text{
+.title-select-text {
   font-size: large;
   font-weight: bold;
 }
-.title-title, .title-sub, .title-select{
+.title-title,
+.title-sub,
+.title-select {
   margin-top: 20px;
 }
-.title-sub, .title-sub-section .title-sub-section-text .title-sub-section-btn{
+.title-sub,
+.title-sub-section .title-sub-section-text .title-sub-section-btn {
   vertical-align: middle;
 }
-.title-sub-section-btn{
+.title-sub-section-btn {
   display: inline;
 }
 </style>
