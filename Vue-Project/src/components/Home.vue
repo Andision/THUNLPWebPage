@@ -127,8 +127,8 @@ export default {
   text-align: center;
   background-color: white;
   padding: 50px;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 300px;
+  padding-bottom: 300px;
 }
 .home-second{
   padding: 50px;
