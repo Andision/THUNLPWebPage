@@ -83,18 +83,9 @@
           </div>
           <hr />
           <div class="title-select">
-            <!-- <el-checkbox-group v-model="c" :min="0" :max="1">
-              <el-checkbox label="NENGLI" v-model="c.nl"
-                ><div class="title-select-text">
-                  {{ language.task_nlb }}
-                </div></el-checkbox
-              >
-              <el-checkbox label="JINJIAN" v-model="c.jj"
-                ><div class="title-select-text">
-                  {{ language.task_jjb }}
-                </div></el-checkbox
-              >
-            </el-checkbox-group> -->
+            <el-checkbox v-model="checked2" disabled>
+              {{language.task_jjb}}
+            </el-checkbox>
           </div>
           <!-- <hr /> -->
         </div>
@@ -102,7 +93,7 @@
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw">
           <el-table-column type="expand">
-            <template slot-scope="props">
+            <template slot-scope="scope">
               <el-container>
                 <el-aside width="450px"
                   ><div id="main" style="width: 400px; height: 300px"></div
@@ -157,48 +148,114 @@
                   <hr /> -->
                   <el-row>
                     <el-row>
-                      <el-col
+                      <!-- <el-col
                         v-for="(i, index) in ads"
                         :key="index"
                         :span="Math.floor(24 / taskData.length)"
                         ><div class="">
                           <el-button type="text">{{ i.name }}</el-button>
                         </div></el-col
-                      >
+                      > -->
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text">
+                            {{ language.task_sjnl }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text">
+                            {{ language.task_ljnl }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text">
+                            {{ language.task_jsnl }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text">
+                            {{ language.task_szjsnl }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text">
+                            {{ language.task_scnl }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text">
+                            {{ language.task_dyynl }}
+                          </el-button>
+                        </div>
+                      </el-col>
                     </el-row>
                     <hr />
                     <el-row>
                       <el-col
-                        v-for="(i, index) in ads"
+                        v-for="(i, index) in scope.row.show1"
                         :key="index"
-                        :span="Math.floor(24 / taskData.length)"
-                        ><div class="">{{ i.score }}</div></el-col
+                        :span="Math.floor(24 / scope.row.show1.length)"
                       >
+                        <div class="">
+                          <el-button type="text">
+                            {{ i.name }}
+                          </el-button>
+                        </div>
+                      </el-col>
                     </el-row>
                     <hr />
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show1"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show1.length)"
+                      >
+                        <div class="">
+                          <el-button type="text">
+                            {{ i.score }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                    </el-row>
+                    <hr />
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show2"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show2.length)"
+                      >
+                        <div class="">
+                          <el-button type="text">
+                            {{ i.name }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                    </el-row>
+                    <hr />
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show2"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show2.length)"
+                      >
+                        <div class="">
+                          <el-button type="text">
+                            {{ i.score }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                    </el-row>
                   </el-row>
-                  <!-- <el-row>
-                    <el-row>
-                      <el-col
-                        v-for="(i, index) in dataData"
-                        :key="index"
-                        :span="Math.floor(24 / dataData.length)"
-                        ><div class="">
-                          <el-button type="text">{{ i.name }}</el-button>
-                        </div></el-col
-                      >
-                    </el-row>
-                    <hr />
-                    <el-row>
-                      <el-col
-                        v-for="(i, index) in dataData"
-                        :key="index"
-                        :span="Math.floor(24 / dataData.length)"
-                        ><div class="">{{ i.score }}</div></el-col
-                      >
-                    </el-row>
-                    <hr />
-                  </el-row> -->
                 </el-main>
               </el-container>
             </template>
@@ -241,6 +298,7 @@ export default {
   data () {
     return {
       language: en,
+      checked2: true,
       showAll: true,
       ads: [
         {
@@ -290,7 +348,45 @@ export default {
           szjs: '59.27',
           sc: '34.8',
           dyy: '23.98',
-          score: '99'
+          score: '99',
+          show1: [
+            {
+              name: '阅读理解',
+              score: '86.36'
+            }
+          ],
+          show2: [
+            {
+              name: 'C3',
+              score: '86.36'
+            }
+          ],
+          expand: [
+            {
+              name: 'WMT20',
+              score: 23.98
+            },
+            {
+              name: 'Math23K',
+              score: 59.27
+            },
+            {
+              name: 'Sogou-Log',
+              score: 35.37
+            },
+            {
+              name: 'C3',
+              score: 86.36
+            },
+            {
+              name: 'LCSTS',
+              score: 34.8
+            },
+            {
+              name: 'CCPR',
+              score: 90.62
+            }
+          ]
         }
       ],
       taskData: [
