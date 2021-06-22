@@ -50,6 +50,18 @@
           <el-row class="input" style="text-align: left;">
             <el-checkbox v-model="submit.public">{{language.submit_sfgk}}</el-checkbox>
           </el-row>
+
+          <el-row class="input" style="text-align: left;">
+            <el-checkbox v-model="submit.pretrain">{{language.submit_sfyxl}}</el-checkbox>
+          </el-row>
+
+          <el-row class="input" style="text-align: left;">
+            <el-checkbox v-model="submit.integration">{{language.submit_sfjc}}</el-checkbox>
+          </el-row>
+
+          <el-row class="input" style="text-align: left;">
+            <el-checkbox v-model="submit.multask">{{language.submit_sfdrw}}</el-checkbox>
+          </el-row>
         </div>
         <el-row style="text-align: left; margin-top: 30px;">
             <el-checkbox v-model="check">
@@ -81,7 +93,10 @@ export default {
         para: '',
         link: '',
         github: '',
-        public: false
+        public: false,
+        pretrain: false,
+        integration: false,
+        multask: false
       },
       check: false
     }
