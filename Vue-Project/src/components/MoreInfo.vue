@@ -207,6 +207,11 @@ export default {
   }
 }
 </script>
+<style>
+code{
+  white-space:normal
+}
+</style>
 <style scoped>
 .title{
   margin: 50px;
