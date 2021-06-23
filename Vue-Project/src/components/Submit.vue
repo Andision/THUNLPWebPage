@@ -73,7 +73,7 @@
 
         <el-row style="text-align: right; margin-top: 50px; margin-bottom: 50px;">
           <el-button type="primary" @click="handleClickSelect">{{language.Select + ' ZIP'}}</el-button>
-          <el-button type="primary" @click="notOpen">{{language.Submit}}</el-button>
+          <el-button type="primary" @click="handleClickSubmit">{{language.Submit}}</el-button>
         </el-row>
 
         <input ref="filElem" type="file" style="display: none;">
