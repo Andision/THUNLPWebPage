@@ -118,21 +118,24 @@ export default {
   mounted: function () {
     // this.notOpen()
     var that = this.$parent.$parent.$parent
-    console.log('In Submit Mount:', that.isLogin)
-    if (!that.isLogin) {
-      this.$confirm(this.language.notlogin + ' ' + this.language.gologin, '', {
-        confirmButtonText: 'OK',
-        cancelButtonText: this.language.Cancel
-      }).then(() => {
-        console.log('Submit Mount LOGIN')
-        that.handleLoginStatus(true)
-      }).catch(() => {
-        // this.$message({
-        //   type: 'info',
-        //   message: '已取消删除'
-        // })
-      })
-    }
+    var tthis = this
+    setTimeout(function () {
+      console.log('In Submit Mount:', that.isLogin)
+      if (!that.isLogin) {
+        tthis.$confirm(tthis.language.notlogin + ' ' + tthis.language.gologin, '', {
+          confirmButtonText: 'OK',
+          cancelButtonText: tthis.language.Cancel
+        }).then(() => {
+          console.log('Submit Mount LOGIN')
+          that.handleLoginStatus(true)
+        }).catch(() => {
+          // this.$message({
+          //   type: 'info',
+          //   message: '已取消删除'
+          // })
+        })
+      }
+    }, 2 * 1000)
   },
   methods: {
     handleClickSelect () {
