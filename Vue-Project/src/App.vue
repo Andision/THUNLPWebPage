@@ -129,7 +129,8 @@ export default {
         if (res.status === 200) {
           if (res.data.re_code === '0') {
             this.isLogin = false
-            document.cookie = ''
+            document.cookie = 'null'
+            console.log('In toLogout in App', document.cookie)
             this.$message({
               message: '登出成功',
               type: 'success'
