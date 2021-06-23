@@ -101,6 +101,17 @@ export default {
         integration: false,
         multask: false
       },
+      submit_clear: {
+        name: '',
+        discription: '',
+        para: '',
+        link: '',
+        github: '',
+        public: false,
+        pretrain: false,
+        integration: false,
+        multask: false
+      },
       check: false
     }
   },
@@ -118,12 +129,30 @@ export default {
         }
       }
       let formData = new FormData()
-      // formData.append('key', result.dir)
       formData.append('file', this.$refs.filElem.files[0])
+      formData.append('code_url', this.submit.github)
+      formData.append('paper_url', this.submit.link)
+      formData.append('modelname', this.submit.name)
+      if (this.submit.public) {
+        formData.append('public', 1)
+      } else {
+        formData.append('public', 0)
+      }
+      // formData.append('institution', this.submit.)
 
       this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
         console.log('handleClickSubmit', res, res.status)
         if (res.status === 200) {
+          this.submit = this.submit_clear
+          this.$alert(this.language.submit_tjcg, {
+            confirmButtonText: 'OK'
+            // callback: action => {
+            //   this.$message({
+            //     type: 'info',
+            //     message: `action: ${action}`
+            //   })
+            // }
+          })
         }
       }).catch(error => {
         console.log(error)
