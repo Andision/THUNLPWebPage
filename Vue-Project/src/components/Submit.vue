@@ -62,19 +62,21 @@
           <el-row class="input" style="text-align: left;">
             <el-checkbox v-model="submit.multask">{{language.submit_sfdrw}}</el-checkbox>
           </el-row>
-        </div>
-        <el-row style="text-align: left; margin-top: 30px;">
+          <el-row class="input" style="text-align: left;">
             <el-checkbox v-model="check">
               <span>
                 <span style="color: red;">* </span>{{language.submit_wlj}}
               </span>
             </el-checkbox>
           </el-row>
+        </div>
 
         <el-row style="text-align: right; margin-top: 50px; margin-bottom: 50px;">
-          <el-button type="primary" @click="notOpen">{{language.Select + ' ZIP'}}</el-button>
+          <el-button type="primary" @click="handleClickSelect">{{language.Select + ' ZIP'}}</el-button>
           <el-button type="primary" @click="notOpen">{{language.Submit}}</el-button>
         </el-row>
+
+        <input ref="filElem" type="file" style="display: none;">
 
       </div>
     </div>
@@ -105,6 +107,9 @@ export default {
     // this.notOpen()
   },
   methods: {
+    handleClickSelect () {
+      this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
+    },
     notOpen () {
       this.$alert('参与测评暂未开放，敬请期待', '暂未开放', {
         confirmButtonText: '确定'
