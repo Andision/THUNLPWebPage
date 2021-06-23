@@ -104,7 +104,8 @@ export default {
       if (cookieOri === '' || cookie.token === '') {
         // this.handleLoginStatus(true)
         this.isLogin = false
-      } else if (cookie.extime > Date.parse(new Date())) {
+      } else if (cookie.extime > Date.parse(new Date()).toString()) {
+        console.log('Check Login in App True')
         this.isLogin = true
       }
       // else {
