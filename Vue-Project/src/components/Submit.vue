@@ -85,6 +85,7 @@
 
 <script>
 import en from '@/components/en.json'
+import config from '@/components/config.json'
 export default {
   data () {
     return {
@@ -109,6 +110,24 @@ export default {
   methods: {
     handleClickSelect () {
       this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
+    },
+    handleClickSubmit () {
+      let myConfig = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      let formData = new FormData()
+      // formData.append('key', result.dir)
+      formData.append('file', this.$refs.filElem.files[0])
+
+      this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
+        console.log('handleClickSubmit', res, res.status)
+        if (res.status === 200) {
+        }
+      }).catch(error => {
+        console.log(error)
+      })
     },
     notOpen () {
       this.$alert('参与测评暂未开放，敬请期待', '暂未开放', {

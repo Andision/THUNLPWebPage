@@ -3,6 +3,7 @@
     "toSignup": "/register",
     "toLogin": "/login",
     "toLogout": "/logout",
+    "toSubmit": "/commit",
     "getDataDownload": "/get_full_dataset",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
