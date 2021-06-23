@@ -24,9 +24,11 @@
     </div>
     <div class="content">
       <div>
-        <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
+        <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
           {{item.name}}
-        </el-link>
+        </el-link> -->
+        <pre class="" v-html="show.author">
+        </pre>
       </div>
       <div>
         <pre class="" v-html="show.org">
