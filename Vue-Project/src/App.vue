@@ -95,7 +95,6 @@ export default {
   },
   methods: {
     checkLogin () {
-      console.log('HH')
       var cookieOri = document.cookie
       var cookie = ''
       if (cookieOri !== '') {
@@ -105,12 +104,13 @@ export default {
       if (cookieOri === '' || cookie.token === '') {
         // this.handleLoginStatus(true)
         this.isLogin = false
-      } else {
-        this.isLogin = true
-        this.token = cookie.token
-        // this.token = cookie.token
-        // this.$router.push({path: '/user'})
       }
+      // else {
+      //   this.isLogin = true
+      //   this.token = cookie.token
+      //   // this.token = cookie.token
+      //   // this.$router.push({path: '/user'})
+      // }
     },
     toLogin () {
       this.checkLogin()
