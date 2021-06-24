@@ -248,7 +248,6 @@ code{
   letter-spacing: 0px;
 }
 .section-color{
-  background-color: #F5F4FE;
   padding: 50px;
   word-wrap: break-word;
   word-break: break-all;
