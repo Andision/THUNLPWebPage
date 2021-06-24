@@ -341,6 +341,7 @@ export default {
           value: [row.sj, row.szjs, row.js, row.lj, row.sc, row.dyy]
         }
       ]
+      console.log(this.pic.data)
       this.$nextTick(() => {
         this.drawChart()
       })
