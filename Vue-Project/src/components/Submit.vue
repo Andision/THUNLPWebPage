@@ -172,6 +172,10 @@ export default {
             //   })
             // }
           })
+        } else if (res.status === 4004) {
+          this.$message.error(res.data.msg)
+        } else {
+          this.$message.error('上传失败')
         }
       }).catch(error => {
         console.log(error)
