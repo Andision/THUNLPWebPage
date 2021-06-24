@@ -29,7 +29,10 @@
         </div>
       </div>
       <div class="main-content">
-        <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw">
+        <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
+          :header-row-style="{'color': '#ffffff',}"
+          :header-cell-style="{background:'#64438D'}"
+        >
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-container>
