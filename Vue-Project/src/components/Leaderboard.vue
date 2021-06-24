@@ -292,7 +292,7 @@
 
 <script>
 import en from '@/components/en.json'
-// import config from '@/components/config.json'
+import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
@@ -448,21 +448,48 @@ export default {
     }
   },
   mounted: function () {
-    // let data = {
-    //   'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
-    //   'start': 1,
-    //   'end': -1
-    // }
-    // this.$axios.post(config.API + '/test_rank', data).then(res => {
-    //   console.log(res)
-    //   if (res.status === 200) {
-    //     console.log(res)
-    //     var t = res.data
-    //     this.pic.data = [{
-    //       value: [t.ability_score.识记能力.ability_sum, t.ability_score.理解能力.ability_sum, t.ability_score.多语言能力.ability_sum, t.ability_score.数值计算能力.ability_sum, t.ability_score.检索能力.ability_sum, t.ability_score.生成能力.ability_sum]
-    //     }]
-    //   }
-    // })
+    let data = {
+      'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
+      'start': 0,
+      'end': -1
+    }
+    this.$axios.post(config.API + config.getRanklist, data).then(res => {
+      console.log(res)
+      if (res.status === 200) {
+        console.log(res)
+        var t = res.data
+        for (var i = 0; i < t.length; i++) {
+          var r = t[i]
+          var toAppend = {
+            rank: i + 1,
+            name: r.modelname,
+            org: r.institution,
+            plink: r.paper_url,
+            clink: r.code_url,
+            sj: r.识记能力.ability_sum,
+            lj: r.理解能力.ability_sum,
+            js: r.检索能力.ability_sum,
+            szjs: r.数值计算能力.ability_sum,
+            sc: r.生成能力.ability_sum,
+            dyy: r.多语言能力.ability_sum,
+            score: r.总分,
+            show1: [
+              {
+                name: '阅读理解',
+                score: '86.36'
+              }
+            ],
+            show2: [
+              {
+                name: 'C3',
+                score: '86.36'
+              }
+            ]
+          }
+
+        }
+      }
+    })
   },
   methods: {
     waitToDraw (row, rowList) {
