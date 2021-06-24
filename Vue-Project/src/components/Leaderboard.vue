@@ -93,7 +93,7 @@
                         </div>
                       </el-col>
                     </el-row>
-                    <hr />
+                    <hr class="inner-hr"/>
                     <el-row>
                       <el-col
                         v-for="(i, index) in scope.row.show1"
@@ -107,7 +107,7 @@
                         </div>
                       </el-col>
                     </el-row>
-                    <hr />
+                    <hr class="inner-hr"/>
                     <el-row>
                       <el-col
                         v-for="(i, index) in scope.row.show1"
@@ -121,7 +121,7 @@
                         </div>
                       </el-col>
                     </el-row>
-                    <hr />
+                    <hr class="inner-hr"/>
                     <el-row>
                       <el-col
                         v-for="(i, index) in scope.row.show2"
@@ -135,7 +135,7 @@
                         </div>
                       </el-col>
                     </el-row>
-                    <hr />
+                    <hr class="inner-hr"/>
                     <el-row>
                       <el-col
                         v-for="(i, index) in scope.row.show2"
@@ -358,10 +358,24 @@ export default {
           // shape: 'circle',
           name: {
             textStyle: {
-              color: '#fff',
-              backgroundColor: '#64438D',
+              color: '#062A4E',
+              fontWeight: 'bolder',
+              fontSize: 16,
               borderRadius: 3,
               padding: [3, 5]
+            }
+          },
+          splitArea: {
+            show: true,
+            areaStyle: {
+              color: ['#593587', '#593587', '#6F4D99', '#8C73AB', '#C09ADE'] // 图表背景网格的颜色
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              width: 0,
+              color: '#B0BBCD' // 图表背景网格线的颜色
             }
           },
           indicator: this.pic.indicator
@@ -369,7 +383,19 @@ export default {
         series: [
           {
             type: 'radar',
-            data: this.pic.data
+            data: this.pic.data,
+            itemStyle: {
+              normal: {
+                color: 'rgba(0,0,0,0)', // 图表中各个图区域的边框线拐点颜色
+                lineStyle: {
+                  color: '#ECEAFF', // 图表中各个图区域的边框线颜色
+                  width: 5
+                },
+                areaStyle: {
+                  type: 'default'
+                }
+              }
+            }
           }
         ]
       }
@@ -442,5 +468,10 @@ export default {
 }
 .title-sub-section-btn{
   display: inline;
+}
+.inner-hr{
+  height: 3px;
+  background: #9AB1DE;
+  border: 0;
 }
 </style>
