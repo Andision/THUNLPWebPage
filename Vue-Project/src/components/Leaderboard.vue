@@ -49,42 +49,42 @@
                       > -->
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.sjd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.sjd;scope.row.show2=scope.row.sjd">
                             {{ language.task_sjnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.ljd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.ljd;scope.row.show2=scope.row.ljd">
                             {{ language.task_ljnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.jsd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.jsd;scope.row.show2=scope.row.jsd">
                             {{ language.task_jsnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.szjsd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.szjsd;scope.row.show2=scope.row.szjsd">
                             {{ language.task_szjsnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.scd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.scd;scope.row.show2=scope.row.scd">
                             {{ language.task_scnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dyyd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.dyyd;scope.row.show2=scope.row.dyyd">
                             {{ language.task_dyynl }}
                           </el-button>
                         </div>
