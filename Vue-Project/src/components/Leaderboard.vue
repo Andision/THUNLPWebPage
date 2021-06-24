@@ -486,7 +486,7 @@ export default {
               }
             ]
           }
-
+          this.tableData.push(toAppend)
         }
       }
     })
