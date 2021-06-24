@@ -18,68 +18,6 @@
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div>
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div>
             </div>
-            <!-- <el-row :gutter="20">
-              <el-col :span="4"
-                ><div class="title-sub-section">
-                  <div class="title-sub-section-text">
-                    {{ language.task_sjnl }}
-                  </div>
-                  <el-switch
-                    v-model="s.sj"
-                    active-color="#64438D"
-                  ></el-switch></div
-              ></el-col>
-              <el-col :span="4"
-                ><div class="title-sub-section">
-                  <div class="title-sub-section-text">
-                    {{ language.task_ljnl }}
-                  </div>
-                  <el-switch
-                    v-model="s.lj"
-                    active-color="#64438D"
-                  ></el-switch></div
-              ></el-col>
-              <el-col :span="4"
-                ><div class="title-sub-section">
-                  <div class="title-sub-section-text">
-                    {{ language.task_jsnl }}
-                  </div>
-                  <el-switch
-                    v-model="s.js"
-                    active-color="#64438D"
-                  ></el-switch></div
-              ></el-col>
-              <el-col :span="4"
-                ><div class="title-sub-section">
-                  <div class="title-sub-section-text">
-                    {{ language.task_szjsnl }}
-                  </div>
-                  <el-switch
-                    v-model="s.szjs"
-                    active-color="#64438D"
-                  ></el-switch></div
-              ></el-col>
-              <el-col :span="4"
-                ><div class="title-sub-section">
-                  <div class="title-sub-section-text">
-                    {{ language.task_scnl }}
-                  </div>
-                  <el-switch
-                    v-model="s.sc"
-                    active-color="#64438D"
-                  ></el-switch></div
-              ></el-col>
-              <el-col :span="4"
-                ><div class="title-sub-section">
-                  <div class="title-sub-section-text">
-                    {{ language.task_dyynl }}
-                  </div>
-                  <el-switch
-                    v-model="s.dyy"
-                    active-color="#64438D"
-                  ></el-switch></div
-              ></el-col>
-            </el-row> -->
           </div>
           <hr />
           <div class="title-select">
@@ -99,53 +37,6 @@
                   ><div id="main" style="width: 400px; height: 300px"></div
                 ></el-aside>
                 <el-main>
-                  <!-- <el-row>
-                    <el-row>
-                      <el-col :span="4"
-                        ><div class="">
-                          <el-button type="text">{{
-                            language.task_sjnl
-                          }}</el-button>
-                        </div></el-col
-                      >
-                      <el-col :span="4"
-                        ><div class="">
-                          <el-button type="text">{{
-                            language.task_ljnl
-                          }}</el-button>
-                        </div></el-col
-                      >
-                      <el-col :span="4"
-                        ><div class="">
-                          <el-button type="text">{{
-                            language.task_jsnl
-                          }}</el-button>
-                        </div></el-col
-                      >
-                      <el-col :span="4"
-                        ><div class="">
-                          <el-button type="text">{{
-                            language.task_szjsnl
-                          }}</el-button>
-                        </div></el-col
-                      >
-                      <el-col :span="4"
-                        ><div class="">
-                          <el-button type="text">{{
-                            language.task_scnl
-                          }}</el-button>
-                        </div></el-col
-                      >
-                      <el-col :span="4"
-                        ><div class="">
-                          <el-button type="text">{{
-                            language.task_dyynl
-                          }}</el-button>
-                        </div></el-col
-                      >
-                    </el-row>
-                  </el-row>
-                  <hr /> -->
                   <el-row>
                     <el-row>
                       <!-- <el-col
@@ -158,42 +49,42 @@
                       > -->
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text">
+                          <el-button type="text" @click="scope.row.show1=scope.row.sjd">
                             {{ language.task_sjnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text">
+                          <el-button type="text" @click="scope.row.show1=scope.row.ljd">
                             {{ language.task_ljnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text">
+                          <el-button type="text" @click="scope.row.show1=scope.row.jsd">
                             {{ language.task_jsnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text">
+                          <el-button type="text" @click="scope.row.show1=scope.row.szjsd">
                             {{ language.task_szjsnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text">
+                          <el-button type="text" @click="scope.row.show1=scope.row.scd">
                             {{ language.task_scnl }}
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text">
+                          <el-button type="text" @click="scope.row.show1=scope.row.dyyd">
                             {{ language.task_dyynl }}
                           </el-button>
                         </div>
@@ -208,7 +99,7 @@
                       >
                         <div class="">
                           <el-button type="text">
-                            {{ i.name }}
+                            {{ i.task }}
                           </el-button>
                         </div>
                       </el-col>
@@ -300,32 +191,6 @@ export default {
       language: en,
       checked2: true,
       showAll: true,
-      ads: [
-        {
-          name: 'WMT20',
-          score: 23.98
-        },
-        {
-          name: 'Math23K',
-          score: 59.27
-        },
-        {
-          name: 'Sogou-Log',
-          score: 35.37
-        },
-        {
-          name: 'C3',
-          score: 86.36
-        },
-        {
-          name: 'LCSTS',
-          score: 34.8
-        },
-        {
-          name: 'CCPR',
-          score: 90.62
-        }
-      ],
       s: {
         sj: true,
         lj: true,
@@ -389,29 +254,6 @@ export default {
           ]
         }
       ],
-      taskData: [
-        {
-          name: 'task1',
-          score: '90'
-        },
-        {
-          name: 'task2',
-          score: '90'
-        },
-        {
-          name: 'task3',
-          score: '90'
-        },
-        {
-          name: 'task4',
-          score: '90'
-        },
-        {
-          name: 'task5',
-          score: '90'
-        }
-      ],
-      dataData: [],
       pic: {
         indicator: [
           {
@@ -473,18 +315,14 @@ export default {
             sc: r.生成能力.ability_sum,
             dyy: r.多语言能力.ability_sum,
             score: r.总分,
-            show1: [
-              {
-                name: '阅读理解',
-                score: '86.36'
-              }
-            ],
-            show2: [
-              {
-                name: 'C3',
-                score: '86.36'
-              }
-            ]
+            sjd: r.识记能力.dataset_score_list,
+            ljd: r.理解能力.dataset_score_list,
+            jsd: r.检索能力.dataset_score_list,
+            szjsd: r.数值计算能力.dataset_score_list,
+            scd: r.生成能力.dataset_score_list,
+            dyyd: r.多语言能力.dataset_score_list,
+            show1: r.识记能力.dataset_score_list,
+            show2: r.识记能力.dataset_score_list
           }
           this.tableData.push(toAppend)
           console.log(toAppend)
