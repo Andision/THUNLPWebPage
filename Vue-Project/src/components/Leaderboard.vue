@@ -334,6 +334,11 @@ export default {
   methods: {
     waitToDraw (row, rowList) {
       console.log(row)
+      this.pic.data = [
+        {
+          value: [row.sj, row.szjs, row.js, row.lj, row.sc, row.dyy]
+        }
+      ]
       this.$nextTick(() => {
         this.drawChart()
       })
