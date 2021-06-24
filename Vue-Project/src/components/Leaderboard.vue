@@ -457,7 +457,7 @@ export default {
       console.log(res)
       if (res.status === 200) {
         console.log(res)
-        var t = res.data
+        var t = res.data.rank_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
           var toAppend = {
@@ -487,6 +487,7 @@ export default {
             ]
           }
           this.tableData.push(toAppend)
+          console.log(toAppend)
         }
       }
     })
