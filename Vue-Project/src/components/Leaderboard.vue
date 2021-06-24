@@ -157,14 +157,16 @@
           <el-table-column label="论文链接" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink">
-                <i class="el-icon-paperclip"></i>
+                <!-- <i class="el-icon-paperclip"></i> -->
+                <img src="https://z3.ax1x.com/2021/06/24/RQBvFK.png" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
           <el-table-column label="代码链接" prop="clink">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink">
-                <i class="el-icon-paperclip"></i>
+                <!-- <i class="el-icon-paperclip"></i> -->
+                <img src="https://z3.ax1x.com/2021/06/24/RQBvFK.png" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
