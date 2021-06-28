@@ -147,64 +147,65 @@ export default {
           message: '请填写所有必填项并选择文件！',
           type: 'warning'
         })
-      }
-      let myConfig = {
-        headers: {
-          'Content-Type': 'multipart/form-data'
+      } else {
+        let myConfig = {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
         }
-      }
-      let formData = new FormData()
-      formData.append('file', this.$refs.filElem.files[0])
-      formData.append('code_url', this.submit.github)
-      formData.append('paper_url', this.submit.link)
-      formData.append('modelname', this.submit.name)
-      formData.append('description', this.submit.discription)
-      formData.append('paras', this.submit.para)
+        let formData = new FormData()
+        formData.append('file', this.$refs.filElem.files[0])
+        formData.append('code_url', this.submit.github)
+        formData.append('paper_url', this.submit.link)
+        formData.append('modelname', this.submit.name)
+        formData.append('description', this.submit.discription)
+        formData.append('paras', this.submit.para)
 
-      if (this.submit.public) {
-        formData.append('public', 1)
-      } else {
-        formData.append('public', 0)
-      }
-      if (this.submit.pretrain) {
-        formData.append('pre_train', 1)
-      } else {
-        formData.append('pre_train', 0)
-      }
-      if (this.submit.integration) {
-        formData.append('integrate', 1)
-      } else {
-        formData.append('integrate', 0)
-      }
-      if (this.submit.multask) {
-        formData.append('multiple', 1)
-      } else {
-        formData.append('multiple', 0)
-      }
-      // formData.append('institution', this.submit.)
-      this.$message('上传中......')
-      this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
-        console.log('handleClickSubmit', res, res.status)
-        if (res.status === 200) {
-          this.submit = this.submit_clear
-          this.check = false
-          this.$alert(this.language.submit_tjcg, {
-            confirmButtonText: 'OK'
+        if (this.submit.public) {
+          formData.append('public', 1)
+        } else {
+          formData.append('public', 0)
+        }
+        if (this.submit.pretrain) {
+          formData.append('pre_train', 1)
+        } else {
+          formData.append('pre_train', 0)
+        }
+        if (this.submit.integration) {
+          formData.append('integrate', 1)
+        } else {
+          formData.append('integrate', 0)
+        }
+        if (this.submit.multask) {
+          formData.append('multiple', 1)
+        } else {
+          formData.append('multiple', 0)
+        }
+        // formData.append('institution', this.submit.)
+        this.$message('上传中......')
+        this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
+          console.log('handleClickSubmit', res, res.status)
+          if (res.status === 200) {
+            this.submit = this.submit_clear
+            this.check = false
+            this.$alert(this.language.submit_tjcg, {
+              confirmButtonText: 'OK'
             // callback: action => {
             //   this.$message({
             //     type: 'info',
             //     message: `action: ${action}`
             //   })
             // }
-          })
-        } else if (res.status === 4004) {
-          this.$message.error(res.data.msg)
-        } else {
-          this.$message.error('上传失败')
-        }
-      }).catch(error => {
-        console.log(error)
-      })
+            })
+          } else if (res.status === 4004) {
+            this.$message.error(res.data.msg)
+          } else {
+            this.$message.error('上传失败')
+          }
+        }).catch(error => {
+          console.log(error)
+        })
+      }
     },
     notOpen () {
       this.$alert('参与测评暂未开放，敬请期待', '暂未开放', {
