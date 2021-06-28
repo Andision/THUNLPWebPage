@@ -187,6 +187,7 @@ export default {
         console.log('handleClickSubmit', res, res.status)
         if (res.status === 200) {
           this.submit = this.submit_clear
+          this.check = false
           this.$alert(this.language.submit_tjcg, {
             confirmButtonText: 'OK'
             // callback: action => {
