@@ -34,7 +34,7 @@
           <el-row class="input">
             <el-input
               v-model="submit.link"
-              :placeholder="language.submit_paperLinks+'*'"
+              :placeholder="language.submit_paperLinks"
               size="large"
             ></el-input>
           </el-row>
@@ -142,6 +142,12 @@ export default {
       this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
     },
     handleClickSubmit () {
+      if (this.check === false || this.submit.name === '' || this.submit.description === '' || this.submit.paras === '' || this.$refs.filElem.files[0] === undefined) {
+        this.$message({
+          message: '请填写所有必填项并选择文件！',
+          type: 'warning'
+        })
+      }
       let myConfig = {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -152,10 +158,28 @@ export default {
       formData.append('code_url', this.submit.github)
       formData.append('paper_url', this.submit.link)
       formData.append('modelname', this.submit.name)
+      formData.append('description', this.submit.discription)
+      formData.append('paras', this.submit.para)
+
       if (this.submit.public) {
         formData.append('public', 1)
       } else {
         formData.append('public', 0)
+      }
+      if (this.submit.pretrain) {
+        formData.append('pre_train', 1)
+      } else {
+        formData.append('pre_train', 0)
+      }
+      if (this.submit.integration) {
+        formData.append('integrate', 1)
+      } else {
+        formData.append('integrate', 0)
+      }
+      if (this.submit.multask) {
+        formData.append('multiple', 1)
+      } else {
+        formData.append('multiple', 0)
       }
       // formData.append('institution', this.submit.)
 
