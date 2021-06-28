@@ -208,7 +208,7 @@ export default {
 }
 </script>
 <style>
-code{
+pre{
   white-space:normal
 }
 </style>
