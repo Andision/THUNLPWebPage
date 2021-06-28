@@ -182,7 +182,7 @@ export default {
         formData.append('multiple', 0)
       }
       // formData.append('institution', this.submit.)
-
+      this.$message('上传中......')
       this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
         console.log('handleClickSubmit', res, res.status)
         if (res.status === 200) {
