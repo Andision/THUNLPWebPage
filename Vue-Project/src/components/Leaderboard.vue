@@ -32,6 +32,7 @@
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
           :header-row-style="{'color': '#ffffff',}"
           :header-cell-style="{background:'#64438D'}"
+          cell-style="font-weight: 700; color: black;"
         >
           <el-table-column type="expand">
             <template slot-scope="scope">
@@ -115,9 +116,9 @@
                         :span="Math.floor(24 / scope.row.show1.length)"
                       >
                         <div class="">
-                          <el-button type="text">
+                          <div class="score">
                             {{ i.score }}
-                          </el-button>
+                          </div>
                         </div>
                       </el-col>
                     </el-row>
@@ -143,9 +144,9 @@
                         :span="Math.floor(24 / scope.row.show2.length)"
                       >
                         <div class="">
-                          <el-button type="text">
+                          <div class="score">
                             {{ i.score }}
-                          </el-button>
+                          </div>
                         </div>
                       </el-col>
                     </el-row>
@@ -295,7 +296,7 @@ export default {
     }
   },
   mounted: function () {
-    this.tableData = []
+    // this.tableData = []
     let data = {
       'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
       'start': 0,
@@ -470,8 +471,12 @@ export default {
   display: inline;
 }
 .inner-hr{
-  height: 3px;
+  height: 1px;
   background: #9AB1DE;
   border: 0;
+}
+.score{
+  font-weight: bolder;
+  color: black;
 }
 </style>
