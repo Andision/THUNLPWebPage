@@ -122,20 +122,21 @@ export default {
     setTimeout(function () {
       console.log('In Submit Mount:', that.isLogin)
       if (!that.isLogin) {
-        tthis.$confirm(tthis.language.notlogin + ' ' + tthis.language.gologin, '', {
-          confirmButtonText: 'OK',
-          cancelButtonText: tthis.language.Cancel
+        tthis.$alert(tthis.language.notlogin + ' ' + tthis.language.gologin, '', {
+          confirmButtonText: 'OK'
+          // cancelButtonText: tthis.language.Cancel
         }).then(() => {
           console.log('Submit Mount LOGIN')
           that.handleLoginStatus(true)
         }).catch(() => {
+          tthis.$router.push({path: '/'})
           // this.$message({
           //   type: 'info',
           //   message: '已取消删除'
           // })
         })
       }
-    }, 2 * 1000)
+    }, 1 * 1000)
   },
   methods: {
     handleClickSelect () {
