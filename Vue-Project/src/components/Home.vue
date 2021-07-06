@@ -160,7 +160,7 @@ export default {
 }
 
 .second-list{
-  margin: 30px;
+  margin-left: 10%;
 }
 
 .second-list ul {
