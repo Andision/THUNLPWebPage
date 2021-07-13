@@ -10,6 +10,7 @@ import Submit from '@/components/Submit'
 import MoreInfo from '@/components/MoreInfo'
 import Task from '@/components/Task'
 import Leaderboard from '@/components/Leaderboard'
+import Report from '@/components/Report'
 
 Vue.use(Router)
 
@@ -86,6 +87,14 @@ export default new Router({
       },
       name: 'Leaderboard',
       component: Leaderboard
+    },
+    {
+      path: '/report',
+      meta: {
+        title: '智源指数'
+      },
+      name: 'Report',
+      component: Report
     }
   ]
 })
