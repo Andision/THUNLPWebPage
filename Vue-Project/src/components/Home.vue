@@ -113,10 +113,16 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .el-main{
   background-color: #F5F4FE;
 }
+.main{
+  background-color: #F5F4FE;
+}
+</style>
+
+<style scoped>
 .all{
   background-color: #F5F4FE;
   min-height: 800px;
@@ -160,7 +166,7 @@ export default {
 }
 
 .second-list{
-  margin: 30px;
+  margin-left: 10%;
 }
 
 .second-list ul {
