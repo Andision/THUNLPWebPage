@@ -296,7 +296,7 @@ export default {
     }
   },
   mounted: function () {
-    // this.tableData = []
+    this.tableData = []
     let data = {
       'rank_by_ability': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
       'start': 0,
