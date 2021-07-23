@@ -203,10 +203,12 @@ export default {
               console.log('handleClickSubmit', res1, res1.status)
               if (res1.status === 200) {
                 that.$message({
-                  message: '评测完成！',
+                  message: '评测完成！即将跳转至测评报告。',
                   type: 'success'
                 })
-                that.$router.push({path: '/report?id=' + res.data.fileid})
+                setTimeout(function () {
+                  that.$router.push({path: '/report?id=' + res.data.fileid})
+                }, 3 * 1000)
               }
             })
             // this.$alert('评测完成！', {
