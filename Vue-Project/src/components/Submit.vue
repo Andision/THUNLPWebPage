@@ -206,6 +206,7 @@ export default {
                   message: '评测完成！',
                   type: 'success'
                 })
+                that.$router.push({path: '/report?id=' + res.data.fileid})
               }
             })
             // this.$alert('评测完成！', {
