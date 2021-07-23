@@ -200,7 +200,7 @@ export default {
             let formData1 = new FormData()
             formData1.append('fileid', res.fileid)
             that.$axios.post(config.API + '/review', formData1, myConfig).then(res1 => {
-              console.log('handleClickSubmit', res, res.status)
+              console.log('handleClickSubmit', res1, res1.status)
               if (res1.status === 200) {
                 that.$message({
                   message: '评测完成！',
