@@ -8,5 +8,6 @@
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
     "getMoreInfo": "/parser",
-    "getSubmitlist": "/commit_record"
+    "getSubmitlist": "/commit_record",
+    "getEvalReport": "/eval_report"
 }

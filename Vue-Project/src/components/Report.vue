@@ -4,7 +4,30 @@
       测评报告
     </div>
     <el-collapse accordion>
-      <el-collapse-item class="section">
+      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index">
+        <template slot="title">
+          <div class="section-title" :class="key.score==-1?'title-red':'title-green'">
+            {{key.info}}
+          </div>
+        </template>
+        <div class="section-success">
+          <div class="section-content-title">
+            正常处理
+          </div>
+          <div class="section-content">
+            
+          </div>
+        </div>
+        <div class="section-fail">
+          <div class="section-content-title">
+            错误显示
+          </div>
+          <div class="section-content">
+            {{key.err_msg}}
+          </div>
+        </div>
+      </el-collapse-item>
+      <!-- <el-collapse-item class="section">
         <template slot="title">
           <div class="section-title">
             {{language.task_sjnl}}
@@ -141,7 +164,7 @@
             xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           </div>
         </div>
-      </el-collapse-item>
+      </el-collapse-item> -->
     </el-collapse>
   </div>
 </template>
@@ -151,9 +174,26 @@ import en from '@/components/en.json'
 export default {
   data () {
     return {
-      language: en
+      language: en,
+      id: '',
+      tableData = []
     }
-  }
+  },
+
+  mounted: function () {
+    this.id = this.$route.query.id
+    console.log(this.id)
+    this.tableData = []
+    let formData = new FormData()
+    formData.append('fileid', this.id)
+    this.$axios.post(config.API + config.getEvalReport, formData).then(res => {
+      console.log(res)
+      if (res.status === 200) {
+        console.log(res)
+        this.tableData = res.data.rating_list
+      }
+    })
+  },
 }
 </script>
 
@@ -184,6 +224,12 @@ export default {
 .section-fail{
   color: red;
   margin: 50px;
+}
+.title-red{
+  color: red;
+}
+.title-green{
+  color: green;
 }
 .section-content-title{
   font-size: x-large;
