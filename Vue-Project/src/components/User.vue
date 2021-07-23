@@ -84,6 +84,7 @@ export default {
   },
   methods: {
     handleRowClick (row, column, event) {
+      console.log(row)
       this.$router.push({path: '/report?id=' + row.fileid})
     }
   }
