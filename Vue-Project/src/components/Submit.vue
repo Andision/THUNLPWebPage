@@ -143,6 +143,7 @@ export default {
       this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
     },
     handleClickSubmit () {
+      var that = this
       if (this.check === false || this.submit.name === '' || this.submit.description === '' || this.submit.paras === '' || this.$refs.filElem.files[0] === undefined) {
         this.$message({
           message: '请填写所有必填项并选择文件！',
@@ -189,15 +190,33 @@ export default {
           if (res.status === 200) {
             this.submit = this.submit_clear
             this.check = false
-            this.$alert(this.language.submit_tjcg, {
-              confirmButtonText: 'OK'
-            // callback: action => {
-            //   this.$message({
-            //     type: 'info',
-            //     message: `action: ${action}`
-            //   })
-            // }
+
+            this.$message({
+              message: '上传成功',
+              type: 'success'
             })
+            this.$message('评测中......')
+
+            let formData1 = new FormData()
+            formData1.append('fileid', res.fileid)
+            that.$axios.post(config.API + '/review', formData1, myConfig).then(res1 => {
+              console.log('handleClickSubmit', res, res.status)
+              if (res1.status === 200) {
+                that.$message({
+                  message: '评测完成！',
+                  type: 'success'
+                })
+              }
+            })
+            // this.$alert('评测完成！', {
+            //   confirmButtonText: 'OK'
+            // // callback: action => {
+            // //   this.$message({
+            // //     type: 'info',
+            // //     message: `action: ${action}`
+            // //   })
+            // // }
+            // })
           } else if (res.status === 4004) {
             this.$message.error(res.data.msg)
           } else {
