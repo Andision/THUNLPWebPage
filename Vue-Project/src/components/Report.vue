@@ -15,9 +15,18 @@
             正常处理
           </div>
           <div class="section-content">
+            <p>
+              数据集名称匹配成功：{{key.info}}
+            </p>
+            <p>
+              运行提交结果测评脚本...
+            </p>
+            <p v-if="key.score!=-1">
+              测评脚本运行成功！
+            </p>
           </div>
         </div>
-        <div class="section-fail">
+        <div class="section-fail" v-if="key.score==-1">
           <div class="section-content-title">
             错误显示
           </div>
