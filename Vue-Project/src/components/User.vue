@@ -9,6 +9,7 @@
           :header-row-style="{'color': '#ffffff',}"
           :header-cell-style="{background:'#64438D'}"
           cell-style="font-weight: 700; color: black;"
+          @row-click="handleRowClick"
         >
           <el-table-column label="#" prop="rank"> </el-table-column>
           <el-table-column label="模型名" prop="name"> </el-table-column>
@@ -82,6 +83,9 @@ export default {
     })
   },
   methods: {
+    handleRowClick (row, column, event) {
+      this.$router.push({path: '/report?id=' + row.fileid})
+    }
   }
 }
 </script>
