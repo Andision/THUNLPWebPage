@@ -7,5 +7,6 @@
     "getDataDownload": "/get_full_dataset",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
-    "getMoreInfo": "/parser"
+    "getMoreInfo": "/parser",
+    "getSubmitlist": "/commit_record"
 }
