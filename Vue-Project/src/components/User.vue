@@ -1,11 +1,11 @@
 <template>
   <div class="all">
-    <h1 class="title">{{ language.leaderboard_phb }}</h1>
+    <h1 class="title">提交记录</h1>
     <el-card class="main">
       <div slot="header">
       </div>
       <div class="main-content">
-        <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
+        <el-table :data="tableData" style="width: 100%"
           :header-row-style="{'color': '#ffffff',}"
           :header-cell-style="{background:'#64438D'}"
           cell-style="font-weight: 700; color: black;"
