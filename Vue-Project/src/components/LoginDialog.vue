@@ -30,7 +30,7 @@
             </el-col>
             <el-col :span="12">
               <!-- <div style="float:right;">{{language.Forgetpassword}}?</div> -->
-              <el-button type="text" @click="handleClickLink('forget')">{{language.Forgetpassword}}?</el-button>
+              <el-button type="text" class="forget" @click="handleClickLink('forget')">{{language.Forgetpassword}}?</el-button>
             </el-col>
           </el-row>
         </el-row>
@@ -46,7 +46,7 @@
         </el-row>
       </el-tab-pane>
       <!-- --------------------------------- -->
-      <el-tab-pane label="Sign Up">
+      <el-tab-pane :label="language.SignUp">
         <el-row class="input"> {{language.WelcomeToJoinUs}} </el-row>
 
         <el-row class="input">
@@ -232,5 +232,8 @@ export default {
 <style scoped>
 .input{
   margin:30px;
+}
+.forget{
+  padding: 0;
 }
 </style>
