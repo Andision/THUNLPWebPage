@@ -15,7 +15,6 @@
             正常处理
           </div>
           <div class="section-content">
-            
           </div>
         </div>
         <div class="section-fail">
@@ -171,12 +170,13 @@
 
 <script>
 import en from '@/components/en.json'
+import config from '@/components/config.json'
 export default {
   data () {
     return {
       language: en,
       id: '',
-      tableData = []
+      tableData: []
     }
   },
 
@@ -193,7 +193,7 @@ export default {
         this.tableData = res.data.rating_list
       }
     })
-  },
+  }
 }
 </script>
 
