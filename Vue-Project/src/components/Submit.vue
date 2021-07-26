@@ -117,7 +117,8 @@ export default {
         integration: false,
         multask: false
       },
-      check: false
+      check: false,
+      showFileName: this.$refs.filElem.files[0].name
     }
   },
   mounted: function () {
