@@ -82,7 +82,7 @@
           </div>
         </el-row>
 
-        <input ref="filElem" type="file" style="display: none;" @change="">
+        <input ref="filElem" type="file" style="display: none;" @change="handleFileChange">
 
       </div>
     </div>
