@@ -77,6 +77,9 @@
           <div>
             {{drawerInfo.description}}
           </div>
+          <div>
+            <el-link type="primary" :href="'/report?id='+drawerInfo.fileid">评测报告</el-link>
+          </div>
         </div>
       </div>
     </el-drawer>
@@ -120,7 +123,8 @@ export default {
             dyy: r.多语言能力,
             time: r.commit_time,
             description: r.description,
-            public: r.public
+            public: r.public,
+            fileid: r.fileid
           }
           this.tableData.push(toAppend)
           console.log(toAppend)
