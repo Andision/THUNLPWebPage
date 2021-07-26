@@ -93,7 +93,8 @@ export default {
       language: en,
       tableData: [],
       drawerInfo: {
-      }
+      },
+      drawer: false
     }
   },
   mounted: function () {
