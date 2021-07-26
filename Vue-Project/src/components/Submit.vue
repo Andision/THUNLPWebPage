@@ -76,6 +76,11 @@
           <el-button type="primary" @click="handleClickSubmit">{{language.Submit}}</el-button>
         </el-row>
 
+        <el-row class="input" style="text-align: left;">
+          <div>
+          </div>
+        </el-row>
+
         <input ref="filElem" type="file" style="display: none;">
 
       </div>
@@ -143,6 +148,7 @@ export default {
       this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
     },
     handleClickSubmit () {
+      console.log(this.$refs.filElem.files[0])
       var that = this
       if (this.check === false || this.submit.name === '' || this.submit.description === '' || this.submit.paras === '' || this.$refs.filElem.files[0] === undefined) {
         this.$message({
