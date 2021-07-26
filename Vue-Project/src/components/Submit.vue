@@ -78,10 +78,11 @@
 
         <el-row class="input" style="text-align: left;">
           <div>
+            {{showFileName}}
           </div>
         </el-row>
 
-        <input ref="filElem" type="file" style="display: none;">
+        <input ref="filElem" type="file" style="display: none;" @change="">
 
       </div>
     </div>
@@ -118,7 +119,7 @@ export default {
         multask: false
       },
       check: false,
-      showFileName: this.$refs.filElem.files[0].name
+      showFileName: ''
     }
   },
   mounted: function () {
@@ -236,6 +237,9 @@ export default {
           console.log(error)
         })
       }
+    },
+    handleFileChange () {
+      this.showFileName = this.$refs.filElem.files[0].name
     },
     notOpen () {
       this.$alert('参与测评暂未开放，敬请期待', '暂未开放', {
