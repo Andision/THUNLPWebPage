@@ -40,6 +40,46 @@
         </el-table>
       </div>
     </el-card>
+
+    <el-drawer
+      :visible.sync="drawer"
+      direction="rtl"
+      size="30%"
+      :with-header="false"
+    >
+      <div class="draw">
+        <div class="draw-sub">
+          <h1>{{drawerInfo.name}}</h1>
+          <div>
+            {{drawerInfo.link}}
+            Time: {{drawerInfo.commit_time}}
+            <!-- <br>
+            Score: {{drawerInfo.score}} -->
+          </div>
+        </div>
+        <hr class="draw-hr">
+        <!-- <div class="draw-sub">
+          <h1>{{language.Model}}</h1>
+          <div>
+            {{drawerInfo.model}}
+          </div>
+        </div>
+        <hr class="draw-hr"> -->
+        <div class="draw-sub">
+          <h1>{{language.Parameter}}</h1>
+          <div>
+            是否公开：{{drawerInfo.public}}
+          </div>
+        </div>
+        <hr class="draw-hr">
+        <div class="draw-sub">
+          <h1>{{language.More}} {{language.Information}}</h1>
+          <div>
+            {{drawerInfo.description}}
+          </div>
+        </div>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -51,7 +91,9 @@ export default {
   data () {
     return {
       language: en,
-      tableData: []
+      tableData: [],
+      drawerInfo: {
+      }
     }
   },
   mounted: function () {
@@ -74,7 +116,10 @@ export default {
             js: r.检索能力,
             szjs: r.数值计算能力,
             sc: r.生成能力,
-            dyy: r.多语言能力
+            dyy: r.多语言能力,
+            time: r.commit_time,
+            description: r.description,
+            public: r.public
           }
           this.tableData.push(toAppend)
           console.log(toAppend)
@@ -85,7 +130,16 @@ export default {
   methods: {
     handleRowClick (row, column, event) {
       console.log(row)
-      this.$router.push({path: '/report?id=' + row.fileid})
+      // this.drawerInfo.rank = row.rank
+      // this.drawerInfo.name = row.name
+      // this.drawerInfo.link = row.link
+      // this.drawerInfo.date = row.date
+      // this.drawerInfo.score = row.score
+      // this.drawerInfo.model = row.model
+      // this.drawerInfo.parameter = row.parameter
+      // this.drawerInfo.more = row.more
+      this.drawerInfo = row
+      this.drawer = true
     }
   }
 }
@@ -143,5 +197,20 @@ export default {
 .score{
   font-weight: bolder;
   color: black;
+}
+
+.draw{
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.draw-sub{
+  margin-top: 50px;
+}
+.draw-sub h1{
+  color: #7857A1;
+}
+.draw-hr{
+  margin-top: 50px;
 }
 </style>
