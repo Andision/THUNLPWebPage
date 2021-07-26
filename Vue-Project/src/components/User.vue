@@ -52,7 +52,7 @@
           <h1>{{drawerInfo.name}}</h1>
           <div>
             {{drawerInfo.link}}
-            Time: {{drawerInfo.commit_time}}
+            Time: {{drawerInfo.time}}
             <!-- <br>
             Score: {{drawerInfo.score}} -->
           </div>
