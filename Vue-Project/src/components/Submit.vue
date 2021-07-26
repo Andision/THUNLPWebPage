@@ -148,7 +148,7 @@ export default {
       this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
     },
     handleClickSubmit () {
-      console.log(this.$refs.filElem.files[0])
+      console.log(this.$refs.filElem.files[0].name)
       var that = this
       if (this.check === false || this.submit.name === '' || this.submit.description === '' || this.submit.paras === '' || this.$refs.filElem.files[0] === undefined) {
         this.$message({
