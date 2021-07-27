@@ -112,7 +112,7 @@
           {{language.more_sample}}
           <i class="el-icon-edit"></i>
         </div>
-        <pre class="section-content section-color bg-color" v-html="show.sample" style="background-color:#f5f4fe">
+        <pre class="section-content section-color bg-color" v-html="show.sample">
         </pre>
       </div>
     </div>
@@ -212,7 +212,7 @@ pre{
   white-space:normal
 }
 .bg-color{
-  background-color: aqua;
+  background-color: #eceaff;
 }
 </style>
 <style scoped>
