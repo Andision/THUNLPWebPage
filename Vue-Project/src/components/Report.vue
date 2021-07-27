@@ -7,16 +7,16 @@
       <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index">
         <template slot="title">
           <div class="section-title" :class="key.score==-1?'title-red':'title-green'">
-            {{key.info}}
+            {{key.ability}}
           </div>
         </template>
-        <div class="section-success">
+        <div class="section-success" v-if="key.score!=null">
           <div class="section-content-title">
             正常处理
           </div>
           <div class="section-content">
             <p>
-              数据集名称匹配成功：{{key.info}}
+              数据集名称匹配成功：{{key.ability+key.task+key.dataset}}
             </p>
             <p>
               运行提交结果测评脚本...
