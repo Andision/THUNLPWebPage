@@ -4,7 +4,7 @@
       测评报告
     </div>
     <el-collapse accordion>
-      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index">
+      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index" v-show="key.score!=null">
         <template slot="title">
           <div class="section-title" :class="key.score==-1?'title-red':'title-green'">
             {{key.ability}}
