@@ -211,6 +211,9 @@ export default {
 pre{
   white-space:normal
 }
+.bg-color{
+  background-color: #f5f4fe;
+}
 </style>
 <style scoped>
 .title{
@@ -252,9 +255,6 @@ pre{
   word-wrap: break-word;
   word-break: break-all;
   overflow: auto;
-}
-.bg-color{
-  background-color: #f5f4fe;
 }
 .author{
   margin-right: 10px;
