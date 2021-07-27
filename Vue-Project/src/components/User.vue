@@ -78,7 +78,7 @@
             {{drawerInfo.description}}
           </div>
           <div>
-            <el-link type="primary" :href="'/#/report?id='+drawerInfo.fileid" style="color: #2c3e50;">评测报告</el-link>
+            <el-link type="primary" :href="'/#/report?id='+drawerInfo.fileid">评测报告</el-link>
           </div>
         </div>
       </div>
