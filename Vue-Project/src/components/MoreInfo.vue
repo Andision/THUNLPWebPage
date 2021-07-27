@@ -212,7 +212,7 @@ pre{
   white-space:normal
 }
 .bg-color{
-  background-color: #f5f4fe;
+  background-color: aqua;
 }
 </style>
 <style scoped>
