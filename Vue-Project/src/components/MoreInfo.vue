@@ -64,7 +64,7 @@
           {{language.more_ref}}
           <i class="el-icon-document"></i>
         </div>
-        <pre class="section-content" v-html="show.ref" style="background-color:#f5f4fe">
+        <pre class="section-content bg-color" v-html="show.ref">
         </pre>
         <!-- <div class="section-content section-color">
           {{show.ref}}
@@ -112,7 +112,7 @@
           {{language.more_sample}}
           <i class="el-icon-edit"></i>
         </div>
-        <pre class="section-content section-color" v-html="show.sample" style="background-color:#f5f4fe">
+        <pre class="section-content section-color bg-color" v-html="show.sample" style="background-color:#f5f4fe">
         </pre>
       </div>
     </div>
@@ -253,11 +253,15 @@ pre{
   word-break: break-all;
   overflow: auto;
 }
+.bg-color{
+  background-color: #f5f4fe;
+}
 .author{
   margin-right: 10px;
   margin-bottom: 10px;
 }
 code {
   white-space: pre-wrap;
+
 }
 </style>
