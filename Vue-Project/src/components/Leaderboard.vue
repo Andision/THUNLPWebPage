@@ -11,12 +11,71 @@
           <hr />
           <div class="title-sub">
             <div style="display:flex;flex-direction:row;justify-content: space-between;">
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div>
+              <!-- <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div>
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div>
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div>
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div>
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div>
-              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div> -->
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  语言理解能力-词语级
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.yyljcy" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  语言理解能力-篇章级
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.yyljpj" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  信息获取及问答能力
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.xxhq" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  语言生成能力
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch
+                    v-model="s.yysc"
+                    active-color="#64438D"
+                  ></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  对话交互能力
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.dhjh" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  多语言能力
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  数学推理能力
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.sxtl" active-color="#64438D"></el-switch>
+                </div>
+              </div>
             </div>
           </div>
           <hr />
@@ -198,12 +257,13 @@ export default {
       checked2: true,
       showAll: true,
       s: {
-        sj: true,
-        lj: true,
-        js: true,
-        szjs: true,
-        sc: true,
-        dyy: true
+        sxtl: true,
+        dyy: true,
+        dhjh: true,
+        yysc: true,
+        xxhq: true,
+        yyljpj: true,
+        yyljcy: true
       },
       c: ['NENGLI', 'JINJIAN'],
       tableData: [
@@ -315,28 +375,35 @@ export default {
             org: r.institution,
             plink: r.paper_url,
             clink: r.code_url,
-            sj: r.识记能力.ability_sum[0],
-            lj: r.理解能力.ability_sum[0],
-            js: r.检索能力.ability_sum[0],
-            szjs: r.数值计算能力.ability_sum[0],
-            sc: r.生成能力.ability_sum[0],
+            sxtl: r.数学推理能力.ability_sum[0],
             dyy: r.多语言能力.ability_sum[0],
-            sj_list: r.识记能力.ability_sum,
-            lj_list: r.理解能力.ability_sum,
-            js_list: r.检索能力.ability_sum,
-            szjs_list: r.数值计算能力.ability_sum,
-            sc_list: r.生成能力.ability_sum,
-            dyy_list: r.多语言能力.ability_sum,
+            dhjh: r.对话交互能力.ability_sum[0],
+            yysc: r.语言生成能力.ability_sum[0],
+            xxhq: r.信息获取及问答能力.ability_sum[0],
+            yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
+            yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+            // sj: r.识记能力.ability_sum[0],
+            // lj: r.理解能力.ability_sum[0],
+            // js: r.检索能力.ability_sum[0],
+            // szjs: r.数值计算能力.ability_sum[0],
+            // sc: r.生成能力.ability_sum[0],
+            // dyy: r.多语言能力.ability_sum[0],
+            // sj_list: r.识记能力.ability_sum,
+            // lj_list: r.理解能力.ability_sum,
+            // js_list: r.检索能力.ability_sum,
+            // szjs_list: r.数值计算能力.ability_sum,
+            // sc_list: r.生成能力.ability_sum,
+            // dyy_list: r.多语言能力.ability_sum,
             score: r.总分,
             score_list: r.总分[0],
-            sjd: r.识记能力.dataset_score_list,
-            ljd: r.理解能力.dataset_score_list,
-            jsd: r.检索能力.dataset_score_list,
-            szjsd: r.数值计算能力.dataset_score_list,
-            scd: r.生成能力.dataset_score_list,
-            dyyd: r.多语言能力.dataset_score_list,
-            show1: r.识记能力.dataset_score_list,
-            show2: r.识记能力.dataset_score_list
+            // sjd: r.识记能力.dataset_score_list,
+            // ljd: r.理解能力.dataset_score_list,
+            // jsd: r.检索能力.dataset_score_list,
+            // szjsd: r.数值计算能力.dataset_score_list,
+            // scd: r.生成能力.dataset_score_list,
+            // dyyd: r.多语言能力.dataset_score_list,
+            show1: r.多语言能力.dataset_score_list,
+            show2: r.多语言能力.dataset_score_list
           }
           this.tableData.push(toAppend)
           console.log(toAppend)
