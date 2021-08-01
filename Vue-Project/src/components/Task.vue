@@ -25,53 +25,61 @@
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div></el-col> -->
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{ language.task_sjnl }}
+                  语言理解能力-词语级
                 </div>
                 <div class="title-sub-section-btn">
-                  <el-switch v-model="s.sj" active-color="#64438D"></el-switch>
+                  <el-switch v-model="s.yyljcy" active-color="#64438D"></el-switch>
                 </div>
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{ language.task_ljnl }}
+                  语言理解能力-篇章级
                 </div>
                 <div class="title-sub-section-btn">
-                  <el-switch v-model="s.lj" active-color="#64438D"></el-switch>
+                  <el-switch v-model="s.yyljpj" active-color="#64438D"></el-switch>
                 </div>
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{ language.task_jsnl }}
+                  信息获取及问答能力
                 </div>
                 <div class="title-sub-section-btn">
-                  <el-switch v-model="s.js" active-color="#64438D"></el-switch>
+                  <el-switch v-model="s.xxhq" active-color="#64438D"></el-switch>
                 </div>
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{ language.task_szjsnl }}
+                  语言生成能力
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch
-                    v-model="s.szjs"
+                    v-model="s.yysc"
                     active-color="#64438D"
                   ></el-switch>
                 </div>
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{ language.task_scnl }}
+                  对话交互能力
                 </div>
                 <div class="title-sub-section-btn">
-                  <el-switch v-model="s.sc" active-color="#64438D"></el-switch>
+                  <el-switch v-model="s.dhjh" active-color="#64438D"></el-switch>
                 </div>
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{ language.task_dyynl }}
+                  多语言能力
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
+                </div>
+              </div>
+              <div class="title-sub-section">
+                <div class="title-sub-section-text">
+                  数学推理能力
+                </div>
+                <div class="title-sub-section-btn">
+                  <el-switch v-model="s.sxtl" active-color="#64438D"></el-switch>
                 </div>
               </div>
             </div>
@@ -94,7 +102,49 @@
         </div>
       </div>
       <div class="main-content" v-show="!checked2">
-        <div class="main-section" v-show="s.sj">
+        <div class="main-section" v-show="s.yyljcy">
+          <TaskSection
+            :data="alldata.all['语言理解能力-词语级']"
+            title="语言理解能力-词语级"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.yyljpj">
+          <TaskSection
+            :data="alldata.all['语言理解能力-篇章级']"
+            title="语言理解能力-篇章级"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.xxhq">
+          <TaskSection
+            :data="alldata.all.信息获取及问答能力"
+            title="信息获取及问答能力"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.yysc">
+          <TaskSection
+            :data="alldata.all.语言生成能力"
+            title="语言生成能力"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.dhjh">
+          <TaskSection
+            :data="alldata.all.对话交互能力"
+            title="对话交互能力"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.dyy">
+          <TaskSection
+            :data="alldata.all.多语言能力"
+            title="多语言能力"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.sxtl">
+          <TaskSection
+            :data="alldata.all.数学推理能力"
+            title="数学推理能力"
+          ></TaskSection>
+        </div>
+        <!-- <div class="main-section" v-show="s.sj">
           <TaskSection
             :data="alldata.all.识记能力"
             title="识记能力"
@@ -129,7 +179,7 @@
             :data="alldata.all.多语言能力"
             title="多语言能力"
           ></TaskSection>
-        </div>
+        </div> -->
       </div>
       <div class="main-content" v-show="checked2">
         <div class="main-section" v-show="s.yyljcy">
