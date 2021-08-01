@@ -369,6 +369,7 @@ export default {
         var t = res.data.rank_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
+          console.log(i, r)
           var toAppend = {
             rank: i + 1,
             name: r.modelname,
