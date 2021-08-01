@@ -36,6 +36,7 @@
           <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
           <el-table-column label="生成能力" prop="sc"> </el-table-column>
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
+          <el-table-column label="智源指数" prop="zy"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
@@ -127,6 +128,8 @@ export default {
             szjs: r.数值计算能力[0],
             sc: r.生成能力[0],
             dyy: r.多语言能力[0],
+            zy_list: r.智源指数,
+            zy: r.智源指数[0],
             time: r.commit_time,
             description: r.description,
             public: r.public,
