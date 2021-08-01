@@ -16,7 +16,7 @@
           </div>
           <div class="section-content">
             <p>
-              数据集名称匹配成功：{{key.ability+key.task+key.dataset}}
+              数据集名称匹配成功：{{key.ability+' - '+key.task+' - '+key.dataset}}
             </p>
             <p>
               运行提交结果测评脚本...
