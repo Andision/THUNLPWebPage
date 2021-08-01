@@ -134,13 +134,13 @@
       <div class="main-content" v-show="checked2">
         <div class="main-section" v-show="s.yyljcy">
           <TaskSection
-            :data="alldata.jj.语言理解能力-词语级"
+            :data="alldata.jj['语言理解能力-词语级']"
             title="语言理解能力-词语级"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.yyljpj">
           <TaskSection
-            :data="alldata.jj.语言理解能力-篇章级"
+            :data="alldata.jj['语言理解能力-篇章级']"
             title="语言理解能力-篇章级"
           ></TaskSection>
         </div>
