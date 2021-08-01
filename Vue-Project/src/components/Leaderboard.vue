@@ -299,7 +299,7 @@ export default {
     this.tableData = []
     let data = {
       'rank_by_ability': ['语言理解能力-词语级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
-      'start': 0,
+      'start': 1,
       'end': -1
     }
     this.$axios.post(config.API + config.getRanklist, data).then(res => {
