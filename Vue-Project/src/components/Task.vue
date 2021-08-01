@@ -132,40 +132,46 @@
         </div>
       </div>
       <div class="main-content" v-show="checked2">
-        <div class="main-section" v-show="s.sj">
+        <div class="main-section" v-show="s.yyljcy">
           <TaskSection
-            :data="alldata.jj.识记能力"
-            title="识记能力"
+            :data="alldata.jj.语言理解能力-词语级"
+            title="语言理解能力-词语级"
           ></TaskSection>
         </div>
-        <div class="main-section" v-show="s.lj">
+        <div class="main-section" v-show="s.yyljpj">
           <TaskSection
-            :data="alldata.jj.理解能力"
-            title="理解能力"
+            :data="alldata.jj.语言理解能力-篇章级"
+            title="语言理解能力-篇章级"
           ></TaskSection>
         </div>
-        <div class="main-section" v-show="s.js">
+        <div class="main-section" v-show="s.xxhq">
           <TaskSection
-            :data="alldata.jj.检索能力"
-            title="检索能力"
+            :data="alldata.jj.信息获取及问答能力"
+            title="信息获取及问答能力"
           ></TaskSection>
         </div>
-        <div class="main-section" v-show="s.szjs">
+        <div class="main-section" v-show="s.yysc">
           <TaskSection
-            :data="alldata.jj.数值计算能力"
-            title="数值计算能力"
+            :data="alldata.jj.语言生成能力"
+            title="语言生成能力"
           ></TaskSection>
         </div>
-        <div class="main-section" v-show="s.sc">
+        <div class="main-section" v-show="s.dhjh">
           <TaskSection
-            :data="alldata.jj.生成能力"
-            title="生成能力"
+            :data="alldata.jj.对话交互能力"
+            title="对话交互能力"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dyy">
           <TaskSection
             :data="alldata.jj.多语言能力"
             title="多语言能力"
+          ></TaskSection>
+        </div>
+        <div class="main-section" v-show="s.sxtl">
+          <TaskSection
+            :data="alldata.jj.数学推理能力"
+            title="数学推理能力"
           ></TaskSection>
         </div>
       </div>
@@ -185,12 +191,13 @@ export default {
       showAll: true,
       checked2: false,
       s: {
-        sj: true,
-        lj: true,
-        js: true,
-        szjs: true,
-        sc: true,
-        dyy: true
+        sxtl: true,
+        dyy: true,
+        dhjh: true,
+        yysc: true,
+        xxhq: true,
+        yyljpj: true,
+        yyljcy: true
       },
       c: [
         'NENGLI',
@@ -208,29 +215,32 @@ export default {
   watch: {
     showAll (curVal, oldVal) {
       if (curVal) {
-        this.s.sj = true
-        this.s.lj = true
-        this.s.js = true
-        this.s.szjs = true
-        this.s.sc = true
+        this.s.sxtl = true
         this.s.dyy = true
+        this.s.dhjh = true
+        this.s.yysc = true
+        this.s.xxhq = true
+        this.s.yyljpj = true
+        this.s.yyljcy = true
       } else {
-        this.s.sj = false
-        this.s.lj = false
-        this.s.js = false
-        this.s.szjs = false
-        this.s.sc = false
+        this.s.sxtl = false
         this.s.dyy = false
+        this.s.dhjh = false
+        this.s.yysc = false
+        this.s.xxhq = false
+        this.s.yyljpj = false
+        this.s.yyljcy = false
       }
     },
     checked2 (curVal, oldVal) {
       this.showAll = true
-      this.s.sj = true
-      this.s.lj = true
-      this.s.js = true
-      this.s.szjs = true
-      this.s.sc = true
+      this.s.sxtl = true
       this.s.dyy = true
+      this.s.dhjh = true
+      this.s.yysc = true
+      this.s.xxhq = true
+      this.s.yyljpj = true
+      this.s.yyljcy = true
     }
   },
   mounted: function () {
