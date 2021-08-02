@@ -345,6 +345,10 @@ export default {
           {
             name: '生成能力',
             max: 100
+          },
+          {
+            name: '能力能力',
+            max: 100
           }
         ],
         data: [
