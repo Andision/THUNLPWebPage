@@ -417,7 +417,7 @@ export default {
       console.log(row)
       this.pic.data = [
         {
-          value: [row.sj, row.szjs, row.js, row.lj, row.sc, row.dyy]
+          value: [row.sxtl, row.dhjh, row.yysc, row.xxhq, row.yyljpj, row.yyljcy, row.dyy]
         }
       ]
       console.log(this.pic.data)
