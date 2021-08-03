@@ -30,13 +30,21 @@
               </el-link>
             </template>
           </el-table-column>
-          <el-table-column label="识记能力" prop="sj"> </el-table-column>
+          <!-- <el-table-column label="识记能力" prop="sj"> </el-table-column>
           <el-table-column label="理解能力" prop="lj"> </el-table-column>
           <el-table-column label="检索能力" prop="js"> </el-table-column>
           <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
           <el-table-column label="生成能力" prop="sc"> </el-table-column>
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
-          <el-table-column label="智源指数" prop="zy"> </el-table-column>
+          <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
+          <el-table-column label="语言理解能力-词语级" prop="yyljcy"> </el-table-column>
+          <el-table-column label="语言理解能力-篇章级" prop="yyljpj"> </el-table-column>
+          <el-table-column label="信息获取及问答能力" prop="xxhq"> </el-table-column>
+          <el-table-column label="语言生成能力" prop="yysc"> </el-table-column>
+          <el-table-column label="对话交互能力" prop="dhjh"> </el-table-column>
+          <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
+          <el-table-column label="数学推理能力" prop="sxtl"> </el-table-column>
+          <el-table-column label="智源指数" prop="score"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
@@ -116,20 +124,28 @@ export default {
             org: 'Test',
             plink: r.论文链接,
             clink: r.代码链接,
-            sj_list: r.识记能力,
-            lj_list: r.理解能力,
-            js_list: r.检索能力,
-            szjs_list: r.数值计算能力,
-            sc_list: r.生成能力,
-            dyy_list: r.多语言能力,
-            sj: r.识记能力[0],
-            lj: r.理解能力[0],
-            js: r.检索能力[0],
-            szjs: r.数值计算能力[0],
-            sc: r.生成能力[0],
-            dyy: r.多语言能力[0],
-            zy_list: r.智源指数,
-            zy: r.智源指数[0],
+            // sj_list: r.识记能力,
+            // lj_list: r.理解能力,
+            // js_list: r.检索能力,
+            // szjs_list: r.数值计算能力,
+            // sc_list: r.生成能力,
+            // dyy_list: r.多语言能力,
+            // sj: r.识记能力[0],
+            // lj: r.理解能力[0],
+            // js: r.检索能力[0],
+            // szjs: r.数值计算能力[0],
+            // sc: r.生成能力[0],
+            // dyy: r.多语言能力[0],
+            // zy_list: r.智源指数,
+            // zy: r.智源指数[0],
+            sxtl: r.数学推理能力.ability_sum[0],
+            dyy: r.多语言能力.ability_sum[0],
+            dhjh: r.对话交互能力.ability_sum[0],
+            yysc: r.语言生成能力.ability_sum[0],
+            xxhq: r.信息获取及问答能力.ability_sum[0],
+            yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
+            yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+            score: r.总分[0],
             time: r.commit_time,
             description: r.description,
             public: r.public,
