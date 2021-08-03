@@ -41,7 +41,7 @@
             {{key}}
           </div>
         </template>
-        <div class="section-fail" v-if="key.score!=null">
+        <div class="section-fail">
           <div class="section-content-title">
             错误显示
           </div>
