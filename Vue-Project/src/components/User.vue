@@ -145,7 +145,7 @@ export default {
             xxhq: r.信息获取及问答能力.ability_sum[0],
             yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
             yyljcy: r['语言理解能力-词语级'].ability_sum[0],
-            score: r.总分[0],
+            score: r.智源指数[0],
             time: r.commit_time,
             description: r.description,
             public: r.public,
