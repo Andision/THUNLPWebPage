@@ -131,28 +131,28 @@
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="4">
+                      <el-col :span="3">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
                             语言生成能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="4">
+                      <el-col :span="3">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
                             对话交互能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="4">
+                      <el-col :span="3">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
                             多语言能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="4">
+                      <el-col :span="3">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
                             数学推理能力
