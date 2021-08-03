@@ -35,6 +35,29 @@
           </div>
         </div>
       </el-collapse-item>
+      <el-collapse-item class="section" v-for="(key,index) in err_list" :key="index">
+        <template slot="title">
+          <div class="section-title title-red">
+            {{key}}
+          </div>
+        </template>
+        <div class="section-fail" v-if="key.score!=null">
+          <div class="section-content-title">
+            错误显示
+          </div>
+          <div class="section-content">
+            <p>
+              数据集名称匹配失败
+            </p>
+            <!-- <p>
+              运行提交结果测评脚本...
+            </p>
+            <p v-if="key.score!=-1">
+              测评脚本运行成功！
+            </p> -->
+          </div>
+        </div>
+      </el-collapse-item>
       <!-- <el-collapse-item class="section">
         <template slot="title">
           <div class="section-title">
@@ -185,7 +208,8 @@ export default {
     return {
       language: en,
       id: '',
-      tableData: []
+      tableData: [],
+      err_list: []
     }
   },
 
@@ -198,8 +222,9 @@ export default {
     this.$axios.post(config.API + config.getEvalReport, formData).then(res => {
       console.log(res)
       if (res.status === 200) {
-        console.log(res)
+        // console.log(res)
         this.tableData = res.data.rating_list
+        this.err_list = res.data.filename_err
       }
     })
   }
