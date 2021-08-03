@@ -233,12 +233,14 @@
               </el-link>
             </template>
           </el-table-column>
-          <el-table-column label="识记能力" prop="sj"> </el-table-column>
-          <el-table-column label="理解能力" prop="lj"> </el-table-column>
-          <el-table-column label="检索能力" prop="js"> </el-table-column>
-          <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
-          <el-table-column label="生成能力" prop="sc"> </el-table-column>
+          <el-table-column label="语言理解能力-词语级" prop="yyljcy"> </el-table-column>
+          <el-table-column label="语言理解能力-篇章级" prop="yyljpj"> </el-table-column>
+          <el-table-column label="信息获取及问答能力" prop="xxhq"> </el-table-column>
+          <el-table-column label="语言生成能力" prop="yysc"> </el-table-column>
+          <el-table-column label="对话交互能力" prop="dhjh"> </el-table-column>
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
+          <el-table-column label="数学推理能力" prop="sxtl"> </el-table-column>
+          <el-table-column label="智源指数" prop="score"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
@@ -399,8 +401,8 @@ export default {
             // szjs_list: r.数值计算能力.ability_sum,
             // sc_list: r.生成能力.ability_sum,
             // dyy_list: r.多语言能力.ability_sum,
-            score: r.总分,
-            score_list: r.总分[0],
+            score: r.总分[0],
+            score_list: r.总分,
             // sjd: r.识记能力.dataset_score_list,
             // ljd: r.理解能力.dataset_score_list,
             // jsd: r.检索能力.dataset_score_list,
