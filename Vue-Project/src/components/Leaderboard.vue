@@ -112,43 +112,50 @@
                       > -->
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.sjd;scope.row.show2=scope.row.sjd">
-                            {{ language.task_sjnl }}
+                          <el-button type="text" @click="scope.row.show1=scope.row.yyljcy;scope.row.show2=scope.row.yyljcy">
+                            语言理解能力-词语级
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.ljd;scope.row.show2=scope.row.ljd">
-                            {{ language.task_ljnl }}
+                            语言理解能力-篇章级
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.jsd;scope.row.show2=scope.row.jsd">
-                            {{ language.task_jsnl }}
+                            信息获取及问答能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.szjsd;scope.row.show2=scope.row.szjsd">
-                            {{ language.task_szjsnl }}
+                            语言生成能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.scd;scope.row.show2=scope.row.scd">
-                            {{ language.task_scnl }}
+                            对话交互能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dyyd;scope.row.show2=scope.row.dyyd">
-                            {{ language.task_dyynl }}
+                            多语言能力
+                          </el-button>
+                        </div>
+                      </el-col>
+                      <el-col :span="4">
+                        <div class="">
+                          <el-button type="text" @click="scope.row.show1=scope.row.dyyd;scope.row.show2=scope.row.dyyd">
+                            数学推理能力
                           </el-button>
                         </div>
                       </el-col>
@@ -389,6 +396,13 @@ export default {
             xxhq: r.信息获取及问答能力.ability_sum[0],
             yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
             yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+            sxtl_dataset: r.数学推理能力.dataset_score_list,
+            dyy_dataset: r.多语言能力.dataset_score_list,
+            dhjh_dataset: r.对话交互能力.dataset_score_list,
+            yysc_dataset: r.语言生成能力.dataset_score_list,
+            xxhq_dataset: r.信息获取及问答能力.dataset_score_list,
+            yyljpj_dataset: r['语言理解能力-篇章级'].dataset_score_list,
+            yyljcy_dataset: r['语言理解能力-词语级'].dataset_score_list,
             // sj: r.识记能力.ability_sum[0],
             // lj: r.理解能力.ability_sum[0],
             // js: r.检索能力.ability_sum[0],
