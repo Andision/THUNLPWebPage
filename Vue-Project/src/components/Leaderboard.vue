@@ -112,49 +112,49 @@
                       > -->
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yyljcy;scope.row.show2=scope.row.yyljcy">
+                          <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
                             语言理解能力-词语级
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.ljd;scope.row.show2=scope.row.ljd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
                             语言理解能力-篇章级
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.jsd;scope.row.show2=scope.row.jsd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
                             信息获取及问答能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.szjsd;scope.row.show2=scope.row.szjsd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
                             语言生成能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.scd;scope.row.show2=scope.row.scd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
                             对话交互能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dyyd;scope.row.show2=scope.row.dyyd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
                             多语言能力
                           </el-button>
                         </div>
                       </el-col>
                       <el-col :span="4">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dyyd;scope.row.show2=scope.row.dyyd">
+                          <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
                             数学推理能力
                           </el-button>
                         </div>
