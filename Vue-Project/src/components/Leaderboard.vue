@@ -389,13 +389,29 @@ export default {
             org: r.institution,
             plink: r.paper_url,
             clink: r.code_url,
-            sxtl: r.数学推理能力.ability_sum[0],
-            dyy: r.多语言能力.ability_sum[0],
-            dhjh: r.对话交互能力.ability_sum[0],
-            yysc: r.语言生成能力.ability_sum[0],
-            xxhq: r.信息获取及问答能力.ability_sum[0],
-            yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
-            yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+            // sxtl: r.数学推理能力.ability_sum[0],
+            // dyy: r.多语言能力.ability_sum[0],
+            // dhjh: r.对话交互能力.ability_sum[0],
+            // yysc: r.语言生成能力.ability_sum[0],
+            // xxhq: r.信息获取及问答能力.ability_sum[0],
+            // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
+            // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+            sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + '(' + r.数学推理能力.ability_sum[1] + ')',
+            dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + '(' + r.多语言能力.ability_sum[1] + ')',
+            dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + '(' + r.对话交互能力.ability_sum[1] + ')',
+            yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + '(' + r.语言生成能力.ability_sum[1] + ')',
+            xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + '(' + r.信息获取及问答能力.ability_sum[1] + ')',
+            yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + '(' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
+            yyljcy: r['语言理解能力-词语级'].ability_sum[0] === null ? '' : r['语言理解能力-词语级'].ability_sum[0] + '(' + r['语言理解能力-词语级'].ability_sum[1] + ')',
+            score: r.总分[0] === null ? '' : r.总分[0] + '(' + r.总分[1] + ')',
+            // sxtl_sub: r.数学推理能力[1],
+            // dyy_sub: r.多语言能力[1],
+            // dhjh_sub: r.对话交互能力[1],
+            // yysc_sub: r.语言生成能力[1],
+            // xxhq_sub: r.信息获取及问答能力[1],
+            // yyljpj_sub: r['语言理解能力-篇章级'][1],
+            // yyljcy_sub: r['语言理解能力-词语级'][1],
+            // score_sub: r.智源指数[1],
             sxtl_dataset: r.数学推理能力.dataset_score_list,
             dyy_dataset: r.多语言能力.dataset_score_list,
             dhjh_dataset: r.对话交互能力.dataset_score_list,
@@ -403,6 +419,13 @@ export default {
             xxhq_dataset: r.信息获取及问答能力.dataset_score_list,
             yyljpj_dataset: r['语言理解能力-篇章级'].dataset_score_list,
             yyljcy_dataset: r['语言理解能力-词语级'].dataset_score_list,
+            sxtl_list: r.数学推理能力.ability_sum,
+            dyy_list: r.多语言能力.ability_sum,
+            dhjh_list: r.对话交互能力.ability_sum,
+            yysc_list: r.语言生成能力.ability_sum,
+            xxhq_list: r.信息获取及问答能力.ability_sum,
+            yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
+            yyljcy_list: r['语言理解能力-词语级'].ability_sum,
             // sj: r.识记能力.ability_sum[0],
             // lj: r.理解能力.ability_sum[0],
             // js: r.检索能力.ability_sum[0],
@@ -415,8 +438,8 @@ export default {
             // szjs_list: r.数值计算能力.ability_sum,
             // sc_list: r.生成能力.ability_sum,
             // dyy_list: r.多语言能力.ability_sum,
-            score: r.总分[0],
-            score_list: r.总分,
+            // score: r.总分[0],
+            // score_list: r.总分,
             // sjd: r.识记能力.dataset_score_list,
             // ljd: r.理解能力.dataset_score_list,
             // jsd: r.检索能力.dataset_score_list,
@@ -434,10 +457,10 @@ export default {
   },
   methods: {
     waitToDraw (row, rowList) {
-      console.log(row)
+      console.log('row', row)
       this.pic.data = [
         {
-          value: [row.sxtl, row.dhjh, row.yysc, row.xxhq, row.yyljpj, row.yyljcy, row.dyy]
+          value: [row.sxtl_list[0], row.dhjh_list[0], row.yysc_list[0], row.xxhq_list[0], row.yyljpj_list[0], row.yyljcy_list[0], row.dyy_list[0]]
         }
       ]
       console.log(this.pic.data)
