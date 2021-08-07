@@ -31,7 +31,9 @@
             错误显示
           </div>
           <div class="section-content">
-            {{key.err_msg}}
+            <pre>
+              {{key.err_msg}}
+            </pre>
           </div>
         </div>
       </el-collapse-item>
