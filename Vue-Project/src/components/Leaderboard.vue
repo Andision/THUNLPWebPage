@@ -110,21 +110,21 @@
                           <el-button type="text">{{ i.name }}</el-button>
                         </div></el-col
                       > -->
-                      <el-col :span="4">
+                      <el-col :span="7">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
                             语言理解能力-词语级
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="4">
+                      <el-col :span="7">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
                             语言理解能力-篇章级
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="4">
+                      <el-col :span="7">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
                             信息获取及问答能力
@@ -138,21 +138,21 @@
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="3">
+                      <el-col :span="8">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
                             对话交互能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="3">
+                      <el-col :span="8">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
                             多语言能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="3">
+                      <el-col :span="8">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
                             数学推理能力
@@ -183,7 +183,7 @@
                       >
                         <div class="">
                           <div class="score">
-                            {{ i.score }}
+                            {{ i.score[0] === null ? '' : i.score[0]+'('+i.score[1]+')' }}
                           </div>
                         </div>
                       </el-col>
@@ -211,7 +211,7 @@
                       >
                         <div class="">
                           <div class="score">
-                            {{ i.score }}
+                            {{ i.score[0] === null ? '' : i.score[0]+'('+i.score[1]+')' }}
                           </div>
                         </div>
                       </el-col>
@@ -470,7 +470,7 @@ export default {
     },
     drawChart (i) {
       // Initialize the echarts instance based on the prepared dom
-      let myChart = this.$echarts.init(document.getElementById('main'+i))
+      let myChart = this.$echarts.init(document.getElementById('main' + i))
       // Specify configuration items and data for the chart
       let option = {
         radar: {
