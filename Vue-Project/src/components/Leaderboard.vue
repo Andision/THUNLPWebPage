@@ -97,7 +97,7 @@
             <template slot-scope="scope">
               <el-container>
                 <el-aside width="450px"
-                  ><div id="main" style="width: 400px; height: 300px"></div
+                  ><div :id="'main'+scope.row.rank" style="width: 400px; height: 300px"></div
                 ></el-aside>
                 <el-main>
                   <el-row>
@@ -465,12 +465,12 @@ export default {
       ]
       console.log(this.pic.data)
       this.$nextTick(() => {
-        this.drawChart()
+        this.drawChart(row.rank)
       })
     },
-    drawChart () {
+    drawChart (i) {
       // Initialize the echarts instance based on the prepared dom
-      let myChart = this.$echarts.init(document.getElementById('main'))
+      let myChart = this.$echarts.init(document.getElementById('main'+i))
       // Specify configuration items and data for the chart
       let option = {
         radar: {
