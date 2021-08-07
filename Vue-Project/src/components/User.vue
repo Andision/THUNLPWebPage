@@ -79,13 +79,29 @@
           <div>
             是否公开：{{drawerInfo.public}}
           </div>
+          <div>
+            是否使用预训练模型：{{drawerInfo.pre_train}}
+          </div>
+          <div>
+            是否使用集成学习提升模型表现：{{drawerInfo.integrate}}
+          </div>
+          <div>
+            是否使用多任务学习提升模型表现：{{drawerInfo.multiple}}
+          </div>
+          <!-- <div>
+            {{drawerInfo.public}}
+          </div> -->
         </div>
         <hr class="draw-hr">
         <div class="draw-sub">
           <h1>{{language.More}} {{language.Information}}</h1>
           <div>
+            提交描述
+          </div>
+          <div>
             {{drawerInfo.description}}
           </div>
+          <hr class="draw-hr">
           <div>
             <el-link type="primary" :href="'/#/report?id='+drawerInfo.fileid">评测报告</el-link>
           </div>
@@ -173,6 +189,9 @@ export default {
             time: r.commit_time,
             description: r.description,
             public: r.public,
+            multiple: r.multiple,
+            integrate: r.integrate,
+            pre_train: r.pre_train,
             fileid: r.fileid
           }
           this.tableData.push(toAppend)
