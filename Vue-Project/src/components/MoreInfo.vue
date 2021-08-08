@@ -64,7 +64,7 @@
           {{language.more_ref}}
           <i class="el-icon-document"></i>
         </div>
-        <pre class="section-content bg-color" v-html="show.ref">
+        <pre class="section-content section-color bg-color" v-html="show.ref">
         </pre>
         <!-- <div class="section-content section-color">
           {{show.ref}}
