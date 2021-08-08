@@ -100,13 +100,20 @@ export default {
       if (cookieOri !== '') {
         cookie = JSON.parse(document.cookie)
       }
-      console.log('cookie:', cookieOri)
-      if (cookieOri === '' || cookie.token === '') {
+      console.log('cookie:', cookieOri, typeof cookieOri)
+      if (cookieOri == null || cookieOri === '' || cookieOri === 'null') {
         // this.handleLoginStatus(true)
+        console.log('Check Login in App False1')
+        this.isLogin = false
+      } else if (cookie.token === '' || cookie.token === null) {
+        console.log('Check Login in App False2')
         this.isLogin = false
       } else if (cookie.extime > Date.parse(new Date()).toString()) {
         console.log('Check Login in App True')
         this.isLogin = true
+      } else {
+        console.log('Check Login in App OTHER')
+        this.isLogin = false
       }
       // else {
       //   this.isLogin = true
