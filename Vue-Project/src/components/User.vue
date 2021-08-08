@@ -37,6 +37,7 @@
           <el-table-column label="生成能力" prop="sc"> </el-table-column>
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
           <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
+          <el-table-column label="提交时间" prop="stime"> </el-table-column>
           <el-table-column label="语言理解能力-词语级" prop="yyljcy"> </el-table-column>
           <el-table-column label="语言理解能力-篇章级" prop="yyljpj"> </el-table-column>
           <el-table-column label="信息获取及问答能力" prop="xxhq"> </el-table-column>
@@ -192,7 +193,8 @@ export default {
             multiple: r.multiple,
             integrate: r.integrate,
             pre_train: r.pre_train,
-            fileid: r.fileid
+            fileid: r.fileid,
+            stime: r.simple_commit_time
           }
           this.tableData.push(toAppend)
           console.log(toAppend)
