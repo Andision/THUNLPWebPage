@@ -113,7 +113,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .el-main{
   background-color: #F5F4FE;
 }
