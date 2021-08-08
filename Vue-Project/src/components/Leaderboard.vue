@@ -240,6 +240,7 @@
               </el-link>
             </template>
           </el-table-column>
+          <el-table-column label="提交时间" prop="stime"> </el-table-column>
           <el-table-column label="语言理解能力-词语级" prop="yyljcy"> </el-table-column>
           <el-table-column label="语言理解能力-篇章级" prop="yyljpj"> </el-table-column>
           <el-table-column label="信息获取及问答能力" prop="xxhq"> </el-table-column>
@@ -426,6 +427,7 @@ export default {
             xxhq_list: r.信息获取及问答能力.ability_sum,
             yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
             yyljcy_list: r['语言理解能力-词语级'].ability_sum,
+            stime: r.simple_commit_time,
             // sj: r.识记能力.ability_sum[0],
             // lj: r.理解能力.ability_sum[0],
             // js: r.检索能力.ability_sum[0],
