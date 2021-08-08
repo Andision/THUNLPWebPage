@@ -234,6 +234,9 @@ export default {
 </script>
 
 <style scoped>
+pre{
+  white-space: pre;
+}
 .all{
   margin: 50px;
 }
