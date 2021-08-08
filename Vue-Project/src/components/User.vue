@@ -2,8 +2,8 @@
   <div class="all">
     <h1 class="title">提交记录</h1>
     <el-card class="main">
-      <div slot="header">
-      </div>
+      <!-- <div slot="header">
+      </div> -->
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%"
           :header-row-style="{'color': '#ffffff',}"
