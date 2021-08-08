@@ -71,15 +71,15 @@
           </el-row>
         </div>
 
+        <el-row class="input" style="text-align: left;">
+          <div v-show="showFileName!=''">
+            已选择：{{showFileName}}
+          </div>
+        </el-row>
+
         <el-row style="text-align: right; margin-top: 50px; margin-bottom: 50px;">
           <el-button type="primary" @click="handleClickSelect">{{language.Select + ' ZIP'}}</el-button>
           <el-button type="primary" @click="handleClickSubmit">{{language.Submit}}</el-button>
-        </el-row>
-
-        <el-row class="input" style="text-align: left;">
-          <div>
-            {{showFileName}}
-          </div>
         </el-row>
 
         <input ref="filElem" type="file" style="display: none;" @change="handleFileChange">
