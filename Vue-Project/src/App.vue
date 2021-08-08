@@ -142,6 +142,7 @@ export default {
               message: '登出成功',
               type: 'success'
             })
+            this.$router.push({path: '/'})
             // location.reload()
           }
         }
