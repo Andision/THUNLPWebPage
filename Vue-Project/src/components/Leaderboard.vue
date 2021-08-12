@@ -92,13 +92,14 @@
           :header-row-style="{'color': '#ffffff',}"
           :header-cell-style="{background:'#64438D'}"
           cell-style="font-weight: 700; color: black;"
+          @row-click="handleRowClick"
         >
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-container>
-                <el-aside width="450px"
-                  ><div :id="'main'+scope.row.rank" style="width: 400px; height: 300px"></div
-                ></el-aside>
+                <el-aside width="600px"
+                  ><div><div :id="'main'+scope.row.rank" style="width: 560px; height: 300px;overflow:hidden;"></div
+                ></div></el-aside>
                 <el-main>
                   <el-row>
                     <el-row>
@@ -110,49 +111,49 @@
                           <el-button type="text">{{ i.name }}</el-button>
                         </div></el-col
                       > -->
-                      <el-col :span="7">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
                             语言理解能力-词语级
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="7">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
                             语言理解能力-篇章级
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="7">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
                             信息获取及问答能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="3">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
                             语言生成能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="8">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
                             对话交互能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="8">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
                             多语言能力
                           </el-button>
                         </div>
                       </el-col>
-                      <el-col :span="8">
+                      <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
                             数学推理能力
@@ -183,7 +184,7 @@
                       >
                         <div class="">
                           <div class="score">
-                            {{ i.score[0] === null ? '' : i.score[0]+'('+i.score[1]+')' }}
+                            {{ i.score[0] === null ? '' : i.score[0]+' ('+i.score[1]+')' }}
                           </div>
                         </div>
                       </el-col>
@@ -211,7 +212,7 @@
                       >
                         <div class="">
                           <div class="score">
-                            {{ i.score[0] === null ? '' : i.score[0]+'('+i.score[1]+')' }}
+                            {{ i.score[0] === null ? '' : i.score[0]+' ('+i.score[1]+')' }}
                           </div>
                         </div>
                       </el-col>
@@ -253,6 +254,67 @@
         </el-table>
       </div>
     </el-card>
+        <el-drawer
+      :visible.sync="drawer"
+      direction="rtl"
+      size="30%"
+      :with-header="false"
+    >
+      <div class="draw">
+        <div class="draw-sub">
+          <h1>模型名：{{drawerInfo.name}}</h1>
+          <div>
+            <!-- {{drawerInfo.link}} -->
+            提交时间: {{drawerInfo.time}}
+            <!-- <br>
+            Score: {{drawerInfo.score}} -->
+          </div>
+          <div>
+            参数数量: {{drawerInfo.paras}}
+          </div>
+        </div>
+        <hr class="draw-hr">
+        <!-- <div class="draw-sub">
+          <h1>{{language.Model}}</h1>
+          <div>
+            {{drawerInfo.model}}
+          </div>
+        </div>
+        <hr class="draw-hr"> -->
+        <div class="draw-sub">
+          <h1>提交参数</h1>
+          <div>
+            是否公开：{{drawerInfo.public}}
+          </div>
+          <div>
+            是否使用预训练模型：{{drawerInfo.pre_train}}
+          </div>
+          <div>
+            是否使用集成学习提升模型表现：{{drawerInfo.integrate}}
+          </div>
+          <div>
+            是否使用多任务学习提升模型表现：{{drawerInfo.multiple}}
+          </div>
+          <!-- <div>
+            {{drawerInfo.public}}
+          </div> -->
+        </div>
+        <hr class="draw-hr">
+        <div class="draw-sub">
+          <h1>提交描述</h1>
+          <!-- <div>
+            提交描述
+          </div> -->
+          <div>
+            {{drawerInfo.description}}
+          </div>
+          <hr class="draw-hr">
+          <!-- <div>
+            <el-link type="primary" :href="'/#/report?id='+drawerInfo.fileid">评测报告</el-link>
+          </div> -->
+        </div>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -263,6 +325,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      drawer: false,
+      drawerInfo: {
+      },
       language: en,
       checked2: true,
       showAll: true,
@@ -397,14 +462,15 @@ export default {
             // xxhq: r.信息获取及问答能力.ability_sum[0],
             // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
             // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
-            sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + '(' + r.数学推理能力.ability_sum[1] + ')',
-            dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + '(' + r.多语言能力.ability_sum[1] + ')',
-            dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + '(' + r.对话交互能力.ability_sum[1] + ')',
-            yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + '(' + r.语言生成能力.ability_sum[1] + ')',
-            xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + '(' + r.信息获取及问答能力.ability_sum[1] + ')',
-            yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + '(' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
-            yyljcy: r['语言理解能力-词语级'].ability_sum[0] === null ? '' : r['语言理解能力-词语级'].ability_sum[0] + '(' + r['语言理解能力-词语级'].ability_sum[1] + ')',
-            score: r.总分[0] === null ? '' : r.总分[0] + '(' + r.总分[1] + ')',
+            sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
+            dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
+            dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + ' (' + r.对话交互能力.ability_sum[1] + ')',
+            yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + ' (' + r.语言生成能力.ability_sum[1] + ')',
+            xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + ' (' + r.信息获取及问答能力.ability_sum[1] + ')',
+            yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + ' (' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
+            yyljcy: r['语言理解能力-词语级'].ability_sum[0] === null ? '' : r['语言理解能力-词语级'].ability_sum[0] + ' (' + r['语言理解能力-词语级'].ability_sum[1] + ')',
+            // score: r.总分[0] === null ? '' : r.总分[0] + ' (' + r.总分[1] + ')',
+            score: r.总分[0] === null ? '' : r.总分[1],
             // sxtl_sub: r.数学推理能力[1],
             // dyy_sub: r.多语言能力[1],
             // dhjh_sub: r.对话交互能力[1],
@@ -458,6 +524,19 @@ export default {
     })
   },
   methods: {
+    handleRowClick (row, column, event) {
+      console.log(row)
+      // this.drawerInfo.rank = row.rank
+      // this.drawerInfo.name = row.name
+      // this.drawerInfo.link = row.link
+      // this.drawerInfo.date = row.date
+      // this.drawerInfo.score = row.score
+      // this.drawerInfo.model = row.model
+      // this.drawerInfo.parameter = row.parameter
+      // this.drawerInfo.more = row.more
+      this.drawerInfo = row
+      this.drawer = true
+    },
     waitToDraw (row, rowList) {
       console.log('row', row)
       this.pic.data = [
@@ -598,5 +677,20 @@ export default {
 .score{
   font-weight: bolder;
   color: black;
+}
+
+.draw{
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.draw-sub{
+  margin-top: 50px;
+}
+.draw-sub h1{
+  color: #7857A1;
+}
+.draw-hr{
+  margin-top: 50px;
 }
 </style>
