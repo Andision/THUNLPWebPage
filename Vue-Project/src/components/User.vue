@@ -59,12 +59,15 @@
     >
       <div class="draw">
         <div class="draw-sub">
-          <h1>{{drawerInfo.name}}</h1>
+          <h1>模型名：{{drawerInfo.name}}</h1>
           <div>
-            {{drawerInfo.link}}
-            Time: {{drawerInfo.time}}
+            <!-- {{drawerInfo.link}} -->
+            提交时间: {{drawerInfo.time}}
             <!-- <br>
             Score: {{drawerInfo.score}} -->
+          </div>
+          <div>
+            参数数量: {{drawerInfo.paras}}
           </div>
         </div>
         <hr class="draw-hr">
@@ -76,7 +79,7 @@
         </div>
         <hr class="draw-hr"> -->
         <div class="draw-sub">
-          <h1>{{language.Parameter}}</h1>
+          <h1>提交参数</h1>
           <div>
             是否公开：{{drawerInfo.public}}
           </div>
@@ -95,10 +98,10 @@
         </div>
         <hr class="draw-hr">
         <div class="draw-sub">
-          <h1>{{language.More}} {{language.Information}}</h1>
-          <div>
+          <h1>提交描述</h1>
+          <!-- <div>
             提交描述
-          </div>
+          </div> -->
           <div>
             {{drawerInfo.description}}
           </div>
@@ -163,14 +166,16 @@ export default {
             // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
             // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
             // score: r.智源指数[0],
-            sxtl: r.数学推理能力[0] === null ? '' : r.数学推理能力[0] + '(' + r.数学推理能力[1] + ')',
-            dyy: r.多语言能力[0] === null ? '' : r.多语言能力[0] + '(' + r.多语言能力[1] + ')',
-            dhjh: r.对话交互能力[0] === null ? '' : r.对话交互能力[0] + '(' + r.对话交互能力[1] + ')',
-            yysc: r.语言生成能力[0] === null ? '' : r.语言生成能力[0] + '(' + r.语言生成能力[1] + ')',
-            xxhq: r.信息获取及问答能力[0] === null ? '' : r.信息获取及问答能力[0] + '(' + r.信息获取及问答能力[1] + ')',
-            yyljpj: r['语言理解能力-篇章级'][0] === null ? '' : r['语言理解能力-篇章级'][0] + '(' + r['语言理解能力-篇章级'][1] + ')',
-            yyljcy: r['语言理解能力-词语级'][0] === null ? '' : r['语言理解能力-词语级'][0] + '(' + r['语言理解能力-词语级'][1] + ')',
-            score: r.智源指数[0] + '(' + r.智源指数[1] + ')',
+            sxtl: r.数学推理能力[0] === null ? '' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
+            dyy: r.多语言能力[0] === null ? '' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
+            dhjh: r.对话交互能力[0] === null ? '' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
+            yysc: r.语言生成能力[0] === null ? '' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
+            xxhq: r.信息获取及问答能力[0] === null ? '' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
+            yyljpj: r['语言理解能力-篇章级'][0] === null ? '' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
+            yyljcy: r['语言理解能力-词语级'][0] === null ? '' : r['语言理解能力-词语级'][0] + ' (' + r['语言理解能力-词语级'][1] + ')',
+            paras: r.paras,
+            // score: r.智源指数[0] + ' (' + r.智源指数[1] + ')',
+            score: r.智源指数[1],
             sxtl_sub: r.数学推理能力[1],
             dyy_sub: r.多语言能力[1],
             dhjh_sub: r.对话交互能力[1],
