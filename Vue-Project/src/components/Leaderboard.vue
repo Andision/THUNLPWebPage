@@ -283,9 +283,9 @@
         <hr class="draw-hr"> -->
         <div class="draw-sub">
           <h1>提交参数</h1>
-          <div>
+          <!-- <div>
             是否公开：{{drawerInfo.public}}
-          </div>
+          </div> -->
           <div>
             是否使用预训练模型：{{drawerInfo.pre_train}}
           </div>
@@ -494,6 +494,13 @@ export default {
             yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
             yyljcy_list: r['语言理解能力-词语级'].ability_sum,
             stime: r.simple_commit_time,
+            public: r.public,
+            multiple: r.multiple,
+            integrate: r.integrate,
+            pre_train: r.pre_train,
+            time: r.simple_commit_time,
+            paras: r.paras,
+            description: r.description,
             // sj: r.识记能力.ability_sum[0],
             // lj: r.理解能力.ability_sum[0],
             // js: r.检索能力.ability_sum[0],
