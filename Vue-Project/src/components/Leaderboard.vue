@@ -225,22 +225,25 @@
           <el-table-column label="排行" prop="rank"> </el-table-column>
           <el-table-column label="模型名" prop="name"> </el-table-column>
           <el-table-column label="机构" prop="org"> </el-table-column>
-          <el-table-column label="论文链接" prop="plink">
+          <el-table-column label="代码论文链接" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink">
                 <!-- <i class="el-icon-paperclip"></i> -->
                 <img src="https://z3.ax1x.com/2021/06/24/RQBvFK.png" style="width:30px;height:30px;">
               </el-link>
-            </template>
-          </el-table-column>
-          <el-table-column label="代码链接" prop="clink">
-            <template slot-scope="scope">
               <el-link :href="scope.row.clink">
                 <!-- <i class="el-icon-paperclip"></i> -->
                 <img src="https://z3.ax1x.com/2021/06/24/RQBvFK.png" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
+          <!-- <el-table-column label="代码链接" prop="clink">
+            <template slot-scope="scope">
+              <el-link :href="scope.row.clink">
+                <img src="https://z3.ax1x.com/2021/06/24/RQBvFK.png" style="width:30px;height:30px;">
+              </el-link>
+            </template>
+          </el-table-column> -->
           <el-table-column label="提交时间" prop="stime"> </el-table-column>
           <el-table-column label="语言理解能力-词语级" prop="yyljcy"> </el-table-column>
           <el-table-column label="语言理解能力-篇章级" prop="yyljpj"> </el-table-column>
