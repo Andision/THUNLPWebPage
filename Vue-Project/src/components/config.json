@@ -9,5 +9,6 @@
     "getRanklist": "/ranklist",
     "getMoreInfo": "/parser",
     "getSubmitlist": "/commit_record",
-    "getEvalReport": "/eval_report"
+    "getEvalReport": "/eval_report",
+    "toDelete": "/delete"
 }

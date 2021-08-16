@@ -8,7 +8,7 @@
         <el-table :data="tableData" style="width: 100%"
           :header-row-style="{'color': '#ffffff',}"
           :header-cell-style="{background:'#64438D'}"
-          cell-style="font-weight: 700; color: black;"
+          :cell-style="function(){return 'font-weight: 700; color: black;'}"
           @row-click="handleRowClick"
         >
           <el-table-column label="#" prop="rank"> </el-table-column>
@@ -46,6 +46,14 @@
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
           <el-table-column label="数学推理能力" prop="sxtl"> </el-table-column>
           <el-table-column label="智源指数" prop="score"> </el-table-column>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-button
+                size="mini"
+                type="danger"
+                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+            </template>
+          </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
@@ -208,8 +216,23 @@ export default {
     })
   },
   methods: {
+    handleDelete (a, b) {
+      let that = this
+      console.log('delete', a, b.fileid)
+      let formData = new FormData()
+      formData.append('fileid', b.fileid)
+      this.$axios.post(config.API + config.toDelete, formData).then(res => {
+        console.log(res)
+        if (res.status === 200) {
+          console.log(res)
+          if (res.data.re_code === '0') {
+            that.tableData.splice(a, a)
+          }
+        }
+      })
+    },
     handleRowClick (row, column, event) {
-      console.log(row)
+      console.log(column)
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link
@@ -218,8 +241,10 @@ export default {
       // this.drawerInfo.model = row.model
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
-      this.drawerInfo = row
-      this.drawer = true
+      if (column.label !== '操作') {
+        this.drawerInfo = row
+        this.drawer = true
+      }
     }
   }
 }
