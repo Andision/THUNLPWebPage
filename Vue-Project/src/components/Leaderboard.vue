@@ -91,7 +91,7 @@
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
           :header-row-style="{'color': '#ffffff',}"
           :header-cell-style="{background:'#64438D'}"
-          cell-style="font-weight: 700; color: black;"
+          :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
           <el-table-column type="expand">
@@ -531,6 +531,13 @@ export default {
     })
   },
   methods: {
+    cellStyle ({ row, column, rowIndex, columnIndex }) {
+      if (rowIndex === 0) {
+        return 'background-color:#eceaff; font-weight: 700; color: black;'
+      } else {
+        return 'font-weight: 700; color: black;'
+      }
+    },
     handleRowClick (row, column, event) {
       console.log(row)
       // this.drawerInfo.rank = row.rank
