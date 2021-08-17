@@ -140,7 +140,7 @@ export default {
 }
 .title1{
   color: #7857A1;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: bold;
   margin: 20px;
 }
@@ -148,6 +148,7 @@ export default {
   color: #7857A1;
   font-weight: bold;
   margin: 20px;
+  font-size: 30px;
 }
 .titledetail{
   font-weight: normal;
@@ -155,6 +156,7 @@ export default {
   padding-right: 20%;
   margin: auto;
   text-align: left;
+  font-size: 20px;
 }
 .second-title{
   color: #062A4E;
@@ -179,7 +181,7 @@ export default {
 }
 .second-list-item{
   color: #062A4E;
-  font-size: small;
+  font-size: medium;
   font-weight: bold;
 }
 
