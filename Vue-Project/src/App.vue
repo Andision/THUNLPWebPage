@@ -239,9 +239,11 @@ body,
   margin: 0;
   width: 100%;
   font-weight: bolder;
+  font-size: 20px;
 }
 .menu-item{
   color: white;
+  font-size: 20px;
 }
 
 .header,
