@@ -245,10 +245,11 @@ pre{
   text-align: left;
   margin-bottom: 30px;
   font-weight: bold;
-  font-size: larger;
+  font-size: 30px;
 }
 .section-content{
   letter-spacing: 0px;
+  font-size: 20px;
 }
 .section-color{
   padding: 50px;
