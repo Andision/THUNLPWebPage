@@ -229,11 +229,11 @@
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/16/ff5bGD.png':'https://z3.ax1x.com/2021/08/16/ff5HPO.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/17/f4Ism9.png':'https://z3.ax1x.com/2021/08/16/ff5HPO.png'" style="width:30px;height:30px;">
               </el-link>
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/16/ff5bGD.png':'https://z3.ax1x.com/2021/08/16/ff5HPO.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/17/f4Ism9.png':'https://z3.ax1x.com/2021/08/16/ff5HPO.png'" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
@@ -542,7 +542,7 @@ export default {
       }
     },
     handleRowClick (row, column, event) {
-      console.log(row)
+      console.log(row, column)
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link
@@ -551,8 +551,10 @@ export default {
       // this.drawerInfo.model = row.model
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
-      this.drawerInfo = row
-      this.drawer = true
+      if (column.label !== '代码论文链接') {
+        this.drawerInfo = row
+        this.drawer = true
+      }
     },
     waitToDraw (row, rowList) {
       console.log('row', row)
