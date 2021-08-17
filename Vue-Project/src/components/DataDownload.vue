@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div style="margin-left: 100px;margin-right: 100px;">
     <h1 class="title">{{language.sjxz}}</h1>
     <div class="table">
       <el-table
         :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
-        cell-style="font-weight: bold;"
+        :cell-style="function(){return 'font-weight: 700; color: black; font-size: large;'}"
       >
         <el-table-column prop="name" :label="language.Name">
         </el-table-column>
