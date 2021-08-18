@@ -225,7 +225,7 @@
           <el-table-column label="排行" prop="rank"> </el-table-column>
           <el-table-column label="模型名" prop="name"> </el-table-column>
           <el-table-column label="机构" prop="org"> </el-table-column>
-          <el-table-column label="代码|论文链接" prop="plink">
+          <el-table-column label="代码 | 链接" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -551,7 +551,7 @@ export default {
       // this.drawerInfo.model = row.model
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
-      if (column.label !== '代码|论文链接') {
+      if (column.label !== '代码 | 链接') {
         this.drawerInfo = row
         this.drawer = true
       }
