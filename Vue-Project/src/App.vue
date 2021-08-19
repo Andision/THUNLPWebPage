@@ -24,6 +24,11 @@
           <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
             language.app_Logout
           }}</el-menu-item>
+          <el-submenu index="9" class="menu-item" style="float: right;">
+            <template slot="title">Language</template>
+            <el-menu-item index="9-1" class="menu-item">简体中文</el-menu-item>
+            <el-menu-item index="9-2" class="menu-item">English</el-menu-item>
+          </el-submenu>
           <el-menu-item class="menu-item" index="7" style="float: right;">{{
             language.app_User
           }}</el-menu-item>
@@ -75,7 +80,8 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
+import en from '@/components/english.json'
+import zh from '@/components/chinese.json'
 import LoginDialog from '@/components/LoginDialog.vue'
 import ForgetDialog from '@/components/ForgetDialog.vue'
 import config from '@/components/config.json'
@@ -180,6 +186,14 @@ export default {
         case '8':
           // this.$router.push({path: '/user'})
           this.toLogout()
+          break
+        case '9-1':
+          // this.$router.push({path: '/user'})
+          this.language = zh
+          break
+        case '9-2':
+          // this.$router.push({path: '/user'})
+          this.language = en
           break
       }
     },
