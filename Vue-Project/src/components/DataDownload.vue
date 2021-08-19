@@ -30,9 +30,9 @@
 
       <div class="block" style="margin-top:15px;">
         <el-pagination align='center' @size-change="handleSizeChange" @current-change="handleCurrentChange"
-          :current-page="currentPage"
+          :current-page.sync="currentPage"
           :page-sizes="[5,10,20]"
-          :page-size="pageSize"
+          :page-size.sync="pageSize"
           layout="total, sizes, prev, pager, next, jumper"
           :total="tableData.length">
         </el-pagination>
@@ -52,6 +52,10 @@ export default {
     }
   },
   mounted: function () {
+    console.log('store', sessionStorage.getItem('pagesize'), sessionStorage.getItem('currentpage'))
+    this.pageSize = sessionStorage.getItem('pagesize') == null ? 10 : parseInt(sessionStorage.getItem('pagesize'))
+    this.currentPage = sessionStorage.getItem('currentpage') == null ? 1 : parseInt(sessionStorage.getItem('currentpage'))
+    console.log('store-after', this.pageSize, this.currentPage)
     // {
     //   name: 'The Corpus of Linguistic Acceptability',
     //   score: '7',
@@ -84,12 +88,14 @@ export default {
     handleSizeChange (val) {
       // console.log(`每页 ${val} 条`)
       this.currentPage = 1
-      this.pageSize = val
+      // this.pageSize = val
+      sessionStorage.setItem('pagesize', val)
     },
     // 当前页改变时触发 跳转其他页
     handleCurrentChange (val) {
       // console.log(`当前页: ${val}`)
-      this.currentPage = val
+      // this.currentPage = val
+      sessionStorage.setItem('currentpage', val)
     }
   }
 }
