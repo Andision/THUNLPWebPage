@@ -23,15 +23,13 @@
       </div> -->
     </div>
     <div class="content">
-      <div>
+      <div class="content-section">
         <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
           {{item.name}}
         </el-link> -->
-        <pre class="" v-html="show.author">
+        <pre class="section-content" v-html="show.author">
         </pre>
-      </div>
-      <div>
-        <pre class="" v-html="show.org">
+        <pre class="section-content" v-html="show.org">
         </pre>
       </div>
 
