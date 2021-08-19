@@ -94,12 +94,10 @@
 <!-- <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog> -->
 <!-- import LoginDoalog from '@/components/LoginDialog.vue' -->
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   data () {
     return {
-      language: en,
       visible: this.v,
       user: {
         username: '',
@@ -110,7 +108,8 @@ export default {
     }
   },
   props: {
-    v: Boolean
+    v: Boolean,
+    language: Object
   },
   watch: {
     v (curVal, oldVal) {

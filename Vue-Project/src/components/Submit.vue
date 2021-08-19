@@ -90,12 +90,10 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   data () {
     return {
-      language: en,
       submit: {
         name: '',
         discription: '',
@@ -121,6 +119,9 @@ export default {
       check: false,
       showFileName: ''
     }
+  },
+  props: {
+    language: Object
   },
   mounted: function () {
     // this.notOpen()

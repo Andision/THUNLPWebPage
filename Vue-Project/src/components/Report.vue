@@ -203,18 +203,18 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   data () {
     return {
-      language: en,
       id: '',
       tableData: [],
       err_list: []
     }
   },
-
+  props: {
+    language: Object
+  },
   mounted: function () {
     this.id = this.$route.query.id
     console.log(this.id)

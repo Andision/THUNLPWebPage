@@ -31,11 +31,9 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 export default {
   data () {
     return {
-      language: en,
       tableData: [{
         title: '如何参与智源指数评测？',
         detail: '在智源指数框架介绍页面一键下载所有数据集，或在数据下载页面下载某个特定数据集<br>生成测试集的预测结果文件。预测结果文件格式和训练集相同。<br>将预测结果文件按照“能力-任务-数据集”的文件夹结构组织（在智源指数框架介绍页面一键下载的数据集已经按照该结构整理），压缩成zip格式。登录个人账号后即可在参与评测页面提交。',
@@ -69,6 +67,9 @@ export default {
         details: ['智源指数体系和评测平台仍在不断建设和完善中，未来我们会在智源社区开放用户反馈意见论坛。']
       }]
     }
+  },
+  props: {
+    language: Object
   }
 }
 </script>

@@ -322,16 +322,17 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
+  props: {
+    language: Object
+  },
   data () {
     return {
       drawer: false,
       drawerInfo: {
       },
-      language: en,
       checked2: true,
       showAll: true,
       s: {

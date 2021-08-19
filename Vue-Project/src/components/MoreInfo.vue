@@ -118,12 +118,10 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   data () {
     return {
-      language: en,
       id: '',
       theNull: undefined,
       show: {
@@ -180,6 +178,9 @@ export default {
         sample: '{<br>    "id": 2,<br>    "text": "东方航空AH股临时停牌传将与上航合并”,<br>    "label": 19, //若为负例,此处为0<br>    "label_desc": "合并",//若为负例,此处为"N/A"<br>    "head": {<br>        "mention": "东方航空", //实体提及内容<br>        "start": 0, //实体提及在句子中开始的字序号<br>        "end": 4 //实体提及在句子中结束的字序号<br>},<br>    "tail": {<br>        "mention": "EM",<br>        "start": 14,<br>        "end": 16<br>    }<br>}<br>'
       }
     }
+  },
+  props: {
+    language: Object
   },
   methods: {},
   mounted: function () {

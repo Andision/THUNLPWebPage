@@ -40,15 +40,13 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   data () {
     return {
       tableData: [],
       currentPage: 1, // 当前页码
-      pageSize: 10, // 每页的数据条数
-      language: en
+      pageSize: 10 // 每页的数据条数
     }
   },
   mounted: function () {
@@ -75,6 +73,9 @@ export default {
         }
       }
     })
+  },
+  props: {
+    language: Object
   },
   methods: {
     // 每页条数改变时触发 选择一页显示多少行

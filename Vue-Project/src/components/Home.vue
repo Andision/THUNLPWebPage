@@ -42,11 +42,9 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 export default {
   data () {
     return {
-      language: en,
       kb: '　',
       org: [
         {
@@ -108,6 +106,9 @@ export default {
         'https://z3.ax1x.com/2021/06/02/2lNMbn.png'
       ]
     }
+  },
+  props: {
+    language: Object
   }
 }
 </script>

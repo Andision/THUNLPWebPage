@@ -47,7 +47,7 @@
           }}</el-menu-item>
         </el-menu>
       </el-header>
-      <el-main class="main" style="padding: 0;"><router-view /></el-main>
+      <el-main class="main" style="padding: 0;"><router-view :language="language"/></el-main>
       <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
           <!-- <el-row>
@@ -69,8 +69,8 @@
         </div>
       </el-footer>
     </el-container>
-    <LoginDialog v-bind:v="dialogLoginVisible" v-on:close="handleLoginStatus"></LoginDialog>
-    <ForgetDialog v-bind:v="dialogForgetVisible" v-on:close="handleForgetStatus"></ForgetDialog>
+    <LoginDialog v-bind:v="dialogLoginVisible" v-on:close="handleLoginStatus" :language="language"></LoginDialog>
+    <ForgetDialog v-bind:v="dialogForgetVisible" v-on:close="handleForgetStatus" :language="language"></ForgetDialog>
   </div>
 </template>
 

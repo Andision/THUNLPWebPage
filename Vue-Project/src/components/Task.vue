@@ -230,14 +230,12 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import TaskSection from '@/components/TaskSection.vue'
 import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      language: en,
       showAll: true,
       checked2: false,
       s: {
@@ -259,6 +257,9 @@ export default {
         jj: {}
       }
     }
+  },
+  props: {
+    language: Object
   },
   methods: {
   },

@@ -20,11 +20,9 @@
 <!-- <LoginDoalog v-bind:v="dialogLoginVisible" v-on:close="handleLogin"></LoginDoalog> -->
 <!-- import LoginDoalog from '@/components/LoginDialog.vue' -->
 <script>
-import en from '@/components/en.json'
 export default {
   data () {
     return {
-      language: en,
       visible: this.v,
       user: {
         email: ''
@@ -32,7 +30,8 @@ export default {
     }
   },
   props: {
-    v: Boolean
+    v: Boolean,
+    language: Object
   },
   watch: {
     v (curVal, oldVal) {

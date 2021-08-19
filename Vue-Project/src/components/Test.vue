@@ -84,13 +84,11 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      language: en,
       tableData: [
         {
           rank: 'Test',
@@ -118,7 +116,11 @@ export default {
       }
     }
   },
+  props: {
+    language: Object
+  },
   mounted: function () {
+    console.log('test', typeof this.language)
     // this.tableData = []
     this.$axios.post(config.API + config.getSubmitlist).then(res => {
       console.log(res)

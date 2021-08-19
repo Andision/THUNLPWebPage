@@ -134,18 +134,19 @@
 </template>
 
 <script>
-import en from '@/components/en.json'
 import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      language: en,
       tableData: [],
       drawerInfo: {
       },
       drawer: false
     }
+  },
+  props: {
+    language: Object
   },
   mounted: function () {
     this.tableData = []
