@@ -225,7 +225,7 @@
           <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org"> </el-table-column>
-          <el-table-column label="代码 | 链接" prop="plink">
+          <el-table-column :label="language.leaderboard_codepaper" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -244,7 +244,7 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column label="提交时间" prop="stime"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
           <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy"> </el-table-column>
           <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj"> </el-table-column>
           <el-table-column :label="language.leaderboard_xxhq" prop="xxhq"> </el-table-column>
