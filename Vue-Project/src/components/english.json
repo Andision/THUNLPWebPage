@@ -12,6 +12,7 @@
     "home_title2": "Chinese Language Understanding and Generation Evaluation benchmark.",
     "home_titledetail": "Zhiyuan Index includes high-quality Chinese natural language processing data sets, rankings and online evaluation platforms, which aims to build a comprehensive and systematic Chinese machine language ability evaluation system, form a multi-level dimension evaluation program, and also trive to promote the standard evaluation of Chinese natural language processing technology in a more scientific, standardized, and high-quality manner.",
     "home_secondtitle": "委员单位 | Organizations",
+    "leaderboard_phb": "Leaderboard",
     "leaderboard_yyljcy": "Language understanding-word level",
     "leaderboard_yyljpj": "Language understanding-discourse level",
     "leaderboard_xxhq": "Information acquisition and Q&A capabilities",
@@ -23,6 +24,8 @@
     "leaderboard_rank": "Rank",
     "leaderboard_model": "Model",
     "leaderboard_org": "Organization",
+    "leaderboard_codepaper":"Code | Paper",
+    "leaderboard_submittime":"Submission time",
     "faq_content": [
         {
             "title": "How to participate in the Zhiyuan Index evaluation",
@@ -59,6 +62,7 @@
             ]
         }
     ],
+    "submit_cycp": "Submit",
     "submit_hint": "Please make sure that you are submitting your prediction files with the structure of ability->task->dataset.",
     "submit_numOfPara": "Total number of parameters",
     "submit_paperLinks": "Paper links",
@@ -70,7 +74,6 @@
     "submit_tjcg": "提交成功！",
     "user_submitRecord": "Submission records",
     "sjxz": "数据下载",
-    "submit_cycp": "参与测评",
     "notlogin": "用户未登录。",
     "gologin": "是否去登录？",
     "more_intro": "简介",
@@ -91,7 +94,6 @@
     "task_nlb": "能力榜",
     "task_jjb": "精简榜",
     "task_wyzskj": "智源指数框架",
-    "leaderboard_phb": "排行榜",
     "forget_hint": "请输入您的邮箱，您将会收到一份带有指示的邮件。",
     "Tasks": "Tasks",
     "Leaderboard": "Leaderboard",
