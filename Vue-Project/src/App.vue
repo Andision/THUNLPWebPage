@@ -89,7 +89,7 @@ export default {
   name: 'App',
   data () {
     return {
-      language: en,
+      language: zh,
       dialogLoginVisible: false,
       dialogForgetVisible: false,
       token: '',
