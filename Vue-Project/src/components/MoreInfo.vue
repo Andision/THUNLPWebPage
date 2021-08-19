@@ -208,15 +208,17 @@ export default {
 </script>
 <style>
 pre{
-  white-space:normal
+  white-space: normal;
+  font-weight: bold;
+  font-family: -apple-system,BlinkMacSystemFont,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .bg-color{
   background-color: #eceaff;
 }
 </style>
 <style scoped>
-.title{
-  margin: 50px;
+.all{
+  font-weight: bold;
 }
 .title-title{
   color: #64438D;
