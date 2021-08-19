@@ -25,7 +25,7 @@
               <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div></el-col> -->
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  语言理解能力-词语级
+                  {{language.leaderboard_yyljcy}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.yyljcy" active-color="#64438D"></el-switch>
@@ -33,7 +33,7 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  语言理解能力-篇章级
+                  {{language.leaderboard_yyljpj}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.yyljpj" active-color="#64438D"></el-switch>
@@ -41,7 +41,7 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  信息获取及问答能力
+                  {{language.leaderboard_xxhq}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.xxhq" active-color="#64438D"></el-switch>
@@ -49,7 +49,7 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  语言生成能力
+                  {{language.leaderboard_yysc}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch
@@ -60,7 +60,7 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  对话交互能力
+                  {{language.leaderboard_dhjh}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dhjh" active-color="#64438D"></el-switch>
@@ -68,7 +68,7 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  多语言能力
+                  {{language.leaderboard_dyy}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
@@ -76,7 +76,7 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  数学推理能力
+                  {{language.leaderboard_sxtl}}
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.sxtl" active-color="#64438D"></el-switch>
