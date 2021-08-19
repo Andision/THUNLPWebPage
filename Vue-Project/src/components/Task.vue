@@ -99,6 +99,9 @@
             }}</el-checkbox>
           </div>
           <hr />
+          <div class="title-select">
+            <el-link type="primary" href="/api/download?method=simple">{{language.task_xzsjj}}</el-link>
+          </div>
         </div>
       </div>
       <div class="main-content" v-show="!checked2">

@@ -73,6 +73,7 @@
     "submit_wlj": "I understand that manual labeling of test set labels cannot be used in the model training process and submission results",
     "submit_tjcg": "提交成功！",
     "user_submitRecord": "Submission records",
+    "task_xzsjj":"Download dataset",
     "sjxz": "数据下载",
     "notlogin": "用户未登录。",
     "gologin": "是否去登录？",

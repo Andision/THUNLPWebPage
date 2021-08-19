@@ -72,6 +72,8 @@
     "submit_sfdrw": "是否使用多任务学习提升模型表现？",
     "submit_wlj": "我了解模型训练过程和提交结果中不能使用人工标注的测试集标签",
     "submit_tjcg": "提交成功！",
+    "user_submitRecord": "提交记录",
+    "task_xzsjj":"下载数据集",
     "sjxz": "数据下载",
     "notlogin": "用户未登录。",
     "gologin": "是否去登录？",
