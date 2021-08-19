@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <h1 class="title">提交记录</h1>
+    <h1 class="title">{{language.user_submitRecord}}</h1>
     <el-card class="main">
       <!-- <div slot="header">
       </div> -->
