@@ -28,7 +28,7 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column :label="leaderboard_codepaper" prop="plink">
+          <el-table-column :label="language.leaderboard_codepaper" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -252,7 +252,7 @@ export default {
       // this.drawerInfo.model = row.model
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
-      if (column.label !== '操作' && column.label !== '代码 | 链接') {
+      if (column.label !== '操作' && column.label !== this.language.leaderboard_codepaper) {
         this.drawerInfo = row
         this.drawer = true
       }

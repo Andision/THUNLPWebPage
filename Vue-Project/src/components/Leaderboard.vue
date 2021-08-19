@@ -121,7 +121,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
-                            {{language.language.leaderboard_yyljpj}}
+                            {{language.leaderboard_yyljpj}}
                           </el-button>
                         </div>
                       </el-col>
@@ -454,7 +454,7 @@ export default {
           var r = t[i]
           console.log(i, r)
           var toAppend = {
-            rank: i + 1,
+            rank: i,
             name: r.modelname,
             org: r.institution,
             plink: r.paper_url,
@@ -528,6 +528,9 @@ export default {
             show1: r.多语言能力.dataset_score_list,
             show2: r.多语言能力.dataset_score_list
           }
+          if (i === 0) {
+            toAppend.rank = ''
+          }
           this.tableData.push(toAppend)
           console.log(toAppend)
         }
@@ -544,6 +547,7 @@ export default {
     },
     handleRowClick (row, column, event) {
       console.log(row, column)
+      console.log(column.label)
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link
@@ -552,7 +556,7 @@ export default {
       // this.drawerInfo.model = row.model
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
-      if (column.label !== '代码 | 链接') {
+      if (column.label !== this.language.leaderboard_codepaper) {
         this.drawerInfo = row
         this.drawer = true
       }
