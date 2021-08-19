@@ -1,0 +1,128 @@
+{
+    "wyzs": "智 源 指 数",
+    "app_Tasks": "任务",
+    "app_Leaderboard": "排行榜",
+    "app_FAQ": "常见问题",
+    "app_Paper": "论文",
+    "app_Submit": "参与测评",
+    "app_Download": "数据下载",
+    "app_User": "个人中心",
+    "app_Logout": "登出",
+    "home_title1": "智源指数",
+    "home_title2": "中文语言理解和生成评测基准",
+    "home_titledetail": "智源指数包含高质量中文自然语言处理数据集、排行榜与在线评测平台,旨在构建全面系统的中文机器语言能力评测体系,形成多层次维度的评测方案,力求更加科学、规范、高质量地推进中文自然语言处理技术的标准评测。",
+    "home_secondtitle": "委员单位 | Organizations",
+    "leaderboard_yyljcy": "语言理解能力—词语级",
+    "leaderboard_yyljpj": "语言理解能力—篇章级",
+    "leaderboard_xxhq": "信息获取及问答能力",
+    "leaderboard_yysc": "语言生成能力",
+    "leaderboard_dhjh": "对话交互能力",
+    "leaderboard_dyy": "多语言能力",
+    "leaderboard_sxtl": "数学推理能力",
+    "leaderboard_zyzs": "智源指数",
+    "leaderboard_rank": "排行",
+    "leaderboard_model": "模型名",
+    "leaderboard_org": "机构",
+    "faq_content": [
+        {
+            "title": "如何参与智源指数评测？",
+            "details": [
+                "在智源指数框架介绍页面一键下载所有数据集，或在数据下载页面下载某个特定数据集；",
+                "生成测试集的预测结果文件。预测结果文件格式和训练集相同；",
+                "将预测结果文件按照“能力-任务-数据集”的文件夹结构组织（在智源指数框架介绍页面一键下载的数据集已经按照该结构整理），压缩成zip格式。登录个人账号后即可在参与评测页面提交。"
+            ]
+        },
+        {
+            "title": "参与评测需要遵守哪些规范？",
+            "details": [
+                "我们禁止任何形式的在模型训练和提交结果中使用测试集标签信息，包括通过自己人工标注测试集标签。",
+                "我们鼓励评测参与者分享论文/技术报告/模型代码，共同推进自然语言处理社区积极健康发展。"
+            ]
+        },
+        {
+            "title": "如何下载获得数据集",
+            "details": [
+                "在智源指数任务框架介绍页面可以一键下载所有数据集；",
+                "在数据集列表可以下载某个特定数据集。"
+            ]
+        },
+        {
+            "title": "智源指数的数据使用许可是什么？",
+            "details": [
+                "智源指数提供的数据仅供个人研究用途使用，禁止商业用途使用。"
+            ]
+        },
+        {
+            "title": "如何反馈对智源指数的建议？",
+            "details": [
+                "智源指数体系和评测平台仍在不断建设和完善中，未来我们会在智源社区开放用户反馈意见论坛。"
+            ]
+        }
+    ],
+    "submit_hint": "请确保将预测文件按照能力-任务-数据集层次结构格式提交",
+    "submit_numOfPara": "参数总数",
+    "submit_paperLinks": "论文链接",
+    "submit_sfgk": "是否公开？",
+    "submit_sfyxl": "是否使用预训练模型？",
+    "submit_sfjc": "是否使用集成学习提升模型表现？",
+    "submit_sfdrw": "是否使用多任务学习提升模型表现？",
+    "submit_wlj": "我了解模型训练过程和提交结果中不能使用人工标注的测试集标签",
+    "submit_tjcg": "提交成功！",
+    "sjxz": "数据下载",
+    "submit_cycp": "参与测评",
+    "notlogin": "用户未登录。",
+    "gologin": "是否去登录？",
+    "more_intro": "简介",
+    "more_paper": "论文",
+    "more_ref": "论文引用",
+    "more_size": "数据规模",
+    "more_download": "数据下载",
+    "more_form": "数据集格式描述",
+    "more_sample": "数据样例",
+    "task_synl": "所有能力",
+    "task_sjnl": "识记能力",
+    "task_ljnl": "理解能力",
+    "task_jsnl": "检索能力",
+    "task_szjsnl": "数值计算能力",
+    "task_scnl": "生成能力",
+    "task_dyynl": "多语言能力",
+    "task_tj": "推荐",
+    "task_nlb": "能力榜",
+    "task_jjb": "精简榜",
+    "task_wyzskj": "智源指数框架",
+    "leaderboard_phb": "排行榜",
+    "forget_hint": "请输入您的邮箱，您将会收到一份带有指示的邮件。",
+    "Tasks": "Tasks",
+    "Leaderboard": "Leaderboard",
+    "FAQ": "FAQ",
+    "Paper": "Paper",
+    "Submit": "Submit",
+    "Download": "Download",
+    "User": "User",
+    "Logout": "Logout",
+    "Username": "用户名",
+    "Email": "邮箱",
+    "Password": "密码",
+    "Login": "登录",
+    "SignUp": "注册",
+    "Remeberme": "记住我",
+    "Forgetpassword": "忘记密码",
+    "WelcomeToJoinUs": " ",
+    "Notamember": "还不是注册用户",
+    "Alreadyhaveanaccount": "已经是注册用户",
+    "PasswordAssistance": "重置密码",
+    "Continue": "继续",
+    "or": "或者",
+    "Name": "Name",
+    "Date": "Date",
+    "Time": "Time",
+    "Score": "Score",
+    "Model": "Model",
+    "Parameter": "Parameter",
+    "More": "More",
+    "Information": "Information",
+    "Info": "Info",
+    "Description": "Description",
+    "Select": "Select",
+    "Cancel": "Cancel"
+}
