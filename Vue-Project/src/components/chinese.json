@@ -12,6 +12,7 @@
     "home_title2": "中文语言理解和生成评测基准",
     "home_titledetail": "智源指数包含高质量中文自然语言处理数据集、排行榜与在线评测平台,旨在构建全面系统的中文机器语言能力评测体系,形成多层次维度的评测方案,力求更加科学、规范、高质量地推进中文自然语言处理技术的标准评测。",
     "home_secondtitle": "委员单位 | Organizations",
+    "leaderboard_phb": "排行榜",
     "leaderboard_yyljcy": "语言理解能力—词语级",
     "leaderboard_yyljpj": "语言理解能力—篇章级",
     "leaderboard_xxhq": "信息获取及问答能力",
@@ -23,6 +24,8 @@
     "leaderboard_rank": "排行",
     "leaderboard_model": "模型名",
     "leaderboard_org": "机构",
+    "leaderboard_codepaper":"代码 | 链接",
+    "leaderboard_submittime":"提交时间",
     "faq_content": [
         {
             "title": "如何参与智源指数评测？",
@@ -59,6 +62,7 @@
             ]
         }
     ],
+    "submit_cycp": "参与测评",
     "submit_hint": "请确保将预测文件按照能力-任务-数据集层次结构格式提交",
     "submit_numOfPara": "参数总数",
     "submit_paperLinks": "论文链接",
@@ -69,7 +73,6 @@
     "submit_wlj": "我了解模型训练过程和提交结果中不能使用人工标注的测试集标签",
     "submit_tjcg": "提交成功！",
     "sjxz": "数据下载",
-    "submit_cycp": "参与测评",
     "notlogin": "用户未登录。",
     "gologin": "是否去登录？",
     "more_intro": "简介",
@@ -90,7 +93,6 @@
     "task_nlb": "能力榜",
     "task_jjb": "精简榜",
     "task_wyzskj": "智源指数框架",
-    "leaderboard_phb": "排行榜",
     "forget_hint": "请输入您的邮箱，您将会收到一份带有指示的邮件。",
     "Tasks": "Tasks",
     "Leaderboard": "Leaderboard",
