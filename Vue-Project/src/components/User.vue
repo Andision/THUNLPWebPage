@@ -11,8 +11,8 @@
           :cell-style="function(){return 'font-weight: 700; color: black;'}"
           @row-click="handleRowClick"
         >
-          <el-table-column label="#" prop="rank"> </el-table-column>
-          <el-table-column label="模型名" prop="name"> </el-table-column>
+          <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
+          <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
           <!-- <el-table-column label="机构" prop="org"> </el-table-column> -->
           <!-- <el-table-column label="论文链接" prop="plink">
             <template slot-scope="scope">
@@ -28,7 +28,7 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column label="代码 | 链接" prop="plink">
+          <el-table-column :label="leaderboard_codepaper" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -47,15 +47,15 @@
           <el-table-column label="生成能力" prop="sc"> </el-table-column>
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
           <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
-          <el-table-column label="提交时间" prop="stime"> </el-table-column>
-          <el-table-column label="语言理解能力-词语级" prop="yyljcy"> </el-table-column>
-          <el-table-column label="语言理解能力-篇章级" prop="yyljpj"> </el-table-column>
-          <el-table-column label="信息获取及问答能力" prop="xxhq"> </el-table-column>
-          <el-table-column label="语言生成能力" prop="yysc"> </el-table-column>
-          <el-table-column label="对话交互能力" prop="dhjh"> </el-table-column>
-          <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
-          <el-table-column label="数学推理能力" prop="sxtl"> </el-table-column>
-          <el-table-column label="智源指数" prop="score"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj"> </el-table-column>
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc"> </el-table-column>
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh"> </el-table-column>
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy"> </el-table-column>
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl"> </el-table-column>
+          <el-table-column :label="language.leaderboard_zyzs" prop="score"> </el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-button
@@ -77,7 +77,7 @@
     >
       <div class="draw">
         <div class="draw-sub">
-          <h1>模型名：{{drawerInfo.name}}</h1>
+          <h1>{{language.leaderboard_model}}：{{drawerInfo.name}}</h1>
           <div>
             <!-- {{drawerInfo.link}} -->
             提交时间: {{drawerInfo.time}}
