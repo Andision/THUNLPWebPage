@@ -355,7 +355,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .all {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 .title {
