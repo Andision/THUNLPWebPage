@@ -34,7 +34,8 @@
           :page-sizes="[5,10,20]"
           :page-size.sync="pageSize"
           layout="total, sizes, prev, pager, next, jumper"
-          :total="tableData.length">
+          :total="tableData.length"
+          v-if="toDisplay">
         </el-pagination>
       </div>
     </div>
@@ -48,13 +49,15 @@ export default {
     return {
       tableData: [],
       currentPage: 1, // 当前页码
-      pageSize: 10 // 每页的数据条数
+      pageSize: 10, // 每页的数据条数
+      toDisplay: false
     }
   },
   mounted: function () {
     console.log('store', sessionStorage.getItem('pagesize'), sessionStorage.getItem('currentpage'))
     this.pageSize = sessionStorage.getItem('pagesize') == null ? 10 : parseInt(sessionStorage.getItem('pagesize'))
     this.currentPage = sessionStorage.getItem('currentpage') == null ? 1 : parseInt(sessionStorage.getItem('currentpage'))
+    this.toDisplay = true
     console.log('store-after', this.pageSize, this.currentPage)
     // {
     //   name: 'The Corpus of Linguistic Acceptability',
