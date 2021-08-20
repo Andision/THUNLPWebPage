@@ -17,14 +17,14 @@
           <!-- <el-table-column label="论文链接" prop="plink">
             <template slot-scope="scope">
               <el-link :href="scope.row.plink">
-                <img src="https://z3.ax1x.com/2021/08/16/ff5HPO.png" style="width:30px;height:30px;">
+                <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
           <el-table-column label="代码链接" prop="clink">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink">
-                <img src="https://z3.ax1x.com/2021/08/16/ff5HPO.png" style="width:30px;height:30px;">
+                <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column> -->
@@ -32,11 +32,11 @@
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/17/f4Ism9.png':'https://z3.ax1x.com/2021/08/16/ff5HPO.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/20/fOBnwn.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/17/f4Ism9.png':'https://z3.ax1x.com/2021/08/16/ff5HPO.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/20/fOBnwn.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
