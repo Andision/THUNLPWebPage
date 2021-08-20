@@ -4,23 +4,9 @@
       <div class="title-title">
         {{show.title}}
       </div>
-      <!-- <div class="title-sub">
-        <div class="title-sub" style="display: inline;">
-          {{show.label}}
-        </div>
-        <div class="title-sub" style="display: inline;">
-          难度
-        </div>
-        <div class="title-color" style="display: inline;">
-          {{show.hard}}
-        </div>
-        <div class="title-sub" style="display: inline;">
-          信度
-        </div>
-        <div class="title-color" style="display: inline;">
-          {{show.reliability}}
-        </div>
-      </div> -->
+      <div class="title-sub">
+        {{show.ability}} | {{show.task}}
+      </div>
     </div>
     <div class="content">
       <div class="content-section">
@@ -220,6 +206,10 @@ pre{
 .all{
   font-weight: bold;
 }
+.title{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 .title-title{
   color: #64438D;
   font-size: 50px;
@@ -229,6 +219,7 @@ pre{
   font-size: xx-large;
   margin: 40px;
   font-weight: bold;
+  color: #64438D;
 }
 .title-color{
   color: #64438D;
