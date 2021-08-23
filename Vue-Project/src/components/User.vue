@@ -32,11 +32,11 @@
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/20/fOBnwn.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/23/hinh3F.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/20/fOBnwn.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/23/hinh3F.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
