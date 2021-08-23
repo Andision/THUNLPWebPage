@@ -8,98 +8,100 @@
         {{show.ability}} | {{show.task}}
       </div>
     </div>
-    <div class="content">
-      <div class="content-section">
-        <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
-          {{item.name}}
-        </el-link> -->
-        <pre class="section-content" v-html="show.author">
-        </pre>
-        <pre class="section-content" v-html="show.org">
-        </pre>
-      </div>
-
-       <div class="content-section" v-if="show.intr!=theNull">
-        <div class="section-title">
-          {{language.more_intro}}
-          <i class="el-icon-question"></i>
+    <el-card style="width:80%; margin: auto; margin-bottom: 50px;">
+      <div class="content">
+        <div class="content-section">
+          <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
+            {{item.name}}
+          </el-link> -->
+          <pre class="section-content" v-html="show.author">
+          </pre>
+          <pre class="section-content" v-html="show.org">
+          </pre>
         </div>
-        <pre class="section-content" v-html="show.intr">
-        </pre>
-        <!-- <div class="section-content">
-          {{show.intr}}
-        </div> -->
-      </div>
 
-      <div class="content-section" v-if="show.paper!=theNull">
-        <div class="section-title">
-          {{language.more_paper}}
-          <i class="el-icon-document"></i>
+        <div class="content-section" v-if="show.intr!=theNull">
+          <div class="section-title">
+            {{language.more_intro}}
+            <i class="el-icon-question"></i>
+          </div>
+          <pre class="section-content" v-html="show.intr">
+          </pre>
+          <!-- <div class="section-content">
+            {{show.intr}}
+          </div> -->
         </div>
-        <pre class="section-content" v-html="show.paper">
-        </pre>
-        <!-- <div class="section-content">
-          {{show.paper}}
-        </div> -->
-      </div>
 
-      <div class="content-section" v-if="show.ref!=theNull">
-        <div class="section-title">
-          {{language.more_ref}}
-          <i class="el-icon-document"></i>
+        <div class="content-section" v-if="show.paper!=theNull">
+          <div class="section-title">
+            {{language.more_paper}}
+            <i class="el-icon-document"></i>
+          </div>
+          <pre class="section-content" v-html="show.paper">
+          </pre>
+          <!-- <div class="section-content">
+            {{show.paper}}
+          </div> -->
         </div>
-        <pre class="section-content section-color bg-color" v-html="show.ref">
-        </pre>
-        <!-- <div class="section-content section-color">
-          {{show.ref}}
-        </div> -->
-      </div>
 
-      <div class="content-section" v-if="show.size!=theNull">
-        <div class="section-title">
-          {{language.more_size}}
-          <i class="el-icon-s-data"></i>
+        <div class="content-section" v-if="show.ref!=theNull">
+          <div class="section-title">
+            {{language.more_ref}}
+            <i class="el-icon-document"></i>
+          </div>
+          <pre class="section-content section-color bg-color" v-html="show.ref">
+          </pre>
+          <!-- <div class="section-content section-color">
+            {{show.ref}}
+          </div> -->
         </div>
-        <pre class="section-content" v-html="show.size">
-        </pre>
-        <!-- <div class="section-content">
-          {{show.size}}
-        </div> -->
-      </div>
 
-      <div class="content-section" v-if="show.download!=theNull">
-        <div class="section-title">
-          {{language.more_download}}
-          <i class="el-icon-download"></i>
+        <div class="content-section" v-if="show.size!=theNull">
+          <div class="section-title">
+            {{language.more_size}}
+            <i class="el-icon-s-data"></i>
+          </div>
+          <pre class="section-content" v-html="show.size">
+          </pre>
+          <!-- <div class="section-content">
+            {{show.size}}
+          </div> -->
         </div>
-        <pre class="section-content" v-html="show.download">
-        </pre>
-        <!-- <div class="section-content">
-          {{show.download}}
-        </div> -->
-      </div>
 
-      <div class="content-section" v-if="show.form!=theNull">
-        <div class="section-title">
-          {{language.more_form}}
-          <i class="el-icon-tickets"></i>
+        <div class="content-section" v-if="show.download!=theNull">
+          <div class="section-title">
+            {{language.more_download}}
+            <i class="el-icon-download"></i>
+          </div>
+          <pre class="section-content" v-html="show.download">
+          </pre>
+          <!-- <div class="section-content">
+            {{show.download}}
+          </div> -->
         </div>
-        <pre class="section-content" v-html="show.form">
-        </pre>
-        <!-- <div class="section-content">
-          {{show.form}}
-        </div> -->
-      </div>
 
-      <div class="content-section" v-if="show.sample!=theNull">
-        <div class="section-title">
-          {{language.more_sample}}
-          <i class="el-icon-edit"></i>
+        <div class="content-section" v-if="show.form!=theNull">
+          <div class="section-title">
+            {{language.more_form}}
+            <i class="el-icon-tickets"></i>
+          </div>
+          <pre class="section-content" v-html="show.form">
+          </pre>
+          <!-- <div class="section-content">
+            {{show.form}}
+          </div> -->
         </div>
-        <pre class="section-content section-color bg-color" v-html="show.sample">
-        </pre>
+
+        <div class="content-section" v-if="show.sample!=theNull">
+          <div class="section-title">
+            {{language.more_sample}}
+            <i class="el-icon-edit"></i>
+          </div>
+          <pre class="section-content section-color bg-color" v-html="show.sample">
+          </pre>
+        </div>
       </div>
-    </div>
+    </el-card>
   </div>
 </template>
 
@@ -205,6 +207,7 @@ pre{
 <style scoped>
 .all{
   font-weight: bold;
+  margin: auto;
 }
 .title{
   margin-top: 100px;
@@ -212,8 +215,8 @@ pre{
 }
 .title-title{
   color: #64438D;
-  font-size: 50px;
-  font-weight: bolder;
+  font-size: 60px;
+  font-weight: 1000;
 }
 .title-sub{
   font-size: xx-large;
