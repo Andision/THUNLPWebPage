@@ -149,7 +149,7 @@ export default {
   color: #7857A1;
   font-weight: bold;
   margin: 20px;
-  font-size: 30px;
+  font-size: 40px;
 }
 .titledetail{
   font-weight: normal;
@@ -157,7 +157,7 @@ export default {
   padding-right: 20%;
   margin: auto;
   text-align: left;
-  font-size: 20px;
+  font-size: 30px;
 }
 .second-title{
   color: #062A4E;
@@ -187,7 +187,10 @@ export default {
 }
 
 .second-logo{
-  margin: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+  min-height: 100px;
 }
 .second-logo-item{
   list-style-type: none;
