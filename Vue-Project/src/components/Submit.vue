@@ -2,7 +2,7 @@
   <div class="all">
     <h1 class="title">{{language.submit_cycp}}</h1>
     <div class="table">
-      <div class="table-hint">
+      <div class="table-hint" v-if="false">
         {{language.submit_hint}}
       </div>
       <div class="table-form">
