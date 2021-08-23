@@ -100,7 +100,7 @@
           </div>
           <hr />
           <div class="title-select">
-            <el-link type="primary" href="/api/download?method=simple">{{language.task_xzsjj}}</el-link>
+            <el-button type="primary" href="/api/download?method=simple">{{language.task_xzsjj}}</el-button>
           </div>
         </div>
       </div>
