@@ -6,7 +6,7 @@
       </div> -->
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%"
-          :header-row-style="{'color': '#ffffff',}"
+          :header-row-style="{'color': '#ffffff','font-size':'17px'}"
           :header-cell-style="{background:'#64438D'}"
           :cell-style="function(){return 'font-weight: 700; color: black;'}"
           @row-click="handleRowClick"
@@ -32,11 +32,11 @@
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/24/hk6IsS.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/24/hk6IsS.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
