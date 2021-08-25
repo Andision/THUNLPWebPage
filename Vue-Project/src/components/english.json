@@ -1,26 +1,26 @@
 {
-    "wyzs": "Zhiyuan Index",
-    "app_Tasks": "task",
-    "app_Leaderboard": "leaderboard",
-    "app_FAQ": "faq",
-    "app_Paper": "paper",
-    "app_Submit": "submit",
-    "app_Download": "dataset",
+    "wyzs": "CUGE Index",
+    "app_Tasks": "Framework",
+    "app_Leaderboard": "Leaderboard",
+    "app_FAQ": "FAQ",
+    "app_Paper": "Paper",
+    "app_Submit": "Submit",
+    "app_Download": "Dataset",
     "app_User": "Profile",
     "app_Logout": "Logout",
-    "home_title1": "Zhiyuan Index",
-    "home_title2": "Chinese Language Understanding and Generation Evaluation benchmark.",
-    "home_titledetail": "Zhiyuan Index includes high-quality Chinese natural language processing data sets, rankings and online evaluation platforms, which aims to build a comprehensive and systematic Chinese machine language ability evaluation system, form a multi-level dimension evaluation program, and also trive to promote the standard evaluation of Chinese natural language processing technology in a more scientific, standardized, and high-quality manner.",
+    "home_title1": "CUGE Index",
+    "home_title2": "Chinese Language Understanding and Generation Evaluation Benchmark.",
+    "home_titledetail": "The CUGE Index contains high-quality Chinese natural language processing datasets, leaderboard and online evaluation platform. The CUGE Index aims to build a comprehensive and systematic Chinese language intelligence evaluation system, form a multi-level evaluation strategy, and promote the standard evaluation of Chinese natural language processing technology in a more scientific, standardized and high-quality manner.",
     "home_secondtitle": "委员单位 | Organizations",
     "leaderboard_phb": "Leaderboard",
-    "leaderboard_yyljcy": "Language understanding-word level",
-    "leaderboard_yyljpj": "Language understanding-discourse level",
-    "leaderboard_xxhq": "Information acquisition and Q&A capabilities",
+    "leaderboard_yyljcy": "Language Understanding: Word-Sentence Level",
+    "leaderboard_yyljpj": "Language Understanding: Discourse Level",
+    "leaderboard_xxhq": "Information Acquisition and Question Answering",
     "leaderboard_yysc": "Language Generation",
-    "leaderboard_dhjh": "Dialogue interaction",
-    "leaderboard_dyy": "Cross-lingual",
-    "leaderboard_sxtl": "Mathematical Inference",
-    "leaderboard_zyzs": "Zhiyuan Index",
+    "leaderboard_dhjh": "Conversational Interaction",
+    "leaderboard_dyy": "Multilingualism",
+    "leaderboard_sxtl": "Mathematical Reasoning",
+    "leaderboard_zyzs": "CUGE Index",
     "leaderboard_rank": "Rank",
     "leaderboard_model": "Model",
     "leaderboard_org": "Organization",
@@ -28,40 +28,57 @@
     "leaderboard_submittime":"Submission time",
     "faq_content": [
         {
-            "title": "How to participate in the Zhiyuan Index evaluation",
+            "title": "How to participate in the CUGE Index evaluation",
             "details": [
-                "Download all data sets with one click on the introduction page of the Zhiyuan Index framework, or download a specific data set on the data download page.",
-                "Generate the prediction result file of the test set. The prediction result file format is the same as the training set.",
-                "The prediction result files are organized according to the folder structure of \"ability-task-data set\" (the data set downloaded with one click on the introduction page of the Zhiyuan Index framework has been organized according to this structure) and compressed into a zip format. After logging in to your personal account, you can submit it on the evaluation page."
+                "Download all datasets on the introduction page of the CUGE Index framework, or download a specific dataset on the data download page.",
+                "Generate the prediction result file of the test set. The format of the prediction result file is defined in the README file of the corresponding dataset.",
+                "Name the prediction result file according to the correct submission file name required in the README file of the corresponding dataset and compress it into a zip format. Log in to your personal account and submit it on the Submit page."
             ]
         },
         {
-            "title": "What norms need to be followed to participate in the evaluation?",
+            "title": "What rules need to be followed to participate in the evaluation?",
             "details": [
-                "Any form of using test set label information in model training and submission results are prohibited, including manually labeling test set labels by ourselves.",
-                "Share papers/technical reports/model codes  by review participants to jointly promote the active and healthy development of the natural language processing community are encouraged."
+                "It is prohibited to use test set label information in model training and submission results in any form, including manually labeling test set labels.",
+                "It is encouraged to share the papers/technical reports/codes to jointly promote the active and healthy development of the natural language processing community."
             ]
         },
         {
             "title": "How to download the dataset?",
             "details": [
-                "All data sets can be downloaded with one click on the introduction page of the Zhiyuan Index task framework. ",
-                "You can download a specific data set in the data set list."
+                "All datasets can be downloaded with one click on the introduction page of the CUGE Index framework.",
+                "You can also download a specific dataset in the dataset list."
             ]
         },
         {
-            "title": "What is the data usage license of Zhiyuan Index?",
+            "title": "What is the data usage license of CUGE Index?",
             "details": [
-                "The data provided by Zhiyuan Index is for personal research purposes only, and commercial use is prohibited."
+                "The data provided by CUGE Index is for individual research purposes only, and commercial use is prohibited."
             ]
         },
         {
-            "title": "How to give feedback on the Zhiyuan Index?",
+            "title": "How to give feedback on the CUGE Index?",
             "details": [
-                "The Zhiyuan index system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the Zhiyuan community  in the future."
+                "The CUGE index system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future. For now, please contact xxxx."
+            ]
+        },
+        {
+            "title": "How does the leaderboard of CUGE Index work?",
+            "details": [
+                "The CUGE Index leaderboard adopts a multi-level scoring strategy. Based on the 'capability-task-dataset' framework, the leaderboard calculates the scores of each dataset, task, capability, as well as the overall CUGE Index score recursively from the bottom up, by averaging the scores of current level.",
+                "In order to eliminate the differences between different datasets and evaluation metrics, the CUGE Index normalizes each evaluation metric score of the participating models, based on the scores of the standard baseline model (mT5-small), and then calculates the scores of each level from the bottom up (shown in parentheses in the leaderboard)."
             ]
         }
     ],
+    "hint_task":"Datasets CUGE Index are principally selected and organized with a language capability-task-dataset hierarchy",
+    "hint_yyljcy":"Evaluate the model's capability to understand a given text and perform word- and sentence-level syntactic and semantic tasks",
+    "hint_yyljpj":"Evaluate the model's capability to understand a given text and perform discourse-level syntactic and semantic tasks",
+    "hint_xxhq":"Evaluate the model's capability to obtain relevant information in open-domain corpora based on given queries",
+    "hint_yysc":"Evaluate the model's capability to generate coherent text based on the given conditions",
+    "hint_dhjh":"Evaluate the model's ability to generate appropriate conversation responses based on conversation history",
+    "hint_dyy":"Evaluate the model's ability to perform tasks involving multiple languages",
+    "hint_sxtl":"Evaluate the model's ability to abstract a given application scenario and perform mathematical computation tasks",
+    "hint_leaderboard1":"The CUGE Index leaderboard adopts a multi-level scoring strategy, providing the scores of datasets, tasks, and capabilities, as well as an overall CUGE Index score.",
+    "hint_leaderboard2":"The CUGE Index normalizes the scores of participating models (shown in parentheses) based on the scores of the standard baseline model (mT5-small), maximally eliminating the differences between different datasets and evaluation metrics.",
     "submit_cycp": "Submit",
     "submit_hint": "Please make sure that you are submitting your prediction files with the structure of ability->task->dataset.",
     "submit_numOfPara": "Total number of parameters",
@@ -70,10 +87,11 @@
     "submit_sfyxl": "Pre-train model used?",
     "submit_sfjc": "Ensemble learning method used?",
     "submit_sfdrw": "Multi-task learning method used?",
-    "submit_wlj": "I understand that manual labeling of test set labels cannot be used in the model training process and submission results",
+    "submit_wlj": "I understand that it is prohibited to use manual test set label information in model training and submission results in any form.",
     "submit_tjcg": "提交成功！",
-    "user_submitRecord": "Submission records",
+    "user_submitRecord": "Submission Records",
     "task_xzsjj":"Download dataset",
+    "task_synl": "All Capabilities",
     "sjxz": "数据下载",
     "notlogin": "用户未登录。",
     "gologin": "是否去登录？",
@@ -84,7 +102,6 @@
     "more_download": "数据下载",
     "more_form": "数据集格式描述",
     "more_sample": "数据样例",
-    "task_synl": "所有能力",
     "task_sjnl": "识记能力",
     "task_ljnl": "理解能力",
     "task_jsnl": "检索能力",
@@ -94,7 +111,7 @@
     "task_tj": "推荐",
     "task_nlb": "能力榜",
     "task_jjb": "精简榜",
-    "task_wyzskj": "智源指数框架",
+    "task_wyzskj": "Framework",
     "forget_hint": "请输入您的邮箱，您将会收到一份带有指示的邮件。",
     "Tasks": "Tasks",
     "Leaderboard": "Leaderboard",
