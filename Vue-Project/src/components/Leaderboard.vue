@@ -1,6 +1,12 @@
 <template>
   <div class="all">
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
+    <div style="margin:50px; text-align:left;font-size: 20px;">
+      {{language.hint_leaderboard1}}
+    </div>
+    <div style="margin:50px; text-align:left;font-size: 20px;">
+      {{language.hint_leaderboard2}}
+    </div>
     <el-card class="main">
       <div slot="header">
         <div class="main-title">
@@ -89,7 +95,7 @@
       </div>
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
-          :header-row-style="{'color': '#ffffff',}"
+          :header-row-style="{'color': '#ffffff','font-size':'17px'}"
           :header-cell-style="{background:'#64438D'}"
           :cell-style="cellStyle"
           @row-click="handleRowClick"
@@ -229,11 +235,11 @@
             <template slot-scope="scope">
               <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/24/hk6IsS.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/24/hk6IsS.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
@@ -403,31 +409,31 @@ export default {
         indicator: [
           {
             name: '数学推理能力',
-            max: 100
+            max: 500
           },
           {
             name: '对话交互能力',
-            max: 100
+            max: 500
           },
           {
             name: '语言生成能力',
-            max: 100
+            max: 500
           },
           {
             name: '信息获取及问答能力',
-            max: 100
+            max: 500
           },
           {
             name: '语言理解能力-篇章级',
-            max: 100
+            max: 500
           },
           {
             name: '语言理解能力-词语级',
-            max: 100
+            max: 500
           },
           {
             name: '多语言能力',
-            max: 100
+            max: 500
           }
         ],
         data: [
@@ -565,7 +571,7 @@ export default {
       console.log('row', row)
       this.pic.data = [
         {
-          value: [row.sxtl_list[0], row.dhjh_list[0], row.yysc_list[0], row.xxhq_list[0], row.yyljpj_list[0], row.yyljcy_list[0], row.dyy_list[0]]
+          value: [row.sxtl_list[1], row.dhjh_list[1], row.yysc_list[1], row.xxhq_list[1], row.yyljpj_list[1], row.yyljcy_list[1], row.dyy_list[1]]
         }
       ]
       console.log(this.pic.data)
