@@ -5,6 +5,7 @@
     </div>
     <div class="sub">
       <!-- 识别和记忆世界知识 -->
+      {{sub}}
     </div>
     <div class="content">
       <el-row :gutter="12" v-for="i in num" :key="i" style="margin-top: 50px;">
@@ -77,7 +78,8 @@ export default {
   },
   props: {
     data: Array,
-    title: String
+    title: String,
+    sub: String
   },
   watch: {
     data (curVal, oldVal) {
