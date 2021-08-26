@@ -255,9 +255,6 @@ body,
   font-weight: bolder;
   font-size: 20px;
 }
-.el-menu-item{
-  font-size: 20px;
-}
 .menu-item{
   color: white;
   font-size: 20px;
@@ -284,5 +281,10 @@ body,
 
 .el-menu--horizontal .el-menu-item.is-active {
     border-bottom: none;
+}
+</style>
+<style>
+.el-menu-item{
+  font-size: 20px;
 }
 </style>
