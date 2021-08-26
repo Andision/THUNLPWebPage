@@ -255,6 +255,9 @@ body,
   font-weight: bolder;
   font-size: 20px;
 }
+.el-menu-item{
+  font-size: 20px;
+}
 .menu-item{
   color: white;
   font-size: 20px;
@@ -279,7 +282,7 @@ body,
   padding-top: 60px;
 }
 
-.el-menu--horizontal>.el-menu-item.is-active {
+.el-menu--horizontal .el-menu-item.is-active {
     border-bottom: none;
 }
 </style>
