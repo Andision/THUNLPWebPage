@@ -48,13 +48,13 @@ export default {
   },
   methods: {
     makeData () {
-      console.log('TASKSECTION1', this.data)
+      // console.log('TASKSECTION1', this.data)
       var count = 1
       for (var key in this.data) {
-        console.log(this.data[key])
+        // console.log(this.data[key])
         var tlist = []
         for (var k in this.data[key]) {
-          console.log('ADS', this.data[key][k])
+          // console.log('ADS', this.data[key][k])
           tlist.push({
             title: this.data[key][k].dataset_name,
             link: this.data[key][k].dataset_id
@@ -67,7 +67,7 @@ export default {
         })
         count++
       }
-      console.log('TASKSECTION', this.show)
+      // console.log('TASKSECTION', this.show)
       // this.show = this.data
       var l = this.show.length
       var s = Math.ceil(l / 4)
