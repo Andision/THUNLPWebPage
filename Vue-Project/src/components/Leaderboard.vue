@@ -1,10 +1,10 @@
 <template>
   <div class="all">
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
-    <div style="margin:50px; text-align:left;font-size: 20px;">
+    <div style="margin:50px; text-align:left;font-size: 20px;margin-bottom:20px;">
       {{language.hint_leaderboard1}}
     </div>
-    <div style="margin:50px; text-align:left;font-size: 20px;">
+    <div style="margin:50px; text-align:left;font-size: 20px; margin-top:10px;">
       {{language.hint_leaderboard2}}
     </div>
     <el-card class="main">
@@ -428,7 +428,7 @@ export default {
             max: 500
           },
           {
-            name: '语言理解能力-词语级',
+            name: '语言理解能力-词句级',
             max: 500
           },
           {
@@ -447,7 +447,7 @@ export default {
   mounted: function () {
     this.tableData = []
     let data = {
-      'rank_by_ability': ['语言理解能力-词语级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
+      'rank_by_ability': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
       'start': 1,
       'end': -1
     }
@@ -478,7 +478,7 @@ export default {
             yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + ' (' + r.语言生成能力.ability_sum[1] + ')',
             xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + ' (' + r.信息获取及问答能力.ability_sum[1] + ')',
             yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + ' (' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
-            yyljcy: r['语言理解能力-词语级'].ability_sum[0] === null ? '' : r['语言理解能力-词语级'].ability_sum[0] + ' (' + r['语言理解能力-词语级'].ability_sum[1] + ')',
+            yyljcy: r['语言理解能力-词句级'].ability_sum[0] === null ? '' : r['语言理解能力-词句级'].ability_sum[0] + ' (' + r['语言理解能力-词句级'].ability_sum[1] + ')',
             // score: r.总分[0] === null ? '' : r.总分[0] + ' (' + r.总分[1] + ')',
             score: r.总分[0] === null ? '' : r.总分[1],
             // sxtl_sub: r.数学推理能力[1],
@@ -495,14 +495,14 @@ export default {
             yysc_dataset: r.语言生成能力.dataset_score_list,
             xxhq_dataset: r.信息获取及问答能力.dataset_score_list,
             yyljpj_dataset: r['语言理解能力-篇章级'].dataset_score_list,
-            yyljcy_dataset: r['语言理解能力-词语级'].dataset_score_list,
+            yyljcy_dataset: r['语言理解能力-词句级'].dataset_score_list,
             sxtl_list: r.数学推理能力.ability_sum,
             dyy_list: r.多语言能力.ability_sum,
             dhjh_list: r.对话交互能力.ability_sum,
             yysc_list: r.语言生成能力.ability_sum,
             xxhq_list: r.信息获取及问答能力.ability_sum,
             yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
-            yyljcy_list: r['语言理解能力-词语级'].ability_sum,
+            yyljcy_list: r['语言理解能力-词句级'].ability_sum,
             stime: r.simple_commit_time,
             public: r.public,
             multiple: r.multiple,
