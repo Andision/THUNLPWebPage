@@ -99,16 +99,16 @@
         <div class="draw-sub">
           <h1>提交参数</h1>
           <div>
-            是否公开：{{drawerInfo.public}}
+            是否公开：{{drawerInfo.public ? language.yes : language.no}}
           </div>
           <div>
-            是否使用预训练模型：{{drawerInfo.pre_train}}
+            是否使用预训练模型：{{drawerInfo.pre_train ? language.yes : language.no}}
           </div>
           <div>
-            是否使用集成学习提升模型表现：{{drawerInfo.integrate}}
+            是否使用集成学习提升模型表现：{{drawerInfo.integrate ? language.yes : language.no}}
           </div>
           <div>
-            是否使用多任务学习提升模型表现：{{drawerInfo.multiple}}
+            是否使用多任务学习提升模型表现：{{drawerInfo.multiple ? language.yes : language.no}}
           </div>
           <!-- <div>
             {{drawerInfo.public}}
