@@ -8,7 +8,7 @@
         <el-table :data="tableData" style="width: 100%"
           :header-row-style="{'color': '#ffffff','font-size':'17px'}"
           :header-cell-style="{background:'#64438D'}"
-          :cell-style="function(){return 'font-weight: 700; color: black; text-align:right;'}"
+          :cell-style="function(){return 'font-weight: 700; color: black; '}"
           @row-click="handleRowClick"
         >
           <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
@@ -48,20 +48,20 @@
           <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
           <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj"> </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy"> </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl"> </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score"> </el-table-column>
-          <el-table-column label="操作">
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
+          <el-table-column :label="language.user_operation">
             <template slot-scope="scope">
               <el-button
                 size="mini"
                 type="danger"
-                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
             </template>
           </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
