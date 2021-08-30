@@ -4,7 +4,7 @@
     <div class="table">
       <el-table
         :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
-        :header-row-style="{'color': '#ffffff',}"
+        :header-row-style="{'color': '#ffffff','font-size':'20px'}"
         :header-cell-style="{background:'#64438D'}"
         :cell-style="function(){return 'font-weight: 700; color: black; font-size: large;'}"
       >
