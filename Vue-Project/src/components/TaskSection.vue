@@ -60,9 +60,16 @@ export default {
             link: this.data[key][k].dataset_id
           })
         }
+        var tt = ''
+        // console.log('123', key.split('|')[0])
+        if (this.language === 'zh') {
+          tt = key.split('|')[0]
+        } else {
+          tt = key.split('|')[1]
+        }
         this.show.push({
           index: count,
-          title: key,
+          title: tt,
           link: tlist
         })
         count++
