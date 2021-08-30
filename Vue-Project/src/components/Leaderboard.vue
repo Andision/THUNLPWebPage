@@ -256,13 +256,13 @@
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
-      <div style="margin:50px; text-align:left;font-size: 20px; margin-left:0px;">
-        {{language.hint_leaderboard1}}
-      </div>
-      <div style="margin:50px; text-align:left;font-size: 20px; margin-left:0px; margin-top:10px;">
-        {{language.hint_leaderboard2}}
-      </div>
     </el-card>
+    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px;">
+      {{language.hint_leaderboard1}}
+    </div>
+    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px; margin-top:10px;">
+      {{language.hint_leaderboard2}}
+    </div>
         <el-drawer
       :visible.sync="drawer"
       direction="rtl"
