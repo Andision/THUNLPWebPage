@@ -546,9 +546,9 @@ export default {
   methods: {
     cellStyle ({ row, column, rowIndex, columnIndex }) {
       if (rowIndex === 0) {
-        return 'background-color:#eceaff; font-weight: 700; color: black;'
+        return 'background-color:#eceaff; font-weight: 700; color: black;text-align:right;'
       } else {
-        return 'font-weight: 700; color: black;'
+        return 'font-weight: 700; color: black;text-align:right;'
       }
     },
     handleRowClick (row, column, event) {
