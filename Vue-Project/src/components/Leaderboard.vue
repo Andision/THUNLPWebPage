@@ -257,10 +257,10 @@
         </el-table>
       </div>
     </el-card>
-    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px;">
+    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px; margin-bottom:30px;">
       {{language.hint_leaderboard1}}
     </div>
-    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px; margin-top:10px;">
+    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px; margin-top:0px;">
       {{language.hint_leaderboard2}}
     </div>
         <el-drawer
