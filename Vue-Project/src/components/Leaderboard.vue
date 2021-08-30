@@ -1,12 +1,6 @@
 <template>
   <div class="all">
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
-    <div style="margin:50px; text-align:left;font-size: 20px;margin-bottom:20px;">
-      {{language.hint_leaderboard1}}
-    </div>
-    <div style="margin:50px; text-align:left;font-size: 20px; margin-top:10px;">
-      {{language.hint_leaderboard2}}
-    </div>
     <el-card class="main">
       <div slot="header">
         <div class="main-title">
@@ -95,8 +89,8 @@
       </div>
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
-          :header-row-style="{'color': '#ffffff','font-size':'17px'}"
-          :header-cell-style="{background:'#64438D'}"
+          :header-row-style="{'color': '#ffffff','font-size':'17px','text-align': 'right'}"
+          :header-cell-style="{background:'#64438D','text-align': 'right'}"
           :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
@@ -261,6 +255,12 @@
           <el-table-column :label="language.leaderboard_zyzs" prop="score"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
+      </div>
+      <div style="margin:50px; text-align:left;font-size: 20px; margin-left:0px;">
+        {{language.hint_leaderboard1}}
+      </div>
+      <div style="margin:50px; text-align:left;font-size: 20px; margin-left:0px; margin-top:10px;">
+        {{language.hint_leaderboard2}}
       </div>
     </el-card>
         <el-drawer

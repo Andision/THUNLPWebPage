@@ -8,7 +8,7 @@
         <el-table :data="tableData" style="width: 100%"
           :header-row-style="{'color': '#ffffff','font-size':'17px'}"
           :header-cell-style="{background:'#64438D'}"
-          :cell-style="function(){return 'font-weight: 700; color: black;'}"
+          :cell-style="function(){return 'font-weight: 700; color: black; text-align:right;'}"
           @row-click="handleRowClick"
         >
           <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
