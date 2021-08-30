@@ -76,9 +76,13 @@ export default {
       }
     }
   },
+  mounted: function () {
+    console.log(this.title)
+  },
   props: {
     data: Array,
     title: String,
+    language: String,
     sub: String
   },
   watch: {
