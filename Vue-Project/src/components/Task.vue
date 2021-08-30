@@ -103,7 +103,7 @@
           </div>
           <hr />
           <div class="title-select">
-            <el-button type="primary" href="/api/download?method=simple">{{language.task_xzsjj}}</el-button>
+            <el-button type="primary" href="/api/download?method=simple" @click="handleDownload">{{language.task_xzsjj}}</el-button>
           </div>
         </div>
       </div>
@@ -282,6 +282,9 @@ export default {
     language: Object
   },
   methods: {
+    handleDownload () {
+      window.open('/api/download?method=simple')
+    }
   },
   watch: {
     showAll (curVal, oldVal) {
