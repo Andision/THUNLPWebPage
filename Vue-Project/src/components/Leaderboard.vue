@@ -89,8 +89,8 @@
       </div>
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
-          :header-row-style="{'color': '#ffffff','font-size':'17px','text-align': 'right'}"
-          :header-cell-style="{background:'#64438D','text-align': 'right'}"
+          :header-row-style="{'color': '#ffffff','font-size':'17px'}"
+          :header-cell-style="{background:'#64438D'}"
           :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
@@ -225,7 +225,7 @@
           <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org"> </el-table-column>
-          <el-table-column :label="language.leaderboard_codepaper" prop="plink">
+          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -245,14 +245,14 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160"> </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy"> </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl"> </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
@@ -546,9 +546,9 @@ export default {
   methods: {
     cellStyle ({ row, column, rowIndex, columnIndex }) {
       if (rowIndex === 0) {
-        return 'background-color:#eceaff; font-weight: 700; color: black;text-align:right;'
+        return 'background-color:#eceaff; font-weight: 700; color: black;'
       } else {
-        return 'font-weight: 700; color: black;text-align:right;'
+        return 'font-weight: 700; color: black;'
       }
     },
     handleRowClick (row, column, event) {
