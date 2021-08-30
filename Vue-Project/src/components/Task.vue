@@ -110,8 +110,8 @@
       <div class="main-content" v-show="!checked2">
         <div class="main-section" v-show="s.yyljcy">
           <TaskSection
-            :data="alldata.all['语言理解能力-词语级']"
-            title="语言理解能力-词语级"
+            :data="alldata.all['语言理解能力-词句级']"
+            title="语言理解能力-词句级"
             :sub="language.hint_yyljcy"
           ></TaskSection>
         </div>
@@ -197,8 +197,8 @@
       <div class="main-content" v-show="checked2">
         <div class="main-section" v-show="s.yyljcy">
           <TaskSection
-            :data="alldata.jj['语言理解能力-词语级']"
-            title="语言理解能力-词语级"
+            :data="alldata.jj['语言理解能力-词句级']"
+            title="语言理解能力-词句级"
             :sub="language.hint_yyljcy"
           ></TaskSection>
         </div>
@@ -333,7 +333,7 @@ export default {
       url: config.API + config.getTaskAll,
       method: 'POST',
       data: {
-        'abilities': ['语言理解能力-词语级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
+        'abilities': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
         'simple': 0
       }
     }).then((res) => {
@@ -348,7 +348,7 @@ export default {
       url: config.API + config.getTaskAll,
       method: 'POST',
       data: {
-        'abilities': ['语言理解能力-词语级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
+        'abilities': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
         'simple': 1
       }
     }).then((res) => {
