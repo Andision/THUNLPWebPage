@@ -117,7 +117,8 @@ export default {
   margin-top: 20px;
 }
 .content{
-  margin-top: 20px;
+  margin-top: -30px;
+  margin-left: -5px;
 }
 .box-card{
   background-color: #7857A1;
