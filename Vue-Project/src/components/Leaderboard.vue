@@ -272,13 +272,13 @@
       <div class="draw">
         <div class="draw-sub">
           <h1>模型名：{{drawerInfo.name}}</h1>
-          <div>
+          <div class="draw-text">
             <!-- {{drawerInfo.link}} -->
             提交时间: {{drawerInfo.time}}
             <!-- <br>
             Score: {{drawerInfo.score}} -->
           </div>
-          <div>
+          <div class="draw-text">
             参数数量: {{drawerInfo.paras}}
           </div>
         </div>
@@ -295,14 +295,14 @@
           <!-- <div>
             是否公开：{{drawerInfo.public}}
           </div> -->
-          <div>
-            是否使用预训练模型：{{drawerInfo.pre_train}}
+          <div class="draw-text">
+            是否使用预训练模型：{{drawerInfo.pre_train ? language.yes : language.no}}
           </div>
-          <div>
-            是否使用集成学习提升模型表现：{{drawerInfo.integrate}}
+          <div class="draw-text">
+            是否使用集成学习提升模型表现：{{drawerInfo.integrate ? language.yes : language.no}}
           </div>
-          <div>
-            是否使用多任务学习提升模型表现：{{drawerInfo.multiple}}
+          <div class="draw-text">
+            是否使用多任务学习提升模型表现：{{drawerInfo.multiple ? language.yes : language.no}}
           </div>
           <!-- <div>
             {{drawerInfo.public}}
@@ -314,7 +314,7 @@
           <!-- <div>
             提交描述
           </div> -->
-          <div>
+          <div class="draw-text">
             {{drawerInfo.description}}
           </div>
           <hr class="draw-hr">
@@ -722,5 +722,8 @@ export default {
 }
 .draw-hr{
   margin-top: 50px;
+}
+.draw-text{
+  margin-top: 20px;
 }
 </style>
