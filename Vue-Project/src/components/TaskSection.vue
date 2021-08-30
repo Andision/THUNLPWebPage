@@ -117,7 +117,7 @@ export default {
   margin-top: 10px;
 }
 .content{
-  margin-top: -30px;
+  margin-top: -10px;
   margin-left: -5px;
 }
 .box-card{
