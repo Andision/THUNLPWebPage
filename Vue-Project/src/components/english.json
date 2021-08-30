@@ -36,6 +36,13 @@
             ]
         },
         {
+            "title": "How does the leaderboard of CUGE Index work?",
+            "details": [
+                "The CUGE Index leaderboard adopts a multi-level scoring strategy. Based on the 'capability-task-dataset' framework, the leaderboard calculates the scores of each dataset, task, capability, as well as the overall CUGE Index score recursively from the bottom up, by averaging the scores of current level.",
+                "In order to eliminate the differences between different datasets and evaluation metrics, the CUGE Index normalizes each evaluation metric score of the participating models, based on the scores of the standard baseline model (mT5-small), and then calculates the scores of each level from the bottom up (shown in parentheses in the leaderboard)."
+            ]
+        },
+        {
             "title": "What rules need to be followed to participate in the evaluation?",
             "details": [
                 "It is prohibited to use test set label information in model training and submission results in any form, including manually labeling test set labels.",
@@ -59,13 +66,6 @@
             "title": "How to give feedback on the CUGE Index?",
             "details": [
                 "The CUGE index system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future. For now, please contact xxxx."
-            ]
-        },
-        {
-            "title": "How does the leaderboard of CUGE Index work?",
-            "details": [
-                "The CUGE Index leaderboard adopts a multi-level scoring strategy. Based on the 'capability-task-dataset' framework, the leaderboard calculates the scores of each dataset, task, capability, as well as the overall CUGE Index score recursively from the bottom up, by averaging the scores of current level.",
-                "In order to eliminate the differences between different datasets and evaluation metrics, the CUGE Index normalizes each evaluation metric score of the participating models, based on the scores of the standard baseline model (mT5-small), and then calculates the scores of each level from the bottom up (shown in parentheses in the leaderboard)."
             ]
         }
     ],
