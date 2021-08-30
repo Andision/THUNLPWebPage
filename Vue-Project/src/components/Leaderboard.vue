@@ -227,13 +227,13 @@
           <el-table-column :label="language.leaderboard_org" prop="org"> </el-table-column>
           <el-table-column :label="language.leaderboard_codepaper" prop="plink">
             <template slot-scope="scope">
-              <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
-                <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-              </el-link>
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
                 <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+              </el-link>
+              <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
+                <!-- <i class="el-icon-paperclip"></i> -->
+                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/25/hePF9U.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
               </el-link>
             </template>
           </el-table-column>
@@ -245,9 +245,9 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj"> </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160"> </el-table-column>
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150"> </el-table-column>
           <el-table-column :label="language.leaderboard_yysc" prop="yysc"> </el-table-column>
           <el-table-column :label="language.leaderboard_dhjh" prop="dhjh"> </el-table-column>
           <el-table-column :label="language.leaderboard_dyy" prop="dyy"> </el-table-column>
@@ -408,31 +408,31 @@ export default {
       pic: {
         indicator: [
           {
-            name: '数学推理能力',
+            name: '数学推理',
             max: 500
           },
           {
-            name: '对话交互能力',
+            name: '对话交互',
             max: 500
           },
           {
-            name: '语言生成能力',
+            name: '语言生成',
             max: 500
           },
           {
-            name: '信息获取及问答能力',
+            name: '信息获取及问答',
             max: 500
           },
           {
-            name: '语言理解能力-篇章级',
+            name: '语言理解-篇章级',
             max: 500
           },
           {
-            name: '语言理解能力-词句级',
+            name: '语言理解-词句级',
             max: 500
           },
           {
-            name: '多语言能力',
+            name: '多语言',
             max: 500
           }
         ],
