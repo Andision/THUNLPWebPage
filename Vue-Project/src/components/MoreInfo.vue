@@ -49,7 +49,7 @@
             {{language.more_ref}}
             <i class="el-icon-document"></i>
           </div>
-          <pre class="section-content section-color bg-color" v-html="show.ref">
+          <pre class="section-content section-color bg-color" v-html="show.ref" id="moreintro">
           </pre>
           <!-- <div class="section-content section-color">
             {{show.ref}}
@@ -195,8 +195,11 @@ export default {
 }
 </script>
 <style>
+#moreintro pre{
+  white-space:nowrap;
+}
 pre{
-  /* white-space: normal; */
+  white-space: normal;
   font-weight: bold;
   font-family: -apple-system,BlinkMacSystemFont,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
