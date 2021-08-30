@@ -53,7 +53,7 @@
           }}</el-menu-item>
         </el-menu>
       </el-header>
-      <el-main class="main" style="padding: 0;"><router-view :language="language"/></el-main>
+      <el-main class="main" style="padding: 0;"><router-view :language="language" v-if="isFresh"/></el-main>
       <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
           <!-- <el-row>
@@ -94,11 +94,19 @@ export default {
       dialogLoginVisible: false,
       dialogForgetVisible: false,
       token: '',
-      isLogin: false
+      isLogin: false,
+      isFresh: true
     }
   },
   mounted: function () {
     this.checkLogin()
+    if (sessionStorage.getItem('language') === 'zh') {
+      this.language = zh
+    } else if (sessionStorage.getItem('language') === 'en') {
+      this.language = en
+    } else {
+      sessionStorage.setItem('language', 'zh')
+    }
   },
   methods: {
     checkLogin () {
@@ -191,12 +199,22 @@ export default {
         case '9-1':
           // this.$router.push({path: '/user'})
           this.language = zh
+          sessionStorage.setItem('language', 'zh')
+          this.handleReload()
           break
         case '9-2':
           // this.$router.push({path: '/user'})
           this.language = en
+          sessionStorage.setItem('language', 'en')
+          this.handleReload()
           break
       }
+    },
+    handleReload () {
+      this.isFresh = false
+      this.$nextTick(function () {
+        this.isFresh = true
+      })
     },
     handleGoHomePage () {
       this.$router.push({path: '/'})
