@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <h1 class="title">{{ language.task_wyzskj }}</h1>
-    <div style="margin:50px; text-align:left;font-size: 20px;">
+    <div style="margin:50px; text-align:left;font-size: 20px; margin-top:0px;">
       {{language.hint_task}}
     </div>
     <el-card class="main">
@@ -380,6 +380,7 @@ export default {
   margin: 50px;
   color: #64438d;
   font-size: 40px;
+  margin-bottom: 20px;
 }
 .main {
   margin: 50px;
