@@ -255,7 +255,7 @@ body,
   font-weight: bolder;
   font-size: 20px;
 }
-.menu-item{
+.el-menu .menu-item{
   color: white;
   font-size: 20px;
 }
