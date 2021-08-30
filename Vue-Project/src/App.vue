@@ -13,6 +13,7 @@
           background-color="#64438D"
           text-color="#FFFFFF"
           active-text-color="#FFFFFF"
+          id="bar"
         >
           <div
             style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
@@ -256,6 +257,11 @@ body,
   font-size: 20px;
 }
 .el-menu .menu-item{
+  color: white;
+  font-size: 20px;
+}
+
+.el-menu .el-submenu__title{
   color: white;
   font-size: 20px;
 }
