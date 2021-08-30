@@ -1,4 +1,5 @@
 {
+    "language": "zh",
     "wyzs": "智 源 指 数",
     "app_Tasks": "任务",
     "app_Leaderboard": "排行榜",
@@ -26,6 +27,8 @@
     "leaderboard_org": "机构",
     "leaderboard_codepaper":"代码 | 论文",
     "leaderboard_submittime":"提交时间",
+    "user_operation": "操作",
+    "user_delete": "删除",
     "faq_content": [
         {
             "title": "如何参与智源指数评测？",
