@@ -111,49 +111,56 @@
         <div class="main-section" v-show="s.yyljcy">
           <TaskSection
             :data="alldata.all['语言理解能力-词句级']"
-            title="语言理解能力-词句级"
+            :title="language.leaderboard_yyljcy"
+            :language="language.language"
             :sub="language.hint_yyljcy"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.yyljpj">
           <TaskSection
             :data="alldata.all['语言理解能力-篇章级']"
-            title="语言理解能力-篇章级"
+            :title="language.leaderboard_yyljpj"
+            :language="language.language"
             :sub="language.hint_yyljpj"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.xxhq">
           <TaskSection
             :data="alldata.all.信息获取及问答能力"
-            title="信息获取及问答能力"
+            :title="language.leaderboard_xxhq"
+            :language="language.language"
             :sub="language.hint_xxhq"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.yysc">
           <TaskSection
             :data="alldata.all.语言生成能力"
-            title="语言生成能力"
+            :title="language.leaderboard_yysc"
+            :language="language.language"
             :sub="language.hint_yysc"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dhjh">
           <TaskSection
             :data="alldata.all.对话交互能力"
-            title="对话交互能力"
+            :title="language.leaderboard_dhjh"
+            :language="language.language"
             :sub="language.hint_dhjh"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dyy">
           <TaskSection
             :data="alldata.all.多语言能力"
-            title="多语言能力"
+            :title="language.leaderboard_dyy"
+            :language="language.language"
             :sub="language.hint_dyy"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.sxtl">
           <TaskSection
             :data="alldata.all.数学推理能力"
-            title="数学推理能力"
+            :title="language.leaderboard_sxtl"
+            :language="language.language"
             :sub="language.hint_sxtl"
           ></TaskSection>
         </div>
@@ -198,49 +205,56 @@
         <div class="main-section" v-show="s.yyljcy">
           <TaskSection
             :data="alldata.jj['语言理解能力-词句级']"
-            title="语言理解能力-词句级"
+            :title="language.leaderboard_yyljcy"
+            :language="language.language"
             :sub="language.hint_yyljcy"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.yyljpj">
           <TaskSection
             :data="alldata.jj['语言理解能力-篇章级']"
-            title="语言理解能力-篇章级"
+            :title="language.leaderboard_yyljpj"
+            :language="language.language"
             :sub="language.hint_yyljpj"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.xxhq">
           <TaskSection
             :data="alldata.jj.信息获取及问答能力"
-            title="信息获取及问答能力"
+            :title="language.leaderboard_xxhq"
+            :language="language.language"
             :sub="language.hint_xxhq"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.yysc">
           <TaskSection
             :data="alldata.jj.语言生成能力"
-            title="语言生成能力"
+            :title="language.leaderboard_yysc"
+            :language="language.language"
             :sub="language.hint_yysc"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dhjh">
           <TaskSection
             :data="alldata.jj.对话交互能力"
-            title="对话交互能力"
+            :title="language.leaderboard_dhjh"
+            :language="language.language"
             :sub="language.hint_dhjh"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.dyy">
           <TaskSection
             :data="alldata.jj.多语言能力"
-            title="多语言能力"
+            :title="language.leaderboard_dyy"
+            :language="language.language"
             :sub="language.hint_dyy"
           ></TaskSection>
         </div>
         <div class="main-section" v-show="s.sxtl">
           <TaskSection
             :data="alldata.jj.数学推理能力"
-            title="数学推理能力"
+            :title="language.leaderboard_sxtl"
+            :language="language.language"
             :sub="language.hint_sxtl"
           ></TaskSection>
         </div>
@@ -258,6 +272,7 @@ export default {
     return {
       showAll: true,
       checked2: false,
+      isFresh: true,
       s: {
         sxtl: true,
         dyy: true,
@@ -284,6 +299,12 @@ export default {
   methods: {
     handleDownload () {
       window.open('/api/download?method=simple')
+    },
+    handleReload () {
+      this.isFresh = false
+      this.$nextTick(function () {
+        this.isFresh = true
+      })
     }
   },
   watch: {
