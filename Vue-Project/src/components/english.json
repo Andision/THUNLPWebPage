@@ -69,6 +69,8 @@
             ]
         }
     ],
+    "yes": "Yes",
+    "no": "No",
     "hint_task":"Datasets CUGE Index are principally selected and organized with a language capability-task-dataset hierarchy",
     "hint_yyljcy":"Evaluate the model's capability to understand a given text and perform word- and sentence-level syntactic and semantic tasks",
     "hint_yyljpj":"Evaluate the model's capability to understand a given text and perform discourse-level syntactic and semantic tasks",
