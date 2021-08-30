@@ -114,7 +114,7 @@ export default {
 .sub{
   font-size: large;
   text-align: left;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .content{
   margin-top: -30px;
