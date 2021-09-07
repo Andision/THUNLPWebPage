@@ -1,7 +1,7 @@
 <template>
   <div class="all">
-    <el-collapse accordion>
-      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index">
+    <el-collapse v-model="activeName">
+      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index" name="1">
         <template slot="title">
           <div class="section-title">
             {{key.title}}
@@ -37,11 +37,15 @@ export default {
   },
   data () {
     return {
-      tableData: []
+      tableData: [],
+      activeName: ['1']
     }
   },
   mounted: function () {
     this.tableData = this.language.faq_content
+    // for (var i = 0; i < this.tableData.length; i++) {
+    //   this.activeName.push(i)
+    // }
   }
 }
 </script>
