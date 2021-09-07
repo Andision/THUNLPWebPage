@@ -22,10 +22,10 @@
             {{language.wyzs}}
           </div>
           <div
-            style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
+            style="float: left; margin-top:10px; margin-left: 20px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
           >
             <a href="http://baai.ac.cn">
-              <img src="https://z3.ax1x.com/2021/09/07/hoKB0e.jpg" style="height: 40px;">
+              <img src="https://z3.ax1x.com/2021/09/07/ho7fHA.jpg" style="height: 30px;">
             </a>
           </div>
 
