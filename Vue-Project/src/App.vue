@@ -21,6 +21,13 @@
           >
             {{language.wyzs}}
           </div>
+          <div
+            style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
+          >
+            <a href="http://baai.ac.cn">
+              <img src="https://z3.ax1x.com/2021/09/07/hoKB0e.jpg" style="height: 40px;">
+            </a>
+          </div>
 
           <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
             language.app_Logout
