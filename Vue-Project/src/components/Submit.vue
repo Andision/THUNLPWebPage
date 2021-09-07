@@ -2,7 +2,7 @@
   <div class="all">
     <h1 class="title">{{language.submit_cycp}}</h1>
     <div class="table">
-      <div class="table-hint" v-if="false">
+      <div class="table-hint">
         {{language.submit_hint}}
       </div>
       <div class="table-form">
@@ -27,6 +27,14 @@
             <el-input
               v-model="submit.para"
               :placeholder="language.submit_numOfPara+'*'"
+              size="large"
+            ></el-input>
+          </el-row>
+
+          <el-row class="input">
+            <el-input
+              v-model="submit.org"
+              :placeholder="language.leaderboard_org"
               size="large"
             ></el-input>
           </el-row>
@@ -103,7 +111,8 @@ export default {
         public: false,
         pretrain: false,
         integration: false,
-        multask: false
+        multask: false,
+        org: ''
       },
       submit_clear: {
         name: '',
@@ -114,7 +123,8 @@ export default {
         public: false,
         pretrain: false,
         integration: false,
-        multask: false
+        multask: false,
+        org: ''
       },
       check: false,
       showFileName: ''
@@ -171,6 +181,7 @@ export default {
         formData.append('modelname', this.submit.name)
         formData.append('description', this.submit.discription)
         formData.append('paras', this.submit.para)
+        formData.append('institution', this.submit.org)
 
         if (this.submit.public) {
           formData.append('public', 1)
@@ -270,7 +281,7 @@ export default {
   text-align: center;
 }
 .table-hint{
-  font-size: xx-large;
+  font-size: x-large;
   margin-bottom: 30px;
 }
 .table-color{
