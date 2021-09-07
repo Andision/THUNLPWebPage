@@ -283,6 +283,8 @@ export default {
 .table-hint{
   font-size: x-large;
   margin-bottom: 30px;
+  text-align: left;
+  margin-left: 20px;
 }
 .table-color{
   padding: 10px;
