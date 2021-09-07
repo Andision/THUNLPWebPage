@@ -237,6 +237,9 @@ export default {
         if (res.status === 200) {
           console.log(res)
           if (res.data.re_code === '0') {
+            if (that.tableData.length === 1) {
+              that.tableData = []
+            }
             that.tableData.splice(a, a)
           }
         }
