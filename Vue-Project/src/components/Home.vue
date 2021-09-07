@@ -38,6 +38,31 @@
         <!-- </ul> -->
       </div>
     </div>
+
+    <div class="home-second">
+      <div class="second-title">
+        <!-- {{language.home_secondtitle}} -->
+        支持单位
+      </div>
+      <hr class="second-hr">
+      <div class="second-list">
+        <ul>
+          <li class="second-list-item" v-for="(item,index) in org" :key="index">
+            ●{{kb}} {{kb}}{{ item.zh }}
+            <br>
+            {{kb}}{{kb}}{{kb}}{{ item.en }}
+          </li>
+        </ul>
+      </div>
+      <hr class="second-hr" color="#F5F4FE" />
+      <div class="second-logo">
+        <!-- <ul> -->
+        <div class="second-logo-item" v-for="(item,index) in logo" :key="index">
+          <img class="pic-logo" :src="item"/>
+        </div>
+        <!-- </ul> -->
+      </div>
+    </div>
   </div>
 </template>
 
