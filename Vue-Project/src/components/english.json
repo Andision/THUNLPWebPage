@@ -29,6 +29,8 @@
     "leaderboard_submittime": "Submission time",
     "user_operation": "Operation",
     "user_delete": "Delete",
+    "moreinfo_org":"Organization",
+    "moreinfo_author":"Author",
     "faq_content": [
         {
             "title": "How to participate in the CUGE Index evaluation",
