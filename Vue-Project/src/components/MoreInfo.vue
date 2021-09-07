@@ -14,8 +14,18 @@
           <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
             {{item.name}}
           </el-link> -->
+           <div class="section-title"  v-if="show.author!=theNull">
+            {{language.moreinfo_author}}
+            <i class="el-icon-s-custom"></i>
+          </div>
           <pre class="section-content" v-html="show.author">
           </pre>
+        </div>
+        <div class="content-section">
+           <div class="section-title"  v-if="show.org!=theNull">
+            {{language.moreinfo_org}}
+            <i class="el-icon-s-home"></i>
+          </div>
           <pre class="section-content" v-html="show.org">
           </pre>
         </div>
