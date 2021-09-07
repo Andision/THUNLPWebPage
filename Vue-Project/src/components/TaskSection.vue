@@ -8,9 +8,26 @@
       {{sub}}
     </div>
     <div class="content">
-      <el-row :gutter="12" v-for="i in num" :key="i" style="margin-top: 50px;">
+      <el-row :gutter="12" v-for="i in num" :key="i" style="margin-top: 50px; margin-left: -30px;">
         <el-col :span="6" v-for="(j,index) in show.slice(i*4,(i+1)*4)" :key="i+index">
-          <el-tooltip
+          <el-dropdown
+            placement="bottom-end"
+          >
+            <el-col :span="6">
+              <el-card class="box-card">
+                <el-row style="height:100%; vertical-align: -webkit-baseline-middle;">
+                  <el-col :span="6"><div class="card-left">{{j.index}}</div></el-col>
+                  <el-col :span="18" style="height:100%; vertical-align: -webkit-baseline-middle;"><div class="card-right">{{j.title}}</div></el-col>
+                  <!-- <el-col :span="6" class="card-left">{{j.index}}</el-col>
+                  <el-col :span="18" class="card-right">{{j.title}}</el-col> -->
+                </el-row>
+              </el-card>
+            </el-col>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item v-for="(k,kindex) in j.link" :key="k.link+kindex"><el-link class="link" :href="'/#/more?id='+k.link" :underline="false">{{k.title}}</el-link></el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+          <!-- <el-tooltip
             class="item"
             effect="dark"
             placement="bottom"
@@ -25,12 +42,10 @@
                 <el-row style="height:100%; vertical-align: -webkit-baseline-middle;">
                   <el-col :span="6"><div class="card-left">{{j.index}}</div></el-col>
                   <el-col :span="18" style="height:100%; vertical-align: -webkit-baseline-middle;"><div class="card-right">{{j.title}}</div></el-col>
-                  <!-- <el-col :span="6" class="card-left">{{j.index}}</el-col>
-                  <el-col :span="18" class="card-right">{{j.title}}</el-col> -->
                 </el-row>
               </el-card>
             </el-col>
-          </el-tooltip>
+          </el-tooltip> -->
         </el-col>
       </el-row>
     </div>
@@ -109,6 +124,9 @@ export default {
   vertical-align: -webkit-baseline-middle;
   padding-right: 10px;
   border: white;
+}
+.el-popper{
+  width: 230px;
 }
 </style>
 
