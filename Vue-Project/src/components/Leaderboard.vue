@@ -225,7 +225,7 @@
           <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org"> </el-table-column>
-          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center">
+          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" width="160">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -245,8 +245,8 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
