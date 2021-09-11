@@ -47,7 +47,7 @@
       <hr class="second-hr">
       <div class="second-list">
         <ul>
-          <li class="second-list-item" v-for="(item,index) in org" :key="index">
+          <li class="second-list-item-support" v-for="(item,index) in org1" :key="index">
             ●{{kb}} {{kb}}{{ item.zh }}
             <br>
             {{kb}}{{kb}}{{kb}}{{ item.en }}
@@ -57,8 +57,8 @@
       <hr class="second-hr" color="#F5F4FE" />
       <div class="second-logo">
         <!-- <ul> -->
-        <div class="second-logo-item" v-for="(item,index) in logo" :key="index">
-          <img class="pic-logo" :src="item"/>
+        <div class="second-logo-item-support" v-for="(item,index) in logo1" :key="index">
+          <img class="pic-logo-support" :src="item"/>
         </div>
         <!-- </ul> -->
       </div>
@@ -117,6 +117,12 @@ export default {
           en: 'Shanxi University'
         }
       ],
+      org1: [
+        {
+          zh: '北京智源人工智能研究院',
+          en: 'Beijing Academy of Artificial Intelligence，BAAI'
+        }
+      ],
       logo: [
         'https://z3.ax1x.com/2021/06/02/2ltLAx.png',
         'https://z3.ax1x.com/2021/06/02/2ltON6.png',
@@ -129,6 +135,9 @@ export default {
         'https://z3.ax1x.com/2021/06/02/2lNuuj.png',
         'https://z3.ax1x.com/2021/06/02/2lNlEq.png',
         'https://z3.ax1x.com/2021/06/02/2lNMbn.png'
+      ],
+      logo1: [
+        'https://z3.ax1x.com/2021/09/07/ho7fHA.jpg'
       ]
     }
   },
@@ -228,5 +237,24 @@ export default {
   height: 40px;
   display: flex;
 
+}
+.pic-logo-support{
+  width: 150px;
+  height: 40px;
+  display: flex;
+
+}
+.second-logo-item-support{
+  /* list-style-type: none;
+  float:left;
+  text-align: center;
+  margin-bottom: 10px; */
+  margin-left: 800px;
+}
+.second-list-item-support{
+  color: #062A4E;
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 100px;
 }
 </style>
