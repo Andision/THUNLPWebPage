@@ -56,12 +56,16 @@
           <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
-          <el-table-column :label="language.user_operation">
+          <el-table-column :label="language.user_operation" width="180">
             <template slot-scope="scope">
               <el-button
                 size="mini"
                 type="danger"
                 @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
+              <el-button
+                size="mini"
+                type="primary"
+                @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
             </template>
           </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
