@@ -15,18 +15,18 @@
           active-text-color="#FFFFFF"
           id="bar"
         >
-          <div
-            style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
-            @click="handleGoHomePage"
-          >
-            {{language.wyzs}}
-          </div>
-          <div
+          <!-- <div
             style="float: left; margin-top:10px; margin-left: 20px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
           >
             <a href="http://baai.ac.cn">
               <img src="https://z3.ax1x.com/2021/09/07/ho7fHA.jpg" style="height: 30px;">
             </a>
+          </div> -->
+          <div
+            style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
+            @click="handleGoHomePage"
+          >
+            {{language.wyzs}}
           </div>
 
           <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
@@ -37,9 +37,9 @@
             <el-menu-item index="9-1" class="menu-item">简体中文</el-menu-item>
             <el-menu-item index="9-2" class="menu-item">English</el-menu-item>
           </el-submenu>
-          <el-menu-item class="menu-item" index="7" style="float: right;">{{
-            language.app_User
-          }}</el-menu-item>
+          <el-menu-item class="menu-item" index="7" style="float: right;">
+          {{isLogin?language.app_User:language.Login}}
+          </el-menu-item>
           <el-menu-item class="menu-item" index="6" style="float: right;">{{
             language.app_Download
           }}</el-menu-item>
