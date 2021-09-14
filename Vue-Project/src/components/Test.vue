@@ -56,7 +56,7 @@
           <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
           <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
-          <el-table-column :label="language.user_operation" width="160">
+          <el-table-column :label="language.user_operation" width="180">
             <template slot-scope="scope">
               <el-button
                 size="mini"
@@ -65,7 +65,7 @@
               <el-button
                 size="mini"
                 type="primary"
-                @click="handleAdd(scope.$index, scope.row)">修改</el-button>
+                @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
             </template>
           </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
@@ -134,48 +134,6 @@
         </div>
       </div>
     </el-drawer>
-    <el-dialog width="500px">
-      <el-row class="input">
-        <el-input
-          v-model="user.username"
-          :placeholder="language.Username"
-          prefix-icon="el-icon-user"
-          size="large"
-        ></el-input>
-      </el-row>
-
-      <el-row class="input">
-        <el-input
-          type="password"
-          <!-- v-model="user.password" -->
-          @keydown.enter.native="doLogin"
-          :placeholder="language.Password"
-          prefix-icon="el-icon-lock"
-          size="large"
-        ></el-input>
-      </el-row>
-      <el-row class="input">
-        <el-row>
-          <el-col :span="12">
-            <el-checkbox v-model="user.remeber" style="float:left;">{{language.Remeberme}}</el-checkbox>
-          </el-col>
-          <el-col :span="12">
-            <!-- <div style="float:right;">{{language.Forgetpassword}}?</div> -->
-            <el-button type="text" class="forget" @click="handleClickLink('forget')">{{language.Forgetpassword}}?</el-button>
-          </el-col>
-        </el-row>
-      </el-row>
-      <el-row class="input" style="vertical-align: bottom;">
-        <el-button style="width: 100%" type="primary" @click="doLogin">
-          {{language.Login}}
-        </el-button>
-      </el-row>
-      <el-row class="input" style="vertical-align: bottom;">
-        <div>
-          {{language.Notamember}}? <el-button type="text" @click="handleClickLink(false)">{{language.SignUp}}</el-button>
-        </div>
-      </el-row>
-    </el-dialog>
   </div>
 </template>
 
