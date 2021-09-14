@@ -231,6 +231,7 @@ export default {
   text-align: left;
   font-size: 30px;
   margin-top: -50px;
+  text-align:justify
 }
 .second-title{
   color: #062A4E;
