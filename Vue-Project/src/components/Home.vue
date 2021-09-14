@@ -39,27 +39,62 @@
       </div>
     </div>
 
-    <div class="home-second">
+    <div class="home-second" style="margin-top:-50px;">
       <div class="second-title">
         <!-- {{language.home_secondtitle}} -->
         支持单位
       </div>
       <hr class="second-hr">
-      <div class="second-list">
-        <ul>
+      <div class="second-list" style="text-align:center;">
+        <div style="margin:auto;" v-for="(item,index) in org1" :key="index">
+          <el-row>
+            <el-col :span="8" style="min-height:10px;">
+              <div>
+              </div>
+            </el-col>
+            <el-col :span="8" style="text-align:left;">
+              <el-row>
+                ●{{kb}}{{ item.zh }}
+              </el-row>
+              <el-row>
+                {{kb}}{{kb}}{{ item.en }}
+              </el-row>
+            </el-col>
+            <el-col :span="8">
+              <div>
+              </div>
+            </el-col>
+          </el-row>
+        </div>
+        <!-- <ul>
           <li class="second-list-item-support" v-for="(item,index) in org1" :key="index">
             ●{{kb}} {{kb}}{{ item.zh }}
             <br>
             {{kb}}{{kb}}{{kb}}{{ item.en }}
           </li>
-        </ul>
+        </ul> -->
       </div>
       <hr class="second-hr" color="#F5F4FE" />
-      <div class="second-logo">
+      <div class="second-logo" style="text-align:center;">
+        <el-row>
+          <el-col :span="8" style="min-height:10px;">
+            <div>
+            </div>
+          </el-col>
+          <el-col :span="8" style="">
+            <a href="http://baai.ac.cn">
+              <img class="pic-logo-support" src="https://z3.ax1x.com/2021/09/07/ho7fHA.jpg"/>
+            </a>
+          </el-col>
+          <el-col :span="8">
+            <div>
+            </div>
+          </el-col>
+        </el-row>
         <!-- <ul> -->
-        <div class="second-logo-item-support" v-for="(item,index) in logo1" :key="index">
+        <!-- <div class="second-logo-item-support" v-for="(item,index) in logo1" :key="index" style="margin:auto;">
           <img class="pic-logo-support" :src="item"/>
-        </div>
+        </div> -->
         <!-- </ul> -->
       </div>
     </div>
@@ -241,20 +276,20 @@ export default {
 .pic-logo-support{
   width: 150px;
   height: 40px;
-  display: flex;
+  /* display: flex; */
 
 }
 .second-logo-item-support{
   /* list-style-type: none;
   float:left;
-  text-align: center;
   margin-bottom: 10px; */
-  margin-left: 800px;
+  /* margin-left: 800px; */
+  text-align: center;
 }
 .second-list-item-support{
   color: #062A4E;
   font-size: medium;
   font-weight: bold;
-  margin-left: 100px;
+  /* margin-left: 100px; */
 }
 </style>
