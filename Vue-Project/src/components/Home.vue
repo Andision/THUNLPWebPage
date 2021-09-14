@@ -46,7 +46,7 @@
         支持单位 | Supporting Organization
       </div>
       <hr class="second-hr">
-      <div class="second-list" style="text-align:center;">
+      <div class="second-list" style="text-align:center;margin-top:30px;">
         <div style="margin:auto;" v-for="(item,index) in org1" :key="index">
           <el-row>
             <el-col :span="8" style="min-height:10px;">
@@ -55,10 +55,10 @@
             </el-col>
             <el-col :span="8" style="text-align:left;" class="second-list-item">
               <el-row>
-                ●{{kb}}{{ item.zh }}
+                ●{{kb}}{{kb}}{{ item.zh }}
               </el-row>
               <el-row>
-                {{kb}}{{kb}}{{ item.en }}
+                {{kb}}{{kb}}{{kb}}{{ item.en }}
               </el-row>
             </el-col>
             <el-col :span="8">
