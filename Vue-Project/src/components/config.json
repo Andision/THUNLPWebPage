@@ -10,5 +10,6 @@
     "getMoreInfo": "/parser",
     "getSubmitlist": "/commit_record",
     "getEvalReport": "/eval_report",
-    "toDelete": "/delete"
+    "toDelete": "/delete",
+    "toEditLink":"/link_modify"
 }
