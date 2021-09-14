@@ -19,7 +19,9 @@
               <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div> -->
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_yyljcy}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
+                    <span>{{language.leaderboard_yyljcy}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.yyljcy" active-color="#64438D"></el-switch>
@@ -27,7 +29,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_yyljpj}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
+                    <span>{{language.leaderboard_yyljpj}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.yyljpj" active-color="#64438D"></el-switch>
@@ -35,7 +39,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_xxhq}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
+                    <span>{{language.leaderboard_xxhq}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.xxhq" active-color="#64438D"></el-switch>
@@ -43,7 +49,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_yysc}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
+                    <span>{{language.leaderboard_yysc}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch
@@ -54,7 +62,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_dhjh}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
+                    <span>{{language.leaderboard_dhjh}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dhjh" active-color="#64438D"></el-switch>
@@ -62,7 +72,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_dyy}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
+                    <span>{{language.leaderboard_dyy}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
@@ -70,7 +82,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_sxtl}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
+                    <span>{{language.leaderboard_sxtl}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.sxtl" active-color="#64438D"></el-switch>
@@ -113,51 +127,65 @@
                       > -->
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
-                            {{language.leaderboard_yyljcy}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
+                              {{language.leaderboard_yyljcy}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
-                            {{language.leaderboard_yyljpj}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
+                              {{language.leaderboard_yyljpj}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
-                            {{language.leaderboard_xxhq}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
+                              {{language.leaderboard_xxhq}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
-                            {{language.leaderboard_yysc}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
+                              {{language.leaderboard_yysc}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
-                            {{language.leaderboard_dhjh}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
+                              {{language.leaderboard_dhjh}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
-                            {{language.leaderboard_dyy}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
+                              {{language.leaderboard_dyy}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                       <el-col :span="6">
                         <div class="">
-                          <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
-                            {{language.leaderboard_sxtl}}
-                          </el-button>
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
+                              {{language.leaderboard_sxtl}}
+                            </el-button>
+                          </el-tooltip>
                         </div>
                       </el-col>
                     </el-row>
