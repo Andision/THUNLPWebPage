@@ -17,7 +17,8 @@
 
     <div class="home-second">
       <div class="second-title">
-        {{language.home_secondtitle}}
+        <!-- {{language.home_secondtitle}} -->
+        委员单位 | Committee Organization
       </div>
       <hr class="second-hr">
       <div class="second-list">
@@ -42,7 +43,7 @@
     <div class="home-second" style="margin-top:-50px;">
       <div class="second-title">
         <!-- {{language.home_secondtitle}} -->
-        支持单位
+        支持单位 | Supporting Organization
       </div>
       <hr class="second-hr">
       <div class="second-list" style="text-align:center;">
@@ -52,7 +53,7 @@
               <div>
               </div>
             </el-col>
-            <el-col :span="8" style="text-align:left;">
+            <el-col :span="8" style="text-align:left;" class="second-list-item">
               <el-row>
                 ●{{kb}}{{ item.zh }}
               </el-row>
@@ -220,6 +221,7 @@ export default {
   margin: 20px;
   font-size: 40px;
   padding: 50px;
+  margin-top: -50px;
 }
 .titledetail{
   font-weight: normal;
@@ -228,6 +230,7 @@ export default {
   margin: auto;
   text-align: left;
   font-size: 30px;
+  margin-top: -50px;
 }
 .second-title{
   color: #062A4E;
