@@ -219,11 +219,12 @@ export default {
   font-weight: bold;
   margin: 20px;
   font-size: 40px;
+  padding: 50px;
 }
 .titledetail{
   font-weight: normal;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
   margin: auto;
   text-align: left;
   font-size: 30px;
