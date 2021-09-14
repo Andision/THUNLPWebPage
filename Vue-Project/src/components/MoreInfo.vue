@@ -253,11 +253,11 @@ pre{
   text-align: left;
   margin-bottom: 30px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 35px;
 }
 .section-content{
   letter-spacing: 0px;
-  font-size: 20px;
+  font-size: 25px;
 }
 .section-color{
   padding: 50px;
