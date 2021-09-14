@@ -70,6 +70,31 @@
           </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
+
+        <el-dialog :visible.sync="visible" width="500px">
+          <el-row class="input">
+            <el-input
+              v-model="link.code"
+              :placeholder="language.user_code"
+              prefix-icon="el-icon-paperclip"
+              size="large"
+            ></el-input>
+          </el-row>
+
+          <el-row class="input">
+            <el-input
+              v-model="link.paper"
+              :placeholder="language.user_paper"
+              prefix-icon="el-icon-paperclip"
+              size="large"
+            ></el-input>
+          </el-row>
+          <el-row class="input" style="vertical-align: bottom;">
+            <el-button style="width: 100%" type="primary" @click="handleSubmit">
+              {{language.user_submit}}
+            </el-button>
+          </el-row>
+        </el-dialog>
       </div>
     </el-card>
 
@@ -144,9 +169,15 @@ export default {
   data () {
     return {
       tableData: [],
+      tb: {},
       drawerInfo: {
       },
-      drawer: false
+      drawer: false,
+      visible: false,
+      link: {
+        paper: '',
+        code: ''
+      }
     }
   },
   props: {
@@ -249,6 +280,34 @@ export default {
         }
       })
     },
+    handleAdd (a, b) {
+      this.visible = true
+      this.tb = b
+      console.log('add', a, b, this.tb)
+    },
+    handleSubmit (a, b) {
+      this.visible = false
+      let formData = new FormData()
+      formData.append('type', 'paper')
+      formData.append('paper_url', this.link.paper)
+      formData.append('code_url', this.link.code)
+      formData.append('fileid', this.tb.fileid)
+      this.$axios.post(config.API + config.toEditLink, formData).then(res => {
+        if (res.status === 200) {
+          console.log('paper', res)
+          location.reload()
+        }
+      })
+      // formData.append('type', 'code')
+      // formData.append('url', this.link.code)
+      // formData.append('fileid', this.tb.fileid)
+      // this.$axios.post(config.API + config.toEditLink, formData).then(res => {
+      //   if (res.status === 200) {
+      //     console.log('code', res)
+      //     // location.reload()
+      //   }
+      // })
+    },
     handleRowClick (row, column, event) {
       console.log(column)
       // this.drawerInfo.rank = row.rank
@@ -338,5 +397,8 @@ export default {
 }
 .draw-text{
   margin-top: 20px;
+}
+.input{
+  margin:30px;
 }
 </style>
