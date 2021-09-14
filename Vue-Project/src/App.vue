@@ -26,7 +26,8 @@
             style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
             @click="handleGoHomePage"
           >
-            {{language.wyzs}}
+            <!-- {{language.wyzs}} -->
+            <span>智源指数 </span><span style="font-size:27px;">CUGE</span>
           </div>
 
           <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
