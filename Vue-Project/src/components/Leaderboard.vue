@@ -89,8 +89,8 @@
       </div>
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
-          :header-row-style="{'color': '#ffffff','font-size':'17px'}"
-          :header-cell-style="{background:'#64438D'}"
+          :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
+          :header-cell-style="{'background':'#64438D', 'text-align':'center'}"
           :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
@@ -222,9 +222,9 @@
               </el-container>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
-          <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
-          <el-table-column :label="language.leaderboard_org" prop="org"> </el-table-column>
+          <el-table-column :label="language.leaderboard_rank" prop="rank" width="100"> </el-table-column>
+          <el-table-column :label="language.leaderboard_model" prop="name" align="center"> </el-table-column>
+          <el-table-column :label="language.leaderboard_org" prop="org" align="center"> </el-table-column>
           <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" width="160">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
@@ -244,14 +244,56 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center"> </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
+                <span>{{language.leaderboard_yyljcy}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
+                <span>{{language.leaderboard_yyljpj}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
+                <span>{{language.leaderboard_xxhq}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
+                <span>{{language.leaderboard_yysc}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
+                <span>{{language.leaderboard_dhjh}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
+                <span>{{language.leaderboard_dyy}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
+                <span>{{language.leaderboard_sxtl}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
           <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
