@@ -43,7 +43,7 @@
     "moreinfo_author":"Author",
     "faq_content": [
         {
-            "title": "How to participate in the CUGE Index evaluation",
+            "title": "How to participate in the CUGE Index evaluation?",
             "details": [
                 "Download all datasets on the introduction page of the CUGE Index framework, or download a specific dataset on the data download page.",
                 "Generate the prediction result file of the test set. The format of the prediction result file is defined in the README file of the corresponding dataset.",
