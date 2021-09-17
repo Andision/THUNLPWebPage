@@ -21,7 +21,7 @@
         委员单位 | Committee Organization
       </div>
       <hr class="second-hr">
-      <div class="second-list">
+      <!-- <div class="second-list">
         <ul>
           <li class="second-list-item" v-for="(item,index) in org" :key="index">
             ●{{kb}} {{kb}}{{ item.zh }}
@@ -29,15 +29,21 @@
             {{kb}}{{kb}}{{kb}}{{ item.en }}
           </li>
         </ul>
+      </div> -->
+      <div v-for="(row,index1) in neworg" :key="index1">
+        <el-row>
+          <el-col :span="6" v-for="(col,index2) in row" :key="index2">
+            <el-image :src="col" style="width:200px; height:60px;background-color:white;"></el-image>
+          </el-col>
+        </el-row>
+        <hr class="second-hr" color="#F5F4FE" />
       </div>
-      <hr class="second-hr" color="#F5F4FE" />
+      <!-- <hr class="second-hr" color="#F5F4FE" />
       <div class="second-logo">
-        <!-- <ul> -->
         <div class="second-logo-item" v-for="(item,index) in logo" :key="index">
           <img class="pic-logo" :src="item"/>
         </div>
-        <!-- </ul> -->
-      </div>
+      </div> -->
     </div>
 
     <div class="home-second" style="margin-top:-50px;">
@@ -47,7 +53,7 @@
       </div>
       <hr class="second-hr">
       <div class="second-list" style="text-align:center;margin-top:30px;">
-        <div style="margin:auto;" v-for="(item,index) in org1" :key="index">
+        <!-- <div style="margin:auto;" v-for="(item,index) in org1" :key="index">
           <el-row>
             <el-col :span="8" style="min-height:10px;">
               <div>
@@ -66,17 +72,14 @@
               </div>
             </el-col>
           </el-row>
-        </div>
-        <!-- <ul>
-          <li class="second-list-item-support" v-for="(item,index) in org1" :key="index">
-            ●{{kb}} {{kb}}{{ item.zh }}
-            <br>
-            {{kb}}{{kb}}{{kb}}{{ item.en }}
-          </li>
-        </ul> -->
+        </div> -->
+
       </div>
       <hr class="second-hr" color="#F5F4FE" />
-      <div class="second-logo" style="text-align:center;">
+      <a href="https://www.baai.ac.cn/">
+        <el-image src="https://z3.ax1x.com/2021/09/16/4nzcTS.jpg" style="width:200px; height:80px;"></el-image>
+      </a>
+      <!-- <div class="second-logo" style="text-align:center;">
         <el-row>
           <el-col :span="8" style="min-height:10px;">
             <div>
@@ -95,9 +98,8 @@
         <!-- <ul> -->
         <!-- <div class="second-logo-item-support" v-for="(item,index) in logo1" :key="index" style="margin:auto;">
           <img class="pic-logo-support" :src="item"/>
-        </div> -->
-        <!-- </ul> -->
-      </div>
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -174,6 +176,20 @@ export default {
       ],
       logo1: [
         'https://z3.ax1x.com/2021/09/07/ho7fHA.jpg'
+      ],
+      neworg: [
+        ['https://z3.ax1x.com/2021/09/16/4nx8Ug.jpg',
+          'https://z3.ax1x.com/2021/09/16/4nxm8A.png',
+          'https://z3.ax1x.com/2021/09/16/4nxV4H.png',
+          'https://z3.ax1x.com/2021/09/16/4nxeCd.jpg'],
+        ['https://z3.ax1x.com/2021/09/16/4nxQDf.png',
+          'https://z3.ax1x.com/2021/09/16/4nx3VS.png',
+          'https://z3.ax1x.com/2021/09/16/4nxMKP.png',
+          'https://z3.ax1x.com/2021/09/16/4nxlb8.png'],
+        ['https://z3.ax1x.com/2021/09/16/4nxuvt.png',
+          'https://z3.ax1x.com/2021/09/16/4nxG5Q.jpg',
+          'https://z3.ax1x.com/2021/09/16/4nxngI.png']
+
       ]
     }
   },
