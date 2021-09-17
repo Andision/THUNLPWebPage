@@ -11,6 +11,7 @@ import MoreInfo from '@/components/MoreInfo'
 import Task from '@/components/Task'
 import Leaderboard from '@/components/Leaderboard'
 import Report from '@/components/Report'
+import AboutUs from '@/components/AboutUs'
 
 Vue.use(Router)
 
@@ -95,6 +96,14 @@ export default new Router({
       },
       name: 'Report',
       component: Report
+    },
+    {
+      path: '/about',
+      meta: {
+        title: '智源指数'
+      },
+      name: 'AboutUs',
+      component: AboutUs
     }
   ]
 })
