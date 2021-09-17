@@ -69,17 +69,17 @@
     "moreinfo_author":"Author",
     "faq_content": [
         {
-            "title": "How to participate in the CUGE Index evaluation?",
+            "title": "How to participate in CUGE evaluation?",
             "details": [
-                "Download all datasets on the introduction page of the CUGE Index framework, or download a specific dataset on the data download page.",
+                "Download all datasets on the introduction page of CUGE framework, or download a specific dataset on the data download page.",
                 "Generate the prediction result file of the test set. The format of the prediction result file is defined in the README file of the corresponding dataset.",
                 "Name the prediction result file according to the correct submission file name required in the README file of the corresponding dataset and compress it into a zip format. Log in to your personal account and submit it on the Submit page."
             ]
         },
         {
-            "title": "How does the leaderboard of CUGE Index work?",
+            "title": "How does the leaderboard of CUGE work?",
             "details": [
-                "The CUGE Index leaderboard adopts a multi-level scoring strategy. Based on the 'capability-task-dataset' framework, the leaderboard calculates the scores of each dataset, task, capability, as well as the overall CUGE Index score recursively from the bottom up, by averaging the scores of current level.",
+                "CUGE leaderboard adopts a multi-level scoring strategy. Based on the 'capability-task-dataset' framework, the leaderboard calculates the scores of each dataset, task, capability, as well as the overall CUGE Index score recursively from the bottom up, by averaging the scores of current level.",
                 "In order to eliminate the differences between different datasets and evaluation metrics, the CUGE Index normalizes each evaluation metric score of the participating models, based on the scores of the standard baseline model (mT5-small), and then calculates the scores of each level from the bottom up (shown in parentheses in the leaderboard)."
             ]
         },
@@ -93,20 +93,20 @@
         {
             "title": "How to download the dataset?",
             "details": [
-                "All datasets can be downloaded with one click on the introduction page of the CUGE Index framework.",
+                "All datasets can be downloaded with one click on the introduction page of CUGE framework.",
                 "You can also download a specific dataset in the dataset list."
             ]
         },
         {
-            "title": "What is the data usage license of CUGE Index?",
+            "title": "What is the data usage license of CUGE?",
             "details": [
-                "The data provided by CUGE Index is for individual research purposes only, and commercial use is prohibited."
+                "The data provided by CUGE is for individual research purposes only, and commercial use is prohibited."
             ]
         },
         {
-            "title": "How to give feedback on the CUGE Index?",
+            "title": "How to give feedback on CUGE?",
             "details": [
-                "The CUGE index system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future. For now, please contact xxxx."
+                "CUGE system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future. For now, you can create issues at CUGE project on GitHub if you have any suggestions or comments for us."
             ]
         }
     ],
