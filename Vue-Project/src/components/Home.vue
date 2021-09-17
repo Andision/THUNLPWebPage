@@ -95,8 +95,7 @@
             </div>
           </el-col>
         </el-row>
-        <!-- <ul> -->
-        <!-- <div class="second-logo-item-support" v-for="(item,index) in logo1" :key="index" style="margin:auto;">
+        <div class="second-logo-item-support" v-for="(item,index) in logo1" :key="index" style="margin:auto;">
           <img class="pic-logo-support" :src="item"/>
         </div>
       </div> -->
