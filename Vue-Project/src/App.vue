@@ -41,6 +41,9 @@
           <el-menu-item class="menu-item" index="7" style="float: right;">
           {{isLogin?language.app_User:language.Login}}
           </el-menu-item>
+          <el-menu-item class="menu-item" index="10" style="float: right;">{{
+            language.app_About
+          }}</el-menu-item>
           <el-menu-item class="menu-item" index="6" style="float: right;">{{
             language.app_Download
           }}</el-menu-item>
@@ -215,6 +218,9 @@ export default {
           this.language = en
           sessionStorage.setItem('language', 'en')
           this.handleReload()
+          break
+        case '10':
+          this.$router.push({path: '/about'})
           break
       }
     },
