@@ -67,25 +67,14 @@
       <el-main class="main" style="padding: 0;"><router-view :language="language" v-if="isFresh"/></el-main>
       <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
-          <a href="http://www3.clustrmaps.com/counter/maps.php?url=http://nlp.csai.tsinghua.edu.cn/~lzy/" class="clustrMapsLink">
-            <img src="http://www3.clustrmaps.com/counter/index2.php?url=http://nlp.csai.tsinghua.edu.cn/~lzy/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
-          </a>
-          <!-- <el-row>
-            <el-col :span="6"><div>LOGO</div></el-col>
-            <el-col :span="6" style="text-align: left;">
-              <div>联系我们</div>
-              <div>123@tsinghua.edu.cn</div>
-            </el-col>
+          <el-row>
             <el-col :span="12">
-              <div>
-                <el-row>
-                  <el-col :span="5" :offset="9"><div>链接</div></el-col>
-                  <el-col :span="5"><div>反馈</div></el-col>
-                  <el-col :span="5"><div>帮助</div></el-col>
-                </el-row>
-              </div>
+              <a href=" "  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=sRtvKqoXFHRrS9V6nm3IDtLYieMCka7pZnXkwO6ZWyQ&cl=ffffff" /></a>
             </el-col>
-          </el-row> -->
+            <el-col :span="12" style="padding-top:30px;">
+              <a href="https://github.com/TsinghuaAI/CUGE">https://github.com/TsinghuaAI/CUGE</a>
+            </el-col>
+          </el-row>
         </div>
       </el-footer>
     </el-container>
