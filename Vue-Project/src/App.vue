@@ -67,6 +67,9 @@
       <el-main class="main" style="padding: 0;"><router-view :language="language" v-if="isFresh"/></el-main>
       <el-footer class="footer" style="padding: 0;">
         <div class="footer-div">
+          <a href="http://www3.clustrmaps.com/counter/maps.php?url=http://nlp.csai.tsinghua.edu.cn/~lzy/" class="clustrMapsLink">
+            <img src="http://www3.clustrmaps.com/counter/index2.php?url=http://nlp.csai.tsinghua.edu.cn/~lzy/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" />
+          </a>
           <!-- <el-row>
             <el-col :span="6"><div>LOGO</div></el-col>
             <el-col :span="6" style="text-align: left;">
@@ -311,10 +314,10 @@ body,
 }
 
 .footer-div {
-  height: 100px;
+  height: 150px;
   background-color: black;
   color: white;
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .el-menu--horizontal .el-menu-item.is-active {
@@ -324,5 +327,9 @@ body,
 <style>
 .el-menu-item{
   font-size: 20px;
+}
+
+.clustrMapsLink{
+  margin-top: -20px;
 }
 </style>
