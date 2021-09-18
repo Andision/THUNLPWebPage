@@ -44,7 +44,7 @@
             <!-- <i class="el-icon-tickets"></i> -->
           </div>
           <div class="section-content">
-            <el-image src="https://z3.ax1x.com/2021/09/16/4nv1h9.png"></el-image>
+            <el-image src="https://z3.ax1x.com/2021/09/18/41ED6P.png"></el-image>
           </div>
         </div>
       </div>
