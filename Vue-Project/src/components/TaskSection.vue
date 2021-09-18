@@ -8,7 +8,7 @@
       {{sub}}
     </div>
     <div class="content">
-      <el-row :gutter="12" v-for="i in num" :key="i" style="margin-top: 50px; margin-left: -30px;">
+      <el-row :gutter="12" v-for="i in num" :key="i" style="margin-top: 50px;" type="flex" justify="start">
         <el-col :span="6" v-for="(j,index) in show.slice(i*4,(i+1)*4)" :key="i+index">
           <el-dropdown
             placement="bottom-end"
@@ -153,7 +153,7 @@ export default {
 }
 .content{
   margin-top: -10px;
-  margin-left: -50px;
+  /* margin-left: -50px; */
 }
 .box-card{
   background-color: #7857A1;
