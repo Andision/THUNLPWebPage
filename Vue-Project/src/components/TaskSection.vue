@@ -18,7 +18,7 @@
                 <el-row style="height:100%; vertical-align: -webkit-baseline-middle;">
                   <el-col :span="6"><div class="card-left">{{j.index}}</div></el-col>
                   <el-col :span="18">
-                    <div style="display: flex; display: -webkit-flex; height:65px; justify-content: center; align-items: center;">
+                    <div style="display: flex; display: -webkit-flex; height:65px; justify-content: left; align-items: center;">
                       <div class="card-right">{{j.title}}</div>
                     </div>
                   </el-col>
@@ -143,19 +143,21 @@ export default {
   font-size: xx-large;
   text-align: left;
   margin-top: 20px;
+  margin-left: 20px;
 }
 .sub{
   font-size: large;
   text-align: left;
   margin-top: 10px;
+  margin-left: 20px;
 }
 .content{
   margin-top: -10px;
-  margin-left: -5px;
+  margin-left: -50px;
 }
 .box-card{
   background-color: #7857A1;
-  width: 230px;
+  width: 240px;
   height: 65px;
   /* margin-top: 20px; */
   margin: auto;
