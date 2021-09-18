@@ -10,6 +10,8 @@
         <div class="section-content" v-for="(key1,index1) in key.details" :key="index1">
           {{key1}}
         </div>
+        <pre class="section-content" v-for="(key2,index2) in key.pre" :key="index2" v-html="key2">
+        </pre>
       </el-collapse-item>
     </el-collapse>
     <!-- <el-table
