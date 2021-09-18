@@ -12,23 +12,19 @@
             <el-switch v-model="showAll" active-color="#64438D"> </el-switch>
           </div>
           <hr />
-          <div class="title-sub">
-            <div
-              style="
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-              "
-            >
-              <!-- <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div></el-col>
-              <el-col :span="4"><div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div></el-col> -->
+                    <div class="title-sub">
+            <div style="display:flex;flex-direction:row;justify-content: space-between;">
+              <!-- <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_sjnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sj" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_ljnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.lj" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_jsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.js" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_szjsnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.szjs" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_scnl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.sc" active-color="#64438D"></el-switch></div></div>
+              <div class="title-sub-section"><div class="title-sub-section-text">{{language.task_dyynl}}</div><div class="title-sub-section-btn"><el-switch v-model="s.dyy" active-color="#64438D"></el-switch></div></div> -->
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_yyljcy}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
+                    <span>{{language.leaderboard_yyljcy}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.yyljcy" active-color="#64438D"></el-switch>
@@ -36,7 +32,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_yyljpj}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
+                    <span>{{language.leaderboard_yyljpj}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.yyljpj" active-color="#64438D"></el-switch>
@@ -44,7 +42,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_xxhq}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
+                    <span>{{language.leaderboard_xxhq}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.xxhq" active-color="#64438D"></el-switch>
@@ -52,7 +52,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_yysc}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
+                    <span>{{language.leaderboard_yysc}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch
@@ -63,7 +65,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_dhjh}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
+                    <span>{{language.leaderboard_dhjh}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dhjh" active-color="#64438D"></el-switch>
@@ -71,7 +75,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_dyy}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
+                    <span>{{language.leaderboard_dyy}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
@@ -79,7 +85,9 @@
               </div>
               <div class="title-sub-section">
                 <div class="title-sub-section-text">
-                  {{language.leaderboard_sxtl}}
+                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
+                    <span>{{language.leaderboard_sxtl}}</span>
+                  </el-tooltip>
                 </div>
                 <div class="title-sub-section-btn">
                   <el-switch v-model="s.sxtl" active-color="#64438D"></el-switch>
