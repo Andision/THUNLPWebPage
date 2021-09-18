@@ -250,7 +250,7 @@
               </el-container>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_rank" prop="rank" width="100"> </el-table-column>
+          <el-table-column :label="language.leaderboard_rank" prop="rank" width="60"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name" align="center"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org" align="center"> </el-table-column>
           <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" width="160">
@@ -273,14 +273,14 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right">
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
                 <span>{{language.leaderboard_yyljcy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right">
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
                 <span>{{language.leaderboard_yyljpj}}</span>
