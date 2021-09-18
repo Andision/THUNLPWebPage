@@ -106,7 +106,10 @@
         {
             "title": "How to give feedback on CUGE?",
             "details": [
-                "CUGE system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future. For now, you can create issues at CUGE project on GitHub if you have any suggestions or comments for us."
+                "CUGE system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future."
+            ],
+            "pre":[
+                "<div>For now, you can create issues at <a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a> project on GitHub if you have any suggestions or comments for us.</div>"
             ]
         }
     ],
