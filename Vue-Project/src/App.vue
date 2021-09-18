@@ -72,7 +72,7 @@
               <a href=" "  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=sRtvKqoXFHRrS9V6nm3IDtLYieMCka7pZnXkwO6ZWyQ&cl=ffffff" /></a>
             </el-col>
             <el-col :span="12" style="padding-top:30px;">
-              <a href="https://github.com/TsinghuaAI/CUGE" style="font-size:xx-large;">联系我们</a>
+              <a href="https://github.com/TsinghuaAI/CUGE" style="font-size:xx-large;text-decoration:none;color:white;">联系我们</a>
             </el-col>
           </el-row>
         </div>
