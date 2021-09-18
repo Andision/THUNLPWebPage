@@ -177,17 +177,17 @@ export default {
         'https://z3.ax1x.com/2021/09/07/ho7fHA.jpg'
       ],
       neworg: [
-        ['https://z3.ax1x.com/2021/09/16/4nx8Ug.jpg',
-          'https://z3.ax1x.com/2021/09/16/4nxm8A.png',
-          'https://z3.ax1x.com/2021/09/16/4nxV4H.png',
-          'https://z3.ax1x.com/2021/09/16/4nxeCd.jpg'],
-        ['https://z3.ax1x.com/2021/09/16/4nxQDf.png',
-          'https://z3.ax1x.com/2021/09/16/4nx3VS.png',
-          'https://z3.ax1x.com/2021/09/16/4nxMKP.png',
-          'https://z3.ax1x.com/2021/09/16/4nxlb8.png'],
-        ['https://z3.ax1x.com/2021/09/16/4nxuvt.png',
-          'https://z3.ax1x.com/2021/09/16/4nxG5Q.jpg',
-          'https://z3.ax1x.com/2021/09/16/4nxngI.png']
+        ['https://z3.ax1x.com/2021/09/18/41kB4A.png',
+          'https://z3.ax1x.com/2021/09/18/41k90g.png',
+          'https://z3.ax1x.com/2021/09/18/41kpnS.png',
+          'https://z3.ax1x.com/2021/09/18/41kFts.png'],
+        ['https://z3.ax1x.com/2021/09/18/41kC7Q.png',
+          'https://z3.ax1x.com/2021/09/18/41kkhn.png',
+          'https://z3.ax1x.com/2021/09/18/41kV10.png',
+          'https://z3.ax1x.com/2021/09/18/41kEpq.png'],
+        ['https://z3.ax1x.com/2021/09/18/41kZcV.png',
+          'https://z3.ax1x.com/2021/09/18/41kikj.png',
+          'https://z3.ax1x.com/2021/09/18/41knnU.png']
 
       ]
     }
