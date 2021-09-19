@@ -24,7 +24,7 @@
           <div class="section-content">
             <!-- <el-image :src="language.about_pic"></el-image> -->
             <el-row :gutter="40">
-              <el-col :span="4.8" v-for="(key,index) in head" :key="index">
+              <el-col :span="25" v-for="(key,index) in head" :key="index">
                 <el-row class="head-word">
                   <el-image :src="key.pic"></el-image>
                 </el-row>
@@ -169,6 +169,9 @@ pre{
 }
 .bg-color{
   background-color: #eceaff;
+}
+.el-col-25{
+  width: 20%;
 }
 </style>
 <style scoped>
