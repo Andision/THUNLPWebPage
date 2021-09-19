@@ -34,7 +34,7 @@
           <el-row class="input">
             <el-input
               v-model="submit.org"
-              :placeholder="language.leaderboard_org"
+              :placeholder="language.submit_org"
               size="large"
             ></el-input>
           </el-row>
