@@ -104,7 +104,7 @@
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
           :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
-          :header-cell-style="{'background':'#64438D', 'text-align':'center'}"
+          :header-cell-style="{'background':'#64438D'}"
           :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
