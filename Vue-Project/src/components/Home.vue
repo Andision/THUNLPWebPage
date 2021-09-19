@@ -177,19 +177,31 @@ export default {
         'https://z3.ax1x.com/2021/09/07/ho7fHA.jpg'
       ],
       neworg: [
-        ['https://z3.ax1x.com/2021/09/18/41kB4A.png',
-          'https://z3.ax1x.com/2021/09/18/41k90g.png',
-          'https://z3.ax1x.com/2021/09/18/41kpnS.png',
-          'https://z3.ax1x.com/2021/09/18/41kFts.png'],
-        ['https://z3.ax1x.com/2021/09/18/41kC7Q.png',
-          'https://z3.ax1x.com/2021/09/18/41kkhn.png',
-          'https://z3.ax1x.com/2021/09/18/41kV10.png',
-          'https://z3.ax1x.com/2021/09/18/41kEpq.png'],
-        ['https://z3.ax1x.com/2021/09/18/41kZcV.png',
-          'https://z3.ax1x.com/2021/09/18/41kikj.png',
-          'https://z3.ax1x.com/2021/09/18/41knnU.png']
-
+        ['https://z3.ax1x.com/2021/09/19/4310Bj.png',
+          'https://z3.ax1x.com/2021/09/19/431UgS.png',
+          'https://z3.ax1x.com/2021/09/19/431N38.jpg',
+          'https://z3.ax1x.com/2021/09/19/431ajg.png'],
+        ['https://z3.ax1x.com/2021/09/19/431wuQ.png',
+          'https://z3.ax1x.com/2021/09/19/431BHs.png',
+          'https://z3.ax1x.com/2021/09/19/431rEn.png',
+          'https://z3.ax1x.com/2021/09/19/431sNq.png'],
+        ['https://z3.ax1x.com/2021/09/19/431y40.png',
+          'https://z3.ax1x.com/2021/09/19/431cCV.jpg',
+          'https://z3.ax1x.com/2021/09/19/431g3T.jpg']
       ]
+      // neworg: [
+      //   ['https://z3.ax1x.com/2021/09/18/41kB4A.png',
+      //     'https://z3.ax1x.com/2021/09/18/41k90g.png',
+      //     'https://z3.ax1x.com/2021/09/18/41kpnS.png',
+      //     'https://z3.ax1x.com/2021/09/18/41kFts.png'],
+      //   ['https://z3.ax1x.com/2021/09/18/41kC7Q.png',
+      //     'https://z3.ax1x.com/2021/09/18/41kkhn.png',
+      //     'https://z3.ax1x.com/2021/09/18/41kV10.png',
+      //     'https://z3.ax1x.com/2021/09/18/41kEpq.png'],
+      //   ['https://z3.ax1x.com/2021/09/18/41kZcV.png',
+      //     'https://z3.ax1x.com/2021/09/18/41kikj.png',
+      //     'https://z3.ax1x.com/2021/09/18/41knnU.png']
+      // ]
     }
   },
   props: {
