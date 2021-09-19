@@ -21,7 +21,7 @@
         委员单位 | Committee Organization
       </div>
       <hr class="second-hr">
-      <!-- <div class="second-list">
+      <div class="second-list">
         <ul>
           <li class="second-list-item" v-for="(item,index) in org" :key="index">
             ●{{kb}} {{kb}}{{ item.zh }}
@@ -29,21 +29,21 @@
             {{kb}}{{kb}}{{kb}}{{ item.en }}
           </li>
         </ul>
-      </div> -->
-      <div v-for="(row,index1) in neworg" :key="index1">
+      </div>
+      <!-- <div v-for="(row,index1) in neworg" :key="index1">
         <el-row>
           <el-col :span="6" v-for="(col,index2) in row" :key="index2">
             <el-image :src="col" style="width:200px; height:60px;background-color:white;"></el-image>
           </el-col>
         </el-row>
         <hr class="second-hr" color="#F5F4FE" />
-      </div>
-      <!-- <hr class="second-hr" color="#F5F4FE" />
+      </div> -->
+      <hr class="second-hr" color="#F5F4FE" />
       <div class="second-logo">
         <div class="second-logo-item" v-for="(item,index) in logo" :key="index">
           <img class="pic-logo" :src="item"/>
         </div>
-      </div> -->
+      </div>
     </div>
 
     <div class="home-second" style="margin-top:-50px;">
