@@ -183,12 +183,12 @@ export default {
   methods: {},
   mounted: function () {
     this.id = this.$route.query.id
-    console.log(this.id)
+    console.log(this.id, this.language.language)
     var useURL = ''
     if (this.language.language === 'en') {
-      useURL = config.getMoreInfoZH
-    } else {
       useURL = config.getMoreInfoEN
+    } else {
+      useURL = config.getMoreInfoZH
     }
     this.$axios.get(config.API + useURL + '?dataset_id=' + this.id).then(res => {
       console.log(res)
