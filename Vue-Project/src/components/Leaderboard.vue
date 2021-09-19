@@ -272,7 +272,7 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" width="120"> </el-table-column>
           <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
@@ -294,35 +294,35 @@
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right">
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
                 <span>{{language.leaderboard_yysc}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right">
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
                 <span>{{language.leaderboard_dhjh}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right">
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
                 <span>{{language.leaderboard_dyy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right">
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
                 <span>{{language.leaderboard_sxtl}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
+          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" width="120"> </el-table-column>
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
