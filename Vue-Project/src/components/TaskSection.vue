@@ -1,7 +1,9 @@
 <template>
   <el-card class="all">
     <div class="title">
-      {{title}}
+      <el-tooltip effect="dark" :content="hint" placement="top">
+        <span>{{title}}</span>
+        </el-tooltip>
     </div>
     <div class="sub">
       <!-- 识别和记忆世界知识 -->
@@ -108,6 +110,7 @@ export default {
   props: {
     data: Array,
     title: String,
+    hint: String,
     language: String,
     sub: String
   },
