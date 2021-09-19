@@ -251,8 +251,8 @@
             </template>
           </el-table-column>
           <el-table-column :label="language.leaderboard_rank" prop="rank" width="60"> </el-table-column>
-          <el-table-column :label="language.leaderboard_model" prop="name" align="center"> </el-table-column>
-          <el-table-column :label="language.leaderboard_org" prop="org" align="center"> </el-table-column>
+          <el-table-column :label="language.leaderboard_model" prop="name" align="center" width="100"> </el-table-column>
+          <el-table-column :label="language.leaderboard_org" prop="org" align="center" width="120"> </el-table-column>
           <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" width="160">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
