@@ -120,6 +120,7 @@
           <TaskSection
             :data="alldata.all['语言理解能力-词句级']"
             :title="language.leaderboard_yyljcy"
+            :hint="language.leaderboard_yyljcy_hint"
             :language="language.language"
             :sub="language.hint_yyljcy"
           ></TaskSection>
@@ -128,6 +129,7 @@
           <TaskSection
             :data="alldata.all['语言理解能力-篇章级']"
             :title="language.leaderboard_yyljpj"
+            :hint="language.leaderboard_yyljpj_hint"
             :language="language.language"
             :sub="language.hint_yyljpj"
           ></TaskSection>
@@ -136,6 +138,7 @@
           <TaskSection
             :data="alldata.all.信息获取及问答能力"
             :title="language.leaderboard_xxhq"
+            :hint="language.leaderboard_xxhq_hint"
             :language="language.language"
             :sub="language.hint_xxhq"
           ></TaskSection>
@@ -144,6 +147,7 @@
           <TaskSection
             :data="alldata.all.语言生成能力"
             :title="language.leaderboard_yysc"
+            :hint="language.leaderboard_yysc_hint"
             :language="language.language"
             :sub="language.hint_yysc"
           ></TaskSection>
@@ -152,6 +156,7 @@
           <TaskSection
             :data="alldata.all.对话交互能力"
             :title="language.leaderboard_dhjh"
+            :hint="language.leaderboard_dhjh_hint"
             :language="language.language"
             :sub="language.hint_dhjh"
           ></TaskSection>
@@ -160,6 +165,7 @@
           <TaskSection
             :data="alldata.all.多语言能力"
             :title="language.leaderboard_dyy"
+            :hint="language.leaderboard_dyy_hint"
             :language="language.language"
             :sub="language.hint_dyy"
           ></TaskSection>
@@ -168,6 +174,7 @@
           <TaskSection
             :data="alldata.all.数学推理能力"
             :title="language.leaderboard_sxtl"
+            :hint="language.leaderboard_sxtl_hint"
             :language="language.language"
             :sub="language.hint_sxtl"
           ></TaskSection>
@@ -214,6 +221,7 @@
           <TaskSection
             :data="alldata.jj['语言理解能力-词句级']"
             :title="language.leaderboard_yyljcy"
+            :hint="language.leaderboard_yyljcy_hint"
             :language="language.language"
             :sub="language.hint_yyljcy"
           ></TaskSection>
@@ -222,6 +230,7 @@
           <TaskSection
             :data="alldata.jj['语言理解能力-篇章级']"
             :title="language.leaderboard_yyljpj"
+            :hint="language.leaderboard_yyljpj_hint"
             :language="language.language"
             :sub="language.hint_yyljpj"
           ></TaskSection>
@@ -230,6 +239,7 @@
           <TaskSection
             :data="alldata.jj.信息获取及问答能力"
             :title="language.leaderboard_xxhq"
+            :hint="language.leaderboard_xxhq_hint"
             :language="language.language"
             :sub="language.hint_xxhq"
           ></TaskSection>
@@ -238,6 +248,7 @@
           <TaskSection
             :data="alldata.jj.语言生成能力"
             :title="language.leaderboard_yysc"
+            :hint="language.leaderboard_yysc_hint"
             :language="language.language"
             :sub="language.hint_yysc"
           ></TaskSection>
@@ -246,6 +257,7 @@
           <TaskSection
             :data="alldata.jj.对话交互能力"
             :title="language.leaderboard_dhjh"
+            :hint="language.leaderboard_dhjh_hint"
             :language="language.language"
             :sub="language.hint_dhjh"
           ></TaskSection>
@@ -254,6 +266,7 @@
           <TaskSection
             :data="alldata.jj.多语言能力"
             :title="language.leaderboard_dyy"
+            :hint="language.leaderboard_dyy_hint"
             :language="language.language"
             :sub="language.hint_dyy"
           ></TaskSection>
@@ -262,6 +275,7 @@
           <TaskSection
             :data="alldata.jj.数学推理能力"
             :title="language.leaderboard_sxtl"
+            :hint="language.leaderboard_sxtl_hint"
             :language="language.language"
             :sub="language.hint_sxtl"
           ></TaskSection>
