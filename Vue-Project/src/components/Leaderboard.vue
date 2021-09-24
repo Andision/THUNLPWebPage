@@ -511,7 +511,82 @@ export default {
             value: [90.62, 86.36, 23.98, 59.27, 35.37, 34.8]
           }
         ]
+      },
+      pic_zh: {
+        indicator: [
+          {
+            name: '数学推理',
+            max: 500
+          },
+          {
+            name: '对话交互',
+            max: 500
+          },
+          {
+            name: '语言生成',
+            max: 500
+          },
+          {
+            name: '信息获取及问答',
+            max: 500
+          },
+          {
+            name: '语言理解-篇章级',
+            max: 500
+          },
+          {
+            name: '语言理解-词句级',
+            max: 500
+          },
+          {
+            name: '多语言',
+            max: 500
+          }
+        ],
+        data: [
+          {
+            value: [90.62, 86.36, 23.98, 59.27, 35.37, 34.8]
+          }
+        ]
+      },
+      pic_en: {
+        indicator: [
+          {
+            name: 'MR',
+            max: 500
+          },
+          {
+            name: 'CI',
+            max: 500
+          },
+          {
+            name: 'NLG',
+            max: 500
+          },
+          {
+            name: 'IA&QA',
+            max: 500
+          },
+          {
+            name: 'NLU-DL',
+            max: 500
+          },
+          {
+            name: 'NLU-WSL',
+            max: 500
+          },
+          {
+            name: 'ML',
+            max: 500
+          }
+        ],
+        data: [
+          {
+            value: [90.62, 86.36, 23.98, 59.27, 35.37, 34.8]
+          }
+        ]
       }
+
     }
   },
   mounted: function () {
@@ -639,6 +714,11 @@ export default {
     },
     waitToDraw (row, rowList) {
       console.log('row', row)
+      if (this.language.language === 'zh') {
+        this.pic = this.pic_zh
+      } else {
+        this.pic = this.pic_en
+      }
       this.pic.data = [
         {
           value: [row.sxtl_list[1], row.dhjh_list[1], row.yysc_list[1], row.xxhq_list[1], row.yyljpj_list[1], row.yyljcy_list[1], row.dyy_list[1]]
