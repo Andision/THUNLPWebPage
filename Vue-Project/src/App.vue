@@ -4,8 +4,8 @@
     <router-view/>
   </div> -->
   <div id="app">
-    <el-container class="container" style="padding: 0;">
-      <el-header class="header" style="padding: 0;">
+    <el-container class="container" style="padding: 0">
+      <el-header class="header" style="padding: 0">
         <el-menu
           class="el-menu"
           mode="horizontal"
@@ -23,70 +23,117 @@
             </a>
           </div> -->
           <div
-            style="float: left; margin-top:10px; margin-left: 50px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
+            style="
+              float: left;
+              margin-top: 10px;
+              margin-left: 50px;
+              padding: 5px;
+              color: white;
+              font-size: larger;
+              cursor: pointer;
+            "
             @click="handleGoHomePage"
           >
             <!-- {{language.wyzs}} -->
-            <span>智源指数 </span><span style="font-size:27px;">CUGE</span>
+            <span>智源指数 </span><span style="font-size: 27px">CUGE</span>
           </div>
 
-          <el-menu-item v-show="isLogin" class="menu-item" index="8" style="float: right;">{{
-            language.app_Logout
-          }}</el-menu-item>
-          <el-submenu index="9" class="menu-item" style="float: right;">
+          <el-menu-item
+            v-show="isLogin"
+            class="menu-item"
+            index="8"
+            style="float: right"
+            >{{ language.app_Logout }}</el-menu-item
+          >
+          <el-submenu index="9" class="menu-item" style="float: right">
             <template slot="title">Language</template>
             <el-menu-item index="9-1" class="menu-item">简体中文</el-menu-item>
             <el-menu-item index="9-2" class="menu-item">English</el-menu-item>
           </el-submenu>
-          <el-menu-item class="menu-item" index="7" style="float: right;">
-          {{isLogin?language.app_User:language.Login}}
+          <el-menu-item class="menu-item" index="7" style="float: right">
+            {{ isLogin ? language.app_User : language.Login }}
           </el-menu-item>
-          <el-menu-item class="menu-item" index="10" style="float: right;">{{
+          <el-menu-item class="menu-item" index="10" style="float: right">{{
             language.app_About
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="6" style="float: right;">{{
+          <el-menu-item class="menu-item" index="6" style="float: right">{{
             language.app_Download
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="5" style="float: right;">{{
+          <el-menu-item class="menu-item" index="5" style="float: right">{{
             language.app_Submit
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="4" style="float: right;">{{
+          <el-menu-item class="menu-item" index="4" style="float: right">{{
             language.app_Paper
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="3" style="float: right;">{{
+          <el-menu-item class="menu-item" index="3" style="float: right">{{
             language.app_FAQ
           }}</el-menu-item>
-          <el-submenu index="10" class="menu-item" style="float: right;">
+          <el-submenu index="10" class="menu-item" style="float: right">
             <template slot="title">单数据集</template>
-            <el-submenu :index="'10-'+index" v-for="(abi,index) in alltask" :key="index" >
-              <template slot="title">{{abi.zh}}</template>
-              <el-menu-item :index="'10-'+index+'-'+index1" v-for="(task,index1) in abi.task" :key="abi+index1">{{task}}</el-menu-item>
+            <el-submenu
+              :index="'10-' + index"
+              v-for="(abi, index) in alltask"
+              :key="index"
+            >
+              <template slot="title">{{ abi.zh }}</template>
+              <el-menu-item
+                :index="
+                  'A-10-' +
+                  index +
+                  '-' +
+                  index1 +
+                  '-' +
+                  task.id +
+                  '-@' +
+                  task.name
+                "
+                v-for="(task, index1) in abi.task"
+                :key="abi + index1"
+                >{{ task.name }}</el-menu-item
+              >
             </el-submenu>
           </el-submenu>
-          <el-menu-item class="menu-item" index="2" style="float: right;">{{
+          <el-menu-item class="menu-item" index="2" style="float: right">{{
             language.app_Leaderboard
           }}</el-menu-item>
-          <el-menu-item class="menu-item" index="1" style="float: right;">{{
+          <el-menu-item class="menu-item" index="1" style="float: right">{{
             language.app_Tasks
           }}</el-menu-item>
         </el-menu>
       </el-header>
-      <el-main class="main" style="padding: 0;"><router-view :language="language" v-if="isFresh"/></el-main>
-      <el-footer class="footer" style="padding: 0;">
+      <el-main class="main" style="padding: 0"
+        ><router-view :language="language" v-if="isFresh"
+      /></el-main>
+      <el-footer class="footer" style="padding: 0">
         <div class="footer-div">
           <el-row>
             <el-col :span="12">
-              <a href="https://clustrmaps.com/site/1bk2u" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=sRtvKqoXFHRrS9V6nm3IDtLYieMCka7pZnXkwO6ZWyQ&cl=ffffff" /></a>
+              <a href="https://clustrmaps.com/site/1bk2u" title="Visit tracker"
+                ><img
+                  src="//www.clustrmaps.com/map_v2.png?d=sRtvKqoXFHRrS9V6nm3IDtLYieMCka7pZnXkwO6ZWyQ&cl=ffffff"
+              /></a>
             </el-col>
-            <el-col :span="12" style="padding-top:30px;">
-              <a href="https://github.com/TsinghuaAI/CUGE" style="font-size:xx-large;text-decoration:none;color:white;">联系我们</a>
+            <el-col :span="12" style="padding-top: 30px">
+              <a
+                href="https://github.com/TsinghuaAI/CUGE"
+                style="font-size: xx-large; text-decoration: none; color: white"
+                >联系我们</a
+              >
             </el-col>
           </el-row>
         </div>
       </el-footer>
     </el-container>
-    <LoginDialog v-bind:v="dialogLoginVisible" v-on:close="handleLoginStatus" :language="language"></LoginDialog>
-    <ForgetDialog v-bind:v="dialogForgetVisible" v-on:close="handleForgetStatus" :language="language"></ForgetDialog>
+    <LoginDialog
+      v-bind:v="dialogLoginVisible"
+      v-on:close="handleLoginStatus"
+      :language="language"
+    ></LoginDialog>
+    <ForgetDialog
+      v-bind:v="dialogForgetVisible"
+      v-on:close="handleForgetStatus"
+      :language="language"
+    ></ForgetDialog>
   </div>
 </template>
 
@@ -153,14 +200,14 @@ export default {
     toLogin () {
       this.checkLogin()
       if (this.isLogin) {
-        this.$router.push({path: '/user'})
+        this.$router.push({ path: '/user' })
       } else {
         this.handleLoginStatus(true)
       }
     },
     toLogout () {
       let formData = new FormData()
-      this.$axios.get(config.API + config.toLogout, formData).then(res => {
+      this.$axios.get(config.API + config.toLogout, formData).then((res) => {
         if (res.status === 200) {
           if (res.data.re_code === '0') {
             this.isLogin = false
@@ -170,7 +217,7 @@ export default {
               message: '登出成功',
               type: 'success'
             })
-            this.$router.push({path: '/'})
+            this.$router.push({ path: '/' })
             // location.reload()
           }
         }
@@ -178,52 +225,59 @@ export default {
     },
     handleMenuSelect (key, keyPath) {
       console.log(key, keyPath)
-      switch (key) {
-        case '1':
-          this.$router.push({path: '/task'})
-          break
-        case '2':
-          this.$router.push({path: '/leaderboard'})
-          break
-        case '3':
-          this.$router.push({path: '/faq'})
-          break
-        case '4':
-          // this.$router.push({path: 'http://www.baidu.com'})
-          window.open('/api/get_paper')
-          break
-        case '5':
-          this.$router.push({path: '/submit'})
-          break
-        case '6':
-          this.$router.push({path: '/download'})
-          break
-        case '6-2':
-          this.$router.push({path: '/judging'})
-          break
-        case '7':
-          // this.$router.push({path: '/user'})
-          this.toLogin()
-          break
-        case '8':
-          // this.$router.push({path: '/user'})
-          this.toLogout()
-          break
-        case '9-1':
-          // this.$router.push({path: '/user'})
-          this.language = zh
-          sessionStorage.setItem('language', 'zh')
-          this.handleReload()
-          break
-        case '9-2':
-          // this.$router.push({path: '/user'})
-          this.language = en
-          sessionStorage.setItem('language', 'en')
-          this.handleReload()
-          break
-        case '10':
-          this.$router.push({path: '/about'})
-          break
+      if (key[0] === 'A') {
+        var tid = key.split('-')[4]
+        var tname = key.split('@')[1]
+        console.log('handleSingle', tid, tname)
+        this.$router.push({ path: '/taskboard?id=' + tid + '&name=' + tname })
+      } else {
+        switch (key) {
+          case '1':
+            this.$router.push({ path: '/task' })
+            break
+          case '2':
+            this.$router.push({ path: '/leaderboard' })
+            break
+          case '3':
+            this.$router.push({ path: '/faq' })
+            break
+          case '4':
+            // this.$router.push({path: 'http://www.baidu.com'})
+            window.open('/api/get_paper')
+            break
+          case '5':
+            this.$router.push({ path: '/submit' })
+            break
+          case '6':
+            this.$router.push({ path: '/download' })
+            break
+          case '6-2':
+            this.$router.push({ path: '/judging' })
+            break
+          case '7':
+            // this.$router.push({path: '/user'})
+            this.toLogin()
+            break
+          case '8':
+            // this.$router.push({path: '/user'})
+            this.toLogout()
+            break
+          case '9-1':
+            // this.$router.push({path: '/user'})
+            this.language = zh
+            sessionStorage.setItem('language', 'zh')
+            this.handleReload()
+            break
+          case '9-2':
+            // this.$router.push({path: '/user'})
+            this.language = en
+            sessionStorage.setItem('language', 'en')
+            this.handleReload()
+            break
+          case '10':
+            this.$router.push({ path: '/about' })
+            break
+        }
       }
     },
     handleReload () {
@@ -233,7 +287,7 @@ export default {
       })
     },
     handleGoHomePage () {
-      this.$router.push({path: '/'})
+      this.$router.push({ path: '/' })
     },
     handleLoginStatus (isLocal) {
       if (isLocal === true) {
@@ -261,7 +315,10 @@ export default {
 
 <style>
 #app {
-  font-family: -apple-system,BlinkMacSystemFont,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -290,12 +347,12 @@ body,
   font-weight: bolder;
   font-size: 20px;
 }
-.el-menu .menu-item{
+.el-menu .menu-item {
   color: white;
   font-size: 20px;
 }
 
-.el-menu .el-submenu__title{
+.el-menu .el-submenu__title {
   color: white;
   font-size: 20px;
 }
@@ -320,15 +377,15 @@ body,
 }
 
 .el-menu--horizontal .el-menu-item.is-active {
-    border-bottom: none;
+  border-bottom: none;
 }
 </style>
 <style>
-.el-menu-item{
+.el-menu-item {
   font-size: 20px;
 }
 
-.clustrMapsLink{
+.clustrMapsLink {
   margin-top: -20px;
 }
 </style>
