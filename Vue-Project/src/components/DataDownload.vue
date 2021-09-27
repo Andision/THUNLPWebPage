@@ -12,10 +12,11 @@
         </el-table-column>
         <el-table-column :label="language.user_operation" width="180">
             <template slot-scope="scope">
-              <el-button
+              <!-- <el-button
                 size="mini"
                 type="primary"
-                @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
+                @click="handleDelete(scope.$index, scope.row)">{{language.leaderboard}}</el-button> -->
+                <el-link :href="'/#/taskboard?id='+scope.row.download + '&name=' + scope.row.name">{{language.leaderboard}}排行榜</el-link>
             </template>
           </el-table-column>
         <el-table-column prop="download" :label="language.Download" width="150" align="center">
