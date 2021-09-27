@@ -4,61 +4,118 @@
             "zh": "语言理解-词句级",
             "en": "语言理解-词句级",
             "task": [
-                "PKU-SEG",
-                "WrodSeg-Weibo",
-                "PKU-SEGPOS",
-                "CCPM",
-                "CMeEE",
-                "FinRE"
+                {
+                    "name": "PKU-SEG",
+                    "id": ""
+                },
+                {
+                    "name": "WrodSeg-Weibo",
+                    "id": ""
+                },
+                {
+                    "name": "PKU-SEGPOS",
+                    "id": ""
+                },
+                {
+                    "name": "CCPM",
+                    "id": ""
+                },
+                {
+                    "name": "CMeEE",
+                    "id": ""
+                },
+                {
+                    "name": "FinRE",
+                    "id": ""
+                }
             ]
         },
         {
             "zh": "语言理解-篇章级",
             "en": "语言理解-篇章级",
             "task": [
-                "SPR",
-                "ClozeT",
-                "C3"
+                {
+                    "name": "SPR",
+                    "id": ""
+                },
+                {
+                    "name": "ClozeT",
+                    "id": ""
+                },
+                {
+                    "name": "C3",
+                    "id": ""
+                }
             ]
         },
         {
             "zh": "信息获取及问答",
             "en": "信息获取及问答",
             "task": [
-                "WantWords",
-                "NLPCC2018-KBQA",
-                "Sogou-Log"
+                {
+                    "name": "WantWords",
+                    "id": ""
+                },
+                {
+                    "name": "NLPCC2018-KBQA",
+                    "id": ""
+                },
+                {
+                    "name": "Sogou-Log",
+                    "id": ""
+                }
             ]
         },
         {
             "zh": "语言生成",
             "en": "语言生成",
             "task": [
-                "LCSTS",
-                "CEPSUM",
-                "E-Reviews"
+                {
+                    "name": "LCSTS",
+                    "id": ""
+                },
+                {
+                    "name": "CEPSUM",
+                    "id": ""
+                },
+                {
+                    "name": "E-Reviews",
+                    "id": ""
+                }
             ]
         },
         {
             "zh": "对话交互",
             "en": "对话交互",
             "task": [
-                "KdConv"
+                {
+                    "name": "KdConv",
+                    "id": ""
+                }
             ]
         },
         {
             "zh": "多语言",
             "en": "多语言",
             "task": [
-                "WMT20",
-                "NCLS"
+                {
+                    "name": "WMT20",
+                    "id": ""
+                },
+                {
+                    "name": "NCLS",
+                    "id": ""
+                }
             ]
         },
         {
             "zh": "数学推理",
             "en": "数学推理",
             "task": [
-                "Math23K"
+                {
+                    "name": "Math23K",
+                    "id": ""
+                }
             ]
         }
     ]
