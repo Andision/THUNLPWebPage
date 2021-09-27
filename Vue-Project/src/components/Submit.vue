@@ -50,7 +50,7 @@
           <el-row class="input">
             <el-input
               v-model="submit.github"
-              :placeholder="language.Model+' URL'"
+              :placeholder="language.submit_codeLinks"
               size="large"
             ></el-input>
           </el-row>
