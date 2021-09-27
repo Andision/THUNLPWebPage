@@ -10,6 +10,14 @@
       >
         <el-table-column prop="name" :label="language.Name">
         </el-table-column>
+        <el-table-column :label="language.user_operation" width="180">
+            <template slot-scope="scope">
+              <el-button
+                size="mini"
+                type="primary"
+                @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
+            </template>
+          </el-table-column>
         <el-table-column prop="download" :label="language.Download" width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
