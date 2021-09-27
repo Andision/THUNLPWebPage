@@ -12,6 +12,7 @@ import Task from '@/components/Task'
 import Leaderboard from '@/components/Leaderboard'
 import Report from '@/components/Report'
 import AboutUs from '@/components/AboutUs'
+import TaskBoard from '@/components/TaskBoard'
 
 Vue.use(Router)
 
@@ -104,6 +105,14 @@ export default new Router({
       },
       name: 'AboutUs',
       component: AboutUs
+    },
+    {
+      path: '/taskboard',
+      meta: {
+        title: '智源指数'
+      },
+      name: 'TaskBoard',
+      component: TaskBoard
     }
   ]
 })
