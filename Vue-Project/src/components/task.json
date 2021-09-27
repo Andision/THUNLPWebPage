@@ -1,0 +1,65 @@
+{
+    "all": [
+        {
+            "zh": "语言理解-词句级",
+            "en": "语言理解-词句级",
+            "task": [
+                "PKU-SEG",
+                "WrodSeg-Weibo",
+                "PKU-SEGPOS",
+                "CCPM",
+                "CMeEE",
+                "FinRE"
+            ]
+        },
+        {
+            "zh": "语言理解-篇章级",
+            "en": "语言理解-篇章级",
+            "task": [
+                "SPR",
+                "ClozeT",
+                "C3"
+            ]
+        },
+        {
+            "zh": "信息获取及问答",
+            "en": "信息获取及问答",
+            "task": [
+                "WantWords",
+                "NLPCC2018-KBQA",
+                "Sogou-Log"
+            ]
+        },
+        {
+            "zh": "语言生成",
+            "en": "语言生成",
+            "task": [
+                "LCSTS",
+                "CEPSUM",
+                "E-Reviews"
+            ]
+        },
+        {
+            "zh": "对话交互",
+            "en": "对话交互",
+            "task": [
+                "KdConv"
+            ]
+        },
+        {
+            "zh": "多语言",
+            "en": "多语言",
+            "task": [
+                "WMT20",
+                "NCLS"
+            ]
+        },
+        {
+            "zh": "数学推理",
+            "en": "数学推理",
+            "task": [
+                "Math23K"
+            ]
+        }
+    ]
+}
