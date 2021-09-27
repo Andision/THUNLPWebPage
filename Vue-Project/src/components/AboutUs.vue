@@ -86,7 +86,7 @@ export default {
         {pic: 'https://z3.ax1x.com/2021/09/25/4sTU2j.png',
           en: {
             title: 'Director',
-            name: 'Maosing Sun'
+            name: 'Maosong Sun'
           },
           zh: {
             title: '主任',
