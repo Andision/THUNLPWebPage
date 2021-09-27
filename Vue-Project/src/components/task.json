@@ -6,27 +6,27 @@
             "task": [
                 {
                     "name": "PKU-SEG",
-                    "id": ""
+                    "id": "17"
                 },
                 {
                     "name": "WrodSeg-Weibo",
-                    "id": ""
+                    "id": "18"
                 },
                 {
                     "name": "PKU-SEGPOS",
-                    "id": ""
+                    "id": "19"
                 },
                 {
                     "name": "CCPM",
-                    "id": ""
+                    "id": "1"
                 },
                 {
                     "name": "CMeEE",
-                    "id": ""
+                    "id": "20"
                 },
                 {
                     "name": "FinRE",
-                    "id": ""
+                    "id": "3"
                 }
             ]
         },
@@ -36,15 +36,15 @@
             "task": [
                 {
                     "name": "SPR",
-                    "id": ""
+                    "id": "6"
                 },
                 {
                     "name": "ClozeT",
-                    "id": ""
+                    "id": "5"
                 },
                 {
                     "name": "C3",
-                    "id": ""
+                    "id": "4"
                 }
             ]
         },
@@ -54,15 +54,15 @@
             "task": [
                 {
                     "name": "WantWords",
-                    "id": ""
+                    "id": "8"
                 },
                 {
                     "name": "NLPCC2018-KBQA",
-                    "id": ""
+                    "id": "9"
                 },
                 {
                     "name": "Sogou-Log",
-                    "id": ""
+                    "id": "7"
                 }
             ]
         },
@@ -72,15 +72,15 @@
             "task": [
                 {
                     "name": "LCSTS",
-                    "id": ""
+                    "id": "10"
                 },
                 {
                     "name": "CEPSUM",
-                    "id": ""
+                    "id": "11"
                 },
                 {
                     "name": "E-Reviews",
-                    "id": ""
+                    "id": "16"
                 }
             ]
         },
@@ -90,7 +90,7 @@
             "task": [
                 {
                     "name": "KdConv",
-                    "id": ""
+                    "id": "14"
                 }
             ]
         },
@@ -100,11 +100,11 @@
             "task": [
                 {
                     "name": "WMT20",
-                    "id": ""
+                    "id": "12"
                 },
                 {
                     "name": "NCLS",
-                    "id": ""
+                    "id": "13"
                 }
             ]
         },
@@ -114,7 +114,7 @@
             "task": [
                 {
                     "name": "Math23K",
-                    "id": ""
+                    "id": "15"
                 }
             ]
         }
