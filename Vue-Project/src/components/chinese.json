@@ -129,6 +129,7 @@
     "submit_hint": "预测结果文件按照相应数据集的readme文件中所要求的正确提交文件名命名，压缩成zip格式。登录个人账号后即可在参与评测页面提交。",
     "submit_numOfPara": "参数总数",
     "submit_paperLinks": "论文链接",
+    "submit_codeLinks": "模型链接",
     "submit_sfgk": "是否公开？",
     "submit_sfyxl": "是否使用预训练模型？",
     "submit_sfjc": "是否使用集成学习提升模型表现？",
