@@ -56,6 +56,13 @@
           <el-menu-item class="menu-item" index="3" style="float: right;">{{
             language.app_FAQ
           }}</el-menu-item>
+          <el-submenu index="10" class="menu-item" style="float: right;">
+            <template slot="title">单数据集</template>
+            <el-submenu :index="'10-'+index" v-for="(abi,index) in alltask" :key="index" >
+              <template slot="title">{{abi.zh}}</template>
+              <el-menu-item :index="'10-'+index+'-'+index1" v-for="(task,index1) in abi.task" :key="abi+index1">{{task}}</el-menu-item>
+            </el-submenu>
+          </el-submenu>
           <el-menu-item class="menu-item" index="2" style="float: right;">{{
             language.app_Leaderboard
           }}</el-menu-item>
@@ -89,6 +96,7 @@ import zh from '@/components/chinese.json'
 import LoginDialog from '@/components/LoginDialog.vue'
 import ForgetDialog from '@/components/ForgetDialog.vue'
 import config from '@/components/config.json'
+import task from '@/components/task.json'
 export default {
   name: 'App',
   data () {
@@ -98,10 +106,12 @@ export default {
       dialogForgetVisible: false,
       token: '',
       isLogin: false,
-      isFresh: true
+      isFresh: true,
+      alltask: task.all
     }
   },
   mounted: function () {
+    console.log(task)
     this.checkLogin()
     if (sessionStorage.getItem('language') === 'zh') {
       this.language = zh
