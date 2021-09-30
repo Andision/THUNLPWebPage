@@ -21,7 +21,7 @@
         委员单位 | Committee Organization
       </div>
       <hr class="second-hr">
-      <div class="second-list">
+      <div class="second-list" style="min-height:300px;">
         <ul>
           <li class="second-list-item" v-for="(item,index) in org" :key="index">
             ●{{kb}} {{kb}}{{ item.zh }}
