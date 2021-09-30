@@ -27,6 +27,7 @@
             ●{{kb}} {{kb}}{{ item.zh }}
             <br>
             {{kb}}{{kb}}{{kb}}{{ item.en }}
+            <br>
           </li>
         </ul>
       </div>
