@@ -69,7 +69,7 @@
             language.app_FAQ
           }}</el-menu-item>
           <el-submenu index="10" class="menu-item" style="float: right">
-            <template slot="title">单数据集</template>
+            <template slot="title">单数据集榜</template>
             <el-submenu
               :index="'10-' + index"
               v-for="(abi, index) in alltask"
@@ -229,7 +229,9 @@ export default {
         var tid = key.split('-')[4]
         var tname = key.split('@')[1]
         console.log('handleSingle', tid, tname)
-        this.$router.push({ path: '/taskboard?id=' + tid + '&name=' + tname })
+        // window.open('/#/taskboard?id=' + tid + '&name=' + tname, '_self')
+        location.href = '/#/taskboard?id=' + tid + '&name=' + tname
+        location.reload()
       } else {
         switch (key) {
           case '1':
