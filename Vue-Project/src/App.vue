@@ -317,9 +317,9 @@ export default {
 
 <style>
 #app {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+  font-family: -apple-system, "Microsoft YaHei", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
