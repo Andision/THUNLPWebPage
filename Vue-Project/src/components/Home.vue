@@ -286,6 +286,7 @@ export default {
   color: #062A4E;
   font-size: medium;
   font-weight: bold;
+  min-height: 50px;
 }
 
 .second-logo{
