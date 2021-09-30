@@ -32,7 +32,8 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" width="120"> </el-table-column>
-          <el-table-column label="指标" prop="zb" align="center"> </el-table-column>
+          <!-- <el-table-column label="指标" prop="zb" align="center"> </el-table-column> -->
+          <el-table-column v-for="(i,index) in newTitle" :label="i" :prop="i" align="center" :key="index"> </el-table-column>
           <el-table-column label="Score" prop="score" align="center"> </el-table-column>
           <!-- <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" width="150">
             <template slot="header" slot-scope="scope">
@@ -168,6 +169,7 @@ export default {
     return {
       Gid: '',
       Gname: '',
+      newTitle: [],
       drawer: false,
       drawerInfo: {
       },
@@ -314,11 +316,17 @@ export default {
         var t = res.data.rank_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
-          console.log(i, r)
-          var kb = ''
-          for (var key in r.index) {
+          console.log(i, r, this.newTitle)
+          // var kb = ''
+          // for (var key in r.index) {
+          //   // console.log(key, r.index[key])
+          //   kb = kb + key + ' : ' + r.index[key] + '; '
+          // }
+          if (this.newTitle.length === 0) {
+            for (var tkey in r.index) {
             // console.log(key, r.index[key])
-            kb = kb + key + ' : ' + r.index[key] + '; '
+              this.newTitle.push(tkey)
+            }
           }
           var toAppend = {
             rank: i + 1,
@@ -326,7 +334,7 @@ export default {
             org: r.institution,
             plink: r.paper_url,
             clink: r.code_url,
-            zb: kb,
+            // zb: kb,
 
             // sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
             // dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
@@ -381,6 +389,9 @@ export default {
             // show1: r.多语言能力.dataset_score_list,
             // show2: r.多语言能力.dataset_score_list
           }
+          for (tkey in this.newTitle) {
+            toAppend[this.newTitle[tkey]] = r.index[this.newTitle[tkey]]
+          }
           if (i === 0) {
             // toAppend.rank = ''
           }
@@ -388,6 +399,7 @@ export default {
           console.log(toAppend)
         }
       }
+      console.log('newTITLE', this.newTitle)
     })
   },
   methods: {
