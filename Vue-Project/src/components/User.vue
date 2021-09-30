@@ -1,102 +1,204 @@
 <template>
   <div class="all">
     <h1 class="title">{{language.user_submitRecord}}</h1>
-    <el-card class="main">
-      <!-- <div slot="header">
-      </div> -->
-      <div class="main-content">
-        <el-table :data="tableData" style="width: 100%"
-          :header-row-style="{'color': '#ffffff','font-size':'17px'}"
-          :header-cell-style="{background:'#64438D'}"
-          :cell-style="function(){return 'font-weight: 700; color: black; '}"
-          @row-click="handleRowClick"
-        >
-          <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
-          <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
-          <!-- <el-table-column label="机构" prop="org"> </el-table-column> -->
-          <!-- <el-table-column label="论文链接" prop="plink">
-            <template slot-scope="scope">
-              <el-link :href="scope.row.plink">
-                <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
-              </el-link>
-            </template>
-          </el-table-column>
-          <el-table-column label="代码链接" prop="clink">
-            <template slot-scope="scope">
-              <el-link :href="scope.row.clink">
-                <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
-              </el-link>
-            </template>
-          </el-table-column> -->
-          <el-table-column :label="language.leaderboard_codepaper" prop="plink">
-            <template slot-scope="scope">
-              <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
-                <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-              </el-link>
-              <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
-                <!-- <i class="el-icon-paperclip"></i> -->
-                <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-              </el-link>
-            </template>
-          </el-table-column>
-          <!-- <el-table-column label="识记能力" prop="sj"> </el-table-column>
-          <el-table-column label="理解能力" prop="lj"> </el-table-column>
-          <el-table-column label="检索能力" prop="js"> </el-table-column>
-          <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
-          <el-table-column label="生成能力" prop="sc"> </el-table-column>
-          <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
-          <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
-          <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
-          <el-table-column :label="language.user_operation" width="180">
-            <template slot-scope="scope">
-              <el-button
-                size="mini"
-                type="danger"
-                @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
-              <el-button
-                size="mini"
-                type="primary"
-                @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
-            </template>
-          </el-table-column>
-          <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
-        </el-table>
+    <el-tabs v-model="activeName" @tab-click="handleClick" class="main">
+      <el-tab-pane label="全榜" name="first">
+        <el-card>
+          <!-- <div slot="header">
+          </div> -->
+          <div class="main-content">
+            <el-table :data="tableData" style="width: 100%"
+              :header-row-style="{'color': '#ffffff','font-size':'17px'}"
+              :header-cell-style="{background:'#64438D'}"
+              :cell-style="function(){return 'font-weight: 700; color: black; '}"
+              @row-click="handleRowClick"
+            >
+              <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
+              <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
+              <!-- <el-table-column label="机构" prop="org"> </el-table-column> -->
+              <!-- <el-table-column label="论文链接" prop="plink">
+                <template slot-scope="scope">
+                  <el-link :href="scope.row.plink">
+                    <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
+                  </el-link>
+                </template>
+              </el-table-column>
+              <el-table-column label="代码链接" prop="clink">
+                <template slot-scope="scope">
+                  <el-link :href="scope.row.clink">
+                    <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
+                  </el-link>
+                </template>
+              </el-table-column> -->
+              <el-table-column :label="language.leaderboard_codepaper" prop="plink">
+                <template slot-scope="scope">
+                  <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
+                    <!-- <i class="el-icon-paperclip"></i> -->
+                    <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                  </el-link>
+                  <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
+                    <!-- <i class="el-icon-paperclip"></i> -->
+                    <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                  </el-link>
+                </template>
+              </el-table-column>
+              <!-- <el-table-column label="识记能力" prop="sj"> </el-table-column>
+              <el-table-column label="理解能力" prop="lj"> </el-table-column>
+              <el-table-column label="检索能力" prop="js"> </el-table-column>
+              <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
+              <el-table-column label="生成能力" prop="sc"> </el-table-column>
+              <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
+              <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
+              <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
+              <el-table-column :label="language.user_operation" width="180">
+                <template slot-scope="scope">
+                  <el-button
+                    size="mini"
+                    type="danger"
+                    @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
+                  <el-button
+                    size="mini"
+                    type="primary"
+                    @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
+                </template>
+              </el-table-column>
+              <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
+            </el-table>
 
-        <el-dialog :visible.sync="visible" width="500px">
-          <el-row class="input">
-            <el-input
-              v-model="link.code"
-              :placeholder="language.user_code"
-              prefix-icon="el-icon-paperclip"
-              size="large"
-            ></el-input>
-          </el-row>
+            <el-dialog :visible.sync="visible" width="500px">
+              <el-row class="input">
+                <el-input
+                  v-model="link.code"
+                  :placeholder="language.user_code"
+                  prefix-icon="el-icon-paperclip"
+                  size="large"
+                ></el-input>
+              </el-row>
 
-          <el-row class="input">
-            <el-input
-              v-model="link.paper"
-              :placeholder="language.user_paper"
-              prefix-icon="el-icon-paperclip"
-              size="large"
-            ></el-input>
-          </el-row>
-          <el-row class="input" style="vertical-align: bottom;">
-            <el-button style="width: 100%" type="primary" @click="handleSubmit">
-              {{language.user_submit}}
-            </el-button>
-          </el-row>
-        </el-dialog>
-      </div>
-    </el-card>
+              <el-row class="input">
+                <el-input
+                  v-model="link.paper"
+                  :placeholder="language.user_paper"
+                  prefix-icon="el-icon-paperclip"
+                  size="large"
+                ></el-input>
+              </el-row>
+              <el-row class="input" style="vertical-align: bottom;">
+                <el-button style="width: 100%" type="primary" @click="handleSubmit">
+                  {{language.user_submit}}
+                </el-button>
+              </el-row>
+            </el-dialog>
+          </div>
+        </el-card>
+      </el-tab-pane>
+      <el-tab-pane label="单数据集榜" name="second">
+        <el-card>
+          <!-- <div slot="header">
+          </div> -->
+          <div class="main-content">
+            <el-table :data="tableData" style="width: 100%"
+              :header-row-style="{'color': '#ffffff','font-size':'17px'}"
+              :header-cell-style="{background:'#64438D'}"
+              :cell-style="function(){return 'font-weight: 700; color: black; '}"
+              @row-click="handleRowClick"
+            >
+              <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
+              <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
+              <!-- <el-table-column label="机构" prop="org"> </el-table-column> -->
+              <!-- <el-table-column label="论文链接" prop="plink">
+                <template slot-scope="scope">
+                  <el-link :href="scope.row.plink">
+                    <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
+                  </el-link>
+                </template>
+              </el-table-column>
+              <el-table-column label="代码链接" prop="clink">
+                <template slot-scope="scope">
+                  <el-link :href="scope.row.clink">
+                    <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
+                  </el-link>
+                </template>
+              </el-table-column> -->
+              <el-table-column :label="language.leaderboard_codepaper" prop="plink">
+                <template slot-scope="scope">
+                  <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
+                    <!-- <i class="el-icon-paperclip"></i> -->
+                    <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                  </el-link>
+                  <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
+                    <!-- <i class="el-icon-paperclip"></i> -->
+                    <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                  </el-link>
+                </template>
+              </el-table-column>
+              <!-- <el-table-column label="识记能力" prop="sj"> </el-table-column>
+              <el-table-column label="理解能力" prop="lj"> </el-table-column>
+              <el-table-column label="检索能力" prop="js"> </el-table-column>
+              <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
+              <el-table-column label="生成能力" prop="sc"> </el-table-column>
+              <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
+              <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
+              <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
+              <el-table-column :label="language.user_operation" width="180">
+                <template slot-scope="scope">
+                  <el-button
+                    size="mini"
+                    type="danger"
+                    @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
+                  <el-button
+                    size="mini"
+                    type="primary"
+                    @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
+                </template>
+              </el-table-column>
+              <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
+            </el-table>
+
+            <el-dialog :visible.sync="visible" width="500px">
+              <el-row class="input">
+                <el-input
+                  v-model="link.code"
+                  :placeholder="language.user_code"
+                  prefix-icon="el-icon-paperclip"
+                  size="large"
+                ></el-input>
+              </el-row>
+
+              <el-row class="input">
+                <el-input
+                  v-model="link.paper"
+                  :placeholder="language.user_paper"
+                  prefix-icon="el-icon-paperclip"
+                  size="large"
+                ></el-input>
+              </el-row>
+              <el-row class="input" style="vertical-align: bottom;">
+                <el-button style="width: 100%" type="primary" @click="handleSubmit">
+                  {{language.user_submit}}
+                </el-button>
+              </el-row>
+            </el-dialog>
+          </div>
+        </el-card>
+      </el-tab-pane>
+    </el-tabs>
 
     <el-drawer
       :visible.sync="drawer"
@@ -168,6 +270,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      activeName: 'first',
       tableData: [],
       tb: {},
       drawerInfo: {
