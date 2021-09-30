@@ -32,6 +32,7 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" width="120"> </el-table-column>
+          <el-table-column label="指标" prop="zb" align="center"> </el-table-column>
           <el-table-column label="Score" prop="score" align="center"> </el-table-column>
           <!-- <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" width="150">
             <template slot="header" slot-scope="scope">
@@ -104,7 +105,7 @@
           <h1>模型名：{{drawerInfo.name}}</h1>
           <div class="draw-text">
             <!-- {{drawerInfo.link}} -->
-            提交时间: {{drawerInfo.time}}
+            提交时间: {{drawerInfo.stime}}
             <!-- <br>
             Score: {{drawerInfo.score}} -->
           </div>
@@ -314,12 +315,18 @@ export default {
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
           console.log(i, r)
+          var kb = ''
+          for (var key in r.index) {
+            // console.log(key, r.index[key])
+            kb = kb + key + ' : ' + r.index[key] + '; '
+          }
           var toAppend = {
-            rank: i,
+            rank: i + 1,
             name: r.modelname,
             org: r.institution,
             plink: r.paper_url,
             clink: r.code_url,
+            zb: kb,
 
             // sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
             // dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
@@ -375,7 +382,7 @@ export default {
             // show2: r.多语言能力.dataset_score_list
           }
           if (i === 0) {
-            toAppend.rank = ''
+            // toAppend.rank = ''
           }
           this.tableData.push(toAppend)
           console.log(toAppend)
@@ -386,7 +393,8 @@ export default {
   methods: {
     cellStyle ({ row, column, rowIndex, columnIndex }) {
       if (rowIndex === 0) {
-        return 'background-color:#eceaff; font-weight: 700; color: black;'
+        return 'font-weight: 700; color: black;'
+        // background-color:#eceaff;
       } else {
         return 'font-weight: 700; color: black;'
       }
