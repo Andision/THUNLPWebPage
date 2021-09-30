@@ -10,13 +10,13 @@
       >
         <el-table-column prop="name" :label="language.Name">
         </el-table-column>
-        <el-table-column :label="language.user_operation" width="180">
+        <el-table-column :label="language.leaderboard_phb" width="180" align="center">
             <template slot-scope="scope">
               <!-- <el-button
                 size="mini"
                 type="primary"
                 @click="handleDelete(scope.$index, scope.row)">{{language.leaderboard}}</el-button> -->
-                <el-link :href="'/#/taskboard?id='+scope.row.download + '&name=' + scope.row.name">{{language.leaderboard}}排行榜</el-link>
+                <el-link icon="el-icon-tickets" :href="'/#/taskboard?id='+scope.row.download + '&name=' + scope.row.name"></el-link>
             </template>
           </el-table-column>
         <el-table-column prop="download" :label="language.Download" width="150" align="center">
