@@ -110,6 +110,19 @@
           <pre class="section-content section-color bg-color" v-html="show.sample">
           </pre>
         </div>
+
+        <div class="content-section" v-if="show.form!=theNull">
+          <div class="section-title">
+            {{language.more_usage}}
+            <i class="el-icon-tickets"></i>
+          </div>
+          <pre class="section-content" v-html="show.form">
+          </pre>
+          <!-- <div class="section-content">
+            {{show.form}}
+          </div> -->
+        </div>
+
       </div>
     </el-card>
   </div>
