@@ -63,7 +63,11 @@
             <!-- <i class="el-icon-tickets"></i> -->
           </div>
           <div class="section-content">
-            <el-image src="https://z3.ax1x.com/2021/09/18/41ED6P.png"></el-image>
+            <!-- <el-image src="https://z3.ax1x.com/2021/09/18/41ED6P.png"></el-image> -->
+            <p>主要负责同学：姚远</p>
+            <p>骨干同学：董青秀，关健，曹博希</p>
+            <p>参与同学：张正彦，肖朝军，顾煜贤，王晓智，岂凡超，鲍军威，聂锦燃，周昆，黄轩成，曾哲妮，任抒怀，陆金梁，曾国洋，吴杨，张纪元，许诚强，汪华东，周子乐</p>
+
           </div>
         </div>
       </div>
