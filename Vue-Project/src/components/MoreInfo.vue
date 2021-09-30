@@ -116,7 +116,7 @@
             {{language.more_usage}}
             <i class="el-icon-tickets"></i>
           </div>
-          <pre class="section-content" v-html="show.form">
+          <pre class="section-content" v-html="show.evaluate">
           </pre>
           <!-- <div class="section-content">
             {{show.form}}
