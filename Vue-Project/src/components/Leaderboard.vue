@@ -322,7 +322,14 @@
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" width="120"> </el-table-column>
+          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" width="120">
+            <template slot="header" slot-scope="scope">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_zyzs_hint" placement="top">
+                <span>{{language.leaderboard_zyzs}}</span>
+              </el-tooltip>
+            </template>
+          </el-table-column>
+          <!-- <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" width="120"> </el-table-column> -->
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
