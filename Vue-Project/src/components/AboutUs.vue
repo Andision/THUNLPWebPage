@@ -106,7 +106,7 @@ export default {
             title: '副主任',
             name: '穗志方'
           }},
-        {pic: 'https://z3.ax1x.com/2021/09/25/4sTJIS.png',
+        {pic: 'https://z3.ax1x.com/2021/10/02/4bc7o4.png',
           en: {
             title: 'Vice Director',
             name: 'Erhong Yang'
@@ -124,7 +124,7 @@ export default {
             title: '秘书长',
             name: '刘知远'
           }},
-        {pic: 'https://z3.ax1x.com/2021/09/25/4sTtPg.png',
+        {pic: 'https://z3.ax1x.com/2021/10/02/4bcTwF.png',
           en: {
             title: 'Vice Secretary General',
             name: 'Xianpei Han'
