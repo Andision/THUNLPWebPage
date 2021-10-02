@@ -385,6 +385,10 @@ body,
 <style>
 .el-menu-item {
   font-size: 20px;
+  font-family: -apple-system, "Microsoft YaHei", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
 }
 
 .clustrMapsLink {
