@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <h1 class="title">{{language.user_submitRecord}}</h1>
-    <el-tabs v-model="activeName" @tab-click="handleClick" class="main">
+    <el-tabs v-model="activeName" class="main">
       <el-tab-pane label="全榜" name="first">
         <el-card>
           <!-- <div slot="header">
@@ -13,7 +13,146 @@
               :cell-style="function(){return 'font-weight: 700; color: black; '}"
               @row-click="handleRowClick"
             >
-              <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
+              <el-table-column type="expand">
+            <template slot-scope="scope">
+              <el-container>
+                <el-main>
+                  <el-row>
+                    <el-row>
+                      <!-- <el-col
+                        v-for="(i, index) in ads"
+                        :key="index"
+                        :span="Math.floor(24 / taskData.length)"
+                        ><div class="">
+                          <el-button type="text">{{ i.name }}</el-button>
+                        </div></el-col
+                      > -->
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
+                              {{language.leaderboard_yyljcy}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
+                              {{language.leaderboard_yyljpj}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
+                              {{language.leaderboard_xxhq}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
+                              {{language.leaderboard_yysc}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
+                              {{language.leaderboard_dhjh}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
+                              {{language.leaderboard_dyy}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
+                            <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
+                              {{language.leaderboard_sxtl}}
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                    </el-row>
+                    <hr class="inner-hr"/>
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show1"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show1.length)"
+                      >
+                        <div class="">
+                          <el-button type="text">
+                            {{ i.task }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                    </el-row>
+                    <hr class="inner-hr"/>
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show1"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show1.length)"
+                      >
+                        <div class="">
+                          <div class="score">
+                            {{ i.score === null ? '' : i.score}}
+                          </div>
+                        </div>
+                      </el-col>
+                    </el-row>
+                    <hr class="inner-hr"/>
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show2"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show2.length)"
+                      >
+                        <div class="">
+                          <el-button type="text">
+                            {{ i.name }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                    </el-row>
+                    <hr class="inner-hr"/>
+                    <el-row>
+                      <el-col
+                        v-for="(i, index) in scope.row.show2"
+                        :key="index"
+                        :span="Math.floor(24 / scope.row.show2.length)"
+                      >
+                        <div class="">
+                          <div class="score">
+                            {{ i.score === null ? '' : i.score }}
+                          </div>
+                        </div>
+                      </el-col>
+                    </el-row>
+                  </el-row>
+                </el-main>
+              </el-container>
+            </template>
+          </el-table-column>
+              <!-- <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column> -->
               <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
               <!-- <el-table-column label="机构" prop="org"> </el-table-column> -->
               <!-- <el-table-column label="论文链接" prop="plink">
@@ -49,105 +188,7 @@
               <el-table-column label="生成能力" prop="sc"> </el-table-column>
               <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
               <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
-              <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
-              <el-table-column :label="language.user_operation" width="180">
-                <template slot-scope="scope">
-                  <el-button
-                    size="mini"
-                    type="danger"
-                    @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
-                  <el-button
-                    size="mini"
-                    type="primary"
-                    @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
-                </template>
-              </el-table-column>
-              <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
-            </el-table>
-
-            <el-dialog :visible.sync="visible" width="500px">
-              <el-row class="input">
-                <el-input
-                  v-model="link.code"
-                  :placeholder="language.user_code"
-                  prefix-icon="el-icon-paperclip"
-                  size="large"
-                ></el-input>
-              </el-row>
-
-              <el-row class="input">
-                <el-input
-                  v-model="link.paper"
-                  :placeholder="language.user_paper"
-                  prefix-icon="el-icon-paperclip"
-                  size="large"
-                ></el-input>
-              </el-row>
-              <el-row class="input" style="vertical-align: bottom;">
-                <el-button style="width: 100%" type="primary" @click="handleSubmit">
-                  {{language.user_submit}}
-                </el-button>
-              </el-row>
-            </el-dialog>
-          </div>
-        </el-card>
-      </el-tab-pane>
-      <el-tab-pane label="单数据集榜" name="second">
-        <el-card>
-          <!-- <div slot="header">
-          </div> -->
-          <div class="main-content">
-            <el-table :data="tableData" style="width: 100%"
-              :header-row-style="{'color': '#ffffff','font-size':'17px'}"
-              :header-cell-style="{background:'#64438D'}"
-              :cell-style="function(){return 'font-weight: 700; color: black; '}"
-              @row-click="handleRowClick"
-            >
-              <el-table-column :label="language.leaderboard_rank" prop="rank"> </el-table-column>
-              <el-table-column :label="language.leaderboard_model" prop="name"> </el-table-column>
-              <!-- <el-table-column label="机构" prop="org"> </el-table-column> -->
-              <!-- <el-table-column label="论文链接" prop="plink">
-                <template slot-scope="scope">
-                  <el-link :href="scope.row.plink">
-                    <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
-                  </el-link>
-                </template>
-              </el-table-column>
-              <el-table-column label="代码链接" prop="clink">
-                <template slot-scope="scope">
-                  <el-link :href="scope.row.clink">
-                    <img src="https://z3.ax1x.com/2021/08/20/fOBmes.png" style="width:30px;height:30px;">
-                  </el-link>
-                </template>
-              </el-table-column> -->
-              <el-table-column :label="language.leaderboard_codepaper" prop="plink">
-                <template slot-scope="scope">
-                  <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
-                    <!-- <i class="el-icon-paperclip"></i> -->
-                    <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-                  </el-link>
-                  <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
-                    <!-- <i class="el-icon-paperclip"></i> -->
-                    <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-                  </el-link>
-                </template>
-              </el-table-column>
-              <!-- <el-table-column label="识记能力" prop="sj"> </el-table-column>
-              <el-table-column label="理解能力" prop="lj"> </el-table-column>
-              <el-table-column label="检索能力" prop="js"> </el-table-column>
-              <el-table-column label="数值计算能力" prop="szjs"> </el-table-column>
-              <el-table-column label="生成能力" prop="sc"> </el-table-column>
-              <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
-              <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
-              <el-table-column :label="language.leaderboard_submittime" prop="stime"> </el-table-column>
+              <el-table-column :label="language.leaderboard_submittime" prop="stime" width="160"> </el-table-column>
               <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
@@ -323,14 +364,23 @@ export default {
             // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
             // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
             // score: r.智源指数[0],
-            sxtl: r.数学推理能力[0] === null ? '' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
-            dyy: r.多语言能力[0] === null ? '' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
-            dhjh: r.对话交互能力[0] === null ? '' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
-            yysc: r.语言生成能力[0] === null ? '' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
-            xxhq: r.信息获取及问答能力[0] === null ? '' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
-            yyljpj: r['语言理解能力-篇章级'][0] === null ? '' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
-            yyljcy: r['语言理解能力-词句级'][0] === null ? '' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
+            sxtl: r.数学推理能力[0] === null ? '0' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
+            dyy: r.多语言能力[0] === null ? '0' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
+            dhjh: r.对话交互能力[0] === null ? '0' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
+            yysc: r.语言生成能力[0] === null ? '0' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
+            xxhq: r.信息获取及问答能力[0] === null ? '0' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
+            yyljpj: r['语言理解能力-篇章级'][0] === null ? '0' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
+            yyljcy: r['语言理解能力-词句级'][0] === null ? '0' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
             paras: r.paras,
+            sxtl_dataset: r.detail_score.数学推理能力.dataset_score_list,
+            dyy_dataset: r.detail_score.多语言能力.dataset_score_list,
+            dhjh_dataset: r.detail_score.对话交互能力.dataset_score_list,
+            yysc_dataset: r.detail_score.语言生成能力.dataset_score_list,
+            xxhq_dataset: r.detail_score.信息获取及问答能力.dataset_score_list,
+            yyljpj_dataset: r.detail_score['语言理解能力-篇章级'].dataset_score_list,
+            yyljcy_dataset: r.detail_score['语言理解能力-词句级'].dataset_score_list,
+            show1: r.detail_score.多语言能力.dataset_score_list,
+            show2: r.detail_score.多语言能力.dataset_score_list,
             // score: r.智源指数[0] + ' (' + r.智源指数[1] + ')',
             score: r.智源指数[1],
             sxtl_sub: r.数学推理能力[1],
@@ -503,5 +553,15 @@ export default {
 }
 .input{
   margin:30px;
+}
+.expand-up{
+  color:#7857A1;
+  font-weight: bold;
+  text-align: center;
+}
+.expand-down{
+  color:black;
+  font-weight: bold;
+  text-align: center;
 }
 </style>

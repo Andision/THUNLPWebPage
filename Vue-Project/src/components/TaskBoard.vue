@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <h1 class="title">{{ language.leaderboard_phb }}-{{Gname}}</h1>
+    <h1 class="title">{{ language.leaderboard_phb }}: {{Gname}}</h1>
     <el-card class="main">
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
@@ -90,12 +90,9 @@
       </div>
     </el-card>
     <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px; margin-bottom:30px;">
-      {{language.hint_leaderboard1}}
+      {{language.hint_taskboard}}
     </div>
-    <div style="margin:50px; text-align:left;font-size: 20px; margin-left:50px; margin-top:0px;">
-      {{language.hint_leaderboard2}}
-    </div>
-        <el-drawer
+    <el-drawer
       :visible.sync="drawer"
       direction="rtl"
       size="30%"

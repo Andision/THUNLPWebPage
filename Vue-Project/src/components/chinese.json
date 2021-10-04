@@ -36,13 +36,14 @@
     "leaderboard_dyy_hint": "多语言",
     "leaderboard_sxtl_hint": "数学推理",
     "leaderboard_zyzs_hint": "基于mT5-small的智源指数",
-    "submit_org":"机构",
+    "hint_taskboard": "智源指数单数据集榜提供单个数据集的各项指标得分，并根据各项指标得分的平均值计算模型在该数据集的总分。",
+    "submit_org": "机构",
     "about_title": "关于我们",
     "about_title1": "关于我们",
     "about_title2": "工作委员会",
     "about_title3": "委员单位",
     "about_title4": "研发团队",
-    "about_pic":"https://z3.ax1x.com/2021/09/16/4njZZD.png",
+    "about_pic": "https://z3.ax1x.com/2021/09/16/4njZZD.png",
     "about_list": [
         "清华大学自然语言处理与社会人文计算实验室",
         "北京大学计算语言学研究所 ",
@@ -60,7 +61,7 @@
         "大连理工大学信息检索研究室 ",
         "山西大学计算智能与中文信息处理教育部重点实验室"
     ],
-    "about_content1": "智源指数由北京智源人工智能研究院支持构建，委员单位由15个国内优势科研单位组成，旨在构建全面系统的中文机器语言能力评测体系,形成多层次维度的评测方案,力求更加科学、规范、高质量地推进中文自然语言处理技术的标准评测。",
+    "about_content1": "智源指数由北京智源人工智能研究院支持构建，委员单位由15个国内优势科研单位组成，旨在构建全面系统的中文机器语言能力评测体系，形成多层次维度的评测方案，力求更加科学、规范、高质量地推进中文自然语言处理技术的标准评测。",
     "user_code": "代码链接",
     "user_paper": "论文链接",
     "user_submit": "提交",
@@ -109,7 +110,7 @@
             "details": [
                 "智源指数体系和评测平台仍在不断建设和完善中，未来我们会在智源社区开放用户反馈意见论坛。"
             ],
-            "pre":[
+            "pre": [
                 "<div>目前，您可以在GitHub上的<a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a>项目中创建issues来提供意见或建议。</div>"
             ]
         }

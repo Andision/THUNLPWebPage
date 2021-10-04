@@ -35,7 +35,8 @@
             @click="handleGoHomePage"
           >
             <!-- {{language.wyzs}} -->
-            <span>智源指数 </span><span style="font-size: 27px">CUGE</span>
+            <span>智源指数 </span>
+            <div style="font-size: 26px; margin-top:50px;display:inline;">CUGE</div>
           </div>
 
           <el-menu-item
