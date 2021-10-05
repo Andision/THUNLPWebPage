@@ -318,7 +318,7 @@ export default {
 
 <style>
 #app {
-  font-family: "Microsoft YaHei", "Apple Color Emoji",
+  font-family: "PingFang SC","Microsoft YaHei", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
@@ -386,7 +386,7 @@ body,
 <style>
 .el-menu-item {
   font-size: 20px;
-  font-family: "Microsoft YaHei", "Apple Color Emoji",
+  font-family: "PingFang SC","Microsoft YaHei", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
     sans-serif;

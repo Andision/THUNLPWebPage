@@ -700,7 +700,7 @@ export default {
       if (rowIndex === 0) {
         return 'background-color:#eceaff; font-weight: 700; color: black;'
       } else {
-        return 'font-weight: 700; color: black;font-family: "Microsoft YaHei", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC","Hiragino Sans GB","Helvetica Neue", Helvetica, Arial, sans-serif;'
+        return 'font-weight: 700; color: black;font-family: "PingFang SC","Microsoft YaHei", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC","Hiragino Sans GB","Helvetica Neue", Helvetica, Arial, sans-serif;'
       }
     },
     handleRowClick (row, column, event) {

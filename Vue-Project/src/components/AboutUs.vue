@@ -169,7 +169,7 @@ export default {
 pre{
   white-space: normal;
   /* font-weight: bold; */
-  font-family: "Microsoft YaHei","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "PingFang SC","Microsoft YaHei","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .bg-color{
   background-color: #eceaff;
