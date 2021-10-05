@@ -22,7 +22,8 @@
         <el-table-column prop="download" :label="language.Download" width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
-              <el-link icon="el-icon-download" :href="'/api/download_dataset?dataset_id='+scope.row.download" :underline="false"></el-link>
+              <el-link icon="el-icon-download" @click="handleDownload(scope.row.download)" :underline="false"></el-link>
+              <!-- :href="'/api/download_dataset?dataset_id='+scope.row.download" -->
             </div>
           </template>
         </el-table-column>
@@ -54,15 +55,21 @@
 <script>
 import config from '@/components/config.json'
 export default {
+  props: {
+    language: Object,
+    app: Object
+  },
   data () {
     return {
       tableData: [],
       currentPage: 1, // 当前页码
       pageSize: 10, // 每页的数据条数
-      toDisplay: false
+      toDisplay: false,
+      tapp: {}
     }
   },
   mounted: function () {
+    this.tapp = this.app
     console.log('store', sessionStorage.getItem('pagesize'), sessionStorage.getItem('currentpage'))
     this.pageSize = sessionStorage.getItem('pagesize') == null ? 10 : parseInt(sessionStorage.getItem('pagesize'))
     this.currentPage = sessionStorage.getItem('currentpage') == null ? 1 : parseInt(sessionStorage.getItem('currentpage'))
@@ -92,9 +99,6 @@ export default {
       }
     })
   },
-  props: {
-    language: Object
-  },
   methods: {
     // 每页条数改变时触发 选择一页显示多少行
     handleSizeChange (val) {
@@ -108,6 +112,14 @@ export default {
       // console.log(`当前页: ${val}`)
       // this.currentPage = val
       sessionStorage.setItem('currentpage', val)
+    },
+    handleDownload (did) {
+      // console.log('DID', this.tapp.isLogin)
+      if (this.tapp.isLogin) {
+        window.open('/api/download_dataset?dataset_id=' + did)
+      } else {
+        this.tapp.toLogin()
+      }
     }
   }
 }
