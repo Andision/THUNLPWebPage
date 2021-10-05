@@ -9,10 +9,10 @@
           :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
-          <el-table-column :label="language.leaderboard_rank" prop="rank" width="60"> </el-table-column>
-          <el-table-column :label="language.leaderboard_model" prop="name" align="center" width="100"> </el-table-column>
-          <el-table-column :label="language.leaderboard_org" prop="org" align="center" width="120"> </el-table-column>
-          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" width="160">
+          <el-table-column :label="language.leaderboard_rank" prop="rank" min-width="60"> </el-table-column>
+          <el-table-column :label="language.leaderboard_model" prop="name" align="center" min-width="100"> </el-table-column>
+          <el-table-column :label="language.leaderboard_org" prop="org" align="center" min-width="120"> </el-table-column>
+          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="160">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -31,60 +31,60 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" width="120"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="120"> </el-table-column>
           <!-- <el-table-column label="指标" prop="zb" align="center"> </el-table-column> -->
           <el-table-column v-for="(i,index) in newTitle" :label="i" :prop="i" align="center" :key="index"> </el-table-column>
           <el-table-column label="Score" prop="score" align="center"> </el-table-column>
-          <!-- <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" width="150">
+          <!-- <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
                 <span>{{language.leaderboard_yyljcy}}</span>
               </el-tooltip>
             </template>
           </el-table-column> -->
-          <!-- <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" width="150">
+          <!-- <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" min-width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
                 <span>{{language.leaderboard_yyljpj}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right">
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
                 <span>{{language.leaderboard_xxhq}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" width="120">
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" min-width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
                 <span>{{language.leaderboard_yysc}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" width="120">
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" min-width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
                 <span>{{language.leaderboard_dhjh}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" width="120">
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" min-width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
                 <span>{{language.leaderboard_dyy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" width="120">
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" min-width="120">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
                 <span>{{language.leaderboard_sxtl}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" width="120"> </el-table-column> -->
+          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" min-width="120"> </el-table-column> -->
           <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
         </el-table>
       </div>
