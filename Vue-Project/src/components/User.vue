@@ -188,16 +188,16 @@
               <el-table-column label="生成能力" prop="sc"> </el-table-column>
               <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
               <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
-              <el-table-column :label="language.leaderboard_submittime" prop="stime" width="160"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" width="160" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" width="160" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" width="150" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_submittime" prop="stime" min-width="160"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" min-width="160" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" min-width="160" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
-              <el-table-column :label="language.user_operation" width="180">
+              <el-table-column :label="language.user_operation" min-width="180">
                 <template slot-scope="scope">
                   <el-button
                     size="mini"
