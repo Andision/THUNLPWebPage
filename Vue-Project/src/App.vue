@@ -103,7 +103,7 @@
         </el-menu>
       </el-header>
       <el-main class="main" style="padding: 0"
-        ><router-view :language="language" v-if="isFresh"
+        ><router-view :language="language" v-if="isFresh" :isLogin="isLogin" :app="this"
       /></el-main>
       <el-footer class="footer" style="padding: 0">
         <div class="footer-div">
