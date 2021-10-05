@@ -10,7 +10,7 @@
       >
         <el-table-column prop="name" :label="language.Name">
         </el-table-column>
-        <el-table-column :label="language.leaderboard_phb" width="180" align="center">
+        <el-table-column :label="language.leaderboard_phb" min-width="180" align="center">
             <template slot-scope="scope">
               <!-- <el-button
                 size="mini"
@@ -19,7 +19,7 @@
                 <el-link icon="el-icon-tickets" :href="'/#/taskboard?id='+scope.row.download + '&name=' + scope.row.name"></el-link>
             </template>
           </el-table-column>
-        <el-table-column prop="download" :label="language.Download" width="150" align="center">
+        <el-table-column prop="download" :label="language.Download" min-width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
               <el-link icon="el-icon-download" @click="handleDownload(scope.row.download)" :underline="false"></el-link>
@@ -27,14 +27,14 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column prop="more" :label="language.More+' '+language.Info" width="150" align="center">
+        <el-table-column prop="more" :label="language.More+' '+language.Info" min-width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
               <el-link icon="el-icon-more" :href="'/#/more?id='+scope.row.more" :underline="false"></el-link>
             </div>
           </template>
         </el-table-column>
-        <!-- <el-table-column prop="score" :label="language.Score" width="100" align="center">
+        <!-- <el-table-column prop="score" :label="language.Score" min-width="100" align="center">
         </el-table-column> -->
       </el-table>
 
