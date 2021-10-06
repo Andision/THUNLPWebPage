@@ -146,7 +146,6 @@ export default {
       let formData = new FormData()
       formData.append('nickname', this.user.username)
       formData.append('password', this.user.password)
-      formData.append('institution', this.user.org)
       this.$axios.post(config.API + config.toLogin, formData).then(res => {
         console.log('LOGIN RES', res, res.status)
         if (res.status === 200) {
@@ -195,6 +194,7 @@ export default {
       formData.append('nickname', this.user.username)
       formData.append('password', this.user.password)
       formData.append('email', this.user.email)
+      formData.append('institution', this.user.org)
       this.$axios.post(config.API + config.toSignup, formData).then(res => {
         console.log('SIGN RES', res, res.status)
         if (res.status === 200) {
