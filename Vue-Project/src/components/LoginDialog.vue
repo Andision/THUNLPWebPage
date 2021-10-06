@@ -69,6 +69,15 @@
 
         <el-row class="input">
           <el-input
+            v-model="user.org"
+            :placeholder="language.leaderboard_org"
+            prefix-icon="el-icon-office-building"
+            size="large"
+          ></el-input>
+        </el-row>
+
+        <el-row class="input">
+          <el-input
             type="password"
             v-model="user.password"
             @keydown.enter.native="doLogin"
@@ -103,7 +112,8 @@ export default {
         username: '',
         password: '',
         remeber: false,
-        email: ''
+        email: '',
+        org: ''
       }
     }
   },
@@ -136,6 +146,7 @@ export default {
       let formData = new FormData()
       formData.append('nickname', this.user.username)
       formData.append('password', this.user.password)
+      formData.append('institution', this.user.org)
       this.$axios.post(config.API + config.toLogin, formData).then(res => {
         console.log('LOGIN RES', res, res.status)
         if (res.status === 200) {

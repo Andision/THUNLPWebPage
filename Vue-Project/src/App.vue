@@ -126,7 +126,7 @@
             <el-col :span="12" style="padding-top: 30px">
               <a
                 href="https://github.com/TsinghuaAI/CUGE"
-                style="font-size: xx-large; text-decoration: none; color: white"
+                style="font-size: xx-medium; text-decoration: none; color: white"
                 >联系我们</a
               >
             </el-col>
