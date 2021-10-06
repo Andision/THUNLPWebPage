@@ -76,7 +76,7 @@
               v-for="(abi, index) in alltask"
               :key="index"
             >
-              <template slot="title">{{ abi.zh }}</template>
+              <template slot="title"><span class="ads-font">{{ language.language == 'zh' ? abi.zh:abi.en }}</span></template>
               <el-menu-item
                 :index="
                   'A-10-' +
@@ -385,6 +385,14 @@ body,
 </style>
 <style>
 .el-menu-item {
+  font-size: 20px;
+  font-family: "Microsoft YaHei", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.ads-font {
   font-size: 20px;
   font-family: "Microsoft YaHei", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
