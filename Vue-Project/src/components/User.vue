@@ -197,7 +197,7 @@
               <el-table-column :label="language.leaderboard_dyy" prop="dyy" min-width="120" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" min-width="120" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column>
-              <el-table-column :label="language.user_operation" min-width="180">
+              <el-table-column :label="language.user_operation" min-width="180" align="center">
                 <template slot-scope="scope">
                   <el-button
                     size="mini"
