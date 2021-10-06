@@ -18,7 +18,7 @@
     <div class="home-second">
       <div class="second-title">
         <!-- {{language.home_secondtitle}} -->
-        委员单位 | Committee Organization
+        委员单位 | Committee Organizations
       </div>
       <hr class="second-hr" />
       <!-- <div class="second-list" style="min-height:300px;">
@@ -206,7 +206,7 @@ export default {
         [
           { pic: 'https://z3.ax1x.com/2021/10/05/4vD4nx.png', zh: '复旦大学', en: 'Fudan University' },
           { pic: 'https://z3.ax1x.com/2021/10/05/4vDWcR.png', zh: '苏州大学', en: 'Soochow University' },
-          { pic: 'https://z3.ax1x.com/2021/10/06/4znAn1.png', zh: '京东科技', en: 'JDT' }
+          { pic: 'https://z3.ax1x.com/2021/10/06/4zKGY8.png', zh: '京东科技', en: 'JDT' }
         ]
       ]
       // neworg: [

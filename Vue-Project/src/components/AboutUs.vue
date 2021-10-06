@@ -240,7 +240,7 @@ code {
 .head-word{
   text-align: center;
   font-weight: bold;
-  font-size: large;
+  font-size: 25px;
 }
 .head-purple{
   color: #64438D;

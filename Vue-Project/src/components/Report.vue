@@ -24,6 +24,14 @@
             <p v-if="key.score!=-1">
               测评脚本运行成功！
             </p>
+            <br>
+            <p>
+              指标结果
+            </p>
+
+            <p v-for="(key1,index1) in key.index" :key="index1">
+              {{index1}} : {{key1}}
+            </p>
           </div>
         </div>
         <div class="section-fail" v-if="key.err_msg!=null">
