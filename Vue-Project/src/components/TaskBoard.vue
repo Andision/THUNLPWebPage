@@ -9,7 +9,7 @@
           :cell-style="cellStyle"
           @row-click="handleRowClick"
         >
-          <el-table-column :label="language.leaderboard_rank" prop="rank" min-width="60"> </el-table-column>
+          <el-table-column :label="language.leaderboard_rank" prop="rank" align="center" min-width="60"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name" align="center" min-width="100"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org" align="center" min-width="120"> </el-table-column>
           <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="160">
