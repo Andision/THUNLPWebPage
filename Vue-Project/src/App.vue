@@ -5,102 +5,111 @@
   </div> -->
   <div id="app">
     <el-container class="container" style="padding: 0">
-      <el-header class="header" style="padding: 0">
-        <el-menu
-          class="el-menu"
-          mode="horizontal"
-          @select="handleMenuSelect"
-          background-color="#64438D"
-          text-color="#FFFFFF"
-          active-text-color="#FFFFFF"
-          id="bar"
-        >
-          <!-- <div
-            style="float: left; margin-top:10px; margin-left: 20px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
-          >
-            <a href="http://baai.ac.cn">
-              <img src="https://z3.ax1x.com/2021/09/07/ho7fHA.jpg" style="height: 30px;">
-            </a>
-          </div> -->
-          <div
-            style="
-              float: left;
-              margin-top: 10px;
-              margin-left: 50px;
-              padding: 5px;
-              color: white;
-              font-size: larger;
-              cursor: pointer;
-            "
-            @click="handleGoHomePage"
-          >
-            <!-- {{language.wyzs}} -->
-            <span>智源指数 </span>
-            <div style="font-size: 26px; margin-top:50px;display:inline;">CUGE</div>
-          </div>
-
-          <el-menu-item
-            v-show="isLogin"
-            class="menu-item"
-            index="8"
-            style="float: right"
-            >{{ language.app_Logout }}</el-menu-item
-          >
-          <el-submenu index="9" class="menu-item" style="float: right">
-            <template slot="title">Language</template>
-            <el-menu-item index="9-1" class="menu-item">简体中文</el-menu-item>
-            <el-menu-item index="9-2" class="menu-item">English</el-menu-item>
-          </el-submenu>
-          <el-menu-item class="menu-item" index="7" style="float: right">
-            {{ isLogin ? language.app_User : language.Login }}
-          </el-menu-item>
-          <el-menu-item class="menu-item" index="10" style="float: right">{{
-            language.app_About
-          }}</el-menu-item>
-          <el-menu-item class="menu-item" index="6" style="float: right">{{
-            language.app_Download
-          }}</el-menu-item>
-          <el-menu-item class="menu-item" index="5" style="float: right">{{
-            language.app_Submit
-          }}</el-menu-item>
-          <el-menu-item class="menu-item" index="4" style="float: right">{{
-            language.app_Paper
-          }}</el-menu-item>
-          <el-menu-item class="menu-item" index="3" style="float: right">{{
-            language.app_FAQ
-          }}</el-menu-item>
-          <el-submenu index="10" class="menu-item" style="float: right">
-            <template slot="title">{{language.app_Single}}</template>
-            <el-submenu
-              :index="'10-' + index"
-              v-for="(abi, index) in alltask"
-              :key="index"
+      <el-header class="header" style="padding: 0;">
+        <div>
+          <el-row style="background-color: #64438D;">
+            <el-col :span="4">
+            <div
+              style="
+                float: left;
+                margin-top: 10px;
+                margin-left: 50px;
+                color: white;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: #64438D;
+              "
+              @click="handleGoHomePage"
             >
-              <template slot="title"><span class="ads-font">{{ language.language == 'zh' ? abi.zh:abi.en }}</span></template>
-              <el-menu-item
-                :index="
-                  'A-10-' +
-                  index +
-                  '-' +
-                  index1 +
-                  '-' +
-                  task.id +
-                  '-@' +
-                  task.name
-                "
-                v-for="(task, index1) in abi.task"
-                :key="abi + index1"
-                >{{ task.name }}</el-menu-item
+              <!-- {{language.wyzs}} -->
+              <div style="display:inline-block;height: 100%;">{{language.wyzs}}</div>
+              <!-- <div style="display:inline-block;height: 100%;line-height: 10px;">CUGE</div> -->
+            </div>
+            </el-col>
+            <el-col :span="20">
+              <el-menu
+                class="el-menu"
+                mode="horizontal"
+                @select="handleMenuSelect"
+                background-color="#64438D"
+                text-color="#FFFFFF"
+                active-text-color="#FFFFFF"
+                id="bar"
               >
-            </el-submenu>
-          </el-submenu>
-          <el-menu-item class="menu-item" index="2" style="float: right">{{
-            language.app_Leaderboard
-          }}</el-menu-item>
-          <el-menu-item class="menu-item" index="1" style="float: right">{{
-            language.app_Tasks
-          }}</el-menu-item>
-        </el-menu>
+                <!-- <div
+                  style="float: left; margin-top:10px; margin-left: 20px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
+                >
+                  <a href="http://baai.ac.cn">
+                    <img src="https://z3.ax1x.com/2021/09/07/ho7fHA.jpg" style="height: 30px;">
+                  </a>
+                </div> -->
+
+                <el-menu-item
+                  v-show="isLogin"
+                  class="menu-item"
+                  index="8"
+                  style="float: right"
+                  >{{ language.app_Logout }}</el-menu-item
+                >
+                <el-submenu index="9" class="menu-item" style="float: right">
+                  <template slot="title">Language</template>
+                  <el-menu-item index="9-1" class="menu-item">简体中文</el-menu-item>
+                  <el-menu-item index="9-2" class="menu-item">English</el-menu-item>
+                </el-submenu>
+                <el-menu-item class="menu-item" index="7" style="float: right">
+                  {{ isLogin ? language.app_User : language.Login }}
+                </el-menu-item>
+                <el-menu-item class="menu-item" index="10" style="float: right">{{
+                  language.app_About
+                }}</el-menu-item>
+                <el-menu-item class="menu-item" index="6" style="float: right">{{
+                  language.app_Download
+                }}</el-menu-item>
+                <el-menu-item class="menu-item" index="5" style="float: right">{{
+                  language.app_Submit
+                }}</el-menu-item>
+                <el-menu-item class="menu-item" index="4" style="float: right">{{
+                  language.app_Paper
+                }}</el-menu-item>
+                <el-menu-item class="menu-item" index="3" style="float: right">{{
+                  language.app_FAQ
+                }}</el-menu-item>
+                <el-submenu index="10" class="menu-item" style="float: right">
+                  <template slot="title">{{language.app_Single}}</template>
+                  <el-submenu
+                    :index="'10-' + index"
+                    v-for="(abi, index) in alltask"
+                    :key="index"
+                  >
+                    <template slot="title"><span class="ads-font">{{ language.language == 'zh' ? abi.zh:abi.en }}</span></template>
+                    <el-menu-item
+                      :index="
+                        'A-10-' +
+                        index +
+                        '-' +
+                        index1 +
+                        '-' +
+                        task.id +
+                        '-@' +
+                        task.name
+                      "
+                      v-for="(task, index1) in abi.task"
+                      :key="abi + index1"
+                      >{{ task.name }}</el-menu-item
+                    >
+                  </el-submenu>
+                </el-submenu>
+                <el-menu-item class="menu-item" index="2" style="float: right">{{
+                  language.app_Leaderboard
+                }}</el-menu-item>
+                <el-menu-item class="menu-item" index="1" style="float: right">{{
+                  language.app_Tasks
+                }}</el-menu-item>
+              </el-menu>
+            </el-col>
+          </el-row>
+        </div>
       </el-header>
       <el-main class="main" style="padding: 0"
         ><router-view :language="language" v-if="isFresh" :isLogin="isLogin" :app="this"
