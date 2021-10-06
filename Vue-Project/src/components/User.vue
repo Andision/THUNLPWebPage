@@ -169,7 +169,7 @@
                   </el-link>
                 </template>
               </el-table-column> -->
-              <el-table-column :label="language.leaderboard_codepaper" prop="plink">
+              <el-table-column :label="language.leaderboard_codepaper" prop="plink" min-width="110">
                 <template slot-scope="scope">
                   <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
                     <!-- <i class="el-icon-paperclip"></i> -->
@@ -192,11 +192,11 @@
               <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" min-width="160" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" min-width="160" align="right"> </el-table-column>
               <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yysc" prop="yysc" min-width="120" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" min-width="120" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dyy" prop="dyy" min-width="120" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" min-width="120" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column>
               <el-table-column :label="language.user_operation" min-width="180">
                 <template slot-scope="scope">
                   <el-button
