@@ -38,7 +38,7 @@
               <el-row>
                 <el-image
                   :src="col.pic"
-                  style=" height: 100px;"
+                  style=" height: 100px; max-width:200px;"
                 ></el-image>
               </el-row>
               <el-row> {{col.zh}} </el-row>
