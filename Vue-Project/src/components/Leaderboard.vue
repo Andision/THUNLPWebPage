@@ -253,7 +253,7 @@
           <el-table-column :label="language.leaderboard_rank" prop="rank" min-width="100"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name" align="center" min-width="100"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org" align="center" min-width="120"> </el-table-column>
-          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="160">
+          <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="130">
             <template slot-scope="scope">
               <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
                 <!-- <i class="el-icon-paperclip"></i> -->
@@ -272,7 +272,7 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="160"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="100"> </el-table-column>
           <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
@@ -322,7 +322,7 @@
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" min-width="120">
+          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" min-width="130">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_zyzs_hint" placement="top">
                 <span>{{language.leaderboard_zyzs}}</span>

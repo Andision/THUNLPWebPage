@@ -70,7 +70,7 @@
             language.app_FAQ
           }}</el-menu-item>
           <el-submenu index="10" class="menu-item" style="float: right">
-            <template slot="title">单数据集榜</template>
+            <template slot="title">{{language.app_Single}}</template>
             <el-submenu
               :index="'10-' + index"
               v-for="(abi, index) in alltask"

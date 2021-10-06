@@ -10,6 +10,7 @@
     "app_About": "About",
     "app_User": "Profile",
     "app_Logout": "Logout",
+    "app_Single": "Single",
     "home_title1": "CUGE",
     "home_title2": "Chinese Language Understanding and Generation Evaluation Benchmark",
     "home_titledetail": "CUGE contains high-quality Chinese natural language processing datasets, leaderboard and online evaluation platform. CUGE aims to build a comprehensive and systematic Chinese language intelligence evaluation system, form a multi-level evaluation strategy, and promote the standard evaluation of Chinese natural language processing technology in a more scientific, standardized and high-quality manner.",
