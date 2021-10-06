@@ -38,7 +38,7 @@
               <el-row>
                 <el-image
                   :src="col.pic"
-                  style=" height: 100px; max-width:200px;"
+                  style=" height: 100px; width:100px;"
                 ></el-image>
               </el-row>
               <el-row> {{col.zh}} </el-row>
@@ -194,7 +194,7 @@ export default {
         [
           { pic: 'https://z3.ax1x.com/2021/10/05/4vDfj1.png', zh: '清华大学', en: 'Tsinghua University' },
           { pic: 'https://z3.ax1x.com/2021/10/05/4vDyAU.png', zh: '北京大学', en: 'Peking University' },
-          { pic: 'https://z3.ax1x.com/2021/10/05/4vD29J.png', zh: '中国科学院', en: 'Chinese Academy of Sciences' },
+          { pic: 'https://z3.ax1x.com/2021/10/06/4xlzaq.png', zh: '中国科学院', en: 'Chinese Academy of Sciences' },
           { pic: 'https://z3.ax1x.com/2021/10/05/4vD6NF.png', zh: '中国人民大学', en: 'Renmin University' }
         ],
         [
@@ -206,7 +206,7 @@ export default {
         [
           { pic: 'https://z3.ax1x.com/2021/10/05/4vD4nx.png', zh: '复旦大学', en: 'Fudan University' },
           { pic: 'https://z3.ax1x.com/2021/10/05/4vDWcR.png', zh: '苏州大学', en: 'Soochow University' },
-          { pic: 'https://z3.ax1x.com/2021/10/05/4vD5B6.png', zh: '京东', en: 'JD.COM' }
+          { pic: 'https://z3.ax1x.com/2021/10/06/4xlxZn.png', zh: '京东', en: 'JD.COM' }
         ]
       ]
       // neworg: [
