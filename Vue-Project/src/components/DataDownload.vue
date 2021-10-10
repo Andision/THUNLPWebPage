@@ -27,7 +27,7 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column prop="more" :label="language.More+' '+language.Info" min-width="150" align="center">
+        <el-table-column prop="more" :label="language.More" min-width="150" align="center">
           <template slot-scope="scope">
             <div class="icon">
               <el-link icon="el-icon-more" :href="'/#/more?id='+scope.row.more" :underline="false"></el-link>

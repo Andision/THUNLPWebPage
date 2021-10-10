@@ -32,7 +32,7 @@
         </ul>
       </div> -->
       <div style="margin: 50px;">
-        <div v-for="(row, index1) in neworg" :key="index1" style="margin-top: 30px;">
+        <div v-for="(row, index1) in org_oss" :key="index1" style="margin-top: 30px;">
           <el-row>
             <el-col :span="6" v-for="(col, index2) in row" :key="index2">
               <el-row>
@@ -191,6 +191,25 @@ export default {
       ],
       logo1: ['https://z3.ax1x.com/2021/09/07/ho7fHA.jpg'],
       neworg: [
+        [
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDfj1.png', zh: '清华大学', en: 'Tsinghua University' },
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDyAU.png', zh: '北京大学', en: 'Peking University' },
+          { pic: 'https://z3.ax1x.com/2021/10/06/4xlzaq.png', zh: '中国科学院', en: 'Chinese Academy of Sciences' },
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vD6NF.png', zh: '中国人民大学', en: 'Renmin University of China' }
+        ],
+        [
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDr7T.png', zh: '北京语言大学', en: 'Beijing Language and Culture University' },
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDIHK.png', zh: '山西大学', en: 'Shanxi University' },
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDR39.png', zh: '大连理工大学', en: 'Dalian University of Technology' },
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDch4.png', zh: '哈尔滨工业大学', en: 'Harbin Institute of Technology' }
+        ],
+        [
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vD4nx.png', zh: '复旦大学', en: 'Fudan University' },
+          { pic: 'https://z3.ax1x.com/2021/10/05/4vDWcR.png', zh: '苏州大学', en: 'Soochow University' },
+          { pic: 'https://z3.ax1x.com/2021/10/06/4zKGY8.png', zh: '京东科技', en: 'JDT' }
+        ]
+      ],
+      org_oss: [
         [
           { pic: 'https://cuge.oss-cn-beijing.aliyuncs.com/website_image/org_logo/thu.png', zh: '清华大学', en: 'Tsinghua University' },
           { pic: 'https://cuge.oss-cn-beijing.aliyuncs.com/website_image/org_logo/pku.png', zh: '北京大学', en: 'Peking University' },
