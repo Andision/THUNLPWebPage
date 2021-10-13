@@ -4,6 +4,10 @@
     "toLogin": "/login",
     "toLogout": "/logout",
     "toSubmit": "/commit",
+    "toDelete": "/delete",
+    "toEditLink": "/link_modify",
+    "toCheck": "/ask_for_check",
+    "toSubmitCheck": "/admin_check",
     "getDataDownload": "/get_full_dataset",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
@@ -11,6 +15,5 @@
     "getMoreInfoEN": "/parser_en",
     "getSubmitlist": "/commit_record",
     "getEvalReport": "/eval_report",
-    "toDelete": "/delete",
-    "toEditLink":"/link_modify"
+    "getChecklist": "/check_list"
 }

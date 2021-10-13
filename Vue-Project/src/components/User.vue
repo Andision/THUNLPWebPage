@@ -189,15 +189,15 @@
               <el-table-column label="多语言能力" prop="dyy"> </el-table-column>
               <el-table-column label="智源指数" prop="zy"> </el-table-column> -->
               <el-table-column :label="language.leaderboard_submittime" prop="stime" min-width="160"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" min-width="160" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" min-width="160" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_yysc" prop="yysc" min-width="120" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" min-width="120" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_dyy" prop="dyy" min-width="120" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" min-width="120" align="right"> </el-table-column>
-              <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column>
-              <el-table-column :label="language.user_operation" min-width="180" align="center">
+              <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" min-width="150" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" min-width="150" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="140" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_yysc" prop="yysc" min-width="110" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" min-width="110" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_dyy" prop="dyy" min-width="110" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" min-width="110" align="right"> </el-table-column>
+              <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="110" align="center"> </el-table-column>
+              <el-table-column :label="language.user_operation" min-width="270" align="center">
                 <template slot-scope="scope">
                   <el-button
                     size="mini"
@@ -207,6 +207,11 @@
                     size="mini"
                     type="primary"
                     @click="handleAdd(scope.$index, scope.row)">修改链接</el-button>
+                  <el-button
+                    size="mini"
+                    type="primary"
+                    :disabled="scope.row.public"
+                    @click="handlePublic(scope.$index, scope.row)">{{scope.row.public ? "审核中..." : "申请公开"}}</el-button>
                 </template>
               </el-table-column>
               <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
@@ -448,6 +453,17 @@ export default {
       this.visible = true
       this.tb = b
       console.log('add', a, b, this.tb)
+    },
+    handlePublic (a, b) {
+      console.log('public', a, b.fileid, b)
+      let formData = new FormData()
+      formData.append('fileid', b.fileid)
+      this.$axios.post(config.API + config.toCheck, formData).then(res => {
+        if (res.status === 200) {
+          console.log('public', res)
+          location.reload()
+        }
+      })
     },
     handleSubmit (a, b) {
       this.visible = false

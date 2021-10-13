@@ -13,6 +13,7 @@ import Leaderboard from '@/components/Leaderboard'
 import Report from '@/components/Report'
 import AboutUs from '@/components/AboutUs'
 import TaskBoard from '@/components/TaskBoard'
+import Admin from '@/components/Admin'
 
 Vue.use(Router)
 
@@ -113,6 +114,14 @@ export default new Router({
       },
       name: 'TaskBoard',
       component: TaskBoard
+    },
+    {
+      path: '/admin',
+      meta: {
+        title: '智源指数'
+      },
+      name: 'Admin',
+      component: Admin
     }
   ]
 })
