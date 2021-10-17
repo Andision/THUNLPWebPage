@@ -111,7 +111,7 @@
           </pre>
         </div>
 
-        <div class="content-section" v-if="show.form!=theNull">
+        <div class="content-section" v-if="show.evaluate!=theNull">
           <div class="section-title">
             {{language.more_usage}}
             <i class="el-icon-tickets"></i>

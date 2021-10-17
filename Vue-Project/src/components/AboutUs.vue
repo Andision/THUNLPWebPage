@@ -69,9 +69,9 @@
             <p v-if="language.language=='zh'">主要负责同学：姚远</p>
             <p v-if="language.language=='zh'">骨干同学：董青秀，关健，曹博希</p>
             <p v-if="language.language=='zh'">参与同学：张正彦，肖朝军，顾煜贤，王晓智，岂凡超，鲍军威，聂锦燃，周昆，黄轩成，曾哲妮，任抒怀，陆金梁，曾国洋，吴杨，张纪元，许诚强，汪华东，周子乐</p>
-            <p v-if="language.language=='en'">Leader: Yuan Yao</p>
-            <p v-if="language.language=='en'">Backbone: Qingxiu Dong, Jian Guan, Boxi Cao</p>
-            <p v-if="language.language=='en'">Participate: Zhengyan Zhang, Chaojun Xiao, Yuxian Gu, Xiaozhi Wang, Fanchao Qi, Junwei Bao, Jinran Nie, Kun Zhou, Xuancheng Huang, Zheni Zeng, ShuHuai Ren, Jinliang Lu, Guoyang Zeng, Yang Wu, Jiyuan Zhang, Chengqiang Xu, Huadong Wang, Zile Zhou</p>
+            <p v-if="language.language=='en'">Student in Charge: Yuan Yao</p>
+            <p v-if="language.language=='en'">Core Member: Qingxiu Dong, Jian Guan, Boxi Cao</p>
+            <p v-if="language.language=='en'">Team Member: Zhengyan Zhang, Chaojun Xiao, Yuxian Gu, Xiaozhi Wang, Fanchao Qi, Junwei Bao, Jinran Nie, Kun Zhou, Xuancheng Huang, Zheni Zeng, ShuHuai Ren, Jinliang Lu, Guoyang Zeng, Yang Wu, Jiyuan Zhang, Chengqiang Xu, Huadong Wang, Zile Zhou</p>
 
           </div>
         </div>

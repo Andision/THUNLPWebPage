@@ -68,6 +68,11 @@
     "user_submit":"Submit",
     "user_operation": "Operation",
     "user_delete": "Delete",
+    "user_edit": "Edit Links",
+    "user_check":"In Review",
+    "user_public":"Disclosure",
+    "user_accepted":"Accepted",
+    "user_rejected":"Rejected",
     "moreinfo_org":"Organization",
     "moreinfo_author":"Author",
     "faq_content": [

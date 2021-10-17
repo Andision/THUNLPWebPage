@@ -265,7 +265,7 @@
               </el-link>
             </template>
           </el-table-column> -->
-          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="100"> </el-table-column>
+          <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="110"> </el-table-column>
           <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">

@@ -12,7 +12,7 @@
         <el-table-column prop="name" :label="language.Name" min-width="80" align="left">
         </el-table-column>
         <el-table-column prop="ability" :label="language.app_Tasks" min-width="150" align="left"></el-table-column>
-        <el-table-column :label="language.leaderboard_phb" min-width="50" align="center">
+        <el-table-column :label="language.leaderboard_phb" min-width="60" align="center">
             <template slot-scope="scope">
               <!-- <el-button
                 size="mini"

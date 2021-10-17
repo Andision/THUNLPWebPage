@@ -97,14 +97,14 @@
               </el-menu>
             </el-col>
             <el-col :span="2">
-              <div style="height:60px; display: flex; display: -webkit-flex; justify-content: center; align-items: center;">
+              <div id="language-switch" style="height:60px; display: flex; display: -webkit-flex; justify-content: center; align-items: center;">
                 <el-switch
                   v-model="languageswitch"
                   active-text="ZH"
                   inactive-text="EN"
                   @change="handleLanguage"
-                  active-color="#7857a1"
-                  inactive-color="#7857a1"
+                  active-color="#B38BE4"
+                  inactive-color="#B38BE4"
                   >
                 </el-switch>
               </div>
@@ -425,5 +425,9 @@ body,
 
 .clustrMapsLink {
   margin-top: -20px;
+}
+
+#language-switch .el-switch__label{
+  color:white;
 }
 </style>
