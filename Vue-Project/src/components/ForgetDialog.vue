@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     doLogin () {
-      console.log('LOGIN')
+      console.log('FORGET')
     }
   }
 }

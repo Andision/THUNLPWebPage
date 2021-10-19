@@ -27,7 +27,7 @@
               <!-- <div style="display:inline-block;height: 100%;line-height: 10px;">CUGE</div> -->
             </div>
             </el-col>
-            <el-col :span="20">
+            <el-col :span="18">
               <el-menu
                 class="el-menu"
                 mode="horizontal"
@@ -37,13 +37,6 @@
                 active-text-color="#FFFFFF"
                 id="bar"
               >
-                <!-- <div
-                  style="float: left; margin-top:10px; margin-left: 20px; padding: 5px; color: white; font-size: larger; cursor: pointer;"
-                >
-                  <a href="http://baai.ac.cn">
-                    <img src="https://z3.ax1x.com/2021/09/07/ho7fHA.jpg" style="height: 30px;">
-                  </a>
-                </div> -->
 
                 <el-menu-item
                   v-show="isLogin"
@@ -52,11 +45,6 @@
                   style="float: right"
                   >{{ language.app_Logout }}</el-menu-item
                 >
-                <el-submenu index="9" class="menu-item" style="float: right">
-                  <template slot="title">Language</template>
-                  <el-menu-item index="9-1" class="menu-item">简体中文</el-menu-item>
-                  <el-menu-item index="9-2" class="menu-item">English</el-menu-item>
-                </el-submenu>
                 <el-menu-item class="menu-item" index="7" style="float: right">
                   {{ isLogin ? language.app_User : language.Login }}
                 </el-menu-item>
@@ -107,6 +95,19 @@
                   language.app_Tasks
                 }}</el-menu-item>
               </el-menu>
+            </el-col>
+            <el-col :span="2">
+              <div id="language-switch" style="height:60px; display: flex; display: -webkit-flex; justify-content: center; align-items: center;">
+                <el-switch
+                  v-model="languageswitch"
+                  active-text="ZH"
+                  inactive-text="EN"
+                  @change="handleLanguage"
+                  active-color="#B38BE4"
+                  inactive-color="#B38BE4"
+                  >
+                </el-switch>
+              </div>
             </el-col>
           </el-row>
         </div>
@@ -164,7 +165,8 @@ export default {
       token: '',
       isLogin: false,
       isFresh: true,
-      alltask: task.all
+      alltask: task.all,
+      languageswitch: true
     }
   },
   mounted: function () {
@@ -298,6 +300,18 @@ export default {
         this.isFresh = true
       })
     },
+    handleLanguage () {
+      // console.log('changelanguage')
+      if (this.languageswitch) {
+        this.language = zh
+        sessionStorage.setItem('language', 'zh')
+        this.handleReload()
+      } else {
+        this.language = en
+        sessionStorage.setItem('language', 'en')
+        this.handleReload()
+      }
+    },
     handleGoHomePage () {
       this.$router.push({ path: '/' })
     },
@@ -411,5 +425,9 @@ body,
 
 .clustrMapsLink {
   margin-top: -20px;
+}
+
+#language-switch .el-switch__label{
+  color:white;
 }
 </style>

@@ -8,9 +8,11 @@
         :header-cell-style="{background:'#64438D'}"
         :cell-style="function(){return 'font-weight: 700; color: black; font-size: large;'}"
       >
-        <el-table-column prop="name" :label="language.Name">
+        <el-table-column prop="" label="" width="50" align="left"></el-table-column>
+        <el-table-column prop="name" :label="language.Name" min-width="80" align="left">
         </el-table-column>
-        <el-table-column :label="language.leaderboard_phb" min-width="180" align="center">
+        <el-table-column prop="ability" :label="language.app_Tasks" min-width="150" align="left"></el-table-column>
+        <el-table-column :label="language.leaderboard_phb" min-width="60" align="center">
             <template slot-scope="scope">
               <!-- <el-button
                 size="mini"
@@ -19,7 +21,8 @@
                 <el-link icon="el-icon-tickets" :href="'/#/taskboard?id='+scope.row.download + '&name=' + scope.row.name"></el-link>
             </template>
           </el-table-column>
-        <el-table-column prop="download" :label="language.Download" min-width="150" align="center">
+        <el-table-column prop="" label="" width="50" align="left"></el-table-column>
+        <el-table-column prop="download" :label="language.Download" min-width="50" align="center">
           <template slot-scope="scope">
             <div class="icon">
               <el-link icon="el-icon-download" @click="handleDownload(scope.row.download)" :underline="false"></el-link>
@@ -27,7 +30,7 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column prop="more" :label="language.More" min-width="150" align="center">
+        <el-table-column prop="more" :label="language.language == 'en' ? language.More+' '+ language.Info : language.More" min-width="50" align="center">
           <template slot-scope="scope">
             <div class="icon">
               <el-link icon="el-icon-more" :href="'/#/more?id='+scope.row.more" :underline="false"></el-link>
@@ -82,7 +85,7 @@ export default {
     //   more: '12345'
     // }
     this.$axios.get(config.API + config.getDataDownload).then(res => {
-      // console.log(res.data.dataset_list)
+      console.log(res.data.dataset_list)
       if (res.status === 200) {
         if (res.data.re_code === '0') {
           for (var i = 0; i < res.data.dataset_list.length; i++) {
@@ -92,7 +95,8 @@ export default {
               name: t.dataset_name,
               score: t.dataset_id,
               download: t.dataset_id,
-              more: t.dataset_id
+              more: t.dataset_id,
+              ability: t.ability + ' | ' + t.task
             })
           }
         }

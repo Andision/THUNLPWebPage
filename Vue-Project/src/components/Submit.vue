@@ -102,6 +102,7 @@ import config from '@/components/config.json'
 export default {
   data () {
     return {
+      finish_upload: false,
       submit: {
         name: '',
         discription: '',
@@ -204,13 +205,22 @@ export default {
           formData.append('multiple', 0)
         }
         // formData.append('institution', this.submit.)
-        this.$message('上传中......')
+        // this.$message('上传中......')
+        const loading = this.$loading({
+          lock: true,
+          text: 'Uploading',
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.7)'
+        })
+        setTimeout(() => {
+          loading.close()
+        }, 120000)
         this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
           console.log('handleClickSubmit', res, res.status)
           if (res.status === 200) {
             this.submit = this.submit_clear
             this.check = false
-
+            loading.close()
             this.$message({
               message: '上传成功',
               type: 'success'
