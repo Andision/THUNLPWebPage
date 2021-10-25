@@ -127,7 +127,7 @@
             <el-col :span="12" style="padding-top: 30px">
               <a
                 href="https://github.com/TsinghuaAI/CUGE"
-                style="font-size: xx-medium; text-decoration: none; color: white"
+                style="font-size: xx-medium; text-decoration: none; color: #9B9EA0"
                 >联系我们</a
               >
             </el-col>
@@ -397,7 +397,8 @@ body,
 
 .footer-div {
   height: 150px;
-  background-color: black;
+  /*background-color: black;*/
+  background: rgb(37, 37, 37);
   color: white;
   padding-top: 50px;
 }
