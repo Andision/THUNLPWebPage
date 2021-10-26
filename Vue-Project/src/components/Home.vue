@@ -89,12 +89,20 @@
         </div> -->
       </div>
       <hr class="second-hr" color="#F5F4FE" />
-      <a href="https://www.baai.ac.cn/">
-        <el-image
-          src="https://z3.ax1x.com/2021/09/16/4nzcTS.jpg"
-          style="width: 200px; height: 80px"
-        ></el-image>
-      </a>
+      <el-row>
+        <a href="https://www.baai.ac.cn/">
+          <el-image
+            src="https://z3.ax1x.com/2021/09/16/4nzcTS.jpg"
+            style="width: 180px; height: 80px"
+          ></el-image>
+        </a>
+      </el-row>
+      {{zhiyuan.zh}}
+      <el-row>
+      </el-row>
+      <el-row>
+        {{zhiyuan.en}}
+      </el-row>
       <!-- <div class="second-logo" style="text-align:center;">
         <el-row>
           <el-col :span="8" style="min-height:10px;">
@@ -170,6 +178,10 @@ export default {
           en: 'Shanxi University'
         }
       ],
+      zhiyuan: {
+        zh: '北京智源人工智能研究院',
+        en: 'Beijing Academy of Artificial Intelligence，BAAI'
+      },
       org1: [
         {
           zh: '北京智源人工智能研究院',

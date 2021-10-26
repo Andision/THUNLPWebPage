@@ -34,7 +34,7 @@
           <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="120"> </el-table-column>
           <!-- <el-table-column label="指标" prop="zb" align="center"> </el-table-column> -->
           <el-table-column v-for="(i,index) in newTitle" :label="i" :prop="i" align="center" :key="index"> </el-table-column>
-          <el-table-column label="Score" prop="score" align="center"> </el-table-column>
+          <el-table-column label="Score" prop="score" align="center" v-if="newTitle.length > 1"> </el-table-column>
           <!-- <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">

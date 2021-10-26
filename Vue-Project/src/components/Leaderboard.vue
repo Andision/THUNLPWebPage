@@ -3,6 +3,30 @@
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
     <el-card class="main">
       <div slot="header">
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-submenu
+            v-for="(abi, index) in alltask"
+            :index="'10-' + index"
+            :key="index"
+          >
+            <template slot="title">{{ language.language == 'zh' ? abi.zh:abi.en }}</template>
+            <el-menu-item
+                      :index="
+                        'A-10-' +
+                        index +
+                        '-' +
+                        index1 +
+                        '-' +
+                        task.id +
+                        '-@' +
+                        task.name
+                      "
+                      v-for="(task, index1) in abi.task"
+                      :key="abi + index1"
+                      >{{ task.name }}</el-menu-item
+                    >
+          </el-submenu>
+        </el-menu>
         <!-- <div class="main-title">
           <div class="title-title">
             {{ language.task_synl }}
@@ -399,6 +423,7 @@
 
 <script>
 import config from '@/components/config.json'
+import task from '@/components/task.json'
 export default {
   name: 'HelloWorld',
   props: {
@@ -407,6 +432,7 @@ export default {
   data () {
     return {
       drawer: false,
+      alltask: task.all,
       drawerInfo: {
       },
       checked2: true,

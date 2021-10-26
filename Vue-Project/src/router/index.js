@@ -14,6 +14,7 @@ import Report from '@/components/Report'
 import AboutUs from '@/components/AboutUs'
 import TaskBoard from '@/components/TaskBoard'
 import Admin from '@/components/Admin'
+import Reset from '@/components/Reset'
 
 Vue.use(Router)
 
@@ -122,6 +123,14 @@ export default new Router({
       },
       name: 'Admin',
       component: Admin
+    },
+    {
+      path: '/reset',
+      meta: {
+        title: '智源指数'
+      },
+      name: 'Reset',
+      component: Reset
     }
   ]
 })

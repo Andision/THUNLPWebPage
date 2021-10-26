@@ -1,4 +1,5 @@
 {
+    "debug": "true",
     "API": "/api",
     "toSignup": "/register",
     "toLogin": "/login",
@@ -8,6 +9,7 @@
     "toEditLink": "/link_modify",
     "toCheck": "/ask_for_check",
     "toSubmitCheck": "/admin_check",
+    "toForget": "/forget_password",
     "getDataDownload": "/get_full_dataset",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
