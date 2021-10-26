@@ -257,7 +257,7 @@ export default {
             break
           case '4':
             // this.$router.push({path: 'http://www.baidu.com'})
-            window.open('/api/get_paper')
+            window.open('/pdf/CUGE.pdf')
             break
           case '5':
             this.$router.push({ path: '/submit' })

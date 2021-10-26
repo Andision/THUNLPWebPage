@@ -11,7 +11,7 @@
         <el-table-column prop="" label="" width="50" align="left"></el-table-column>
         <el-table-column prop="name" :label="language.Name" min-width="80" align="left">
         </el-table-column>
-        <el-table-column prop="ability" :label="language.app_Tasks" min-width="150" align="left"></el-table-column>
+        <el-table-column prop="ability" :label="language.datadownload_task" min-width="150" align="left"></el-table-column>
         <el-table-column :label="language.leaderboard_phb" min-width="60" align="center">
             <template slot-scope="scope">
               <!-- <el-button
