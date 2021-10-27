@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import config from '@/components/config.json'
 export default {
   data () {
     var validatePass = (rule, value, callback) => {
@@ -47,10 +48,10 @@ export default {
       }
     }
     return {
+      token: '',
       ruleForm: {
         pass: '',
-        checkPass: '',
-        age: ''
+        checkPass: ''
       },
       rules: {
         pass: [
@@ -64,9 +65,24 @@ export default {
   },
   methods: {
     handleSubmitForm (formName) {
+      var that = this
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          console.log('submit!!')
+          let formData = new FormData()
+          formData.append('token', this.token)
+          formData.append('password', this.ruleForm.pass)
+          this.$axios.post(config.API + config.toReset, formData).then((res) => {
+            if (config.debug === 'true') {
+              console.log(res)
+            }
+            if (res.status === 200) {
+              that.$message({
+                message: res.data.msg,
+                type: res.data.re_code === '0' ? 'success' : ''
+              })
+            }
+          })
         } else {
           console.log('error submit!!')
           return false
@@ -76,6 +92,10 @@ export default {
   },
   props: {
     language: Object
+  },
+  mounted: function () {
+    this.token = this.$route.query.token
+    console.log('resetPswd', this.token)
   }
 }
 </script>

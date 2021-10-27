@@ -5,7 +5,7 @@
       <el-row class="detail"> <div style="word-wrap:break-all;">{{language.forget_hint}} </div></el-row>
       <el-row class="input">
         <el-input
-          v-model="user.username"
+          v-model="user.email"
           :placeholder="language.Email"
           prefix-icon="el-icon-user"
           size="large"
@@ -18,7 +18,7 @@
       </el-row>
     </div>
     <div v-if="showHint == true">
-      请查看您的邮箱完成后续设置。
+      {{resHint}}
     </div>
   </el-dialog>
 </template>
@@ -31,6 +31,7 @@ export default {
     return {
       visible: this.v,
       showHint: false,
+      resHint: '',
       user: {
         email: ''
       }
@@ -46,6 +47,9 @@ export default {
     },
     visible (curVal, oldVal) {
       if (!curVal) {
+        this.showHint = false
+        this.resHint = ''
+        this.user.email = ''
         this.$emit('close', false)
       }
     }
@@ -60,6 +64,7 @@ export default {
         }
         if (res.status === 200) {
           this.showHint = true
+          this.resHint = res.data.msg
         }
       })
     }
