@@ -70,7 +70,7 @@
                     v-for="(abi, index) in alltask"
                     :key="index"
                   >
-                    <template slot="title"><span class="ads-font">{{ language.language == 'zh' ? abi.zh:abi.en }}</span></template>
+                    <template slot="title"><span class="ads-font">{{ language.language == 'zh' ? abi.name_zh:abi.name_en }}</span></template>
                     <el-menu-item
                       :index="
                         'A-10-' +
@@ -84,7 +84,7 @@
                       "
                       v-for="(task, index1) in abi.task"
                       :key="abi + index1"
-                      >{{ task.name }}</el-menu-item
+                      >{{ task.name_en }}</el-menu-item
                     >
                   </el-submenu>
                 </el-submenu>

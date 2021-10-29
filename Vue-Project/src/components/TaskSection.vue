@@ -160,7 +160,7 @@ export default {
 }
 .box-card{
   background-color: #7857A1;
-  width: 240px;
+  width: 250px;
   height: 80px;
   /* margin-top: 20px; */
   margin: auto;

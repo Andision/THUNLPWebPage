@@ -1,119 +1,152 @@
 {
     "all": [
         {
-            "zh": "语言理解-词句级",
-            "en": "NLU-WSL",
+            "name_zh": "语言理解-词句级",
+            "name_en": "NLU-WSL",
+            "id": "NLU-WSL",
+            "span": 77,
             "task": [
                 {
-                    "name": "PKU-SEG",
+                    "name_zh": "PKU-SEG",
+                    "name_en": "PKU-SEG",
                     "id": "17"
                 },
                 {
-                    "name": "WordSeg-Weibo",
+                    "name_zh": "WordSeg-Weibo",
+                    "name_en": "WordSeg-Weibo",
                     "id": "18"
                 },
                 {
-                    "name": "PKU-SEGPOS",
+                    "name_zh": "PKU-SEGPOS",
+                    "name_en": "PKU-SEGPOS",
                     "id": "19"
                 },
                 {
-                    "name": "CCPM",
+                    "name_zh": "CCPM",
+                    "name_en": "CCPM",
                     "id": "1"
                 },
                 {
-                    "name": "CMeEE",
+                    "name_zh": "CMeEE",
+                    "name_en": "CMeEE",
                     "id": "20"
                 },
                 {
-                    "name": "FinRE",
+                    "name_zh": "FinRE",
+                    "name_en": "FinRE",
                     "id": "3"
                 }
             ]
         },
         {
-            "zh": "语言理解-篇章级",
-            "en": "NLU-DL",
+            "name_zh": "语言理解-篇章级",
+            "name_en": "NLU-DL",
+            "id": "NLU-DL",
+            "span": 7,
             "task": [
                 {
-                    "name": "SPR",
+                    "name_zh": "SPR",
+                    "name_en": "SPR",
                     "id": "6"
                 },
                 {
-                    "name": "ClozeT",
+                    "name_zh": "ClozeT",
+                    "name_en": "ClozeT",
                     "id": "5"
                 },
                 {
-                    "name": "C3",
+                    "name_zh": "C3",
+                    "name_en": "C3",
                     "id": "4"
                 }
             ]
         },
         {
-            "zh": "信息获取及问答",
-            "en": "IA&QA",
+            "name_zh": "信息获取及问答",
+            "name_en": "IA&QA",
+            "id": "IA&QA",
+            "span": 7,
             "task": [
                 {
-                    "name": "WantWords",
+                    "name_zh": "WantWords",
+                    "name_en": "WantWords",
                     "id": "8"
                 },
                 {
-                    "name": "NLPCC2018-KBQA",
+                    "name_zh": "NLPCC2018-KBQA",
+                    "name_en": "NLPCC2018-KBQA",
                     "id": "9"
                 },
                 {
-                    "name": "Sogou-Log",
+                    "name_zh": "Sogou-Log",
+                    "name_en": "Sogou-Log",
                     "id": "7"
                 }
             ]
         },
         {
-            "zh": "语言生成",
-            "en": "NLG",
+            "name_zh": "语言生成",
+            "name_en": "NLG",
+            "id": "NLG",
+            "span": 7,
             "task": [
                 {
-                    "name": "LCSTS",
+                    "name_zh": "LCSTS",
+                    "name_en": "LCSTS",
                     "id": "10"
                 },
                 {
-                    "name": "CEPSUM",
+                    "name_zh": "CEPSUM",
+                    "name_en": "CEPSUM",
                     "id": "11"
                 },
                 {
-                    "name": "E-Reviews",
+                    "name_zh": "E-Reviews",
+                    "name_en": "E-Reviews",
                     "id": "16"
                 }
             ]
         },
         {
-            "zh": "对话交互",
-            "en": "CI",
+            "name_zh": "对话交互",
+            "name_en": "CI",
+            "id": "CI",
+            "span": 7,
             "task": [
                 {
-                    "name": "KdConv",
+                    "name_zh": "KdConv",
+                    "name_en": "KdConv",
                     "id": "14"
                 }
             ]
         },
         {
-            "zh": "多语言",
-            "en": "ML",
+            "name_zh": "多语言",
+            "name_en": "ML",
+            "id": "ML",
+            "span": 7,
             "task": [
                 {
-                    "name": "WMT20",
+                    "name_zh": "WMT20",
+                    "name_en": "WMT20",
                     "id": "12"
                 },
                 {
-                    "name": "NCLS",
+                    "name_zh": "NCLS",
+                    "name_en": "NCLS",
                     "id": "13"
                 }
             ]
         },
         {
-            "zh": "数学推理",
-            "en": "MR",
+            "name_zh": "数学推理",
+            "name_en": "MR",
+            "id": "MR",
+            "span": 7,
             "task": [
                 {
-                    "name": "Math23K",
+                    "name_zh": "Math23K",
+                    "name_en": "Math23K",
                     "id": "15"
                 }
             ]

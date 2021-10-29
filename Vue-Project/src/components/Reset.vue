@@ -3,12 +3,12 @@
     <el-card class="reset-all-card">
       <div slot="header" class="clearfix">
       </div>
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-        <el-form-item label="密码" prop="pass">
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm">
+        <el-form-item prop="pass">
+          <el-input type="password" v-model="ruleForm.pass" autocomplete="off" :placeholder="language.reset_pswd"></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="checkPass">
-          <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+        <el-form-item prop="checkPass">
+          <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" :placeholder="language.reset_confirmPswd"></el-input>
         </el-form-item>
       </el-form>
       <!-- <el-row class="reset-card-line">
@@ -18,7 +18,7 @@
         <el-input v-model="form.check" placeholder="haha" show-password></el-input>
       </el-row> -->
       <el-row class="reset-card-line">
-        <el-button type="primary" @click="handleSubmitForm('ruleForm')" style="width:100%;">RESETs</el-button>
+        <el-button type="primary" @click="handleSubmitForm('ruleForm')" style="width:100%;">{{language.reset_reset}}</el-button>
       </el-row>
     </el-card>
   </div>

@@ -11,7 +11,10 @@
     "app_User": "Profile",
     "app_Logout": "Logout",
     "app_Single": "Single",
-    "datadownload_task":"Ability | Task",
+    "datadownload_task": "Ability | Task",
+    "reset_confirmPswd":"Confirm Password",
+    "reset_pswd":"Input Password",
+    "reset_reset": "Reset",
     "home_title1": "CUGE",
     "home_title2": "Chinese Language Understanding and Generation Evaluation Benchmark",
     "home_titledetail": "CUGE contains high-quality Chinese natural language processing datasets, leaderboard and online evaluation platform. CUGE aims to build a comprehensive and systematic Chinese language intelligence evaluation system, form a multi-level evaluation strategy, and promote the standard evaluation of Chinese natural language processing technology in a more scientific, standardized and high-quality manner.",
@@ -38,13 +41,13 @@
     "leaderboard_dyy_hint": "Multilingualism",
     "leaderboard_sxtl_hint": "Mathematical Reasoning",
     "leaderboard_zyzs_hint": "CUGE Index based on mT5-small",
-    "submit_org":"Organization",
+    "submit_org": "Organization",
     "about_title": "ABOUT US",
     "about_title1": "About Us",
     "about_title2": "Work Committee",
     "about_title3": "Committee Organization",
     "about_title4": "R&D Team",
-    "about_pic":"https://z3.ax1x.com/2021/09/16/4uSfAO.png",
+    "about_pic": "https://z3.ax1x.com/2021/09/16/4uSfAO.png",
     "about_list": [
         "Tsinghua Natural Language Processing and Computational Social Science Lab",
         "Peking University Institute of Computational Linguistics",
@@ -61,21 +64,20 @@
         "Institute of Human Language Technology, Soochow University",
         "Dalian University of Technology Information Retrieval",
         "Key Laboratory Computational Intelligence and Chinese Information Processing of Ministry of Education, Shanxi University"
-
     ],
     "about_content1": "The CUGE benchmark is built with the support of Beijing Academy of Artificial Intelligence, and the committee organizations are composed of 15 domestic superior research institutes. CUGE aims to build a comprehensive and systematic Chinese language intelligence evaluation system, form a multi-level evaluation strategy, and promote the standard evaluation of Chinese natural language processing technology in a more scientific, standardized and high-quality manner.",
-    "user_code":"Code Link",
-    "user_paper":"Paper Link",
-    "user_submit":"Submit",
+    "user_code": "Code Link",
+    "user_paper": "Paper Link",
+    "user_submit": "Submit",
     "user_operation": "Operation",
     "user_delete": "Delete",
     "user_edit": "Edit Links",
-    "user_check":"In Review",
-    "user_public":"Disclosure",
-    "user_accepted":"Accepted",
-    "user_rejected":"Rejected",
-    "moreinfo_org":"Organization",
-    "moreinfo_author":"Author",
+    "user_check": "In Review",
+    "user_public": "Disclosure",
+    "user_accepted": "Accepted",
+    "user_rejected": "Rejected",
+    "moreinfo_org": "Organization",
+    "moreinfo_author": "Author",
     "faq_content": [
         {
             "title": "How to participate in CUGE evaluation?",
@@ -117,7 +119,7 @@
             "details": [
                 "CUGE system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future."
             ],
-            "pre":[
+            "pre": [
                 "<div>For now, you can create issues at <a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a> project on GitHub if you have any suggestions or comments for us.</div>"
             ]
         }

@@ -375,36 +375,38 @@ export default {
     //     }
     //   }
     // })
-    this.$axios.request({
-      url: config.API + config.getTaskAll,
-      method: 'POST',
-      data: {
-        'abilities': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
-        'simple': 0
-      }
-    }).then((res) => {
-      console.log('new tasl', res)
-      if (res.status === 200) {
-        this.show = res.data.ability_datasets_dic
-        this.alldata.all = res.data.ability_datasets_dic
-      }
-    })
-
-    this.$axios.request({
-      url: config.API + config.getTaskAll,
-      method: 'POST',
-      data: {
-        'abilities': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
-        'simple': 1
-      }
-    }).then((res) => {
-      console.log('s tasl', res)
-      if (res.status === 200) {
-        this.alldata.jj = res.data.ability_datasets_dic
-      }
-    })
-
-    this.alldata.all = this.test_data.ability_datasets_dic
+    // this.$axios.request({
+    //   url: config.API + config.getTaskAll,
+    //   method: 'POST',
+    //   data: {
+    //     'abilities': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
+    //     'simple': 1
+    //   }
+    // }).then((res) => {
+    //   console.log('s tasl', res)
+    //   if (res.status === 200) {
+    //     this.alldata.jj = res.data.ability_datasets_dic
+    //     config.task.jj = res.data.ability_datasets_dic
+    //   }
+    // })
+    // this.$axios.request({
+    //   url: config.API + config.getTaskAll,
+    //   method: 'POST',
+    //   data: {
+    //     'abilities': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
+    //     'simple': 0
+    //   }
+    // }).then((res) => {
+    //   console.log('new tasl', res)
+    //   if (res.status === 200) {
+    //     this.show = res.data.ability_datasets_dic
+    //     config.task.all = res.data.ability_datasets_dic
+    //   }
+    // })
+    // this.alldata.all = this.test_data.ability_datasets_dic
+    this.alldata.jj = config.task.jj
+    this.alldata.all = config.task.all
+    this.show = config.task.all
   },
   components: { TaskSection }
 }

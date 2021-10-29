@@ -3,7 +3,12 @@
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
     <el-card class="main">
       <div slot="header">
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-row>
+          <el-col :span="abi.span" v-for="(abi, index) in data" :key="index">
+            <el-tree ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id" highlight-current></el-tree>
+          </el-col>
+        </el-row>
+        <!-- <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-submenu
             v-for="(abi, index) in alltask"
             :index="'10-' + index"
@@ -26,7 +31,7 @@
                       >{{ task.name }}</el-menu-item
                     >
           </el-submenu>
-        </el-menu>
+        </el-menu> -->
         <!-- <div class="main-title">
           <div class="title-title">
             {{ language.task_synl }}
@@ -124,6 +129,7 @@
           :header-cell-style="{'background':'#64438D'}"
           :cell-style="cellStyle"
           @row-click="handleRowClick"
+          ref="table"
         >
           <el-table-column type="expand">
             <template slot-scope="scope">
@@ -446,98 +452,13 @@ export default {
         yyljpj: true,
         yyljcy: true
       },
-      c: ['NENGLI', 'JINJIAN'],
-      tableData: [
-        {
-          rank: '1',
-          name: '"mT5-XXL"',
-          org: '"CUGE Team"',
-          plink: 'https://arxiv.org/abs/2010.11934',
-          clink: 'https://github.com/google-research/multilingual-t5',
-          sj: '90.62',
-          lj: '86.36',
-          js: '35.37',
-          szjs: '59.27',
-          sc: '34.8',
-          dyy: '23.98',
-          score: '99',
-          show1: [
-            {
-              name: '阅读理解',
-              score: '86.36'
-            }
-          ],
-          show2: [
-            {
-              name: 'C3',
-              score: '86.36'
-            }
-          ],
-          expand: [
-            {
-              name: 'WMT20',
-              score: 23.98
-            },
-            {
-              name: 'Math23K',
-              score: 59.27
-            },
-            {
-              name: 'Sogou-Log',
-              score: 35.37
-            },
-            {
-              name: 'C3',
-              score: 86.36
-            },
-            {
-              name: 'LCSTS',
-              score: 34.8
-            },
-            {
-              name: 'CCPR',
-              score: 90.62
-            }
-          ]
-        }
-      ],
-      pic: {
-        indicator: [
-          {
-            name: '数学推理',
-            max: 500
-          },
-          {
-            name: '对话交互',
-            max: 500
-          },
-          {
-            name: '语言生成',
-            max: 500
-          },
-          {
-            name: '信息获取及问答',
-            max: 500
-          },
-          {
-            name: '语言理解-篇章级',
-            max: 500
-          },
-          {
-            name: '语言理解-词句级',
-            max: 500
-          },
-          {
-            name: '多语言',
-            max: 500
-          }
-        ],
-        data: [
-          {
-            value: [90.62, 86.36, 23.98, 59.27, 35.37, 34.8]
-          }
-        ]
+      data: task.all,
+      defaultProps: {
+        children: 'task',
+        // label: language.language === 'zh' ? 'name_zh' : 'name_en'
+        label: 'name_zh'
       },
+      tableData: [],
       pic_zh: {
         indicator: [
           {
@@ -623,13 +544,15 @@ export default {
       'end': -1
     }
     this.$axios.post(config.API + config.getRanklist, data).then(res => {
-      console.log(res)
-      if (res.status === 200) {
+      if (config.debug === 'true') {
         console.log(res)
+      }
+      if (res.status === 200) {
+        // console.log(res)
         var t = res.data.rank_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
-          console.log(i, r)
+          // console.log(i, r)
           var toAppend = {
             rank: i,
             name: r.modelname,
@@ -709,12 +632,18 @@ export default {
             toAppend.rank = 'Baseline'
           }
           this.tableData.push(toAppend)
-          console.log(toAppend)
+          // console.log(toAppend)
         }
       }
     })
   },
   methods: {
+    handleNodeClick (a, b, c) {
+      console.log(a, b, c)
+      var t = this.$refs.tree[0].getCheckedNodes()
+      console.log('tree', t)
+      // this.$refs.tree.setCheckedKeys([])
+    },
     cellStyle ({ row, column, rowIndex, columnIndex }) {
       if (rowIndex === 0) {
         return 'background-color:#eceaff; font-weight: 700; color: black;font-family: "Microsoft YaHei";'
@@ -734,8 +663,9 @@ export default {
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
       if (column.label !== this.language.leaderboard_codepaper) {
-        this.drawerInfo = row
-        this.drawer = true
+        // this.drawerInfo = row
+        // this.drawer = true
+        this.$refs.table.toggleRowExpansion(row)
       }
     },
     waitToDraw (row, rowList) {
@@ -831,6 +761,14 @@ export default {
 }
 </script>
 
+<style>
+.el-col-7{
+  width:14%;
+}
+.el-col-77{
+  width:16%;
+}
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .all {

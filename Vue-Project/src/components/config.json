@@ -18,5 +18,191 @@
     "getMoreInfoEN": "/parser_en",
     "getSubmitlist": "/commit_record",
     "getEvalReport": "/eval_report",
-    "getChecklist": "/check_list"
+    "getChecklist": "/check_list",
+    "task": {
+        "jj": {
+            "信息获取及问答能力": {
+                "文档检索|Document Retrieval": [
+                    {
+                        "dataset_id": 7,
+                        "dataset_name": "Sogou-Log"
+                    }
+                ]
+            },
+            "多语言能力": {
+                "机器翻译|Machine Translation": [
+                    {
+                        "dataset_id": 12,
+                        "dataset_name": "WMT20"
+                    }
+                ]
+            },
+            "对话交互能力": {
+                "知识驱动的对话生成|Knowledge-driven Conversation Generation": [
+                    {
+                        "dataset_id": 14,
+                        "dataset_name": "KdConv"
+                    }
+                ]
+            },
+            "数学推理能力": {
+                "数值计算|Mathematical Computation": [
+                    {
+                        "dataset_id": 15,
+                        "dataset_name": "Math23K"
+                    }
+                ]
+            },
+            "语言理解能力-篇章级": {
+                "阅读理解|Reading Comprehension": [
+                    {
+                        "dataset_id": 4,
+                        "dataset_name": "C3"
+                    }
+                ]
+            },
+            "语言理解能力-词句级": {
+                "古诗文识记|Classical Poetry Matching": [
+                    {
+                        "dataset_id": 1,
+                        "dataset_name": "CCPM"
+                    }
+                ]
+            },
+            "语言生成能力": {
+                "摘要生成|Text Summarization": [
+                    {
+                        "dataset_id": 10,
+                        "dataset_name": "LCSTS"
+                    }
+                ]
+            }
+        },
+        "all": {
+            "信息获取及问答能力": {
+                "反向词典|Reverse Dictionary": [
+                    {
+                        "dataset_id": 8,
+                        "dataset_name": "WantWords"
+                    }
+                ],
+                "开放域问答|Open-domain Question Answering": [
+                    {
+                        "dataset_id": 9,
+                        "dataset_name": "NLPCC2018-KBQA"
+                    }
+                ],
+                "文档检索|Document Retrieval": [
+                    {
+                        "dataset_id": 7,
+                        "dataset_name": "Sogou-Log"
+                    }
+                ]
+            },
+            "多语言能力": {
+                "机器翻译|Machine Translation": [
+                    {
+                        "dataset_id": 12,
+                        "dataset_name": "WMT20"
+                    }
+                ],
+                "跨语言摘要|Cross-lingual Text Summarization": [
+                    {
+                        "dataset_id": 13,
+                        "dataset_name": "NCLS"
+                    }
+                ]
+            },
+            "对话交互能力": {
+                "知识驱动的对话生成|Knowledge-driven Conversation Generation": [
+                    {
+                        "dataset_id": 14,
+                        "dataset_name": "KdConv"
+                    }
+                ]
+            },
+            "数学推理能力": {
+                "数值计算|Mathematical Computation": [
+                    {
+                        "dataset_id": 15,
+                        "dataset_name": "Math23K"
+                    }
+                ]
+            },
+            "语言理解能力-篇章级": {
+                "幽默检测|Humor Detection": [
+                    {
+                        "dataset_id": 6,
+                        "dataset_name": "SPR"
+                    }
+                ],
+                "故事情节完形填空|Story Cloze Test": [
+                    {
+                        "dataset_id": 5,
+                        "dataset_name": "ClozeT"
+                    }
+                ],
+                "阅读理解|Reading Comprehension": [
+                    {
+                        "dataset_id": 4,
+                        "dataset_name": "C3"
+                    }
+                ]
+            },
+            "语言理解能力-词句级": {
+                "中文分词|Word Segmentation": [
+                    {
+                        "dataset_id": 17,
+                        "dataset_name": "PKU-SEG"
+                    },
+                    {
+                        "dataset_id": 18,
+                        "dataset_name": "WordSeg-Weibo"
+                    }
+                ],
+                "中文分词和词性标注|Word Segmentation and POS Tagging": [
+                    {
+                        "dataset_id": 19,
+                        "dataset_name": "PKU-SEGPOS"
+                    }
+                ],
+                "古诗文识记|Classical Poetry Matching": [
+                    {
+                        "dataset_id": 1,
+                        "dataset_name": "CCPM"
+                    }
+                ],
+                "命名实体识别|Named Entity Recognition": [
+                    {
+                        "dataset_id": 20,
+                        "dataset_name": "CMeEE"
+                    }
+                ],
+                "实体关系抽取|Entity Relation Extraction": [
+                    {
+                        "dataset_id": 3,
+                        "dataset_name": "FinRE"
+                    }
+                ]
+            },
+            "语言生成能力": {
+                "摘要生成|Text Summarization": [
+                    {
+                        "dataset_id": 10,
+                        "dataset_name": "LCSTS"
+                    },
+                    {
+                        "dataset_id": 11,
+                        "dataset_name": "CEPSUM"
+                    }
+                ],
+                "数据到文本生成|Data-to-text Generation": [
+                    {
+                        "dataset_id": 16,
+                        "dataset_name": "E-Reviews"
+                    }
+                ]
+            }
+        }
+    }
 }

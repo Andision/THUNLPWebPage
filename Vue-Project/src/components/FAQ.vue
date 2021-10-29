@@ -1,16 +1,16 @@
 <template>
   <div class="all">
     <el-collapse v-model="activeName">
-      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index" name="1">
+      <el-collapse-item class="section" v-for="(key,index) in tableData" :key="index" name="open">
         <template slot="title">
           <div class="section-title">
             {{key.title}}
           </div>
         </template>
-        <div class="section-content" v-for="(key1,index1) in key.details" :key="index1">
+        <div class="section-content" v-for="(key1,index1) in key.details" :key="index+'--'+index1">
           {{key1}}
         </div>
-        <pre class="section-content" v-for="(key2,index2) in key.pre" :key="index2" v-html="key2">
+        <pre class="section-content" v-for="(key2,index2) in key.pre" :key="index+'-'+index2" v-html="key2">
         </pre>
       </el-collapse-item>
     </el-collapse>
@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       tableData: [],
-      activeName: ['1']
+      activeName: ['open']
     }
   },
   mounted: function () {

@@ -34,10 +34,10 @@
                 <el-row class="head-word" v-if="language.language=='zh'">
                   {{key.zh.name}}
                 </el-row>
-                <el-row class="head-word head-purple" v-if="language.language=='en'">
+                <el-row class="head-word-en head-purple" v-if="language.language=='en'">
                   {{key.en.title}}
                 </el-row>
-                <el-row class="head-word" v-if="language.language=='en'">
+                <el-row class="head-word-en" v-if="language.language=='en'">
                   {{key.en.name}}
                 </el-row>
               </el-col>
@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import config from '@/components/config.json'
+// import config from '@/components/config.json'
 export default {
   props: {
     language: Object
@@ -145,25 +145,6 @@ export default {
   methods: {},
   mounted: function () {
     this.about_list = this.language.about_list
-    this.id = this.$route.query.id
-    console.log(this.id)
-    this.$axios.get(config.API + config.getMoreInfo + '?dataset_id=' + this.id).then(res => {
-      console.log(res)
-      if (res.status === 200) {
-        var t = res.data
-        this.show = t
-        // this.show.title = t.数据集
-        // this.show.org = t.单位
-        // this.show.intr = t.简介
-        // this.show.paper = t.论文
-        // this.show.ref = t.论文引用
-        // this.show.size = t.数据规模
-        // this.show.download = t.数据下载
-        // this.show.form = t.数据集格式描述
-        // this.show.sample = t.数据样例
-      }
-    })
-    // this.show = this.testshow
   }
 }
 </script>
@@ -246,6 +227,11 @@ code {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+}
+.head-word-en{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 .head-purple{
   color: #64438D;
