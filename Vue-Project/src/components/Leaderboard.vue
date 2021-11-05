@@ -5,8 +5,17 @@
       <div slot="header">
         <el-row>
           <el-col :span="abi.span" v-for="(abi, index) in data" :key="index">
-            <el-tree ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id" highlight-current></el-tree>
+            <el-tree ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree>
           </el-col>
+        </el-row>
+        <hr />
+        <el-row>
+          <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
+            精简榜
+          </el-button>
+          <el-button size="mini" type="success" style="float:right; margin-right:30px;" @click="handleTreeSelect">
+            确认选择
+          </el-button>
         </el-row>
         <!-- <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-submenu
@@ -134,7 +143,7 @@
           <el-table-column type="expand">
             <template slot-scope="scope">
               <el-container>
-                <el-aside width="600px"
+                <el-aside width="600px" v-show="!isSelecting"
                   ><div><div :id="'main'+scope.row.rank" style="width: 560px; height: 300px;overflow:hidden;"></div
                 ></div></el-aside>
                 <el-main>
@@ -151,7 +160,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?[]:scope.row.yyljcy_dataset">
                               {{language.leaderboard_yyljcy}}
                             </el-button>
                           </el-tooltip>
@@ -160,7 +169,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?[]:scope.row.yyljpj_dataset">
                               {{language.leaderboard_yyljpj}}
                             </el-button>
                           </el-tooltip>
@@ -169,7 +178,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?[]:scope.row.xxhq_dataset">
                               {{language.leaderboard_xxhq}}
                             </el-button>
                           </el-tooltip>
@@ -178,7 +187,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?[]:scope.row.yysc_dataset">
                               {{language.leaderboard_yysc}}
                             </el-button>
                           </el-tooltip>
@@ -187,7 +196,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?[]:scope.row.dhjh_dataset">
                               {{language.leaderboard_dhjh}}
                             </el-button>
                           </el-tooltip>
@@ -196,7 +205,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?[]:scope.row.dyy_dataset">
                               {{language.leaderboard_dyy}}
                             </el-button>
                           </el-tooltip>
@@ -205,7 +214,7 @@
                       <el-col :span="6">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?[]:scope.row.sxtl_dataset">
                               {{language.leaderboard_sxtl}}
                             </el-button>
                           </el-tooltip>
@@ -215,19 +224,19 @@
                     <hr class="inner-hr"/>
                     <el-row>
                       <el-col
-                        v-for="(i, index) in scope.row.show1"
+                        v-for="(i, name, index) in scope.row.show1"
                         :key="index"
-                        :span="Math.floor(24 / scope.row.show1.length)"
+                        :span="Math.floor(24 / Object.keys(scope.row.show1).length)"
                       >
                         <div class="">
-                          <el-button type="text">
-                            {{ i.task }}
+                          <el-button type="text" @click="isSelecting?scope.row.show2=i.dataset_score_list:isSelecting=isSelecting">
+                            {{ isSelecting? name : i.task }}
                           </el-button>
                         </div>
                       </el-col>
                     </el-row>
-                    <hr class="inner-hr"/>
-                    <el-row>
+                    <hr class="inner-hr" v-show="!isSelecting"/>
+                    <el-row v-show="!isSelecting">
                       <el-col
                         v-for="(i, index) in scope.row.show1"
                         :key="index"
@@ -235,7 +244,7 @@
                       >
                         <div class="">
                           <div class="score">
-                            {{ i.score[0] === null ? '' : i.score[0]+' ('+i.score[1]+')' }}
+                            {{ isSelecting? i : (i.score[0] === null ? '' : i.score[0]+' ('+i.score[1]+')') }}
                           </div>
                         </div>
                       </el-col>
@@ -249,7 +258,7 @@
                       >
                         <div class="">
                           <el-button type="text">
-                            {{ i.name }}
+                            {{ isSelecting? i.name : i.name }}
                           </el-button>
                         </div>
                       </el-col>
@@ -263,7 +272,7 @@
                       >
                         <div class="">
                           <div class="score">
-                            {{ i.score[0] === null ? '' : i.score[0]+' ('+i.score[1]+')' }}
+                            {{ isSelecting? i.score === null ? '':i.score : (i.score[0] === null ? '' : i.score[0]+' ('+i.score[1]+')') }}
                           </div>
                         </div>
                       </el-col>
@@ -429,7 +438,7 @@
 
 <script>
 import config from '@/components/config.json'
-import task from '@/components/task.json'
+import task from '@/components/select.json'
 export default {
   name: 'HelloWorld',
   props: {
@@ -437,6 +446,7 @@ export default {
   },
   data () {
     return {
+      isSelecting: false,
       drawer: false,
       alltask: task.all,
       drawerInfo: {
@@ -451,6 +461,39 @@ export default {
         xxhq: true,
         yyljpj: true,
         yyljcy: true
+      },
+      dataSelect: {
+        '语言理解能力-词句级': {
+          '古诗文识记': 0,
+          '实体关系抽取': 0,
+          '中文分词': 0,
+          '中文分词和词性标注': 0,
+          '命名实体识别': 0
+        },
+        '语言理解能力-篇章级': {
+          '阅读理解': 0,
+          '故事情节完形填空': 0,
+          '幽默检测': 0
+        },
+        '信息获取及问答能力': {
+          '文档检索': 0,
+          '反向词典': 0,
+          '开放域问答': 0
+        },
+        '语言生成能力': {
+          '摘要生成': 0,
+          '数据到文本生成': 0
+        },
+        '多语言能力': {
+          '机器翻译': 0,
+          '跨语言摘要': 0
+        },
+        '对话交互能力': {
+          '知识驱动的对话生成': 0
+        },
+        '数学推理能力': {
+          '数值计算': 0
+        }
       },
       data: task.all,
       defaultProps: {
@@ -537,111 +580,190 @@ export default {
     }
   },
   mounted: function () {
-    this.tableData = []
-    let data = {
-      'rank_by_ability': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
-      'start': 1,
-      'end': -1
-    }
-    this.$axios.post(config.API + config.getRanklist, data).then(res => {
-      if (config.debug === 'true') {
-        console.log(res)
-      }
-      if (res.status === 200) {
-        // console.log(res)
-        var t = res.data.rank_list
-        for (var i = 0; i < t.length; i++) {
-          var r = t[i]
-          // console.log(i, r)
-          var toAppend = {
-            rank: i,
-            name: r.modelname,
-            org: r.institution,
-            plink: r.paper_url,
-            clink: r.code_url,
-            // sxtl: r.数学推理能力.ability_sum[0],
-            // dyy: r.多语言能力.ability_sum[0],
-            // dhjh: r.对话交互能力.ability_sum[0],
-            // yysc: r.语言生成能力.ability_sum[0],
-            // xxhq: r.信息获取及问答能力.ability_sum[0],
-            // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
-            // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
-            sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
-            dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
-            dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + ' (' + r.对话交互能力.ability_sum[1] + ')',
-            yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + ' (' + r.语言生成能力.ability_sum[1] + ')',
-            xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + ' (' + r.信息获取及问答能力.ability_sum[1] + ')',
-            yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + ' (' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
-            yyljcy: r['语言理解能力-词句级'].ability_sum[0] === null ? '' : r['语言理解能力-词句级'].ability_sum[0] + ' (' + r['语言理解能力-词句级'].ability_sum[1] + ')',
-            // score: r.总分[0] === null ? '' : r.总分[0] + ' (' + r.总分[1] + ')',
-            score: r.总分[0] === null ? '' : r.总分[1],
-            // sxtl_sub: r.数学推理能力[1],
-            // dyy_sub: r.多语言能力[1],
-            // dhjh_sub: r.对话交互能力[1],
-            // yysc_sub: r.语言生成能力[1],
-            // xxhq_sub: r.信息获取及问答能力[1],
-            // yyljpj_sub: r['语言理解能力-篇章级'][1],
-            // yyljcy_sub: r['语言理解能力-词语级'][1],
-            // score_sub: r.智源指数[1],
-            sxtl_dataset: r.数学推理能力.dataset_score_list,
-            dyy_dataset: r.多语言能力.dataset_score_list,
-            dhjh_dataset: r.对话交互能力.dataset_score_list,
-            yysc_dataset: r.语言生成能力.dataset_score_list,
-            xxhq_dataset: r.信息获取及问答能力.dataset_score_list,
-            yyljpj_dataset: r['语言理解能力-篇章级'].dataset_score_list,
-            yyljcy_dataset: r['语言理解能力-词句级'].dataset_score_list,
-            sxtl_list: r.数学推理能力.ability_sum,
-            dyy_list: r.多语言能力.ability_sum,
-            dhjh_list: r.对话交互能力.ability_sum,
-            yysc_list: r.语言生成能力.ability_sum,
-            xxhq_list: r.信息获取及问答能力.ability_sum,
-            yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
-            yyljcy_list: r['语言理解能力-词句级'].ability_sum,
-            stime: r.simple_commit_time,
-            public: r.public,
-            multiple: r.multiple,
-            integrate: r.integrate,
-            pre_train: r.pre_train,
-            time: r.simple_commit_time,
-            paras: r.paras,
-            description: r.description,
-            // sj: r.识记能力.ability_sum[0],
-            // lj: r.理解能力.ability_sum[0],
-            // js: r.检索能力.ability_sum[0],
-            // szjs: r.数值计算能力.ability_sum[0],
-            // sc: r.生成能力.ability_sum[0],
-            // dyy: r.多语言能力.ability_sum[0],
-            // sj_list: r.识记能力.ability_sum,
-            // lj_list: r.理解能力.ability_sum,
-            // js_list: r.检索能力.ability_sum,
-            // szjs_list: r.数值计算能力.ability_sum,
-            // sc_list: r.生成能力.ability_sum,
-            // dyy_list: r.多语言能力.ability_sum,
-            // score: r.总分[0],
-            // score_list: r.总分,
-            // sjd: r.识记能力.dataset_score_list,
-            // ljd: r.理解能力.dataset_score_list,
-            // jsd: r.检索能力.dataset_score_list,
-            // szjsd: r.数值计算能力.dataset_score_list,
-            // scd: r.生成能力.dataset_score_list,
-            // dyyd: r.多语言能力.dataset_score_list,
-            show1: r.多语言能力.dataset_score_list,
-            show2: r.多语言能力.dataset_score_list
-          }
-          if (i === 0) {
-            toAppend.rank = 'Baseline'
-          }
-          this.tableData.push(toAppend)
-          // console.log(toAppend)
-        }
-      }
-    })
+    this.handleDefaultSelect()
   },
   methods: {
     handleNodeClick (a, b, c) {
-      console.log(a, b, c)
-      var t = this.$refs.tree[0].getCheckedNodes()
-      console.log('tree', t)
+      // console.log(a, b, c)
+      // var t = this.$refs.tree[0].getCheckedNodes()
+      // console.log('tree', t)
+      // // this.$refs.tree.setCheckedKeys([])
+    },
+    handleDefaultSelect () {
+      this.isSelecting = false
+      this.tableData = []
+      let data = {
+        'rank_by_ability': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
+        'start': 1,
+        'end': -1
+      }
+      this.$axios.post(config.API + config.getRanklist, data).then(res => {
+        if (config.debug === 'true') {
+          console.log(res)
+        }
+        if (res.status === 200) {
+        // console.log(res)
+          var t = res.data.rank_list
+          for (var i = 0; i < t.length; i++) {
+            var r = t[i]
+            // console.log(i, r)
+            var toAppend = {
+              rank: i,
+              name: r.modelname,
+              org: r.institution,
+              plink: r.paper_url,
+              clink: r.code_url,
+              // sxtl: r.数学推理能力.ability_sum[0],
+              // dyy: r.多语言能力.ability_sum[0],
+              // dhjh: r.对话交互能力.ability_sum[0],
+              // yysc: r.语言生成能力.ability_sum[0],
+              // xxhq: r.信息获取及问答能力.ability_sum[0],
+              // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
+              // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+              sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
+              dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
+              dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + ' (' + r.对话交互能力.ability_sum[1] + ')',
+              yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + ' (' + r.语言生成能力.ability_sum[1] + ')',
+              xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + ' (' + r.信息获取及问答能力.ability_sum[1] + ')',
+              yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + ' (' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
+              yyljcy: r['语言理解能力-词句级'].ability_sum[0] === null ? '' : r['语言理解能力-词句级'].ability_sum[0] + ' (' + r['语言理解能力-词句级'].ability_sum[1] + ')',
+              // score: r.总分[0] === null ? '' : r.总分[0] + ' (' + r.总分[1] + ')',
+              score: r.总分[0] === null ? '' : r.总分[1],
+              // sxtl_sub: r.数学推理能力[1],
+              // dyy_sub: r.多语言能力[1],
+              // dhjh_sub: r.对话交互能力[1],
+              // yysc_sub: r.语言生成能力[1],
+              // xxhq_sub: r.信息获取及问答能力[1],
+              // yyljpj_sub: r['语言理解能力-篇章级'][1],
+              // yyljcy_sub: r['语言理解能力-词语级'][1],
+              // score_sub: r.智源指数[1],
+              sxtl_dataset: r.数学推理能力.dataset_score_list,
+              dyy_dataset: r.多语言能力.dataset_score_list,
+              dhjh_dataset: r.对话交互能力.dataset_score_list,
+              yysc_dataset: r.语言生成能力.dataset_score_list,
+              xxhq_dataset: r.信息获取及问答能力.dataset_score_list,
+              yyljpj_dataset: r['语言理解能力-篇章级'].dataset_score_list,
+              yyljcy_dataset: r['语言理解能力-词句级'].dataset_score_list,
+              sxtl_list: r.数学推理能力.ability_sum,
+              dyy_list: r.多语言能力.ability_sum,
+              dhjh_list: r.对话交互能力.ability_sum,
+              yysc_list: r.语言生成能力.ability_sum,
+              xxhq_list: r.信息获取及问答能力.ability_sum,
+              yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
+              yyljcy_list: r['语言理解能力-词句级'].ability_sum,
+              stime: r.simple_commit_time,
+              public: r.public,
+              multiple: r.multiple,
+              integrate: r.integrate,
+              pre_train: r.pre_train,
+              time: r.simple_commit_time,
+              paras: r.paras,
+              description: r.description,
+              // sj: r.识记能力.ability_sum[0],
+              // lj: r.理解能力.ability_sum[0],
+              // js: r.检索能力.ability_sum[0],
+              // szjs: r.数值计算能力.ability_sum[0],
+              // sc: r.生成能力.ability_sum[0],
+              // dyy: r.多语言能力.ability_sum[0],
+              // sj_list: r.识记能力.ability_sum,
+              // lj_list: r.理解能力.ability_sum,
+              // js_list: r.检索能力.ability_sum,
+              // szjs_list: r.数值计算能力.ability_sum,
+              // sc_list: r.生成能力.ability_sum,
+              // dyy_list: r.多语言能力.ability_sum,
+              // score: r.总分[0],
+              // score_list: r.总分,
+              // sjd: r.识记能力.dataset_score_list,
+              // ljd: r.理解能力.dataset_score_list,
+              // jsd: r.检索能力.dataset_score_list,
+              // szjsd: r.数值计算能力.dataset_score_list,
+              // scd: r.生成能力.dataset_score_list,
+              // dyyd: r.多语言能力.dataset_score_list,
+              show1: r.多语言能力.dataset_score_list,
+              show2: r.多语言能力.dataset_score_list
+            }
+            if (i === 0) {
+              toAppend.rank = 'Baseline'
+            }
+            this.tableData.push(toAppend)
+          // console.log(toAppend)
+          }
+        }
+      })
+    },
+    handleTreeSelect () {
+      this.isSelecting = true
+      let l = ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力']
+      for (let i in l) {
+        var t = this.$refs.tree[i].getCheckedNodes()
+        console.log('tree', t)
+        for (let j in t) {
+          console.log('ha', l[i], t[j].name_zh)
+          this.dataSelect[l[i]][t[j].name_zh] = 1
+        }
+      }
+      console.log(this.dataSelect)
+
+      this.$axios.post(config.API + config.getSuperRank, {ability_task_dic: this.dataSelect}).then(res => {
+        if (config.debug === 'true') {
+          console.log(res)
+        }
+        if (res.status === 200) {
+        // console.log(res)
+          this.tableData = []
+          var t = res.data.super_rank_list
+          for (var i = 0; i < t.length; i++) {
+            var r = t[i]
+            // console.log(i, r)
+            var toAppend = {
+              rank: i,
+              name: r.modelname,
+              org: r.institution,
+              plink: r.paper_url,
+              clink: r.code_url,
+
+              // sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
+              // dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
+              // dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + ' (' + r.对话交互能力.ability_sum[1] + ')',
+              // yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + ' (' + r.语言生成能力.ability_sum[1] + ')',
+              // xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + ' (' + r.信息获取及问答能力.ability_sum[1] + ')',
+              // yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + ' (' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
+              // yyljcy: r['语言理解能力-词句级'].ability_sum[0] === null ? '' : r['语言理解能力-词句级'].ability_sum[0] + ' (' + r['语言理解能力-词句级'].ability_sum[1] + ')',
+              score: r.sum,
+
+              sxtl_dataset: r.数学推理能力,
+              dyy_dataset: r.多语言能力,
+              dhjh_dataset: r.对话交互能力,
+              yysc_dataset: r.语言生成能力,
+              xxhq_dataset: r.信息获取及问答能力,
+              yyljpj_dataset: r['语言理解能力-篇章级'],
+              yyljcy_dataset: r['语言理解能力-词句级'],
+
+              // sxtl_list: r.数学推理能力.ability_sum,
+              // dyy_list: r.多语言能力.ability_sum,
+              // dhjh_list: r.对话交互能力.ability_sum,
+              // yysc_list: r.语言生成能力.ability_sum,
+              // xxhq_list: r.信息获取及问答能力.ability_sum,
+              // yyljpj_list: r['语言理解能力-篇章级'].ability_sum,
+              // yyljcy_list: r['语言理解能力-词句级'].ability_sum,
+
+              stime: r.simple_commit_time,
+              public: r.public,
+              multiple: r.multiple,
+              integrate: r.integrate,
+              pre_train: r.pre_train,
+              time: r.simple_commit_time,
+              paras: r.paras,
+              description: r.description,
+
+              show1: r['语言理解能力-篇章级'],
+              show2: r['语言理解能力-篇章级'][0]
+            }
+            this.tableData.push(toAppend)
+            console.log(toAppend)
+          }
+        }
+      })
       // this.$refs.tree.setCheckedKeys([])
     },
     cellStyle ({ row, column, rowIndex, columnIndex }) {
@@ -669,6 +791,9 @@ export default {
       }
     },
     waitToDraw (row, rowList) {
+      if (this.isSelecting) {
+        return
+      }
       console.log('row', row)
       if (this.language.language === 'zh') {
         this.pic = this.pic_zh
@@ -766,8 +891,14 @@ export default {
   width:14%;
 }
 .el-col-77{
-  width:16%;
+  width:14.28%;
 }
+.el-tree-node__label{
+  color: #64438d;
+  /* font-weight:bold; */
+  font-size:large;
+}
+
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

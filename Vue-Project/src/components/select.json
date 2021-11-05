@@ -1,0 +1,145 @@
+{
+    "all": [
+        {
+            "name_zh": "语言理解-词句级",
+            "name_en": "NLU-WSL",
+            "id": "NLU-WSL",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "中文分词",
+                    "name_en": "中文分词",
+                    "id": "17"
+                },
+                {
+                    "name_zh": "中文分词和词性标注",
+                    "name_en": "中文分词和词性标注",
+                    "id": "18"
+                },
+                {
+                    "name_zh": "古诗文识记",
+                    "name_en": "古诗文识记",
+                    "id": "19"
+                },
+                {
+                    "name_zh": "命名实体识别",
+                    "name_en": "命名实体识别",
+                    "id": "1"
+                },
+                {
+                    "name_zh": "实体关系抽取",
+                    "name_en": "实体关系抽取",
+                    "id": "20"
+                }
+            ]
+        },
+        {
+            "name_zh": "语言理解-篇章级",
+            "name_en": "NLU-DL",
+            "id": "NLU-DL",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "幽默检测",
+                    "name_en": "幽默检测",
+                    "id": "6"
+                },
+                {
+                    "name_zh": "故事情节完形填空",
+                    "name_en": "故事情节完形填空",
+                    "id": "5"
+                },
+                {
+                    "name_zh": "阅读理解",
+                    "name_en": "阅读理解",
+                    "id": "4"
+                }
+            ]
+        },
+        {
+            "name_zh": "信息获取及问答",
+            "name_en": "IA&QA",
+            "id": "IA&QA",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "反向词典",
+                    "name_en": "反向词典",
+                    "id": "8"
+                },
+                {
+                    "name_zh": "开放域问答",
+                    "name_en": "开放域问答",
+                    "id": "9"
+                },
+                {
+                    "name_zh": "文档检索",
+                    "name_en": "文档检索",
+                    "id": "7"
+                }
+            ]
+        },
+        {
+            "name_zh": "语言生成",
+            "name_en": "NLG",
+            "id": "NLG",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "摘要生成",
+                    "name_en": "摘要生成",
+                    "id": "10"
+                },
+                {
+                    "name_zh": "数据到文本生成",
+                    "name_en": "数据到文本生成",
+                    "id": "11"
+                }
+            ]
+        },
+        {
+            "name_zh": "对话交互",
+            "name_en": "CI",
+            "id": "CI",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "知识驱动的对话生成",
+                    "name_en": "知识驱动的对话生成",
+                    "id": "14"
+                }
+            ]
+        },
+        {
+            "name_zh": "多语言",
+            "name_en": "ML",
+            "id": "ML",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "机器翻译",
+                    "name_en": "机器翻译",
+                    "id": "12"
+                },
+                {
+                    "name_zh": "跨语言摘要",
+                    "name_en": "跨语言摘要",
+                    "id": "13"
+                }
+            ]
+        },
+        {
+            "name_zh": "数学推理",
+            "name_en": "MR",
+            "id": "MR",
+            "span": 77,
+            "task": [
+                {
+                    "name_zh": "数值计算",
+                    "name_en": "数值计算",
+                    "id": "15"
+                }
+            ]
+        }
+    ]
+}

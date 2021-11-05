@@ -14,6 +14,7 @@
     "getDataDownload": "/get_full_dataset",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
+    "getSuperRank": "/super_rank",
     "getMoreInfoZH": "/parser",
     "getMoreInfoEN": "/parser_en",
     "getSubmitlist": "/commit_record",
