@@ -463,37 +463,11 @@ export default {
         yyljcy: true
       },
       dataSelect: {
-        '语言理解能力-词句级': {
-          '古诗文识记': 0,
-          '实体关系抽取': 0,
-          '中文分词': 0,
-          '中文分词和词性标注': 0,
-          '命名实体识别': 0
-        },
-        '语言理解能力-篇章级': {
-          '阅读理解': 0,
-          '故事情节完形填空': 0,
-          '幽默检测': 0
-        },
-        '信息获取及问答能力': {
-          '文档检索': 0,
-          '反向词典': 0,
-          '开放域问答': 0
-        },
-        '语言生成能力': {
-          '摘要生成': 0,
-          '数据到文本生成': 0
-        },
-        '多语言能力': {
-          '机器翻译': 0,
-          '跨语言摘要': 0
-        },
-        '对话交互能力': {
-          '知识驱动的对话生成': 0
-        },
-        '数学推理能力': {
-          '数值计算': 0
-        }
+        信息获取及问答能力: [],
+        语言生成能力: [],
+        多语言能力: [],
+        对话交互能力: [],
+        数学推理能力: []
       },
       data: task.all,
       defaultProps: {
@@ -693,13 +667,22 @@ export default {
     },
     handleTreeSelect () {
       this.isSelecting = true
+      this.dataSelect = {
+        信息获取及问答能力: [],
+        语言生成能力: [],
+        多语言能力: [],
+        对话交互能力: [],
+        数学推理能力: []
+      }
+      this.dataSelect['语言理解能力-词句级'] = []
+      this.dataSelect['语言理解能力-篇章级'] = []
       let l = ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力']
       for (let i in l) {
         var t = this.$refs.tree[i].getCheckedNodes()
         console.log('tree', t)
         for (let j in t) {
           console.log('ha', l[i], t[j].name_zh)
-          this.dataSelect[l[i]][t[j].name_zh] = 1
+          this.dataSelect[l[i]].push(t[j].name_zh)
         }
       }
       console.log(this.dataSelect)
@@ -722,13 +705,13 @@ export default {
               plink: r.paper_url,
               clink: r.code_url,
 
-              // sxtl: r.数学推理能力.ability_sum[0] === null ? '' : r.数学推理能力.ability_sum[0] + ' (' + r.数学推理能力.ability_sum[1] + ')',
-              // dyy: r.多语言能力.ability_sum[0] === null ? '' : r.多语言能力.ability_sum[0] + ' (' + r.多语言能力.ability_sum[1] + ')',
-              // dhjh: r.对话交互能力.ability_sum[0] === null ? '' : r.对话交互能力.ability_sum[0] + ' (' + r.对话交互能力.ability_sum[1] + ')',
-              // yysc: r.语言生成能力.ability_sum[0] === null ? '' : r.语言生成能力.ability_sum[0] + ' (' + r.语言生成能力.ability_sum[1] + ')',
-              // xxhq: r.信息获取及问答能力.ability_sum[0] === null ? '' : r.信息获取及问答能力.ability_sum[0] + ' (' + r.信息获取及问答能力.ability_sum[1] + ')',
-              // yyljpj: r['语言理解能力-篇章级'].ability_sum[0] === null ? '' : r['语言理解能力-篇章级'].ability_sum[0] + ' (' + r['语言理解能力-篇章级'].ability_sum[1] + ')',
-              // yyljcy: r['语言理解能力-词句级'].ability_sum[0] === null ? '' : r['语言理解能力-词句级'].ability_sum[0] + ' (' + r['语言理解能力-词句级'].ability_sum[1] + ')',
+              sxtl: r.ability_sum_dic.数学推理能力,
+              dyy: r.ability_sum_dic.多语言能力,
+              dhjh: r.ability_sum_dic.对话交互能力,
+              yysc: r.ability_sum_dic.语言生成能力,
+              xxhq: r.ability_sum_dic.信息获取及问答能力,
+              yyljpj: r.ability_sum_dic['语言理解能力-篇章级'],
+              yyljcy: r.ability_sum_dic['语言理解能力-词句级'],
               score: r.sum,
 
               sxtl_dataset: r.数学推理能力,
