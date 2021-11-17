@@ -8,27 +8,27 @@
             "task": [
                 {
                     "name_zh": "中文分词",
-                    "name_en": "中文分词",
+                    "name_en": "Word Segmentation",
                     "id": "17"
                 },
                 {
                     "name_zh": "中文分词和词性标注",
-                    "name_en": "中文分词和词性标注",
+                    "name_en": "Word Segmentation and POS Tagging",
                     "id": "18"
                 },
                 {
                     "name_zh": "古诗文识记",
-                    "name_en": "古诗文识记",
+                    "name_en": "Classical Poetry Matching",
                     "id": "19"
                 },
                 {
                     "name_zh": "命名实体识别",
-                    "name_en": "命名实体识别",
+                    "name_en": "Named Entity Recognition",
                     "id": "1"
                 },
                 {
                     "name_zh": "实体关系抽取",
-                    "name_en": "实体关系抽取",
+                    "name_en": "Entity Relation Extraction",
                     "id": "20"
                 }
             ]
@@ -41,17 +41,17 @@
             "task": [
                 {
                     "name_zh": "幽默检测",
-                    "name_en": "幽默检测",
+                    "name_en": "Humor Detection",
                     "id": "6"
                 },
                 {
                     "name_zh": "故事情节完形填空",
-                    "name_en": "故事情节完形填空",
+                    "name_en": "Story Cloze Test",
                     "id": "5"
                 },
                 {
                     "name_zh": "阅读理解",
-                    "name_en": "阅读理解",
+                    "name_en": "Reading Comprehension",
                     "id": "4"
                 }
             ]
@@ -64,17 +64,17 @@
             "task": [
                 {
                     "name_zh": "反向词典",
-                    "name_en": "反向词典",
+                    "name_en": "Reverse Dictionary",
                     "id": "8"
                 },
                 {
                     "name_zh": "开放域问答",
-                    "name_en": "开放域问答",
+                    "name_en": "Open-domain Question Answering",
                     "id": "9"
                 },
                 {
                     "name_zh": "文档检索",
-                    "name_en": "文档检索",
+                    "name_en": "Document Retrieval",
                     "id": "7"
                 }
             ]
@@ -87,12 +87,12 @@
             "task": [
                 {
                     "name_zh": "摘要生成",
-                    "name_en": "摘要生成",
+                    "name_en": "Text Summarization",
                     "id": "10"
                 },
                 {
                     "name_zh": "数据到文本生成",
-                    "name_en": "数据到文本生成",
+                    "name_en": "Data-to-text Generation",
                     "id": "11"
                 }
             ]
@@ -105,7 +105,7 @@
             "task": [
                 {
                     "name_zh": "知识驱动的对话生成",
-                    "name_en": "知识驱动的对话生成",
+                    "name_en": "Knowledge-driven Conversation Generation",
                     "id": "14"
                 }
             ]
@@ -118,12 +118,12 @@
             "task": [
                 {
                     "name_zh": "机器翻译",
-                    "name_en": "机器翻译",
+                    "name_en": "Machine Translation",
                     "id": "12"
                 },
                 {
                     "name_zh": "跨语言摘要",
-                    "name_en": "跨语言摘要",
+                    "name_en": "Cross-lingual Text Summarization",
                     "id": "13"
                 }
             ]
@@ -136,7 +136,7 @@
             "task": [
                 {
                     "name_zh": "数值计算",
-                    "name_en": "数值计算",
+                    "name_en": "Mathematical Computation",
                     "id": "15"
                 }
             ]

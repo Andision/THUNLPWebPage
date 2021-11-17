@@ -80,7 +80,7 @@
                         '-' +
                         task.id +
                         '-@' +
-                        task.name
+                        task.name_en
                       "
                       v-for="(task, index1) in abi.task"
                       :key="abi + index1"
@@ -128,9 +128,12 @@
               <a
                 href="https://github.com/TsinghuaAI/CUGE"
                 style="font-size: xx-medium; text-decoration: none; color: white"
-                >联系我们</a
+                >{{language.app_contactus}}</a
               >
             </el-col>
+          </el-row>
+          <el-row>
+            ©2021
           </el-row>
         </div>
       </el-footer>

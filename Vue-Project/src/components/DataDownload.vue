@@ -11,7 +11,7 @@
         <el-table-column prop="" label="" width="50" align="left"></el-table-column>
         <el-table-column prop="name" :label="language.Name" min-width="80" align="left">
         </el-table-column>
-        <el-table-column prop="ability" :label="language.datadownload_task" min-width="150" align="left"></el-table-column>
+        <el-table-column :prop="language.language == 'zh'?'ability':'en_ability'" :label="language.datadownload_task" min-width="150" align="left"></el-table-column>
         <el-table-column :label="language.leaderboard_phb" min-width="60" align="center">
             <template slot-scope="scope">
               <!-- <el-button
@@ -96,7 +96,8 @@ export default {
               score: t.dataset_id,
               download: t.dataset_id,
               more: t.dataset_id,
-              ability: t.ability + ' | ' + t.task
+              ability: t.ability + ' | ' + t.task,
+              en_ability: t.en_ability + ' | ' + t.en_task
             })
           }
         }

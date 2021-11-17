@@ -5,132 +5,18 @@
       <div slot="header">
         <el-row>
           <el-col :span="abi.span" v-for="(abi, index) in data" :key="index">
-            <el-tree ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree>
+            <el-tree id="mytree" ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree>
           </el-col>
         </el-row>
         <hr />
         <el-row>
           <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
-            精简榜
+            {{language.leaderboard_jjb}}
           </el-button>
           <el-button size="mini" type="success" style="float:right; margin-right:30px;" @click="handleTreeSelect">
-            确认选择
+            {{language.leaderboard_queren}}
           </el-button>
         </el-row>
-        <!-- <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-submenu
-            v-for="(abi, index) in alltask"
-            :index="'10-' + index"
-            :key="index"
-          >
-            <template slot="title">{{ language.language == 'zh' ? abi.zh:abi.en }}</template>
-            <el-menu-item
-                      :index="
-                        'A-10-' +
-                        index +
-                        '-' +
-                        index1 +
-                        '-' +
-                        task.id +
-                        '-@' +
-                        task.name
-                      "
-                      v-for="(task, index1) in abi.task"
-                      :key="abi + index1"
-                      >{{ task.name }}</el-menu-item
-                    >
-          </el-submenu>
-        </el-menu> -->
-        <!-- <div class="main-title">
-          <div class="title-title">
-            {{ language.task_synl }}
-            <el-switch v-model="showAll" active-color="#64438D"> </el-switch>
-          </div>
-          <hr />
-          <div class="title-sub">
-            <div style="display:flex;flex-direction:row;justify-content: space-between;">
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
-                    <span>{{language.leaderboard_yyljcy}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch v-model="s.yyljcy" active-color="#64438D"></el-switch>
-                </div>
-              </div>
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
-                    <span>{{language.leaderboard_yyljpj}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch v-model="s.yyljpj" active-color="#64438D"></el-switch>
-                </div>
-              </div>
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
-                    <span>{{language.leaderboard_xxhq}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch v-model="s.xxhq" active-color="#64438D"></el-switch>
-                </div>
-              </div>
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
-                    <span>{{language.leaderboard_yysc}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch
-                    v-model="s.yysc"
-                    active-color="#64438D"
-                  ></el-switch>
-                </div>
-              </div>
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
-                    <span>{{language.leaderboard_dhjh}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch v-model="s.dhjh" active-color="#64438D"></el-switch>
-                </div>
-              </div>
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
-                    <span>{{language.leaderboard_dyy}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch v-model="s.dyy" active-color="#64438D"></el-switch>
-                </div>
-              </div>
-              <div class="title-sub-section">
-                <div class="title-sub-section-text">
-                  <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
-                    <span>{{language.leaderboard_sxtl}}</span>
-                  </el-tooltip>
-                </div>
-                <div class="title-sub-section-btn">
-                  <el-switch v-model="s.sxtl" active-color="#64438D"></el-switch>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <div class="title-select">
-            <el-checkbox v-model="checked2" disabled>
-              {{language.task_jjb}}
-            </el-checkbox>
-          </div>
-        </div> -->
       </div>
       <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
@@ -354,11 +240,17 @@
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" min-width="130">
+          <el-table-column prop="score" align="center" min-width="130">
             <template slot="header" slot-scope="scope">
-              <el-tooltip class="item" effect="dark" :content="language.leaderboard_zyzs_hint" placement="top">
+              <el-tooltip class="item" effect="dark" :content="language.leaderboard_zyzs_hint" placement="top" v-show="!isSelecting">
                 <span>{{language.leaderboard_zyzs}}</span>
               </el-tooltip>
+              <span v-show="isSelecting">Score</span>
+            </template>
+          </el-table-column>
+          <el-table-column label=" " prop="" align="center" min-width="20">
+            <template slot-scope="scope">
+              <i class="el-icon-arrow-right" style="cursor:pointer"></i>
             </template>
           </el-table-column>
           <!-- <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" min-width="120"> </el-table-column> -->
@@ -451,8 +343,10 @@ export default {
       alltask: task.all,
       drawerInfo: {
       },
+      tl: {},
       checked2: true,
       showAll: true,
+      savedTree: [],
       s: {
         sxtl: true,
         dyy: true,
@@ -472,8 +366,8 @@ export default {
       data: task.all,
       defaultProps: {
         children: 'task',
-        // label: language.language === 'zh' ? 'name_zh' : 'name_en'
-        label: 'name_zh'
+        label: this.language.language === 'zh' ? 'name_zh' : 'name_en'
+        // label: language.language==='zh'?'name_zh':
       },
       tableData: [],
       pic_zh: {
@@ -554,6 +448,11 @@ export default {
     }
   },
   mounted: function () {
+    // this.defaultProps = {
+    //   children: 'task',
+    //   label: this.language.language === 'zh' ? 'name_zh' : 'name_en'
+    //   // label: language.language==='zh'?'name_zh':
+    // }
     this.handleDefaultSelect()
   },
   methods: {
@@ -679,6 +578,7 @@ export default {
       let l = ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力']
       for (let i in l) {
         var t = this.$refs.tree[i].getCheckedNodes()
+        this.savedTree.push(t)
         console.log('tree', t)
         for (let j in t) {
           console.log('ha', l[i], t[j].name_zh)
@@ -699,7 +599,7 @@ export default {
             var r = t[i]
             // console.log(i, r)
             var toAppend = {
-              rank: i,
+              rank: i + 1,
               name: r.modelname,
               org: r.institution,
               plink: r.paper_url,
@@ -746,6 +646,11 @@ export default {
             console.log(toAppend)
           }
         }
+        // for (let i in l) {
+        //   let tt = this.savedTree[i]
+        //   console.log(i, tt)
+        //   this.$refs.tree[i].setCheckedNodes([{id: '9', label: 'Open-domain Question Answering'}])
+        // }
       })
       // this.$refs.tree.setCheckedKeys([])
     },
@@ -767,7 +672,11 @@ export default {
       // this.drawerInfo.model = row.model
       // this.drawerInfo.parameter = row.parameter
       // this.drawerInfo.more = row.more
-      if (column.label !== this.language.leaderboard_codepaper) {
+      if (column.label === ' ') {
+        this.drawerInfo = row
+        this.drawer = true
+        // this.$refs.table.toggleRowExpansion(row)
+      } else if (column.label !== this.language.leaderboard_codepaper) {
         // this.drawerInfo = row
         // this.drawer = true
         this.$refs.table.toggleRowExpansion(row)
@@ -880,6 +789,13 @@ export default {
   color: #64438d;
   /* font-weight:bold; */
   font-size:large;
+}
+.el-tree-node__label{
+  /* background-color: aqua; */
+  font-weight: bold;
+}
+#mytree .el-tree-node .el-tree-node__children .el-tree-node__label{
+  font-weight: normal;
 }
 
 </style>
