@@ -4,9 +4,28 @@
     <el-card class="main">
       <div slot="header">
         <el-row>
-          <el-col :span="abi.span" v-for="(abi, index) in data" :key="index">
-            <el-tree id="mytree" ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree>
+          <el-col :span="abi.span" v-for="(abi, index) in data" :key="index" style="text-align:left;">
+            <!-- <el-tree id="mytree" ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree> -->
+            <a-tree
+              checkable
+              v-model="checkedKeys[index]"
+              :tree-data="[abi]"
+              :replaceFields="defaultProps"
+              :selectable="false"
+            />
+              <!-- :auto-expand-parent="autoExpandParent"
+              :selected-keys="selectedKeys" -->
+              <!-- v-model="checkedKeys" -->
+              <!-- :expanded-keys="expandedKeys" -->
+              <!-- @expand="onExpand"
+              @select="onSelect" -->
           </el-col>
+          <!-- <a-tree
+              checkable
+              v-model="checkedKeys"
+              :tree-data="[data[0]]"
+              :replaceFields="defaultProps"
+            /> -->
         </el-row>
         <hr />
         <el-row>
@@ -168,7 +187,7 @@
               </el-container>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_rank" prop="rank" min-width="100"> </el-table-column>
+          <el-table-column :label="language.leaderboard_rank" prop="rank" align="center" min-width="100"> </el-table-column>
           <el-table-column :label="language.leaderboard_model" prop="name" align="center" min-width="100"> </el-table-column>
           <el-table-column :label="language.leaderboard_org" prop="org" align="center" min-width="120"> </el-table-column>
           <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="130">
@@ -343,10 +362,12 @@ export default {
       alltask: task.all,
       drawerInfo: {
       },
+      kb: '　',
+      checkedKeys: [],
       tl: {},
       checked2: true,
       showAll: true,
-      savedTree: [],
+      // savedTree: [],
       s: {
         sxtl: true,
         dyy: true,
@@ -366,7 +387,8 @@ export default {
       data: task.all,
       defaultProps: {
         children: 'task',
-        label: this.language.language === 'zh' ? 'name_zh' : 'name_en'
+        title: this.language.language === 'zh' ? 'name_zh' : 'name_en',
+        key: 'name_zh'
         // label: language.language==='zh'?'name_zh':
       },
       tableData: [],
@@ -566,26 +588,37 @@ export default {
     },
     handleTreeSelect () {
       this.isSelecting = true
+      console.log(this.checkedKeys)
       this.dataSelect = {
-        信息获取及问答能力: [],
-        语言生成能力: [],
-        多语言能力: [],
-        对话交互能力: [],
-        数学推理能力: []
+        '信息获取及问答能力': [],
+        '语言生成能力': [],
+        '多语言能力': [],
+        '对话交互能力': [],
+        '数学推理能力': [],
+        '语言理解能力-词句级': [],
+        '语言理解能力-篇章级': []
       }
+      let ha1 = ''
+      let ha2 = ''
       this.dataSelect['语言理解能力-词句级'] = []
       this.dataSelect['语言理解能力-篇章级'] = []
       let l = ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力']
       for (let i in l) {
-        var t = this.$refs.tree[i].getCheckedNodes()
-        this.savedTree.push(t)
-        console.log('tree', t)
+        var t = this.checkedKeys[i]
+        // var t = this.$refs.tree[i].getCheckedNodes()
+        // this.savedTree.push(t)
+        console.log('hha', t)
         for (let j in t) {
-          console.log('ha', l[i], t[j].name_zh)
-          this.dataSelect[l[i]].push(t[j].name_zh)
+          ha1 = l[i]
+          ha2 = t[j]
+          // if (ha1 === ha2) {
+          //   continue
+          // }
+          console.log('ha', ha1, ha2)
+          this.dataSelect[ha1].push(ha2)
         }
       }
-      console.log(this.dataSelect)
+      console.log('haa', this.dataSelect)
 
       this.$axios.post(config.API + config.getSuperRank, {ability_task_dic: this.dataSelect}).then(res => {
         if (config.debug === 'true') {
@@ -605,13 +638,13 @@ export default {
               plink: r.paper_url,
               clink: r.code_url,
 
-              sxtl: r.ability_sum_dic.数学推理能力,
-              dyy: r.ability_sum_dic.多语言能力,
-              dhjh: r.ability_sum_dic.对话交互能力,
-              yysc: r.ability_sum_dic.语言生成能力,
-              xxhq: r.ability_sum_dic.信息获取及问答能力,
-              yyljpj: r.ability_sum_dic['语言理解能力-篇章级'],
-              yyljcy: r.ability_sum_dic['语言理解能力-词句级'],
+              sxtl: r.ability_sum_dic.数学推理能力 === undefined ? '' : r.ability_sum_dic.数学推理能力 + '　　',
+              dyy: r.ability_sum_dic.多语言能力 === undefined ? '' : r.ability_sum_dic.多语言能力 + '　　',
+              dhjh: r.ability_sum_dic.对话交互能力 === undefined ? '' : r.ability_sum_dic.对话交互能力 + '　　',
+              yysc: r.ability_sum_dic.语言生成能力 === undefined ? '' : r.ability_sum_dic.语言生成能力 + '　　',
+              xxhq: r.ability_sum_dic.信息获取及问答能力 === undefined ? '' : r.ability_sum_dic.信息获取及问答能力 + '　　',
+              yyljpj: r.ability_sum_dic['语言理解能力-篇章级'] === undefined ? '' : r.ability_sum_dic['语言理解能力-篇章级'] + '　　',
+              yyljcy: r.ability_sum_dic['语言理解能力-词句级'] === undefined ? '' : r.ability_sum_dic['语言理解能力-词句级'] + '　　',
               score: r.sum,
 
               sxtl_dataset: r.数学推理能力,
@@ -639,8 +672,8 @@ export default {
               paras: r.paras,
               description: r.description,
 
-              show1: r['语言理解能力-篇章级'],
-              show2: r['语言理解能力-篇章级'][0]
+              show1: r[ha1],
+              show2: r[ha1][ha2].dataset_score_list
             }
             this.tableData.push(toAppend)
             console.log(toAppend)
@@ -660,6 +693,10 @@ export default {
       } else {
         return 'font-weight: 700; color: black;font-family: "Microsoft YaHei", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC","Hiragino Sans GB","Helvetica Neue", Helvetica, Arial, sans-serif;'
       }
+    },
+    onCheck (checkedKeys) {
+      console.log('onCheck', checkedKeys)
+      this.checkedKeys = checkedKeys
     },
     handleRowClick (row, column, event) {
       console.log(row, column)
@@ -797,7 +834,20 @@ export default {
 #mytree .el-tree-node .el-tree-node__children .el-tree-node__label{
   font-weight: normal;
 }
+/* .ant-tree-checkbox-checked .ant-tree-checkbox-inner{
+  background-color: #7857a1;
+  border-color: #7857a1;
+}
+.ant-tree-checkbox-indeterminate .ant-tree-checkbox-inner::after{
+  background-color: #7857a1;
+}
+html{
+  --antd-wave-shadow-color: #7857a1;
+}
 
+ant-tree-checkbox-inner::selection{
+  background: #7857a1;
+} */
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
