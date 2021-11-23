@@ -184,7 +184,9 @@ export default {
   vertical-align: middle; */
 }
 .link{
-  margin-right: 20px;
+  /* padding-right: 20px; */
+  width: 100%;
+  text-align: left;
 }
 .bubble{
   padding-left: 20px;
