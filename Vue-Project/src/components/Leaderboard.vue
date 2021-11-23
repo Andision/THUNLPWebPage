@@ -7,6 +7,7 @@
           <el-col :span="abi.span" v-for="(abi, index) in data" :key="index" style="text-align:left;">
             <!-- <el-tree id="mytree" ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree> -->
             <a-tree
+              id="mytree"
               checkable
               v-model="checkedKeys[index]"
               :tree-data="[abi]"
@@ -822,18 +823,30 @@ export default {
 .el-col-77{
   width:14.28%;
 }
-.el-tree-node__label{
+/* .el-tree-node__label{
   color: #64438d;
-  /* font-weight:bold; */
+  /* font-weight:bold;
   font-size:large;
 }
 .el-tree-node__label{
-  /* background-color: aqua; */
+  /* background-color: aqua;
   font-weight: bold;
+} */
+.ant-tree-title{
+  color: #7857A1;
+  font-weight: bold;
+  font-size: large;
+  /* background-color: white; */
 }
-#mytree .el-tree-node .el-tree-node__children .el-tree-node__label{
+#mytree li ul span .ant-tree-title{
+    background-color: red;
+  }
+#mytree li .ant-tree-node-content-wrapper .ant-tree-title{
+  background-color: aqua;
+}
+/* #mytree .el-tree-node .el-tree-node__children .el-tree-node__label{
   font-weight: normal;
-}
+} */
 /* .ant-tree-checkbox-checked .ant-tree-checkbox-inner{
   background-color: #7857a1;
   border-color: #7857a1;

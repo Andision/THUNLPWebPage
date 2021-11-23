@@ -9,8 +9,16 @@ import '../src/assets/font.css'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import axios from 'axios'
-
 import echarts from 'echarts'
+
+import 'ant-design-vue/dist/antd.less' // 引入官方提供的 less 样式入口文件
+// import '../src/components/my-ant-theme.less' // 用于覆盖上面定义的变量
+import Antd from 'ant-design-vue'
+// import 'ant-design-vue/dist/antd.css'
+
+Vue.config.productionTip = false
+Vue.use(Antd)
+
 Vue.prototype.$echarts = echarts
 
 Vue.prototype.$axios = axios
