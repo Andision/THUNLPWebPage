@@ -838,12 +838,12 @@ export default {
   font-size: large;
   /* background-color: white; */
 }
-#mytree li ul span .ant-tree-title{
+/* #mytree li ul span .ant-tree-title{
     background-color: red;
   }
 #mytree li .ant-tree-node-content-wrapper .ant-tree-title{
   background-color: aqua;
-}
+} */
 /* #mytree .el-tree-node .el-tree-node__children .el-tree-node__label{
   font-weight: normal;
 } */
