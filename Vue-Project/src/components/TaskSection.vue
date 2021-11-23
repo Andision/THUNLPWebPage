@@ -30,7 +30,7 @@
               </el-card>
             </el-col>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item v-for="(k,kindex) in j.link" :key="k.link+kindex"><el-link class="link" :href="'/#/more?id='+k.link" :underline="false">{{k.title}}</el-link></el-dropdown-item>
+              <el-dropdown-item class="mydropdown" v-for="(k,kindex) in j.link" :key="k.link+kindex"><el-link class="link" :href="'/#/more?id='+k.link" :underline="false">{{k.title}}</el-link></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
           <!-- <el-tooltip
@@ -138,6 +138,9 @@ export default {
 </style>
 
 <style scoped>
+.mydropdown{
+  text-align: left;
+}
 .all{
   margin: auto;
   width: 100%;
@@ -185,7 +188,7 @@ export default {
 }
 .link{
   /* padding-right: 20px; */
-  width: 100%;
+  /* width: 100%; */
   text-align: left;
 }
 .bubble{

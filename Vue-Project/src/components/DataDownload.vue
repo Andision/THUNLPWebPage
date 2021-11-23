@@ -145,6 +145,7 @@ export default {
   margin: 50px;
   color: #64438D;
   font-size: 40px;
+  font-weight: bold;
 }
 .table{
   margin: 50px;

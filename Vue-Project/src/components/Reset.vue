@@ -81,6 +81,7 @@ export default {
                 message: res.data.msg,
                 type: res.data.re_code === '0' ? 'success' : ''
               })
+              that.$router.push({ path: '/' })
             }
           })
         } else {

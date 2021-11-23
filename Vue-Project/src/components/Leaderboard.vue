@@ -13,6 +13,7 @@
               :tree-data="[abi]"
               :replaceFields="defaultProps"
               :selectable="false"
+              :expanded-keys.sync="expandedKeys[index]"
             />
               <!-- :auto-expand-parent="autoExpandParent"
               :selected-keys="selectedKeys" -->
@@ -211,49 +212,49 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="110"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150">
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150" v-if="tableData[0].yyljcy!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
                 <span>{{language.leaderboard_yyljcy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" min-width="150">
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" min-width="150" v-if="tableData[0].yyljpj!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
                 <span>{{language.leaderboard_yyljpj}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right">
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right" v-if="tableData[0].xxhq!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
                 <span>{{language.leaderboard_xxhq}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" min-width="120">
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" min-width="120" v-if="tableData[0].yysc!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
                 <span>{{language.leaderboard_yysc}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" min-width="120">
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" min-width="120" v-if="tableData[0].dhjh!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
                 <span>{{language.leaderboard_dhjh}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" min-width="120">
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" min-width="120" v-if="tableData[0].dyy!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
                 <span>{{language.leaderboard_dyy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" min-width="120">
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" min-width="120" v-if="tableData[0].sxtl!=''">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
                 <span>{{language.leaderboard_sxtl}}</span>
@@ -268,9 +269,9 @@
               <span v-show="isSelecting">Score</span>
             </template>
           </el-table-column>
-          <el-table-column label=" " prop="" align="center" min-width="20">
+          <el-table-column label=" " prop="" width="40">
             <template slot-scope="scope">
-              <i class="el-icon-arrow-right" style="cursor:pointer"></i>
+              <i class="el-icon-arrow-right" style="cursor:pointer;overflow: hidden;"/>
             </template>
           </el-table-column>
           <!-- <el-table-column :label="language.leaderboard_zyzs" prop="score" align="center" min-width="120"> </el-table-column> -->
@@ -361,6 +362,7 @@ export default {
       isSelecting: false,
       drawer: false,
       alltask: task.all,
+      expandedKeys: [[], [], [], [], [], [], []],
       drawerInfo: {
       },
       kb: '　',
@@ -487,6 +489,8 @@ export default {
     },
     handleDefaultSelect () {
       this.isSelecting = false
+      this.checkedKeys = []
+      this.expandedKeys = [[], [], [], [], [], [], []]
       this.tableData = []
       let data = {
         'rank_by_ability': ['语言理解能力-词句级', '语言理解能力-篇章级', '信息获取及问答能力', '语言生成能力', '对话交互能力', '多语言能力', '数学推理能力'],
@@ -639,13 +643,13 @@ export default {
               plink: r.paper_url,
               clink: r.code_url,
 
-              sxtl: r.ability_sum_dic.数学推理能力 === undefined ? '' : r.ability_sum_dic.数学推理能力 + '　　',
-              dyy: r.ability_sum_dic.多语言能力 === undefined ? '' : r.ability_sum_dic.多语言能力 + '　　',
-              dhjh: r.ability_sum_dic.对话交互能力 === undefined ? '' : r.ability_sum_dic.对话交互能力 + '　　',
-              yysc: r.ability_sum_dic.语言生成能力 === undefined ? '' : r.ability_sum_dic.语言生成能力 + '　　',
-              xxhq: r.ability_sum_dic.信息获取及问答能力 === undefined ? '' : r.ability_sum_dic.信息获取及问答能力 + '　　',
-              yyljpj: r.ability_sum_dic['语言理解能力-篇章级'] === undefined ? '' : r.ability_sum_dic['语言理解能力-篇章级'] + '　　',
-              yyljcy: r.ability_sum_dic['语言理解能力-词句级'] === undefined ? '' : r.ability_sum_dic['语言理解能力-词句级'] + '　　',
+              sxtl: r.ability_sum_dic.数学推理能力 === undefined ? '' : r.ability_sum_dic.数学推理能力 + '　　　',
+              dyy: r.ability_sum_dic.多语言能力 === undefined ? '' : r.ability_sum_dic.多语言能力 + '　　　',
+              dhjh: r.ability_sum_dic.对话交互能力 === undefined ? '' : r.ability_sum_dic.对话交互能力 + '　　　',
+              yysc: r.ability_sum_dic.语言生成能力 === undefined ? '' : r.ability_sum_dic.语言生成能力 + '　　　',
+              xxhq: r.ability_sum_dic.信息获取及问答能力 === undefined ? '' : r.ability_sum_dic.信息获取及问答能力 + '　　　',
+              yyljpj: r.ability_sum_dic['语言理解能力-篇章级'] === undefined ? '' : r.ability_sum_dic['语言理解能力-篇章级'] + '　　　',
+              yyljcy: r.ability_sum_dic['语言理解能力-词句级'] === undefined ? '' : r.ability_sum_dic['语言理解能力-词句级'] + '　　　',
               score: r.sum,
 
               sxtl_dataset: r.数学推理能力,
@@ -875,6 +879,7 @@ ant-tree-checkbox-inner::selection{
   margin: 50px;
   color: #64438d;
   font-size: 40px;
+  font-weight: bold;
 }
 .main {
   margin: 50px;

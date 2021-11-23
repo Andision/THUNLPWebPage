@@ -429,6 +429,7 @@ export default {
   color: #64438d;
   font-size: 40px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 .main {
   margin: 50px;

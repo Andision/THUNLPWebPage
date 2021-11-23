@@ -528,6 +528,7 @@ export default {
   margin: 50px;
   color: #64438d;
   font-size: 40px;
+  font-weight: bold;
 }
 .main {
   margin: 50px;
