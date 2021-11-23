@@ -1,6 +1,7 @@
 @font-face {  
     font-family: 'Microsoft YaHei';
-    src: url('msyh.ttf');
+    /* src: url('msyh.ttf'); */
+    src: url('syht.otf');
     font-weight: normal;  
     font-style: normal;  
 }
