@@ -834,10 +834,12 @@ export default {
 } */
 .ant-tree-title{
   color: #7857A1;
-  font-weight: bold;
   font-size: large;
   /* background-color: white; */
 }
+ #mytree > li > .ant-tree-node-content-wrapper{
+   font-weight: bolder;
+ }
 /* #mytree li ul span .ant-tree-title{
     background-color: red;
   }
