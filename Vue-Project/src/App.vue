@@ -399,7 +399,7 @@ body,
 }
 
 .footer-div {
-  height: 150px;
+  height: 200px;
   background-color: black;
   color: white;
   padding-top: 50px;
