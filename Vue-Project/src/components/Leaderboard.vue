@@ -212,49 +212,49 @@
             </template>
           </el-table-column> -->
           <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="110"> </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" min-width="150" v-if="tableData[0].yyljcy!=''">
+          <el-table-column :label="language.leaderboard_yyljcy" prop="yyljcy" align="right" width="150" v-if="showLines[0]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
                 <span>{{language.leaderboard_yyljcy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" min-width="150" v-if="tableData[0].yyljpj!=''">
+          <el-table-column :label="language.leaderboard_yyljpj" prop="yyljpj" align="right" min-width="150" v-if="showLines[1]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
                 <span>{{language.leaderboard_yyljpj}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right" v-if="tableData[0].xxhq!=''">
+          <el-table-column :label="language.leaderboard_xxhq" prop="xxhq" min-width="150" align="right" v-if="showLines[2]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
                 <span>{{language.leaderboard_xxhq}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" min-width="120" v-if="tableData[0].yysc!=''">
+          <el-table-column :label="language.leaderboard_yysc" prop="yysc" align="right" min-width="120" v-if="showLines[3]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
                 <span>{{language.leaderboard_yysc}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" min-width="120" v-if="tableData[0].dhjh!=''">
+          <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" align="right" min-width="120" v-if="showLines[4]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
                 <span>{{language.leaderboard_dhjh}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" min-width="120" v-if="tableData[0].dyy!=''">
+          <el-table-column :label="language.leaderboard_dyy" prop="dyy" align="right" min-width="120" v-if="showLines[5]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
                 <span>{{language.leaderboard_dyy}}</span>
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" min-width="120" v-if="tableData[0].sxtl!=''">
+          <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" align="right" min-width="120" v-if="showLines[6]">
             <template slot="header" slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
                 <span>{{language.leaderboard_sxtl}}</span>
@@ -363,6 +363,7 @@ export default {
       drawer: false,
       alltask: task.all,
       expandedKeys: [[], [], [], [], [], [], []],
+      showLines: [true, true, true, true, true, true, true],
       drawerInfo: {
       },
       kb: '　',
@@ -489,6 +490,7 @@ export default {
     },
     handleDefaultSelect () {
       this.isSelecting = false
+      this.showLines = [true, true, true, true, true, true, true]
       this.checkedKeys = []
       this.expandedKeys = [[], [], [], [], [], [], []]
       this.tableData = []
@@ -593,6 +595,7 @@ export default {
     },
     handleTreeSelect () {
       this.isSelecting = true
+      this.showLines = [false, false, false, false, false, false, false]
       console.log(this.checkedKeys)
       this.dataSelect = {
         '信息获取及问答能力': [],
@@ -613,6 +616,9 @@ export default {
         // var t = this.$refs.tree[i].getCheckedNodes()
         // this.savedTree.push(t)
         console.log('hha', t)
+        if (t !== undefined) {
+          this.showLines[i] = true
+        }
         for (let j in t) {
           ha1 = l[i]
           ha2 = t[j]
@@ -629,6 +635,7 @@ export default {
         if (config.debug === 'true') {
           console.log(res)
         }
+        this.tableData = []
         if (res.status === 200) {
         // console.log(res)
           this.tableData = []

@@ -217,8 +217,9 @@
                 <el-button
                   size="mini"
                   type="primary"
-                  :disabled="scope.row.public || scope.row.check === 1"
-                  @click="handlePublic(scope.$index, scope.row)">{{scope.row.check == 1 ? language.user_accepted : scope.row.check == -1 ? language.user_rejected : scope.row.public ? language.user_check : language.user_public}}</el-button>
+                  :disabled="!scope.row.public || scope.row.check === 1"
+                  @click="handlePublic(scope.$index, scope.row)">{{scope.row.checkShow}}</el-button>
+                  <!-- {{scope.row.check == 1 ? language.user_accepted : scope.row.check == -1 ? language.user_rejected : scope.row.public ? language.user_check : language.user_public}} -->
               </template>
             </el-table-column>
             <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
@@ -330,7 +331,10 @@
 
         <div class="draw-sub">
           <h1>{{language.user_public}}</h1>
-          <div v-if="drawerInfo.public == 1">
+          <div>
+            申请状态： {{drawerInfo.checkShow}}
+          </div>
+          <!-- <div v-if="drawerInfo.public == 1&& check == None">
             申请状态： {{language.user_check}}
           </div>
           <div v-if="drawerInfo.check == 1">
@@ -338,10 +342,14 @@
           </div>
           <div v-if="drawerInfo.check == -1">
             申请状态： {{language.user_rejected}}
-          </div>
+          </div> -->
           <div v-if="drawerInfo.check == -1">
-            驳回原因： {{drawerInfo.description}}
+            驳回原因： {{drawerInfo.message}}
           </div>
+          <!-- 审核中： public == 1 && check == None
+          审核通过：check == 1
+          驳回： check == -1
+          提交审核： public == 0 -->
         </div>
       </div>
     </el-drawer>
@@ -382,8 +390,21 @@ export default {
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
           var toAppend = {}
+          var checkShow = ''
+          if (r.check === 1) {
+            checkShow = '审核通过'
+          } else if (r.check === -1) {
+            checkShow = '驳回'
+          } else if (r.public && r.check === 0) {
+            checkShow = '审核中'
+          } else if (!r.public) {
+            checkShow = '提交审核'
+          } else {
+            checkShow = '　'
+          }
           if (r.is_evaluate) {
             toAppend = {
+              checkShow: checkShow,
               rank: i + 1,
               name: r.模型名,
               org: 'Test',
@@ -453,7 +474,9 @@ export default {
               integrate: r.integrate,
               pre_train: r.pre_train,
               fileid: r.fileid,
-              stime: r.simple_commit_time.split(' ')
+              stime: r.simple_commit_time.split(' '),
+              check: r.check,
+              message: r.message
             }
           } else {
             toAppend = {
