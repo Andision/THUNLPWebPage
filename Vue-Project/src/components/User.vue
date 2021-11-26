@@ -217,7 +217,7 @@
                 <el-button
                   size="mini"
                   type="primary"
-                  :disabled="!scope.row.public || scope.row.check === 1"
+                  :disabled="scope.row.public || scope.row.check === 1"
                   @click="handlePublic(scope.$index, scope.row)">{{scope.row.checkShow}}</el-button>
                   <!-- {{scope.row.check == 1 ? language.user_accepted : scope.row.check == -1 ? language.user_rejected : scope.row.public ? language.user_check : language.user_public}} -->
               </template>
