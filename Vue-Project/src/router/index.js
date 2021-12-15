@@ -15,6 +15,7 @@ import AboutUs from '@/components/AboutUs'
 import TaskBoard from '@/components/TaskBoard'
 import Admin from '@/components/Admin'
 import Reset from '@/components/Reset'
+import Dataset from '@/components/Dataset'
 
 Vue.use(Router)
 
@@ -131,6 +132,14 @@ export default new Router({
       },
       name: 'Reset',
       component: Reset
+    },
+    {
+      path: '/dataset',
+      meta: {
+        title: '智源指数'
+      },
+      name: 'Dataset',
+      component: Dataset
     }
   ]
 })
