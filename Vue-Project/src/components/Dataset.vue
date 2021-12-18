@@ -23,7 +23,7 @@
             </el-col>
           </el-row>
           <el-row style="text-align:left; margin-top:25px;">
-            <el-button type="primary">下载</el-button>
+            <el-button type="primary" @click="handleDownload()">下载</el-button>
           </el-row>
         </el-col>
       </el-row>
@@ -196,6 +196,7 @@ export default {
       id: '',
       theNull: undefined,
       tableData: [],
+      tapp: {},
       show: {
         title: '',
         author: [
@@ -224,7 +225,8 @@ export default {
     }
   },
   props: {
-    language: Object
+    language: Object,
+    app: Object
   },
   methods: {
     cellStyle ({ row, column, rowIndex, columnIndex }) {
@@ -242,9 +244,18 @@ export default {
         this.drawerInfo = row
         this.drawer = true
       }
+    },
+    handleDownload () {
+      console.log('DID')
+      if (this.tapp.isLogin) {
+        window.open('/api/download_dataset?dataset_id=' + this.id)
+      } else {
+        this.tapp.toLogin()
+      }
     }
   },
   mounted: function () {
+    this.tapp = this.app
     this.id = this.$route.query.id
     console.log(this.id, this.language.language)
     var useURL = ''
