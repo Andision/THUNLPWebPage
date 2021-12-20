@@ -245,7 +245,8 @@ export default {
         var tname = key.split('@')[1]
         console.log('handleSingle', tid, tname)
         // window.open('/#/taskboard?id=' + tid + '&name=' + tname, '_self')
-        location.href = '/#/taskboard?id=' + tid + '&name=' + tname
+        // location.href = '/#/taskboard?id=' + tid + '&name=' + tname
+        location.href = '/#/dataset?id=' + tid + '&name=' + tname
         location.reload()
       } else {
         switch (key) {

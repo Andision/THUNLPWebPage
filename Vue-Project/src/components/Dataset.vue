@@ -1,8 +1,8 @@
 <template>
   <div class="all">
     <div class="title">
-      <el-row style="width:60%; margin: auto;">
-        <el-col :span="12" style="text-align:left; margin-left: 50px;">
+      <el-row style="width:80%; margin: auto;">
+        <el-col :span="16" style="text-align:left; margin-left: 50px;">
           <div class="title-title">
             {{show.title}}
           </div>
@@ -10,19 +10,19 @@
             {{show.ability}} | {{show.task}}
           </div>
         </el-col>
-        <el-col :span="8">
-          <el-row class="title-org" style="text-align:left;">
-            <el-col :span="4">
+        <el-col :span="6">
+          <el-row class="title-org" style="text-align:left; margin-top: 10%;">
+            <el-col :span="8">
               <div style="display: inline-block;">
                 机构：
               </div>
             </el-col>
-            <el-col :span="20">
+            <el-col :span="16">
               <pre v-html="show.org" style="display: inline-block;">
               </pre>
             </el-col>
           </el-row>
-          <el-row style="text-align:left; margin-top:25px;">
+          <el-row style="text-align:left; margin-top:10%;">
             <el-button type="primary" @click="handleDownload()">下载</el-button>
           </el-row>
         </el-col>
