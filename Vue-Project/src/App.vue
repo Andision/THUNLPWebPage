@@ -51,9 +51,9 @@
                 <el-menu-item class="menu-item" index="10" style="float: right">{{
                   language.app_About
                 }}</el-menu-item>
-                <el-menu-item class="menu-item" index="6" style="float: right">{{
+                <!-- <el-menu-item class="menu-item" index="6" style="float: right">{{
                   language.app_Download
-                }}</el-menu-item>
+                }}</el-menu-item> -->
                 <el-menu-item class="menu-item" index="5" style="float: right">{{
                   language.app_Submit
                 }}</el-menu-item>
