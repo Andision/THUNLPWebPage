@@ -105,9 +105,11 @@
               <el-checkbox label="NENGLI" v-model="c.nl"><div class="title-select-text">{{language.task_nlb}}</div></el-checkbox>
             </el-checkbox-group> -->
             <!-- <el-checkbox label="JINJIAN" :v-model="true" disabled><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox> -->
-            <el-checkbox v-model="checked2">{{
-              language.task_jjb
-            }}</el-checkbox>
+            <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
+              <el-checkbox v-model="checked2">
+                {{language.leaderboard_jjb}}
+              </el-checkbox>
+            </el-tooltip>
           </div>
           <hr />
           <div class="title-select">

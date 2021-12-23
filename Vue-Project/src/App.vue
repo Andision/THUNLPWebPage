@@ -5,27 +5,29 @@
   </div> -->
   <div id="app">
     <el-container class="container" style="padding: 0">
-      <el-header class="header" style="padding: 0;">
+      <el-header class="header" style="padding: 0">
         <div>
-          <el-row style="background-color: #64438D;">
+          <el-row style="background-color: #64438d">
             <el-col :span="4">
-            <div
-              style="
-                float: left;
-                margin-top: 10px;
-                margin-left: 50px;
-                color: white;
-                font-size: 28px;
-                font-weight: bold;
-                cursor: pointer;
-                background-color: #64438D;
-              "
-              @click="handleGoHomePage"
-            >
-              <!-- {{language.wyzs}} -->
-              <div style="display:inline-block;height: 100%;">{{language.wyzs}}</div>
-              <!-- <div style="display:inline-block;height: 100%;line-height: 10px;">CUGE</div> -->
-            </div>
+              <div
+                style="
+                  float: left;
+                  margin-top: 10px;
+                  margin-left: 50px;
+                  color: white;
+                  font-size: 28px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  background-color: #64438d;
+                "
+                @click="handleGoHomePage"
+              >
+                <!-- {{language.wyzs}} -->
+                <div style="display: inline-block; height: 100%">
+                  {{ language.wyzs }}
+                </div>
+                <!-- <div style="display:inline-block;height: 100%;line-height: 10px;">CUGE</div> -->
+              </div>
             </el-col>
             <el-col :span="18">
               <el-menu
@@ -37,7 +39,6 @@
                 active-text-color="#FFFFFF"
                 id="bar"
               >
-
                 <el-menu-item
                   v-show="isLogin"
                   class="menu-item"
@@ -48,29 +49,45 @@
                 <el-menu-item class="menu-item" index="7" style="float: right">
                   {{ isLogin ? language.app_User : language.Login }}
                 </el-menu-item>
-                <el-menu-item class="menu-item" index="10" style="float: right">{{
-                  language.app_About
-                }}</el-menu-item>
+                <el-menu-item
+                  class="menu-item"
+                  index="10"
+                  style="float: right"
+                  >{{ language.app_About }}</el-menu-item
+                >
                 <!-- <el-menu-item class="menu-item" index="6" style="float: right">{{
                   language.app_Download
                 }}</el-menu-item> -->
-                <el-menu-item class="menu-item" index="5" style="float: right">{{
-                  language.app_Submit
-                }}</el-menu-item>
-                <el-menu-item class="menu-item" index="4" style="float: right">{{
-                  language.app_Paper
-                }}</el-menu-item>
-                <el-menu-item class="menu-item" index="3" style="float: right">{{
-                  language.app_FAQ
-                }}</el-menu-item>
+                <el-menu-item
+                  class="menu-item"
+                  index="5"
+                  style="float: right"
+                  >{{ language.app_Submit }}</el-menu-item
+                >
+                <el-menu-item
+                  class="menu-item"
+                  index="4"
+                  style="float: right"
+                  >{{ language.app_Paper }}</el-menu-item
+                >
+                <el-menu-item
+                  class="menu-item"
+                  index="3"
+                  style="float: right"
+                  >{{ language.app_FAQ }}</el-menu-item
+                >
                 <el-submenu index="10" class="menu-item" style="float: right">
-                  <template slot="title">{{language.app_Single}}</template>
+                  <template slot="title">{{ language.app_Single }}</template>
                   <el-submenu
                     :index="'10-' + index"
                     v-for="(abi, index) in alltask"
                     :key="index"
                   >
-                    <template slot="title"><span class="ads-font">{{ language.language == 'zh' ? abi.name_zh:abi.name_en }}</span></template>
+                    <template slot="title"
+                      ><span class="ads-font">{{
+                        language.language == "zh" ? abi.name_zh : abi.name_en
+                      }}</span></template
+                    >
                     <el-menu-item
                       :index="
                         'A-10-' +
@@ -88,16 +105,31 @@
                     >
                   </el-submenu>
                 </el-submenu>
-                <el-menu-item class="menu-item" index="2" style="float: right">{{
-                  language.app_Leaderboard
-                }}</el-menu-item>
-                <el-menu-item class="menu-item" index="1" style="float: right">{{
-                  language.app_Tasks
-                }}</el-menu-item>
+                <el-menu-item
+                  class="menu-item"
+                  index="2"
+                  style="float: right"
+                  >{{ language.app_Leaderboard }}</el-menu-item
+                >
+                <el-menu-item
+                  class="menu-item"
+                  index="1"
+                  style="float: right"
+                  >{{ language.app_Tasks }}</el-menu-item
+                >
               </el-menu>
             </el-col>
             <el-col :span="2">
-              <div id="language-switch" style="height:60px; display: flex; display: -webkit-flex; justify-content: center; align-items: center;">
+              <div
+                id="language-switch"
+                style="
+                  height: 60px;
+                  display: flex;
+                  display: -webkit-flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
                 <el-switch
                   v-model="languageswitch"
                   active-text="ZH"
@@ -105,7 +137,7 @@
                   @change="handleLanguage"
                   active-color="#B38BE4"
                   inactive-color="#B38BE4"
-                  >
+                >
                 </el-switch>
               </div>
             </el-col>
@@ -113,7 +145,11 @@
         </div>
       </el-header>
       <el-main class="main" style="padding: 0"
-        ><router-view :language="language" v-if="isFresh" :isLogin="isLogin" :app="this"
+        ><router-view
+          :language="language"
+          v-if="isFresh"
+          :isLogin="isLogin"
+          :app="this"
       /></el-main>
       <el-footer class="footer" style="padding: 0">
         <div class="footer-div">
@@ -127,14 +163,16 @@
             <el-col :span="12" style="padding-top: 30px">
               <a
                 href="https://github.com/TsinghuaAI/CUGE"
-                style="font-size: xx-medium; text-decoration: none; color: white"
-                >{{language.app_contactus}}</a
+                style="
+                  font-size: xx-medium;
+                  text-decoration: none;
+                  color: white;
+                "
+                >{{ language.app_contactus }}</a
               >
             </el-col>
           </el-row>
-          <el-row>
-            ©2021
-          </el-row>
+          <el-row> ©2021 </el-row>
         </div>
       </el-footer>
     </el-container>
@@ -152,58 +190,71 @@
 </template>
 
 <script>
-import en from '@/components/english.json'
-import zh from '@/components/chinese.json'
-import LoginDialog from '@/components/LoginDialog.vue'
-import ForgetDialog from '@/components/ForgetDialog.vue'
-import config from '@/components/config.json'
-import task from '@/components/task.json'
+import en from "@/components/english.json";
+import zh from "@/components/chinese.json";
+import LoginDialog from "@/components/LoginDialog.vue";
+import ForgetDialog from "@/components/ForgetDialog.vue";
+import config from "@/components/config.json";
+import task from "@/components/task.json";
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
       language: zh,
       dialogLoginVisible: false,
       dialogForgetVisible: false,
-      token: '',
+      token: "",
       isLogin: false,
       isFresh: true,
       alltask: task.all,
-      languageswitch: true
-    }
+      languageswitch: true,
+    };
   },
   mounted: function () {
-    console.log(task)
-    this.checkLogin()
-    if (sessionStorage.getItem('language') === 'zh') {
-      this.language = zh
-    } else if (sessionStorage.getItem('language') === 'en') {
-      this.language = en
+    if (config.debug === "true") {
+      console.log(task);
+    }
+
+    this.checkLogin();
+    if (sessionStorage.getItem("language") === "zh") {
+      this.language = zh;
+    } else if (sessionStorage.getItem("language") === "en") {
+      this.language = en;
     } else {
-      sessionStorage.setItem('language', 'zh')
+      sessionStorage.setItem("language", "zh");
     }
   },
   methods: {
-    checkLogin () {
-      var cookieOri = document.cookie
-      var cookie = ''
-      if (cookieOri !== '') {
-        cookie = JSON.parse(document.cookie)
+    checkLogin() {
+      var cookieOri = document.cookie;
+      var cookie = "";
+      if (cookieOri !== "") {
+        cookie = JSON.parse(document.cookie);
       }
-      console.log('cookie:', cookieOri, typeof cookieOri)
-      if (cookieOri == null || cookieOri === '' || cookieOri === 'null') {
+      if (config.debug === "true") {
+        console.log("cookie:", cookieOri, typeof cookieOri);
+      }
+      if (cookieOri == null || cookieOri === "" || cookieOri === "null") {
         // this.handleLoginStatus(true)
-        console.log('Check Login in App False1')
-        this.isLogin = false
-      } else if (cookie.token === '' || cookie.token === null) {
-        console.log('Check Login in App False2')
-        this.isLogin = false
+        if (config.debug === "true") {
+          console.log("Check Login in App False1");
+        }
+        this.isLogin = false;
+      } else if (cookie.token === "" || cookie.token === null) {
+        if (config.debug === "true") {
+          console.log("Check Login in App False2");
+        }
+        this.isLogin = false;
       } else if (cookie.extime > Date.parse(new Date()).toString()) {
-        console.log('Check Login in App True')
-        this.isLogin = true
+        if (config.debug === "true") {
+          console.log("Check Login in App True");
+        }
+        this.isLogin = true;
       } else {
-        console.log('Check Login in App OTHER')
-        this.isLogin = false
+        if (config.debug === "true") {
+          console.log("Check Login in App OTHER");
+        }
+        this.isLogin = false;
       }
       // else {
       //   this.isLogin = true
@@ -212,143 +263,142 @@ export default {
       //   // this.$router.push({path: '/user'})
       // }
     },
-    toLogin () {
-      this.checkLogin()
+    toLogin() {
+      this.checkLogin();
       if (this.isLogin) {
-        this.$router.push({ path: '/user' })
+        this.$router.push({ path: "/user" });
       } else {
-        this.handleLoginStatus(true)
+        this.handleLoginStatus(true);
       }
     },
-    toLogout () {
-      let formData = new FormData()
+    toLogout() {
+      let formData = new FormData();
       this.$axios.get(config.API + config.toLogout, formData).then((res) => {
         if (res.status === 200) {
-          if (res.data.re_code === '0') {
-            this.isLogin = false
-            document.cookie = 'null'
-            console.log('In toLogout in App', document.cookie)
+          if (res.data.re_code === "0") {
+            this.isLogin = false;
+            document.cookie = "null";
+            console.log("In toLogout in App", document.cookie);
             this.$message({
-              message: '登出成功',
-              type: 'success'
-            })
-            this.$router.push({ path: '/' })
+              message: "登出成功",
+              type: "success",
+            });
+            this.$router.push({ path: "/" });
             // location.reload()
           }
         }
-      })
+      });
     },
-    handleMenuSelect (key, keyPath) {
-      console.log(key, keyPath)
-      if (key[0] === 'A') {
-        var tid = key.split('-')[4]
-        var tname = key.split('@')[1]
-        console.log('handleSingle', tid, tname)
+    handleMenuSelect(key, keyPath) {
+      console.log(key, keyPath);
+      if (key[0] === "A") {
+        var tid = key.split("-")[4];
+        var tname = key.split("@")[1];
+        console.log("handleSingle", tid, tname);
         // window.open('/#/taskboard?id=' + tid + '&name=' + tname, '_self')
         // location.href = '/#/taskboard?id=' + tid + '&name=' + tname
-        location.href = '/#/dataset?id=' + tid + '&name=' + tname
-        location.reload()
+        location.href = "/#/dataset?id=" + tid + "&name=" + tname;
+        location.reload();
       } else {
         switch (key) {
-          case '1':
-            this.$router.push({ path: '/task' })
-            break
-          case '2':
-            this.$router.push({ path: '/leaderboard' })
-            break
-          case '3':
-            this.$router.push({ path: '/faq' })
-            break
-          case '4':
+          case "1":
+            this.$router.push({ path: "/task" });
+            break;
+          case "2":
+            this.$router.push({ path: "/leaderboard" });
+            break;
+          case "3":
+            this.$router.push({ path: "/faq" });
+            break;
+          case "4":
             // this.$router.push({path: 'http://www.baidu.com'})
-            window.open('/pdf/CUGE.pdf')
-            break
-          case '5':
-            this.$router.push({ path: '/submit' })
-            break
-          case '6':
-            this.$router.push({ path: '/download' })
-            break
-          case '6-2':
-            this.$router.push({ path: '/judging' })
-            break
-          case '7':
+            window.open("/pdf/CUGE.pdf");
+            break;
+          case "5":
+            this.$router.push({ path: "/submit" });
+            break;
+          case "6":
+            this.$router.push({ path: "/download" });
+            break;
+          case "6-2":
+            this.$router.push({ path: "/judging" });
+            break;
+          case "7":
             // this.$router.push({path: '/user'})
-            this.toLogin()
-            break
-          case '8':
+            this.toLogin();
+            break;
+          case "8":
             // this.$router.push({path: '/user'})
-            this.toLogout()
-            break
-          case '9-1':
+            this.toLogout();
+            break;
+          case "9-1":
             // this.$router.push({path: '/user'})
-            this.language = zh
-            sessionStorage.setItem('language', 'zh')
-            this.handleReload()
-            break
-          case '9-2':
+            this.language = zh;
+            sessionStorage.setItem("language", "zh");
+            this.handleReload();
+            break;
+          case "9-2":
             // this.$router.push({path: '/user'})
-            this.language = en
-            sessionStorage.setItem('language', 'en')
-            this.handleReload()
-            break
-          case '10':
-            this.$router.push({ path: '/about' })
-            break
+            this.language = en;
+            sessionStorage.setItem("language", "en");
+            this.handleReload();
+            break;
+          case "10":
+            this.$router.push({ path: "/about" });
+            break;
         }
       }
     },
-    handleReload () {
-      this.isFresh = false
+    handleReload() {
+      this.isFresh = false;
       this.$nextTick(function () {
-        this.isFresh = true
-      })
+        this.isFresh = true;
+      });
     },
-    handleLanguage () {
+    handleLanguage() {
       // console.log('changelanguage')
       if (this.languageswitch) {
-        this.language = zh
-        sessionStorage.setItem('language', 'zh')
-        this.handleReload()
+        this.language = zh;
+        sessionStorage.setItem("language", "zh");
+        this.handleReload();
       } else {
-        this.language = en
-        sessionStorage.setItem('language', 'en')
-        this.handleReload()
+        this.language = en;
+        sessionStorage.setItem("language", "en");
+        this.handleReload();
       }
     },
-    handleGoHomePage () {
-      this.$router.push({ path: '/' })
+    handleGoHomePage() {
+      this.$router.push({ path: "/" });
     },
-    handleLoginStatus (isLocal) {
+    handleLoginStatus(isLocal) {
       if (isLocal === true) {
-        this.dialogLoginVisible = true
+        this.dialogLoginVisible = true;
       } else if (isLocal === false) {
-        this.dialogLoginVisible = false
+        this.dialogLoginVisible = false;
       } else {
-        this.dialogLoginVisible = false
-        this.handleForgetStatus(true)
+        this.dialogLoginVisible = false;
+        this.handleForgetStatus(true);
       }
-      console.log(this.dialogLoginVisible)
+      console.log(this.dialogLoginVisible);
     },
-    handleForgetStatus (isLocal) {
+    handleForgetStatus(isLocal) {
       if (isLocal) {
-        this.dialogForgetVisible = true
+        this.dialogForgetVisible = true;
       } else {
-        this.dialogForgetVisible = false
+        this.dialogForgetVisible = false;
       }
-      console.log(this.dialogForgetVisible)
-    }
+      console.log(this.dialogForgetVisible);
+    },
   },
-  components: { LoginDialog, ForgetDialog }
-}
+  components: { LoginDialog, ForgetDialog },
+};
 </script>
 
 <style>
 #app {
-  font-family: "Microsoft YaHei", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -413,25 +463,23 @@ body,
 <style>
 .el-menu-item {
   font-size: 20px;
-  font-family: "Microsoft YaHei", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .ads-font {
   font-size: 20px;
-  font-family: "Microsoft YaHei", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .clustrMapsLink {
   margin-top: -20px;
 }
 
-#language-switch .el-switch__label{
-  color:white;
+#language-switch .el-switch__label {
+  color: white;
 }
 </style>

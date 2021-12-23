@@ -31,9 +31,11 @@
         </el-row>
         <hr />
         <el-row>
-          <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
-            {{language.leaderboard_jjb}}
-          </el-button>
+          <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
+            <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
+              {{language.leaderboard_jjb}}
+            </el-button>
+          </el-tooltip>
           <el-button size="mini" type="success" style="float:right; margin-right:30px;" @click="handleTreeSelect">
             {{language.leaderboard_queren}}
           </el-button>

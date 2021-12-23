@@ -12,18 +12,18 @@
         </el-col>
         <el-col :span="6">
           <el-row class="title-org" style="text-align:left; margin-top: 10%;">
-            <el-col :span="8">
+            <el-col :span="language.language =='zh'? 6:12">
               <div style="display: inline-block;">
-                机构：
+                {{language.submit_org}}:
               </div>
             </el-col>
-            <el-col :span="16">
+            <el-col :span="12">
               <pre v-html="show.org" style="display: inline-block;">
               </pre>
             </el-col>
           </el-row>
           <el-row style="text-align:left; margin-top:10%;">
-            <el-button type="primary" @click="handleDownload()">下载</el-button>
+            <el-button type="primary" @click="handleDownload()">{{language.Download}}</el-button>
           </el-row>
         </el-col>
       </el-row>
@@ -31,7 +31,7 @@
     <el-divider/>
     <div>
       <el-tabs class="tab-all" v-model="activeName" stretch>
-        <el-tab-pane label="数据介绍" name="first">
+        <el-tab-pane :label="language.dataset_rank" name="first">
           <div style="margin: auto; margin-bottom: 50px;">
             <div class="content">
               <div class="content-section">
@@ -150,7 +150,7 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="排行榜" name="second">
+        <el-tab-pane :label="language.dataset_rank" name="second">
           <div class="content-board">
             <el-table :data="tableData" style="width: 100%"
               :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
