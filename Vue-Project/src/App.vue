@@ -190,71 +190,71 @@
 </template>
 
 <script>
-import en from "@/components/english.json";
-import zh from "@/components/chinese.json";
-import LoginDialog from "@/components/LoginDialog.vue";
-import ForgetDialog from "@/components/ForgetDialog.vue";
-import config from "@/components/config.json";
-import task from "@/components/task.json";
+import en from '@/components/english.json'
+import zh from '@/components/chinese.json'
+import LoginDialog from '@/components/LoginDialog.vue'
+import ForgetDialog from '@/components/ForgetDialog.vue'
+import config from '@/components/config.json'
+import task from '@/components/task.json'
 export default {
-  name: "App",
-  data() {
+  name: 'App',
+  data () {
     return {
       language: zh,
       dialogLoginVisible: false,
       dialogForgetVisible: false,
-      token: "",
+      token: '',
       isLogin: false,
       isFresh: true,
       alltask: task.all,
-      languageswitch: true,
-    };
+      languageswitch: true
+    }
   },
   mounted: function () {
-    if (config.debug === "true") {
-      console.log(task);
+    if (config.debug === 'true') {
+      console.log(task)
     }
 
-    this.checkLogin();
-    if (sessionStorage.getItem("language") === "zh") {
-      this.language = zh;
-    } else if (sessionStorage.getItem("language") === "en") {
-      this.language = en;
+    this.checkLogin()
+    if (sessionStorage.getItem('language') === 'zh') {
+      this.language = zh
+    } else if (sessionStorage.getItem('language') === 'en') {
+      this.language = en
     } else {
-      sessionStorage.setItem("language", "zh");
+      sessionStorage.setItem('language', 'zh')
     }
   },
   methods: {
-    checkLogin() {
-      var cookieOri = document.cookie;
-      var cookie = "";
-      if (cookieOri !== "") {
-        cookie = JSON.parse(document.cookie);
+    checkLogin () {
+      var cookieOri = document.cookie
+      var cookie = ''
+      if (cookieOri !== '') {
+        cookie = JSON.parse(document.cookie)
       }
-      if (config.debug === "true") {
-        console.log("cookie:", cookieOri, typeof cookieOri);
+      if (config.debug === 'true') {
+        console.log('cookie:', cookieOri, typeof cookieOri)
       }
-      if (cookieOri == null || cookieOri === "" || cookieOri === "null") {
+      if (cookieOri == null || cookieOri === '' || cookieOri === 'null') {
         // this.handleLoginStatus(true)
-        if (config.debug === "true") {
-          console.log("Check Login in App False1");
+        if (config.debug === 'true') {
+          console.log('Check Login in App False1')
         }
-        this.isLogin = false;
-      } else if (cookie.token === "" || cookie.token === null) {
-        if (config.debug === "true") {
-          console.log("Check Login in App False2");
+        this.isLogin = false
+      } else if (cookie.token === '' || cookie.token === null) {
+        if (config.debug === 'true') {
+          console.log('Check Login in App False2')
         }
-        this.isLogin = false;
+        this.isLogin = false
       } else if (cookie.extime > Date.parse(new Date()).toString()) {
-        if (config.debug === "true") {
-          console.log("Check Login in App True");
+        if (config.debug === 'true') {
+          console.log('Check Login in App True')
         }
-        this.isLogin = true;
+        this.isLogin = true
       } else {
-        if (config.debug === "true") {
-          console.log("Check Login in App OTHER");
+        if (config.debug === 'true') {
+          console.log('Check Login in App OTHER')
         }
-        this.isLogin = false;
+        this.isLogin = false
       }
       // else {
       //   this.isLogin = true
@@ -263,135 +263,135 @@ export default {
       //   // this.$router.push({path: '/user'})
       // }
     },
-    toLogin() {
-      this.checkLogin();
+    toLogin () {
+      this.checkLogin()
       if (this.isLogin) {
-        this.$router.push({ path: "/user" });
+        this.$router.push({ path: '/user' })
       } else {
-        this.handleLoginStatus(true);
+        this.handleLoginStatus(true)
       }
     },
-    toLogout() {
-      let formData = new FormData();
+    toLogout () {
+      let formData = new FormData()
       this.$axios.get(config.API + config.toLogout, formData).then((res) => {
         if (res.status === 200) {
-          if (res.data.re_code === "0") {
-            this.isLogin = false;
-            document.cookie = "null";
-            console.log("In toLogout in App", document.cookie);
+          if (res.data.re_code === '0') {
+            this.isLogin = false
+            document.cookie = 'null'
+            console.log('In toLogout in App', document.cookie)
             this.$message({
-              message: "登出成功",
-              type: "success",
-            });
-            this.$router.push({ path: "/" });
+              message: '登出成功',
+              type: 'success'
+            })
+            this.$router.push({ path: '/' })
             // location.reload()
           }
         }
-      });
+      })
     },
-    handleMenuSelect(key, keyPath) {
-      console.log(key, keyPath);
-      if (key[0] === "A") {
-        var tid = key.split("-")[4];
-        var tname = key.split("@")[1];
-        console.log("handleSingle", tid, tname);
+    handleMenuSelect (key, keyPath) {
+      console.log(key, keyPath)
+      if (key[0] === 'A') {
+        var tid = key.split('-')[4]
+        var tname = key.split('@')[1]
+        console.log('handleSingle', tid, tname)
         // window.open('/#/taskboard?id=' + tid + '&name=' + tname, '_self')
         // location.href = '/#/taskboard?id=' + tid + '&name=' + tname
-        location.href = "/#/dataset?id=" + tid + "&name=" + tname;
-        location.reload();
+        location.href = '/#/dataset?id=' + tid + '&name=' + tname
+        location.reload()
       } else {
         switch (key) {
-          case "1":
-            this.$router.push({ path: "/task" });
-            break;
-          case "2":
-            this.$router.push({ path: "/leaderboard" });
-            break;
-          case "3":
-            this.$router.push({ path: "/faq" });
-            break;
-          case "4":
+          case '1':
+            this.$router.push({ path: '/task' })
+            break
+          case '2':
+            this.$router.push({ path: '/leaderboard' })
+            break
+          case '3':
+            this.$router.push({ path: '/faq' })
+            break
+          case '4':
             // this.$router.push({path: 'http://www.baidu.com'})
-            window.open("/pdf/CUGE.pdf");
-            break;
-          case "5":
-            this.$router.push({ path: "/submit" });
-            break;
-          case "6":
-            this.$router.push({ path: "/download" });
-            break;
-          case "6-2":
-            this.$router.push({ path: "/judging" });
-            break;
-          case "7":
+            window.open('/pdf/CUGE.pdf')
+            break
+          case '5':
+            this.$router.push({ path: '/submit' })
+            break
+          case '6':
+            this.$router.push({ path: '/download' })
+            break
+          case '6-2':
+            this.$router.push({ path: '/judging' })
+            break
+          case '7':
             // this.$router.push({path: '/user'})
-            this.toLogin();
-            break;
-          case "8":
+            this.toLogin()
+            break
+          case '8':
             // this.$router.push({path: '/user'})
-            this.toLogout();
-            break;
-          case "9-1":
+            this.toLogout()
+            break
+          case '9-1':
             // this.$router.push({path: '/user'})
-            this.language = zh;
-            sessionStorage.setItem("language", "zh");
-            this.handleReload();
-            break;
-          case "9-2":
+            this.language = zh
+            sessionStorage.setItem('language', 'zh')
+            this.handleReload()
+            break
+          case '9-2':
             // this.$router.push({path: '/user'})
-            this.language = en;
-            sessionStorage.setItem("language", "en");
-            this.handleReload();
-            break;
-          case "10":
-            this.$router.push({ path: "/about" });
-            break;
+            this.language = en
+            sessionStorage.setItem('language', 'en')
+            this.handleReload()
+            break
+          case '10':
+            this.$router.push({ path: '/about' })
+            break
         }
       }
     },
-    handleReload() {
-      this.isFresh = false;
+    handleReload () {
+      this.isFresh = false
       this.$nextTick(function () {
-        this.isFresh = true;
-      });
+        this.isFresh = true
+      })
     },
-    handleLanguage() {
+    handleLanguage () {
       // console.log('changelanguage')
       if (this.languageswitch) {
-        this.language = zh;
-        sessionStorage.setItem("language", "zh");
-        this.handleReload();
+        this.language = zh
+        sessionStorage.setItem('language', 'zh')
+        this.handleReload()
       } else {
-        this.language = en;
-        sessionStorage.setItem("language", "en");
-        this.handleReload();
+        this.language = en
+        sessionStorage.setItem('language', 'en')
+        this.handleReload()
       }
     },
-    handleGoHomePage() {
-      this.$router.push({ path: "/" });
+    handleGoHomePage () {
+      this.$router.push({ path: '/' })
     },
-    handleLoginStatus(isLocal) {
+    handleLoginStatus (isLocal) {
       if (isLocal === true) {
-        this.dialogLoginVisible = true;
+        this.dialogLoginVisible = true
       } else if (isLocal === false) {
-        this.dialogLoginVisible = false;
+        this.dialogLoginVisible = false
       } else {
-        this.dialogLoginVisible = false;
-        this.handleForgetStatus(true);
+        this.dialogLoginVisible = false
+        this.handleForgetStatus(true)
       }
-      console.log(this.dialogLoginVisible);
+      console.log(this.dialogLoginVisible)
     },
-    handleForgetStatus(isLocal) {
+    handleForgetStatus (isLocal) {
       if (isLocal) {
-        this.dialogForgetVisible = true;
+        this.dialogForgetVisible = true
       } else {
-        this.dialogForgetVisible = false;
+        this.dialogForgetVisible = false
       }
-      console.log(this.dialogForgetVisible);
-    },
+      console.log(this.dialogForgetVisible)
+    }
   },
-  components: { LoginDialog, ForgetDialog },
-};
+  components: { LoginDialog, ForgetDialog }
+}
 </script>
 
 <style>
