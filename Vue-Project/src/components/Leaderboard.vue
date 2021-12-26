@@ -2,9 +2,9 @@
   <div class="all">
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
     <el-card class="main">
-      <div slot="header">
-        <el-row>
-          <el-col :span="abi.span" v-for="(abi, index) in data" :key="index" style="text-align:left;">
+      <div slot="header" style="overflow:auto;text-align:left;">
+        <el-row style="display:inline-block;overflow:auto;min-width:1500px;margin-left:10px;">
+          <div :span="abi.span" v-for="(abi, index) in data" :key="index" style="min-width:200px;display:inline-block;float:left;">
             <!-- <el-tree id="mytree" ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree> -->
             <a-tree
               id="mytree"
@@ -21,7 +21,7 @@
               <!-- :expanded-keys="expandedKeys" -->
               <!-- @expand="onExpand"
               @select="onSelect" -->
-          </el-col>
+          </div>
           <!-- <a-tree
               checkable
               v-model="checkedKeys"
@@ -29,8 +29,10 @@
               :replaceFields="defaultProps"
             /> -->
         </el-row>
-        <hr />
-        <el-row>
+      </div>
+      <div class="main-content">
+        <!-- <hr /> -->
+        <el-row style="margin-bottom:50px;">
           <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
             <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
               {{language.leaderboard_jjb}}
@@ -40,8 +42,6 @@
             {{language.leaderboard_queren}}
           </el-button>
         </el-row>
-      </div>
-      <div class="main-content">
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
           :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
           :header-cell-style="{'background':'#64438D'}"
