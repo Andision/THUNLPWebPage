@@ -1,7 +1,7 @@
 <template>
-  <div class="all">
+  <div class="all" style="background-color:#f4f7fe; min-height:1000px;">
     <div class="title">
-      <el-row style="width:80%; margin: auto;">
+      <el-row style="width:80%; margin: auto; ">
         <el-col :span="16" style="text-align:left; margin-left: 50px;">
           <div class="title-title">
             {{show.title}}
@@ -9,6 +9,9 @@
           <div class="title-sub">
             {{show.ability}} | {{show.task}}
           </div>
+          <el-row style="text-align:left; margin-top:20px;">
+            <el-button type="primary" @click="handleDownload()">{{language.dataset_download}}</el-button>
+          </el-row>
         </el-col>
         <el-col :span="6">
           <el-row class="title-org" style="text-align:left; margin-top: 10%;">
@@ -22,14 +25,12 @@
               </pre>
             </el-col>
           </el-row>
-          <el-row style="text-align:left; margin-top:10%;">
-            <el-button type="primary" @click="handleDownload()">{{language.Download}}</el-button>
-          </el-row>
+          <!--download button-->
         </el-col>
       </el-row>
     </div>
-    <el-divider/>
-    <div>
+    <!-- <hr style="margin:0; padding-bottom:10px; background-color:#f4f7fe;"/> -->
+    <div style="background-color:#f4f7fe; min-height:50%;">
       <el-tabs class="tab-all" v-model="activeName" stretch>
         <el-tab-pane :label="language.dataset_intro" name="first">
           <div style="margin: auto; margin-bottom: 50px;">
@@ -151,7 +152,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane :label="language.dataset_rank" name="second">
-          <div class="content-board">
+          <div class="content-board" style="margin-top:50px;">
             <el-table :data="tableData" style="width: 100%"
               :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
               :header-cell-style="{'background':'#64438D'}"
@@ -334,8 +335,8 @@ pre{
   margin: auto;
 }
 .title{
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .title-org{
   font-size: large;
