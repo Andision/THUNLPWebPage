@@ -2,11 +2,11 @@
   <div class="all">
     <h1 class="title">{{ language.leaderboard_phb }}</h1>
     <el-card class="main">
-      <div slot="header" style="overflow:auto;text-align:left;">
-        <el-row style="display:inline-block;overflow:auto;min-width:1500px;margin-left:10px;">
-          <div :span="abi.span" v-for="(abi, index) in data" :key="index" style="min-width:200px;display:inline-block;float:left;">
+      <div slot="header">
+        <el-row class="myTreeTable">
+          <div :span="abi.span" v-for="(abi, index) in data" :key="index" style="min-width:200px; width: auto; float:left; display:inline-block;">
             <!-- <el-tree id="mytree" ref="tree" :data="[abi]" :props="defaultProps" @check-change="handleNodeClick" show-checkbox node-key="id"></el-tree> -->
-            <a-tree
+            <!-- <a-tree
               id="mytree"
               checkable
               v-model="checkedKeys[index]"
@@ -14,7 +14,7 @@
               :replaceFields="defaultProps"
               :selectable="false"
               :expanded-keys.sync="expandedKeys[index]"
-            />
+            /> -->
               <!-- :auto-expand-parent="autoExpandParent"
               :selected-keys="selectedKeys" -->
               <!-- v-model="checkedKeys" -->
@@ -22,26 +22,36 @@
               <!-- @expand="onExpand"
               @select="onSelect" -->
           </div>
-          <!-- <a-tree
-              checkable
-              v-model="checkedKeys"
-              :tree-data="[data[0]]"
-              :replaceFields="defaultProps"
-            /> -->
+          <el-table :data="[{}]" :show-header="false">
+              <el-table-column :min-width="abi.span" v-for="(abi, index) in data" :key="index" style="vertical-align: top;">
+                <template slot-scope="scope" style="vertical-align: top;">
+                  <a-tree
+                    id="mytree"
+                    checkable
+                    v-model="checkedKeys[index]"
+                    :tree-data="[abi]"
+                    :replaceFields="defaultProps"
+                    :selectable="false"
+                    :expanded-keys.sync="expandedKeys[index]"
+                  />
+                </template>
+              </el-table-column>
+            </el-table>
+            <el-row style="margin-top:20px;">
+              <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
+                <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
+                  {{language.leaderboard_jjb}}
+                </el-button>
+              </el-tooltip>
+              <el-button size="mini" type="success" style="float:right; margin-right:30px;" @click="handleTreeSelect">
+                {{language.leaderboard_queren}}
+              </el-button>
+            </el-row>
         </el-row>
       </div>
       <div class="main-content">
         <!-- <hr /> -->
-        <el-row style="margin-bottom:50px;">
-          <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
-            <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
-              {{language.leaderboard_jjb}}
-            </el-button>
-          </el-tooltip>
-          <el-button size="mini" type="success" style="float:right; margin-right:30px;" @click="handleTreeSelect">
-            {{language.leaderboard_queren}}
-          </el-button>
-        </el-row>
+
         <el-table :data="tableData" style="width: 100%" @expand-change="waitToDraw"
           :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
           :header-cell-style="{'background':'#64438D'}"
@@ -66,7 +76,7 @@
                           <el-button type="text">{{ i.name }}</el-button>
                         </div></el-col
                       > -->
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[0]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?[]:scope.row.yyljcy_dataset">
@@ -75,7 +85,7 @@
                           </el-tooltip>
                         </div>
                       </el-col>
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[1]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?[]:scope.row.yyljpj_dataset">
@@ -84,7 +94,7 @@
                           </el-tooltip>
                         </div>
                       </el-col>
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[2]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?[]:scope.row.xxhq_dataset">
@@ -93,7 +103,7 @@
                           </el-tooltip>
                         </div>
                       </el-col>
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[3]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?[]:scope.row.yysc_dataset">
@@ -102,7 +112,7 @@
                           </el-tooltip>
                         </div>
                       </el-col>
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[4]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?[]:scope.row.dhjh_dataset">
@@ -111,7 +121,7 @@
                           </el-tooltip>
                         </div>
                       </el-col>
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[5]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?[]:scope.row.dyy_dataset">
@@ -120,7 +130,7 @@
                           </el-tooltip>
                         </div>
                       </el-col>
-                      <el-col :span="6">
+                      <el-col :span="6" v-if="showLines[6]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
                             <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?[]:scope.row.sxtl_dataset">
@@ -361,6 +371,8 @@ export default {
   },
   data () {
     return {
+      // expand_ability_show: [true, true, true, true, true, true, true],
+      col_that: {},
       isSelecting: false,
       drawer: false,
       alltask: task.all,
@@ -481,6 +493,7 @@ export default {
     //   label: this.language.language === 'zh' ? 'name_zh' : 'name_en'
     //   // label: language.language==='zh'?'name_zh':
     // }
+    this.col_that = this
     this.handleDefaultSelect()
   },
   methods: {
@@ -491,6 +504,7 @@ export default {
       // // this.$refs.tree.setCheckedKeys([])
     },
     handleDefaultSelect () {
+      // this.expand_ability_show = [true, true, true, true, true, true, true]
       this.isSelecting = false
       this.showLines = [true, true, true, true, true, true, true]
       this.checkedKeys = []
@@ -876,6 +890,14 @@ html{
 ant-tree-checkbox-inner::selection{
   background: #7857a1;
 } */
+.myTreeTable .el-table__row td {
+vertical-align: top;
+max-height: 500px;
+overflow: auto;
+}
+.myTreeTable .el-table--enable-row-hover .el-table__body tr:hover > td {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

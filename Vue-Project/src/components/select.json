@@ -4,7 +4,7 @@
             "name_zh": "语言理解-词句级",
             "name_en": "NLU-WSL",
             "id": "NLU-WSL",
-            "span": 77,
+            "span": 240,
             "task": [
                 {
                     "name_zh": "中文分词",
@@ -37,7 +37,7 @@
             "name_zh": "语言理解-篇章级",
             "name_en": "NLU-DL",
             "id": "NLU-DL",
-            "span": 77,
+            "span": 230,
             "task": [
                 {
                     "name_zh": "幽默检测",
@@ -60,7 +60,7 @@
             "name_zh": "信息获取及问答",
             "name_en": "IA&QA",
             "id": "IA&QA",
-            "span": 77,
+            "span": 200,
             "task": [
                 {
                     "name_zh": "反向词典",
@@ -83,7 +83,7 @@
             "name_zh": "语言生成",
             "name_en": "NLG",
             "id": "NLG",
-            "span": 77,
+            "span": 210,
             "task": [
                 {
                     "name_zh": "摘要生成",
@@ -101,7 +101,7 @@
             "name_zh": "对话交互",
             "name_en": "CI",
             "id": "CI",
-            "span": 77,
+            "span": 240,
             "task": [
                 {
                     "name_zh": "知识驱动的对话生成",
@@ -114,7 +114,7 @@
             "name_zh": "多语言",
             "name_en": "ML",
             "id": "ML",
-            "span": 77,
+            "span": 200,
             "task": [
                 {
                     "name_zh": "机器翻译",
@@ -132,7 +132,7 @@
             "name_zh": "数学推理",
             "name_en": "MR",
             "id": "MR",
-            "span": 77,
+            "span": 200,
             "task": [
                 {
                     "name_zh": "数值计算",
