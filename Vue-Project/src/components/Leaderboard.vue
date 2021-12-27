@@ -79,7 +79,7 @@
                       <el-col :span="6" v-if="showLines[0]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?[]:scope.row.yyljcy_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?scope.row.yyljcy_dataset[scope.row.yyljcy_first].dataset_score_list:scope.row.yyljcy_dataset">
                               {{language.leaderboard_yyljcy}}
                             </el-button>
                           </el-tooltip>
@@ -88,7 +88,7 @@
                       <el-col :span="6" v-if="showLines[1]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?[]:scope.row.yyljpj_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?scope.row.yyljpj_dataset[scope.row.yyljpj_first].dataset_score_list:scope.row.yyljpj_dataset">
                               {{language.leaderboard_yyljpj}}
                             </el-button>
                           </el-tooltip>
@@ -97,7 +97,7 @@
                       <el-col :span="6" v-if="showLines[2]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?[]:scope.row.xxhq_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?scope.row.xxhq_dataset[scope.row.xxhq_first].dataset_score_list:scope.row.xxhq_dataset">
                               {{language.leaderboard_xxhq}}
                             </el-button>
                           </el-tooltip>
@@ -106,7 +106,7 @@
                       <el-col :span="6" v-if="showLines[3]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?[]:scope.row.yysc_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?scope.row.yysc_dataset[scope.row.yysc_first].dataset_score_list:scope.row.yysc_dataset">
                               {{language.leaderboard_yysc}}
                             </el-button>
                           </el-tooltip>
@@ -115,7 +115,7 @@
                       <el-col :span="6" v-if="showLines[4]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?[]:scope.row.dhjh_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?scope.row.dhjh_dataset[scope.row.dhjh_first].dataset_score_list:scope.row.dhjh_dataset">
                               {{language.leaderboard_dhjh}}
                             </el-button>
                           </el-tooltip>
@@ -124,7 +124,7 @@
                       <el-col :span="6" v-if="showLines[5]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?[]:scope.row.dyy_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?scope.row.dyy_dataset[scope.row.dyy_first].dataset_score_list:scope.row.dyy_dataset">
                               {{language.leaderboard_dyy}}
                             </el-button>
                           </el-tooltip>
@@ -133,7 +133,7 @@
                       <el-col :span="6" v-if="showLines[6]">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
-                            <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?[]:scope.row.sxtl_dataset">
+                            <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?scope.row.sxtl_dataset[scope.row.sxtl_first].dataset_score_list:scope.row.sxtl_dataset">
                               {{language.leaderboard_sxtl}}
                             </el-button>
                           </el-tooltip>
@@ -701,10 +701,19 @@ export default {
               description: r.description,
 
               show1: r[ha1],
-              show2: r[ha1][ha2].dataset_score_list
+              show2: r[ha1][ha2].dataset_score_list,
+
+              sxtl_first: r.数学推理能力 === undefined ? '' : Object.keys(r.数学推理能力)[0],
+              dyy_first: r.多语言能力 === undefined ? '' : Object.keys(r.多语言能力)[0],
+              dhjh_first: r.对话交互能力 === undefined ? '' : Object.keys(r.对话交互能力)[0],
+              yysc_first: r.语言生成能力 === undefined ? '' : Object.keys(r.语言生成能力)[0],
+              xxhq_first: r.信息获取及问答能力 === undefined ? '' : Object.keys(r.信息获取及问答能力)[0],
+              yyljpj_first: r['语言理解能力-篇章级'] === undefined ? '' : Object.keys(r['语言理解能力-篇章级'])[0],
+              yyljcy_first: r['语言理解能力-词句级'] === undefined ? '' : Object.keys(r['语言理解能力-词句级'])[0]
             }
+
             this.tableData.push(toAppend)
-            console.log(toAppend)
+            console.log(toAppend, toAppend.dyy_dataset[toAppend.dyy_first].dataset_score_list)
           }
         }
         // for (let i in l) {
