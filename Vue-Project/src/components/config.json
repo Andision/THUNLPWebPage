@@ -12,6 +12,8 @@
     "toForget": "/forget_password",
     "toReset": "/reset_password",
     "getDataDownload": "/get_full_dataset",
+    "getDownloadLink": "/download_dataset",
+    "getSimpleDownloadLink": "/download",
     "getTaskAll": "/dataset_filter",
     "getRanklist": "/ranklist",
     "getSuperRank": "/super_rank",

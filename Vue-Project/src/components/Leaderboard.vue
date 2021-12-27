@@ -38,7 +38,7 @@
               </el-table-column>
             </el-table>
             <el-row style="margin-top:20px;">
-              <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
+              <el-tooltip effect="dark" :content="language.leaderboard_jjb_hint" placement="top">
                 <el-button size="mini" type="primary" style="float:right;" @click="handleDefaultSelect">
                   {{language.leaderboard_jjb}}
                 </el-button>
@@ -278,7 +278,7 @@
               <el-tooltip class="item" effect="dark" :content="language.leaderboard_zyzs_hint" placement="top" v-show="!isSelecting">
                 <span>{{language.leaderboard_zyzs}}</span>
               </el-tooltip>
-              <span v-show="isSelecting">Score</span>
+              <span v-show="isSelecting">{{language.leaderboard_select_score}}</span>
             </template>
           </el-table-column>
           <el-table-column label=" " prop="" width="40">
@@ -611,8 +611,10 @@ export default {
     },
     handleTreeSelect () {
       this.isSelecting = true
+      this.showLines = [true, true, true, true, true, true, true]
       this.showLines = [false, false, false, false, false, false, false]
-      console.log(this.checkedKeys)
+      // this.checkedKeys = []
+      console.log('In TreeSelect', this.showLines, this.checkedKeys)
       this.dataSelect = {
         '信息获取及问答能力': [],
         '语言生成能力': [],
@@ -632,8 +634,9 @@ export default {
         // var t = this.$refs.tree[i].getCheckedNodes()
         // this.savedTree.push(t)
         console.log('hha', t)
-        if (t !== undefined) {
+        if (t !== undefined && t.length !== 0) {
           this.showLines[i] = true
+          console.log('setShow', i)
         }
         for (let j in t) {
           ha1 = l[i]

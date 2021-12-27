@@ -66,6 +66,12 @@
                 >
                 <el-menu-item
                   class="menu-item"
+                  index="code"
+                  style="float: right"
+                  >{{ language.app_code }}</el-menu-item
+                >
+                <el-menu-item
+                  class="menu-item"
                   index="4"
                   style="float: right"
                   >{{ language.app_Paper }}</el-menu-item
@@ -160,7 +166,7 @@
                   src="//www.clustrmaps.com/map_v2.png?d=sRtvKqoXFHRrS9V6nm3IDtLYieMCka7pZnXkwO6ZWyQ&cl=ffffff"
               /></a>
             </el-col> -->
-            <el-col :span="24" style="padding-top: 30px">
+            <!-- <el-col :span="24" style="padding-top: 30px">
               <a
                 href="https://github.com/TsinghuaAI/CUGE"
                 style="
@@ -170,9 +176,25 @@
                 "
                 >{{ language.app_contactus }}</a
               >
+            </el-col> -->
+          </el-row>
+          <el-row style="padding-top: 50px;">
+            <el-col :span="12">
+              ©2021 All Rights Reserved
+            </el-col>
+            <el-col :span="12">
+                <a
+                  href="https://github.com/TsinghuaAI/CUGE"
+                  style="
+                    font-size: xx-medium;
+                    text-decoration: none;
+                    color: white;
+                    text-align:right;
+                  "
+                  >{{ language.app_contactus }}</a
+                >
             </el-col>
           </el-row>
-          <el-row> ©2021 </el-row>
         </div>
       </el-footer>
     </el-container>
@@ -207,7 +229,8 @@ export default {
       isLogin: false,
       isFresh: true,
       alltask: task.all,
-      languageswitch: true
+      languageswitch: true,
+      kb: '　'
     }
   },
   mounted: function () {
@@ -313,6 +336,10 @@ export default {
           case '4':
             // this.$router.push({path: 'http://www.baidu.com'})
             window.open('/pdf/CUGE.pdf')
+            break
+          case 'code':
+            // this.$router.push({path: 'http://www.baidu.com'})
+            window.open('https://github.com/TsinghuaAI/CUGE')
             break
           case '5':
             this.$router.push({ path: '/submit' })

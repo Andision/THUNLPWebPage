@@ -35,6 +35,11 @@
                     "name_zh": "FinRE",
                     "name_en": "FinRE",
                     "id": "3"
+                },
+                {
+                    "name_zh": "YACLC",
+                    "name_en": "YACLC",
+                    "id": "21"
                 }
             ]
         },
@@ -58,6 +63,11 @@
                     "name_zh": "C3",
                     "name_en": "C3",
                     "id": "4"
+                },
+                {
+                    "name_zh": "GCRC",
+                    "name_en": "GCRC",
+                    "id": "22"
                 }
             ]
         },

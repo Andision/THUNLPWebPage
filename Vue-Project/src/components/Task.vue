@@ -105,7 +105,7 @@
               <el-checkbox label="NENGLI" v-model="c.nl"><div class="title-select-text">{{language.task_nlb}}</div></el-checkbox>
             </el-checkbox-group> -->
             <!-- <el-checkbox label="JINJIAN" :v-model="true" disabled><div class="title-select-text">{{language.task_jjb}}</div></el-checkbox> -->
-            <el-tooltip effect="dark" :content="language.leaderboard_jjb" placement="top">
+            <el-tooltip effect="dark" :content="language.leaderboard_jjb_hint" placement="top">
               <el-checkbox v-model="checked2">
                 {{language.leaderboard_jjb}}
               </el-checkbox>
@@ -294,6 +294,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      tapp: {},
       showAll: true,
       checked2: false,
       isFresh: true,
@@ -318,11 +319,26 @@ export default {
     }
   },
   props: {
-    language: Object
+    language: Object,
+    app: Object
   },
   methods: {
+    // handleDownload () {
+    //   window.open('/api/download?method=simple')
+    // },
     handleDownload () {
-      window.open('/api/download?method=simple')
+      console.log('DID')
+      if (this.tapp.isLogin) {
+        this.$axios.get(config.API + config.getSimpleDownloadLink + '?method=simple').then(res => {
+          console.log(res)
+          if (res.status === 200) {
+            console.log('link', res.data.oss_url)
+            window.open(res.data.oss_url)
+          }
+        })
+      } else {
+        this.tapp.toLogin()
+      }
     },
     handleReload () {
       this.isFresh = false
@@ -363,6 +379,7 @@ export default {
     }
   },
   mounted: function () {
+    this.tapp = this.app
     console.log('In MOUNT')
     // let data0 = {
     //   'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],

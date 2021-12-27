@@ -2,186 +2,176 @@
   <div class="all" style="background-color:#f4f7fe; min-height:1000px;">
     <div class="title">
       <el-row style="width:80%; margin: auto; ">
-        <el-col :span="16" style="text-align:left; margin-left: 50px;">
+        <el-col :span="16" style="text-align:left; margin-left: 12%;">
           <div class="title-title">
             {{show.title}}
           </div>
           <div class="title-sub">
             {{show.ability}} | {{show.task}}
           </div>
-          <el-row style="text-align:left; margin-top:20px;">
+        </el-col>
+        <el-col :span="84" style="text-align:right; margin-top:95px;">
+          <el-row>
             <el-button type="primary" @click="handleDownload()">{{language.dataset_download}}</el-button>
           </el-row>
-        </el-col>
-        <el-col :span="6">
-          <el-row class="title-org" style="text-align:left; margin-top: 10%;">
-            <el-col :span="language.language =='zh'? 6:12">
-              <div style="display: inline-block;">
-                {{language.submit_org}}:
-              </div>
-            </el-col>
-            <el-col :span="12">
-              <pre v-html="show.org" style="display: inline-block;">
-              </pre>
-            </el-col>
-          </el-row>
-          <!--download button-->
         </el-col>
       </el-row>
     </div>
     <!-- <hr style="margin:0; padding-bottom:10px; background-color:#f4f7fe;"/> -->
-    <div style="background-color:#f4f7fe; min-height:50%;">
-      <el-tabs class="tab-all" v-model="activeName" stretch>
-        <el-tab-pane :label="language.dataset_intro" name="first">
-          <div style="margin: auto; margin-bottom: 50px;">
-            <div class="content">
-              <div class="content-section">
-                <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
-                  {{item.name}}
-                </el-link> -->
-                <div class="section-title"  v-if="show.author!=theNull">
-                  {{language.moreinfo_author}}
-                  <i class="el-icon-s-custom"></i>
+    <el-card style="width:80%; margin:auto;">
+      <div style="min-height:50%;">
+        <el-tabs class="tab-all" v-model="activeName" stretch>
+          <el-tab-pane :label="language.dataset_intro" name="first">
+            <div style="margin: auto; margin-bottom: 50px; padding-top: 20px;">
+              <div class="content">
+                <div class="content-section">
+                  <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
+                    {{item.name}}
+                  </el-link> -->
+                  <div class="section-title"  v-if="show.author!=theNull">
+                    {{language.moreinfo_author}}
+                    <i class="el-icon-s-custom"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.author">
+                  </pre>
                 </div>
-                <pre class="section-content" v-html="show.author">
-                </pre>
-              </div>
-              <div class="content-section">
-                <div class="section-title"  v-if="show.org!=theNull">
-                  {{language.moreinfo_org}}
-                  <i class="el-icon-s-home"></i>
+                <div class="content-section">
+                  <div class="section-title"  v-if="show.org!=theNull">
+                    {{language.moreinfo_org}}
+                    <i class="el-icon-s-home"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.org">
+                  </pre>
                 </div>
-                <pre class="section-content" v-html="show.org">
-                </pre>
-              </div>
 
-              <div class="content-section" v-if="show.intr!=theNull">
-                <div class="section-title">
-                  {{language.more_intro}}
-                  <i class="el-icon-question"></i>
+                <div class="content-section" v-if="show.intr!=theNull">
+                  <div class="section-title">
+                    {{language.more_intro}}
+                    <i class="el-icon-question"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.intr">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.intr}}
+                  </div> -->
                 </div>
-                <pre class="section-content" v-html="show.intr">
-                </pre>
-                <!-- <div class="section-content">
-                  {{show.intr}}
-                </div> -->
-              </div>
 
-              <div class="content-section" v-if="show.paper!=theNull">
-                <div class="section-title">
-                  {{language.more_paper}}
-                  <i class="el-icon-document"></i>
+                <div class="content-section" v-if="show.paper!=theNull">
+                  <div class="section-title">
+                    {{language.more_paper}}
+                    <i class="el-icon-document"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.paper">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.paper}}
+                  </div> -->
                 </div>
-                <pre class="section-content" v-html="show.paper">
-                </pre>
-                <!-- <div class="section-content">
-                  {{show.paper}}
-                </div> -->
-              </div>
 
-              <div class="content-section" v-if="show.ref!=theNull">
-                <div class="section-title">
-                  {{language.more_ref}}
-                  <i class="el-icon-document"></i>
+                <div class="content-section" v-if="show.ref!=theNull">
+                  <div class="section-title">
+                    {{language.more_ref}}
+                    <i class="el-icon-document"></i>
+                  </div>
+                  <pre class="section-content section-color bg-color" v-html="show.ref" id="moreintro">
+                  </pre>
+                  <!-- <div class="section-content section-color">
+                    {{show.ref}}
+                  </div> -->
                 </div>
-                <pre class="section-content section-color bg-color" v-html="show.ref" id="moreintro">
-                </pre>
-                <!-- <div class="section-content section-color">
-                  {{show.ref}}
-                </div> -->
-              </div>
 
-              <div class="content-section" v-if="show.size!=theNull">
-                <div class="section-title">
-                  {{language.more_size}}
-                  <i class="el-icon-s-data"></i>
+                <div class="content-section" v-if="show.size!=theNull">
+                  <div class="section-title">
+                    {{language.more_size}}
+                    <i class="el-icon-s-data"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.size">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.size}}
+                  </div> -->
                 </div>
-                <pre class="section-content" v-html="show.size">
-                </pre>
-                <!-- <div class="section-content">
-                  {{show.size}}
-                </div> -->
-              </div>
 
-              <div class="content-section" v-if="show.download!=theNull">
-                <div class="section-title">
-                  {{language.more_download}}
-                  <i class="el-icon-download"></i>
+                <div class="content-section" v-if="show.download!=theNull">
+                  <div class="section-title">
+                    {{language.more_download}}
+                    <i class="el-icon-download"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.download">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.download}}
+                  </div> -->
                 </div>
-                <pre class="section-content" v-html="show.download">
-                </pre>
-                <!-- <div class="section-content">
-                  {{show.download}}
-                </div> -->
-              </div>
 
-              <div class="content-section" v-if="show.form!=theNull">
-                <div class="section-title">
-                  {{language.more_form}}
-                  <i class="el-icon-tickets"></i>
+                <div class="content-section" v-if="show.form!=theNull">
+                  <div class="section-title">
+                    {{language.more_form}}
+                    <i class="el-icon-tickets"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.form">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.form}}
+                  </div> -->
                 </div>
-                <pre class="section-content" v-html="show.form">
-                </pre>
-                <!-- <div class="section-content">
-                  {{show.form}}
-                </div> -->
-              </div>
 
-              <div class="content-section" v-if="show.sample!=theNull">
-                <div class="section-title">
-                  {{language.more_sample}}
-                  <i class="el-icon-edit"></i>
+                <div class="content-section" v-if="show.sample!=theNull">
+                  <div class="section-title">
+                    {{language.more_sample}}
+                    <i class="el-icon-edit"></i>
+                  </div>
+                  <pre class="section-content section-color bg-color" v-html="show.sample">
+                  </pre>
                 </div>
-                <pre class="section-content section-color bg-color" v-html="show.sample">
-                </pre>
-              </div>
 
-              <div class="content-section" v-if="show.evaluate!=theNull">
-                <div class="section-title">
-                  {{language.more_usage}}
-                  <i class="el-icon-tickets"></i>
+                <div class="content-section" v-if="show.evaluate!=theNull">
+                  <div class="section-title">
+                    {{language.more_usage}}
+                    <i class="el-icon-tickets"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.evaluate">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.form}}
+                  </div> -->
                 </div>
-                <pre class="section-content" v-html="show.evaluate">
-                </pre>
-                <!-- <div class="section-content">
-                  {{show.form}}
-                </div> -->
-              </div>
 
+              </div>
             </div>
-          </div>
-        </el-tab-pane>
-        <el-tab-pane :label="language.dataset_rank" name="second">
-          <div class="content-board" style="margin-top:50px;">
-            <el-table :data="tableData" style="width: 100%"
-              :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
-              :header-cell-style="{'background':'#64438D'}"
-              :cell-style="cellStyle"
-              @row-click="handleRowClick"
-            >
-              <el-table-column :label="language.leaderboard_rank" prop="rank" align="center" min-width="60"> </el-table-column>
-              <el-table-column :label="language.leaderboard_model" prop="name" align="center" min-width="100"> </el-table-column>
-              <el-table-column :label="language.leaderboard_org" prop="org" align="center" min-width="120"> </el-table-column>
-              <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="160">
-                <template slot-scope="scope">
-                  <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
-                    <!-- <i class="el-icon-paperclip"></i> -->
-                    <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-                  </el-link>
-                  <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
-                    <!-- <i class="el-icon-paperclip"></i> -->
-                    <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
-                  </el-link>
-                </template>
-              </el-table-column>
-              <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="120"> </el-table-column>
-              <el-table-column v-for="(i,index) in newTitle" :label="i" :prop="i" align="center" :key="index"> </el-table-column>
-              <el-table-column label="Score" prop="score" align="center" v-if="newTitle.length > 1"> </el-table-column>
-            </el-table>
-          </div>
-        </el-tab-pane>
-      </el-tabs>
-    </div>
+          </el-tab-pane>
+          <el-tab-pane :label="language.dataset_rank" name="second">
+            <div class="content-board" style="margin:70px;">
+              <el-table :data="tableData" style="width: 100%"
+                :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
+                :header-cell-style="{'background':'#64438D'}"
+                :cell-style="cellStyle"
+                @row-click="handleRowClick"
+              >
+                <el-table-column :label="language.leaderboard_rank" prop="rank" align="center" min-width="60"> </el-table-column>
+                <el-table-column :label="language.leaderboard_model" prop="name" align="center" min-width="100"> </el-table-column>
+                <el-table-column :label="language.leaderboard_org" prop="org" align="center" min-width="120"> </el-table-column>
+                <el-table-column :label="language.leaderboard_codepaper" prop="plink" align="center" min-width="160">
+                  <template slot-scope="scope">
+                    <el-link :href="scope.row.clink" :disabled="scope.row.clink==''">
+                      <!-- <i class="el-icon-paperclip"></i> -->
+                      <img :src="scope.row.clink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                    </el-link>
+                    <el-link :href="scope.row.plink" :disabled="scope.row.plink==''">
+                      <!-- <i class="el-icon-paperclip"></i> -->
+                      <img :src="scope.row.plink==''?'https://z3.ax1x.com/2021/08/30/hYfZkV.png':'https://z3.ax1x.com/2021/08/20/fOBmes.png'" style="width:30px;height:30px;">
+                    </el-link>
+                  </template>
+                </el-table-column>
+                <el-table-column :label="language.leaderboard_submittime" prop="stime" align="center" min-width="120"> </el-table-column>
+                <el-table-column v-for="(i,index) in newTitle" :label="i" :prop="i" align="center" :key="index"> </el-table-column>
+                <el-table-column label="Score" prop="score" align="center" v-if="newTitle.length > 1"> </el-table-column>
+              </el-table>
+            </div>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -198,7 +188,8 @@ export default {
       theNull: undefined,
       tableData: [],
       tapp: {},
-      show: {}
+      show: {},
+      kb: '　'
     }
   },
   props: {
@@ -225,7 +216,13 @@ export default {
     handleDownload () {
       console.log('DID')
       if (this.tapp.isLogin) {
-        window.open('/api/download_dataset?dataset_id=' + this.id)
+        this.$axios.get(config.API + config.getDownloadLink + '?dataset_id=' + this.id).then(res => {
+          console.log(res)
+          if (res.status === 200) {
+            console.log('link', res.data.oss_url)
+            window.open(res.data.oss_url)
+          }
+        })
       } else {
         this.tapp.toLogin()
       }
@@ -328,6 +325,12 @@ pre{
 .bg-color{
   background-color: #eceaff;
 }
+.el-tabs__item{
+  /* background-color: aqua; */
+  font-size: 25px;
+  font-weight: bold;
+  height: 50px;
+}
 </style>
 <style scoped>
 .all{
@@ -336,7 +339,7 @@ pre{
 }
 .title{
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
 }
 .title-org{
   font-size: large;
@@ -363,13 +366,13 @@ pre{
 }
 .content-section{
   margin-top: 50px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 .section-title{
   text-align: left;
   margin-bottom: 30px;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 25px;
 }
 .section-content{
   letter-spacing: 0px;
