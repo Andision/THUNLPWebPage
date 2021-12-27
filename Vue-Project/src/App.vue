@@ -154,13 +154,13 @@
       <el-footer class="footer" style="padding: 0">
         <div class="footer-div">
           <el-row>
-            <el-col :span="12">
+            <!-- <el-col :span="12">
               <a href="https://clustrmaps.com/site/1bk2u" title="Visit tracker"
                 ><img
                   src="//www.clustrmaps.com/map_v2.png?d=sRtvKqoXFHRrS9V6nm3IDtLYieMCka7pZnXkwO6ZWyQ&cl=ffffff"
               /></a>
-            </el-col>
-            <el-col :span="12" style="padding-top: 30px">
+            </el-col> -->
+            <el-col :span="24" style="padding-top: 30px">
               <a
                 href="https://github.com/TsinghuaAI/CUGE"
                 style="
@@ -457,6 +457,10 @@ body,
 }
 
 .el-menu--horizontal .el-menu-item.is-active {
+  border-bottom: none;
+}
+
+#bar{
   border-bottom: none;
 }
 </style>
