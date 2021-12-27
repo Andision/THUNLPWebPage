@@ -31,7 +31,7 @@
     <el-divider/>
     <div>
       <el-tabs class="tab-all" v-model="activeName" stretch>
-        <el-tab-pane :label="language.dataset_rank" name="first">
+        <el-tab-pane :label="language.dataset_intro" name="first">
           <div style="margin: auto; margin-bottom: 50px;">
             <div class="content">
               <div class="content-section">
@@ -197,31 +197,7 @@ export default {
       theNull: undefined,
       tableData: [],
       tapp: {},
-      show: {
-        title: '',
-        author: [
-          {
-            name: '',
-            link: ''
-          },
-          {
-            name: '',
-            link: ''
-          },
-          {
-            name: '',
-            link: ''
-          }
-        ],
-        org: '',
-        intr: '',
-        paper: '',
-        ref: '',
-        size: '',
-        download: '',
-        form: '',
-        sample: ''
-      }
+      show: {}
     }
   },
   props: {
