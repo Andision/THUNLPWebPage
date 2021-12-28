@@ -638,13 +638,25 @@ export default {
           this.showLines[i] = true
           console.log('setShow', i)
         }
+        var duplicateKeys = [ '语言理解-词句级', '语言理解-篇章级', '信息获取及问答', '对话交互', '语言生成', '多语言', '数学推理' ]
         for (let j in t) {
           ha1 = l[i]
           ha2 = t[j]
           // if (ha1 === ha2) {
           //   continue
           // }
-          console.log('ha', ha1, ha2)
+          // console.log('adst', ha2 === duplicateKeys[3])
+          if (ha2 === duplicateKeys[0] || ha2 === duplicateKeys[1] || ha2 === duplicateKeys[2] || ha2 === duplicateKeys[3] || ha2 === duplicateKeys[4] || ha2 === duplicateKeys[5] || ha2 === duplicateKeys[6]) {
+            if (config.debug === 'true') {
+              console.log('duplacate ha', ha1, ha2)
+            }
+            continue
+          } else {
+            if (config.debug === 'true') {
+              console.log('normal ha', ha1, ha2)
+            }
+          }
+
           this.dataSelect[ha1].push(ha2)
         }
       }
@@ -716,7 +728,9 @@ export default {
             }
 
             this.tableData.push(toAppend)
-            console.log(toAppend, toAppend.dyy_dataset[toAppend.dyy_first].dataset_score_list)
+            if (config.debug === 'true') {
+              console.log(toAppend)
+            }
           }
         }
         // for (let i in l) {
