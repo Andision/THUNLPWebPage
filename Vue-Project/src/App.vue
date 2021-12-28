@@ -240,13 +240,17 @@ export default {
 
     // this.checkLogin()
     this.checkLoginNew()
-    if (sessionStorage.getItem('language') === 'zh') {
+    if (localStorage.getItem('language') === 'zh') {
       this.language = zh
-    } else if (sessionStorage.getItem('language') === 'en') {
+      this.languageswitch = true
+    } else if (localStorage.getItem('language') === 'en') {
       this.language = en
+      this.languageswitch = false
     } else {
-      sessionStorage.setItem('language', 'zh')
+      localStorage.setItem('language', 'zh')
+      this.languageswitch = true
     }
+    this.handleReload()
   },
   methods: {
     checkLoginNew () {
@@ -382,13 +386,13 @@ export default {
           case '9-1':
             // this.$router.push({path: '/user'})
             this.language = zh
-            sessionStorage.setItem('language', 'zh')
+            localStorage.setItem('language', 'zh')
             this.handleReload()
             break
           case '9-2':
             // this.$router.push({path: '/user'})
             this.language = en
-            sessionStorage.setItem('language', 'en')
+            localStorage.setItem('language', 'en')
             this.handleReload()
             break
           case '10':
@@ -407,11 +411,11 @@ export default {
       // console.log('changelanguage')
       if (this.languageswitch) {
         this.language = zh
-        sessionStorage.setItem('language', 'zh')
+        localStorage.setItem('language', 'zh')
         this.handleReload()
       } else {
         this.language = en
-        sessionStorage.setItem('language', 'en')
+        localStorage.setItem('language', 'en')
         this.handleReload()
       }
     },

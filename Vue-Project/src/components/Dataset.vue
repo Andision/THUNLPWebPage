@@ -24,6 +24,17 @@
           <el-tab-pane :label="language.dataset_intro" name="first">
             <div style="margin: auto; margin-bottom: 50px; padding-top: 20px;">
               <div class="content">
+                <div class="content-section" v-if="show.intr!=theNull">
+                  <div class="section-title">
+                    {{language.more_intro}}
+                    <i class="el-icon-question"></i>
+                  </div>
+                  <pre class="section-content" v-html="show.intr">
+                  </pre>
+                  <!-- <div class="section-content">
+                    {{show.intr}}
+                  </div> -->
+                </div>
                 <div class="content-section">
                   <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
                     {{item.name}}
@@ -42,18 +53,6 @@
                   </div>
                   <pre class="section-content" v-html="show.org">
                   </pre>
-                </div>
-
-                <div class="content-section" v-if="show.intr!=theNull">
-                  <div class="section-title">
-                    {{language.more_intro}}
-                    <i class="el-icon-question"></i>
-                  </div>
-                  <pre class="section-content" v-html="show.intr">
-                  </pre>
-                  <!-- <div class="section-content">
-                    {{show.intr}}
-                  </div> -->
                 </div>
 
                 <div class="content-section" v-if="show.paper!=theNull">
