@@ -13,7 +13,7 @@
                 style="
                   float: left;
                   margin-top: 10px;
-                  margin-left: 50px;
+                  margin-left: 30px;
                   color: white;
                   font-size: 28px;
                   font-weight: bold;
@@ -238,7 +238,8 @@ export default {
       console.log(task)
     }
 
-    this.checkLogin()
+    // this.checkLogin()
+    this.checkLoginNew()
     if (sessionStorage.getItem('language') === 'zh') {
       this.language = zh
     } else if (sessionStorage.getItem('language') === 'en') {
@@ -248,46 +249,58 @@ export default {
     }
   },
   methods: {
-    checkLogin () {
-      var cookieOri = document.cookie
-      var cookie = ''
-      if (cookieOri !== '') {
-        cookie = JSON.parse(document.cookie)
-      }
+    checkLoginNew () {
+      var cookieToken = sessionStorage.getItem('token')
       if (config.debug === 'true') {
-        console.log('cookie:', cookieOri, typeof cookieOri)
+        console.log('checkLoginNew', cookieToken)
       }
-      if (cookieOri == null || cookieOri === '' || cookieOri === 'null') {
-        // this.handleLoginStatus(true)
-        if (config.debug === 'true') {
-          console.log('Check Login in App False1')
-        }
+      if (cookieToken === null || cookieToken === undefined || cookieToken === '') {
         this.isLogin = false
-      } else if (cookie.token === '' || cookie.token === null) {
-        if (config.debug === 'true') {
-          console.log('Check Login in App False2')
-        }
-        this.isLogin = false
-      } else if (cookie.extime > Date.parse(new Date()).toString()) {
-        if (config.debug === 'true') {
-          console.log('Check Login in App True')
-        }
-        this.isLogin = true
       } else {
-        if (config.debug === 'true') {
-          console.log('Check Login in App OTHER')
-        }
-        this.isLogin = false
+        this.isLogin = true
       }
-      // else {
-      //   this.isLogin = true
-      //   this.token = cookie.token
-      //   // this.token = cookie.token
-      //   // this.$router.push({path: '/user'})
-      // }
     },
+    // checkLogin () {
+    //   var cookieOri = document.cookie
+    //   var cookie = ''
+    //   if (cookieOri !== '') {
+    //     cookie = JSON.parse(document.cookie)
+    //   }
+    //   if (config.debug === 'true') {
+    //     console.log('cookie:', cookieOri, typeof cookieOri)
+    //   }
+    //   if (cookieOri == null || cookieOri === '' || cookieOri === 'null') {
+    //     // this.handleLoginStatus(true)
+    //     if (config.debug === 'true') {
+    //       console.log('Check Login in App False1')
+    //     }
+    //     this.isLogin = false
+    //   } else if (cookie.token === '' || cookie.token === null) {
+    //     if (config.debug === 'true') {
+    //       console.log('Check Login in App False2')
+    //     }
+    //     this.isLogin = false
+    //   } else if (cookie.extime > Date.parse(new Date()).toString()) {
+    //     if (config.debug === 'true') {
+    //       console.log('Check Login in App True')
+    //     }
+    //     this.isLogin = true
+    //   } else {
+    //     if (config.debug === 'true') {
+    //       console.log('Check Login in App OTHER')
+    //     }
+    //     this.isLogin = false
+    //   }
+    //   // else {
+    //   //   this.isLogin = true
+    //   //   this.token = cookie.token
+    //   //   // this.token = cookie.token
+    //   //   // this.$router.push({path: '/user'})
+    //   // }
+    // },
     toLogin () {
-      this.checkLogin()
+      // this.checkLogin(
+      this.checkLoginNew()
       if (this.isLogin) {
         this.$router.push({ path: '/user' })
       } else {
@@ -295,22 +308,30 @@ export default {
       }
     },
     toLogout () {
-      let formData = new FormData()
-      this.$axios.get(config.API + config.toLogout, formData).then((res) => {
-        if (res.status === 200) {
-          if (res.data.re_code === '0') {
-            this.isLogin = false
-            document.cookie = 'null'
-            console.log('In toLogout in App', document.cookie)
-            this.$message({
-              message: '登出成功',
-              type: 'success'
-            })
-            this.$router.push({ path: '/' })
-            // location.reload()
-          }
-        }
+      sessionStorage.setItem('token', '')
+      this.$message({
+        message: '登出成功',
+        type: 'success'
       })
+      // this.$router.push({ path: '/' })
+      location.reload()
+      // let formData = new FormData()
+      // this.$axios.get(config.API + config.toLogout, formData).then((res) => {
+      //   if (res.status === 200) {
+      //     if (res.data.re_code === '0') {
+      //       this.isLogin = false
+      //       // document.cookie = 'null'
+      //       // console.log('In toLogout in App', document.cookie)
+      //       localStorage.setItem('token', '')
+      //       this.$message({
+      //         message: '登出成功',
+      //         type: 'success'
+      //       })
+      //       this.$router.push({ path: '/' })
+      //       // location.reload()
+      //     }
+      //   }
+      // })
     },
     handleMenuSelect (key, keyPath) {
       console.log(key, keyPath)

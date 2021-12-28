@@ -151,10 +151,12 @@ export default {
         if (res.status === 200) {
           console.log('LOGIN666', res.data)
           if (res.data.re_code === '0') {
-            document.cookie = JSON.stringify({
-              token: res.data.token,
-              extime: Date.parse(new Date()) + 3600000
-            })
+            // document.cookie = JSON.stringify({
+            //   token: res.data.token,
+            //   extime: Date.parse(new Date()) + 3600000
+            // })
+            sessionStorage.setItem('token', res.data.token)
+            sessionStorage.setItem('token', Date.parse(new Date()) + 3600000)
             this.$message({
               message: '登录成功',
               type: 'success'
