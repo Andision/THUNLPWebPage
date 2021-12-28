@@ -1,4 +1,4 @@
-# thunlp
+# CUGE
 
 > A Vue.js project
 

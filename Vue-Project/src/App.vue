@@ -4,6 +4,12 @@
     <router-view/>
   </div> -->
   <div id="app">
+    <div style="height: 100px; width: 50px; position: fixed; right: 20px; bottom: 10px;">
+      <a-button type="primary" shape="circle" icon="github" style="margin-bottom:10px;" @click="handleContactIcon('github')"/>
+      <el-tooltip effect="light" content="cuge_baai@163.com" placement="left">
+        <a-button type="primary" shape="circle" icon="mail" @click="handleContactIcon('mail')"/>
+      </el-tooltip>
+    </div>
     <el-container class="container" style="padding: 0">
       <el-header class="header" style="padding: 0">
         <div>
@@ -336,6 +342,13 @@ export default {
       //     }
       //   }
       // })
+    },
+    handleContactIcon (w) {
+      if (w === 'github') {
+        window.open('https://github.com/TsinghuaAI/CUGE')
+      } else {
+        window.open('mailto://cuge_baai@163.com')
+      }
     },
     handleMenuSelect (key, keyPath) {
       console.log(key, keyPath)

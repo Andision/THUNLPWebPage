@@ -101,6 +101,15 @@
             ]
         },
         {
+            "title": "What is the relationship between the single leaderboard, the comprehensive leaderboard, and the liteboard?",
+            "details": [
+                "(1) The single leaderboard refers to the leaderboard of each dataset, which is used to display and evaluate the development trend of the dataset.",
+                "(2) The comprehensive leaderboard refers to a ranking for various abilities and tasks. It is mainly used to evaluate the comprehensive ability of the model in language ability and task processing. Participants can filter the evaluation results of the model according to their interested language abilities and tasks, and customize the personalized leaderboard.",
+                "(3) The liteboard is a simplified comprehensive leaderboard officially customized by GLUE index. The most representative tasks and datasets under 7 language abilities are selected (specifically, you can select the button 'liteboard' in Framework page to find them). It support convenient and quick model evaluation and unified comparison.",
+                "When participants select certain abilities or tasks in the Leaderboard pages, the Leaderboard will display the results of the user's customized leaderboard. The display of the results is based on the premise that the participant completes the submission of all datasets under the selected abilities or tasks."
+            ]
+        },
+        {
             "title": "What rules need to be followed to participate in the evaluation?",
             "details": [
                 "It is prohibited to use test set label information in model training and submission results in any form, including manually labeling test set labels.",
@@ -126,7 +135,7 @@
                 "CUGE system and evaluation platform are still under continuous construction and improvement. We will open a user feedback forum in the CUGE community in the future."
             ],
             "pre": [
-                "<div>For now, you can create issues at <a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a> project on GitHub if you have any suggestions or comments for us.</div>"
+                "<div>For now, you can create issues at <a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a> project on GitHub or send email to cuge_baai@163.com if you have any suggestions or comments for us.</div>"
             ]
         }
     ],
@@ -179,7 +188,7 @@
     "task_wyzskj": "Framework",
     "dataset_intro": "Introduction",
     "dataset_rank": "Ranking",
-    "dataset_download":"Dataset Download",
+    "dataset_download": "Dataset Download",
     "forget_hint": "Please input your email, you will receive a mail with introduction.",
     "Tasks": "Tasks",
     "Leaderboard": "Leaderboard",

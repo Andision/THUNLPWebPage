@@ -14,8 +14,8 @@
     "app_contactus": "联系我们",
     "app_code": "代码",
     "datadownload_task": "能力 | 任务",
-    "reset_pswd":"输入密码",
-    "reset_confirmPswd":"确认密码",
+    "reset_pswd": "输入密码",
+    "reset_confirmPswd": "确认密码",
     "reset_reset": "重置",
     "home_title1": "智源指数",
     "home_title2": "中文语言理解和生成评测基准",
@@ -102,6 +102,15 @@
             ]
         },
         {
+            "title": "单数据集榜、综合榜、精简榜是什么关系？",
+            "details": [
+                "（1）单数据集榜，是指每个数据集的评测排行榜，用于展示和评估数据集发展动态。",
+                "（2）综合榜，是指面向所有能力和任务的排行榜。主要用于评价模型在语言能力和任务处理的综合能力情况，参与者可以根据感兴趣的语言能力和任务筛选模型评测结果，定制个性化排行榜。",
+                "（3）精简榜，是智源指数官方定制的精简化的综合榜，分别选用7种语言能力下的最具代表性的任务和数据集组成（具体可以在评测框架页面中选择“精简榜”查看），以支持方便快捷的模型评测和统一比较。",
+                "参与者在综合榜界面，选择某些能力或任务时，综合榜会展示用户定制化排行榜结果，该结果显示需要用户完成已选择的能力或任务下所有数据集的评测提交。"
+            ]
+        },
+        {
             "title": "参与评测需要遵守哪些规范？",
             "details": [
                 "我们禁止任何形式的在模型训练和提交结果中使用测试集标签信息，包括通过自己人工标注测试集标签。",
@@ -127,7 +136,7 @@
                 "智源指数体系和评测平台仍在不断建设和完善中，未来我们会在智源社区开放用户反馈意见论坛。"
             ],
             "pre": [
-                "<div>目前，您可以在GitHub上的<a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a>项目中创建issues来提供意见或建议。</div>"
+                "<div>目前，您可以在GitHub上的<a href='https://github.com/TsinghuaAI/CUGE'>CUGE</a>项目中创建issues或发送邮件至cuge_baai@163.com来提供意见或建议。</div>"
             ]
         }
     ],
@@ -178,9 +187,9 @@
     "task_nlb": "能力榜",
     "task_jjb": "精简榜",
     "task_wyzskj": "智源指数框架",
-    "dataset_intro":"数据介绍",
-    "dataset_rank":"排行榜",
-    "dataset_download":"数据集下载",
+    "dataset_intro": "数据介绍",
+    "dataset_rank": "排行榜",
+    "dataset_download": "数据集下载",
     "forget_hint": "请输入您的邮箱，您将会收到一份带有指示的邮件。",
     "Tasks": "Tasks",
     "Leaderboard": "Leaderboard",

@@ -222,10 +222,12 @@ export default {
             this.check = false
             loading.close()
             this.$message({
-              message: '上传成功',
-              type: 'success'
+              message: '上传成功！评测中......',
+              type: 'info',
+              showClose: true,
+              duration: '5000'
             })
-            this.$message('评测中......')
+            // this.$message('评测中......')
 
             let formData1 = new FormData()
             formData1.append('fileid', res.data.fileid)
@@ -233,12 +235,14 @@ export default {
               console.log('handleClickSubmit', res1, res1.status)
               if (res1.status === 200) {
                 that.$message({
-                  message: '评测完成！即将跳转至测评报告。',
-                  type: 'success'
+                  message: '评测完成待审核！即将跳转至评测报告。',
+                  type: 'success',
+                  showClose: true,
+                  duration: '5000'
                 })
                 setTimeout(function () {
                   that.$router.push({path: '/report?id=' + res.data.fileid})
-                }, 3 * 1000)
+                }, 4 * 1000)
               }
             })
             // this.$alert('评测完成！', {
