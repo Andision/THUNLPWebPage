@@ -402,7 +402,8 @@ export default {
           } else {
             checkShow = '　'
           }
-          if (r.is_evaluate) {
+          let aadss = true
+          if (aadss) {
             toAppend = {
               checkShow: checkShow,
               rank: i + 1,
