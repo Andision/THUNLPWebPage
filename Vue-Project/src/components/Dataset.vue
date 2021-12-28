@@ -325,7 +325,13 @@ pre{
 .bg-color{
   background-color: #eceaff;
 }
-.el-tabs__item{
+#tab-first{
+  /* background-color: aqua; */
+  font-size: 25px;
+  font-weight: bold;
+  height: 50px;
+}
+#tab-second{
   /* background-color: aqua; */
   font-size: 25px;
   font-weight: bold;
@@ -376,7 +382,7 @@ pre{
 }
 .section-content{
   letter-spacing: 0px;
-  font-size: 25px;
+  font-size: 20px;
 }
 .section-color{
   padding: 50px;
