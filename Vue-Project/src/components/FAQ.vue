@@ -10,7 +10,7 @@
         <div class="section-content" v-for="(key1,index1) in key.details" :key="index+'--'+index1">
           {{key1}}
         </div>
-        <pre class="section-content" v-for="(key2,index2) in key.pre" :key="index+'-'+index2" v-html="key2">
+        <pre class="section-content" id="myFont" v-for="(key2,index2) in key.pre" :key="index+'-'+index2" v-html="key2">
         </pre>
       </el-collapse-item>
     </el-collapse>
@@ -90,7 +90,7 @@ export default {
 } */
 </style>
 <style>
-pre{
+#myFont{
   white-space: normal;
   /* font-weight: bold; */
   font-family: "Microsoft YaHei","PingFang SC","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","Hiragino Sans GB","Helvetica Neue",Helvetica,Arial,sans-serif;

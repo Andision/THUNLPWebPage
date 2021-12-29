@@ -203,7 +203,7 @@
     "Leaderboard": "Leaderboard",
     "FAQ": "FAQ",
     "Paper": "Paper",
-    "Submit": "Submit",
+    "Submit": "提交",
     "Download": "下载",
     "User": "User",
     "Logout": "Logout",
@@ -230,6 +230,6 @@
     "Information": "Information",
     "Info": "信息",
     "Description": "描述",
-    "Select": "Select",
+    "Select": "选择",
     "Cancel": "Cancel"
 }

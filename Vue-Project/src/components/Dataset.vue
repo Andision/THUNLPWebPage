@@ -205,20 +205,26 @@ export default {
       }
     },
     handleRowClick (row, column, event) {
-      console.log(row, column)
-      console.log(column.label)
+      if (config.debug === 'true') {
+        console.log(row, column)
+        console.log(column.label)
+      }
       if (column.label !== this.language.leaderboard_codepaper) {
         this.drawerInfo = row
         this.drawer = true
       }
     },
     handleDownload () {
-      console.log('DID')
+      // console.log('DID')
       if (this.tapp.isLogin) {
         this.$axios.get(config.API + config.getDownloadLink + '?dataset_id=' + this.id).then(res => {
-          console.log(res)
+          if (config.debug === 'true') {
+            console.log(res)
+          }
           if (res.status === 200) {
-            console.log('link', res.data.oss_url)
+            if (config.debug === 'true') {
+              console.log('link', res.data.oss_url)
+            }
             window.open(res.data.oss_url)
           }
         })
@@ -230,7 +236,9 @@ export default {
   mounted: function () {
     this.tapp = this.app
     this.id = this.$route.query.id
-    console.log(this.id, this.language.language)
+    if (config.debug === 'true') {
+      console.log(this.id, this.language.language)
+    }
     var useURL = ''
     if (this.language.language === 'en') {
       useURL = config.getMoreInfoEN
@@ -238,7 +246,9 @@ export default {
       useURL = config.getMoreInfoZH
     }
     this.$axios.get(config.API + useURL + '?dataset_id=' + this.id).then(res => {
-      console.log(res)
+      if (config.debug === 'true') {
+        console.log(res)
+      }
       if (res.status === 200) {
         var t = res.data
         this.show = t
@@ -263,13 +273,17 @@ export default {
       'end': -1
     }
     this.$axios.get(config.API + '/rank?rank_by=' + this.Gid, data).then(res => {
-      console.log(res)
-      if (res.status === 200) {
+      if (config.debug === 'true') {
         console.log(res)
+      }
+      if (res.status === 200) {
+        // console.log(res)
         var t = res.data.rank_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
-          console.log(i, r, this.newTitle)
+          if (config.debug === 'true') {
+            console.log(i, r, this.newTitle)
+          }
           // var kb = ''
           // for (var key in r.index) {
           //   // console.log(key, r.index[key])
@@ -304,10 +318,14 @@ export default {
             // toAppend.rank = ''
           }
           this.tableData.push(toAppend)
-          console.log(toAppend)
+          if (config.debug === 'true') {
+            console.log(toAppend)
+          }
         }
       }
-      console.log('newTITLE', this.newTitle)
+      if (config.debug === 'true') {
+        console.log('newTITLE', this.newTitle)
+      }
     })
   }
 }

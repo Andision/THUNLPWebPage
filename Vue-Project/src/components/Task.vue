@@ -327,12 +327,16 @@ export default {
     //   window.open('/api/download?method=simple')
     // },
     handleDownload () {
-      console.log('DID')
+      // console.log('DID')
       if (this.tapp.isLogin) {
         this.$axios.get(config.API + config.getSimpleDownloadLink + '?method=simple').then(res => {
-          console.log(res)
+          if (config.debug === 'true') {
+            console.log(res)
+          }
           if (res.status === 200) {
-            console.log('link', res.data.oss_url)
+            if (config.debug === 'true') {
+              console.log('link', res.data.oss_url)
+            }
             window.open(res.data.oss_url)
           }
         })
@@ -380,7 +384,9 @@ export default {
   },
   mounted: function () {
     this.tapp = this.app
-    console.log('In MOUNT')
+    if (config.debug === 'true') {
+      console.log('In MOUNT')
+    }
     // let data0 = {
     //   'abilities': ['识记能力', '数值计算能力', '检索能力', '理解能力', '生成能力', '多语言能力'],
     //   'sample': 0

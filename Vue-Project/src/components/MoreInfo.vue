@@ -196,7 +196,9 @@ export default {
   methods: {},
   mounted: function () {
     this.id = this.$route.query.id
-    console.log(this.id, this.language.language)
+    if (config.debug === 'true') {
+      console.log(this.id, this.language.language)
+    }
     var useURL = ''
     if (this.language.language === 'en') {
       useURL = config.getMoreInfoEN
@@ -204,7 +206,9 @@ export default {
       useURL = config.getMoreInfoZH
     }
     this.$axios.get(config.API + useURL + '?dataset_id=' + this.id).then(res => {
-      console.log(res)
+      if (config.debug === 'true') {
+        console.log(res)
+      }
       if (res.status === 200) {
         var t = res.data
         this.show = t

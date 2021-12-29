@@ -177,9 +177,10 @@ export default {
   mounted: function () {
     this.tableData = []
     this.$axios.post(config.API + config.getChecklist).then(res => {
-      console.log(res)
-      if (res.status === 200) {
+      if (config.debug === 'true') {
         console.log(res)
+      }
+      if (res.status === 200) {
         var t = res.data.check_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
@@ -201,7 +202,9 @@ export default {
             multiclick: false
           }
           this.tableData.push(toAppend)
-          console.log(toAppend)
+          if (config.debug === 'true') {
+            console.log(toAppend)
+          }
         }
       }
     })
@@ -209,13 +212,17 @@ export default {
   methods: {
     handleYes (a, b) {
       let that = this
-      console.log('YES', a, b.fileid)
+      if (config.debug === 'true') {
+        console.log('YES', a, b.fileid)
+      }
       let formData = new FormData()
       formData.append('fileid', b.fileid)
       formData.append('flag', 1)
       formData.append('message', b.reason)
       this.$axios.post(config.API + config.toSubmitCheck, formData).then(res => {
-        console.log(res)
+        if (config.debug === 'true') {
+          console.log(res)
+        }
         if (res.status === 200) {
           if (that.tableData.length === 1) {
             that.tableData = []
@@ -227,13 +234,17 @@ export default {
     },
     handleNo (a, b) {
       let that = this
-      console.log('NO', a, b.fileid)
+      if (config.debug === 'true') {
+        console.log('NO', a, b.fileid)
+      }
       let formData = new FormData()
       formData.append('fileid', b.fileid)
       formData.append('flag', 0)
       formData.append('message', b.reason)
       this.$axios.post(config.API + config.toSubmitCheck, formData).then(res => {
-        console.log(res)
+        if (config.debug === 'true') {
+          console.log(res)
+        }
         if (res.status === 200) {
           if (that.tableData.length === 1) {
             that.tableData = []
@@ -252,7 +263,9 @@ export default {
       formData.append('fileid', this.tb.fileid)
       this.$axios.post(config.API + config.toEditLink, formData).then(res => {
         if (res.status === 200) {
-          console.log('paper', res)
+          if (config.debug === 'true') {
+            console.log('paper', res)
+          }
           location.reload()
         }
       })
@@ -267,7 +280,9 @@ export default {
       // })
     },
     handleRowClick (row, column, event) {
-      console.log(column)
+      if (config.debug === 'true') {
+        console.log(column)
+      }
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link

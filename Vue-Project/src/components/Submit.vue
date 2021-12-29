@@ -139,13 +139,13 @@ export default {
     var that = this.$parent.$parent.$parent
     var tthis = this
     setTimeout(function () {
-      console.log('In Submit Mount:', that.isLogin)
+      // console.log('In Submit Mount:', that.isLogin)
       if (!that.isLogin) {
         tthis.$alert(tthis.language.notlogin + ' ' + tthis.language.gologin, '', {
           confirmButtonText: 'OK'
           // cancelButtonText: tthis.language.Cancel
         }).then(() => {
-          console.log('Submit Mount LOGIN')
+          // console.log('Submit Mount LOGIN')
           that.handleLoginStatus(true)
         }).catch(() => {
           tthis.$router.push({path: '/'})
@@ -162,7 +162,9 @@ export default {
       this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
     },
     handleClickSubmit () {
-      console.log(this.$refs.filElem.files[0].name)
+      if (config.debug === 'true') {
+        console.log(this.$refs.filElem.files[0].name)
+      }
       var that = this
       if (this.check === false || this.submit.name === '' || this.submit.description === '' || this.submit.paras === '' || this.$refs.filElem.files[0] === undefined) {
         this.$message({
@@ -216,7 +218,9 @@ export default {
           loading.close()
         }, 120000)
         this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
-          console.log('handleClickSubmit', res, res.status)
+          if (config.debug === 'true') {
+            console.log('handleClickSubmit', res, res.status)
+          }
           if (res.status === 200) {
             this.submit = this.submit_clear
             this.check = false
@@ -232,7 +236,9 @@ export default {
             let formData1 = new FormData()
             formData1.append('fileid', res.data.fileid)
             that.$axios.post(config.API + '/review', formData1, myConfig).then(res1 => {
-              console.log('handleClickSubmit', res1, res1.status)
+              if (config.debug === 'true') {
+                console.log('handleClickSubmit', res1, res1.status)
+              }
               if (res1.status === 200) {
                 that.$message({
                   message: '评测完成待审核！即将跳转至评测报告。',
@@ -260,7 +266,9 @@ export default {
             this.$message.error('上传失败')
           }
         }).catch(error => {
-          console.log(error)
+          if (config.debug === 'true') {
+            console.log(error)
+          }
         })
       }
     },

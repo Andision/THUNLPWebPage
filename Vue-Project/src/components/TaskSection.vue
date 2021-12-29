@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import config from '@/components/config.json'
 export default {
   name: 'HelloWorld',
   data () {
@@ -105,7 +106,9 @@ export default {
     }
   },
   mounted: function () {
-    console.log(this.title)
+    if (config.debug === 'true') {
+      console.log(this.title)
+    }
   },
   props: {
     data: Object,

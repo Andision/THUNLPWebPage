@@ -307,13 +307,17 @@ export default {
       'end': -1
     }
     this.$axios.get(config.API + '/rank?rank_by=' + this.Gid, data).then(res => {
-      console.log(res)
-      if (res.status === 200) {
+      if (config.debug === 'true') {
         console.log(res)
+      }
+      if (res.status === 200) {
+        // console.log(res)
         var t = res.data.rank_list
         for (var i = 0; i < t.length; i++) {
           var r = t[i]
-          console.log(i, r, this.newTitle)
+          if (config.debug === 'true') {
+            console.log(i, r, this.newTitle)
+          }
           // var kb = ''
           // for (var key in r.index) {
           //   // console.log(key, r.index[key])
@@ -393,10 +397,14 @@ export default {
             // toAppend.rank = ''
           }
           this.tableData.push(toAppend)
-          console.log(toAppend)
+          if (config.debug === 'true') {
+            console.log(toAppend)
+          }
         }
       }
-      console.log('newTITLE', this.newTitle)
+      if (config.debug === 'true') {
+        console.log('newTITLE', this.newTitle)
+      }
     })
   },
   methods: {
@@ -409,8 +417,12 @@ export default {
       }
     },
     handleRowClick (row, column, event) {
-      console.log(row, column)
-      console.log(column.label)
+      if (config.debug === 'true') {
+        console.log(row, column)
+      }
+      if (config.debug === 'true') {
+        console.log(column.label)
+      }
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link
@@ -425,7 +437,9 @@ export default {
       }
     },
     waitToDraw (row, rowList) {
-      console.log('row', row)
+      if (config.debug === 'true') {
+        console.log('row', row)
+      }
       if (this.language.language === 'zh') {
         this.pic = this.pic_zh
       } else {
@@ -436,7 +450,9 @@ export default {
           value: [row.sxtl_list[1], row.dhjh_list[1], row.yysc_list[1], row.xxhq_list[1], row.yyljpj_list[1], row.yyljcy_list[1], row.dyy_list[1]]
         }
       ]
-      console.log(this.pic.data)
+      if (config.debug === 'true') {
+        console.log(this.pic.data)
+      }
       this.$nextTick(() => {
         this.drawChart(row.rank)
       })

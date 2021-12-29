@@ -355,11 +355,15 @@ export default {
       }
     },
     handleMenuSelect (key, keyPath) {
-      console.log(key, keyPath)
+      if (config.debug === 'true') {
+        console.log(key, keyPath)
+      }
       if (key[0] === 'A') {
         var tid = key.split('-')[4]
         var tname = key.split('@')[1]
-        console.log('handleSingle', tid, tname)
+        if (config.debug === 'true') {
+          console.log('handleSingle', tid, tname)
+        }
         // window.open('/#/taskboard?id=' + tid + '&name=' + tname, '_self')
         // location.href = '/#/taskboard?id=' + tid + '&name=' + tname
         location.href = '/#/dataset?id=' + tid + '&name=' + tname
@@ -448,7 +452,9 @@ export default {
         this.dialogLoginVisible = false
         this.handleForgetStatus(true)
       }
-      console.log(this.dialogLoginVisible)
+      if (config.debug === 'true') {
+        console.log(this.dialogLoginVisible)
+      }
     },
     handleForgetStatus (isLocal) {
       if (isLocal) {
@@ -456,7 +462,9 @@ export default {
       } else {
         this.dialogForgetVisible = false
       }
-      console.log(this.dialogForgetVisible)
+      if (config.debug === 'true') {
+        console.log(this.dialogForgetVisible)
+      }
     }
   },
   components: { LoginDialog, ForgetDialog }

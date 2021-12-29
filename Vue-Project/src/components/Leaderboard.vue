@@ -644,7 +644,9 @@ export default {
       this.showLines = [true, true, true, true, true, true, true]
       this.showLines = [false, false, false, false, false, false, false]
       // this.checkedKeys = []
-      console.log('In TreeSelect', this.showLines, this.checkedKeys)
+      if (config.debug === 'true') {
+        console.log('In TreeSelect', this.showLines, this.checkedKeys)
+      }
       this.dataSelect = {
         '信息获取及问答能力': [],
         '语言生成能力': [],
@@ -663,10 +665,14 @@ export default {
         var t = this.checkedKeys[i]
         // var t = this.$refs.tree[i].getCheckedNodes()
         // this.savedTree.push(t)
-        console.log('hha', t)
+        if (config.debug === 'true') {
+          console.log('hha', t)
+        }
         if (t !== undefined && t.length !== 0) {
           this.showLines[i] = true
-          console.log('setShow', i)
+          if (config.debug === 'true') {
+            console.log('setShow', i)
+          }
         }
         var duplicateKeys = [ '语言理解-词句级', '语言理解-篇章级', '信息获取及问答', '对话交互', '语言生成', '多语言', '数学推理' ]
         for (let j in t) {
@@ -690,7 +696,9 @@ export default {
           this.dataSelect[ha1].push(ha2)
         }
       }
-      console.log('haa', this.dataSelect)
+      if (config.debug === 'true') {
+        console.log('haa', this.dataSelect)
+      }
 
       this.$axios.post(config.API + config.getSuperRank, {ability_task_dic: this.dataSelect}).then(res => {
         if (config.debug === 'true') {
@@ -779,12 +787,19 @@ export default {
       }
     },
     onCheck (checkedKeys) {
-      console.log('onCheck', checkedKeys)
+      if (config.debug === 'true') {
+        console.log('onCheck', checkedKeys)
+      }
+
       this.checkedKeys = checkedKeys
     },
     handleRowClick (row, column, event) {
-      console.log(row, column)
-      console.log(column.label)
+      if (config.debug === 'true') {
+        console.log(row, column)
+      }
+      if (config.debug === 'true') {
+        console.log(column.label)
+      }
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link
@@ -807,7 +822,9 @@ export default {
       if (this.isSelecting) {
         return
       }
-      console.log('row', row)
+      if (config.debug === 'true') {
+        console.log('row', row)
+      }
       if (this.language.language === 'zh') {
         this.pic = this.pic_zh
       } else {
@@ -818,7 +835,9 @@ export default {
           value: [row.sxtl_list[1], row.dhjh_list[1], row.yysc_list[1], row.xxhq_list[1], row.yyljpj_list[1], row.yyljcy_list[1], row.dyy_list[1]]
         }
       ]
-      console.log(this.pic.data)
+      if (config.debug === 'true') {
+        console.log(this.pic.data)
+      }
       this.$nextTick(() => {
         this.drawChart(row.rank)
       })

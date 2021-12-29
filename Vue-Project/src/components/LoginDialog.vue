@@ -142,14 +142,18 @@ export default {
       }
     },
     doLogin () {
-      console.log('LOGIN')
+      if (config.debug === 'true') {
+        console.log('LOGIN')
+      }
       let formData = new FormData()
       formData.append('nickname', this.user.username)
       formData.append('password', this.user.password)
       this.$axios.post(config.API + config.toLogin, formData).then(res => {
-        console.log('LOGIN RES', res, res.status)
+        if (config.debug === 'true') {
+          console.log('LOGIN RES', res, res.status)
+        }
         if (res.status === 200) {
-          console.log('LOGIN666', res.data)
+          // console.log('LOGIN666', res.data)
           if (res.data.re_code === '0') {
             // document.cookie = JSON.stringify({
             //   token: res.data.token,
@@ -187,18 +191,24 @@ export default {
           }
         }
       }).catch(error => {
-        console.log(error)
+        if (config.debug === 'true') {
+          console.log(error)
+        }
       })
     },
     doSignup () {
-      console.log('SIGN')
+      if (config.debug === 'true') {
+        console.log('SIGN')
+      }
       let formData = new FormData()
       formData.append('nickname', this.user.username)
       formData.append('password', this.user.password)
       formData.append('email', this.user.email)
       formData.append('institution', this.user.org)
       this.$axios.post(config.API + config.toSignup, formData).then(res => {
-        console.log('SIGN RES', res, res.status)
+        if (config.debug === 'true') {
+          console.log('SIGN RES', res, res.status)
+        }
         if (res.status === 200) {
           if (res.data.re_code === '0') {
             this.$message({
@@ -225,7 +235,9 @@ export default {
           }
         }
       }).catch(error => {
-        console.log(error)
+        if (config.debug === 'true') {
+          console.log(error)
+        }
       })
     }
     // handleLogin (isLocal) {

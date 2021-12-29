@@ -79,11 +79,15 @@ export default {
   },
   mounted: function () {
     this.tapp = this.app
-    console.log('store', sessionStorage.getItem('pagesize'), sessionStorage.getItem('currentpage'))
+    if (config.debug === 'true') {
+      console.log('store', sessionStorage.getItem('pagesize'), sessionStorage.getItem('currentpage'))
+    }
     this.pageSize = sessionStorage.getItem('pagesize') == null ? 10 : parseInt(sessionStorage.getItem('pagesize'))
     this.currentPage = sessionStorage.getItem('currentpage') == null ? 1 : parseInt(sessionStorage.getItem('currentpage'))
     this.toDisplay = true
-    console.log('store-after', this.pageSize, this.currentPage)
+    if (config.debug === 'true') {
+      console.log('store-after', this.pageSize, this.currentPage)
+    }
     // {
     //   name: 'The Corpus of Linguistic Acceptability',
     //   score: '7',
@@ -91,7 +95,9 @@ export default {
     //   more: '12345'
     // }
     this.$axios.get(config.API + config.getDataDownload).then(res => {
-      console.log(res.data.dataset_list)
+      if (config.debug === 'true') {
+        console.log(res.data.dataset_list)
+      }
       if (res.status === 200) {
         if (res.data.re_code === '0') {
           for (var i = 0; i < res.data.dataset_list.length; i++) {

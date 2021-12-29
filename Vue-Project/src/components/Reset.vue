@@ -68,7 +68,9 @@ export default {
       var that = this
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          console.log('submit!!')
+          if (config.debug === 'true') {
+            console.log('submit!!')
+          }
           let formData = new FormData()
           formData.append('token', this.token)
           formData.append('password', this.ruleForm.pass)
@@ -85,7 +87,9 @@ export default {
             }
           })
         } else {
-          console.log('error submit!!')
+          if (config.debug === 'true') {
+            console.log('error submit!!')
+          }
           return false
         }
       })
@@ -96,7 +100,9 @@ export default {
   },
   mounted: function () {
     this.token = this.$route.query.token
-    console.log('resetPswd', this.token)
+    if (config.debug === 'true') {
+      console.log('resetPswd', this.token)
+    }
   }
 }
 </script>

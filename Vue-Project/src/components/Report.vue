@@ -87,14 +87,20 @@ export default {
   },
   mounted: function () {
     this.id = this.$route.query.id
-    console.log(this.id)
+    if (config.debug === 'true') {
+      console.log(this.id)
+    }
     this.tableData = []
     let formData = new FormData()
     formData.append('fileid', this.id)
     this.$axios.post(config.API + config.getEvalReport, formData).then(res => {
-      console.log(res)
+      if (config.debug === 'true') {
+        console.log(res)
+      }
       if (res.status === 200) {
-        console.log(res.data.rating_list)
+        if (config.debug === 'true') {
+          console.log(res.data.rating_list)
+        }
         this.tableData = res.data.rating_list
         this.err_list = res.data.filename_err
       }
