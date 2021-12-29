@@ -243,6 +243,8 @@ export default {
     }
   },
   mounted: function () {
+    console.log('Code by Andision Zhang with ❤')
+    console.log('You can go to https://andisionzhang.com for more information about me.')
     if (config.debug === 'true') {
       console.log(task)
     }

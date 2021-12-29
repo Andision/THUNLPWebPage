@@ -1,5 +1,5 @@
 {
-    "debug": "true",
+    "debug": "false",
     "API": "/api",
     "toSignup": "/register",
     "toLogin": "/login",
