@@ -549,6 +549,7 @@ export default {
         }
         if (res.status === 200) {
         // console.log(res)
+          this.tableData = []
           var t = res.data.rank_list
           for (var i = 0; i < t.length; i++) {
             var r = t[i]
