@@ -39,7 +39,7 @@
                   <!-- <el-link class="author" type="primary" :href="item.link" v-for="(item,index) in show.author" :key="index">
                     {{item.name}}
                   </el-link> -->
-                  <div class="section-title"  v-if="show.author!=theNull">
+                  <div class="section-title"  v-show="show.author!=theNull">
                     {{language.moreinfo_author}}
                     <i class="el-icon-s-custom"></i>
                   </div>
@@ -120,7 +120,7 @@
                     {{language.more_sample}}
                     <i class="el-icon-edit"></i>
                   </div>
-                  <pre class="section-content section-color bg-color" v-html="show.sample">
+                  <pre class="section-content section-color bg-color" v-html="show.sample" id="myref">
                   </pre>
                 </div>
 
@@ -314,6 +314,9 @@ export default {
 </script>
 <style>
 #moreintro pre{
+  white-space:nowrap;
+}
+#myref pre{
   white-space:nowrap;
 }
 pre{

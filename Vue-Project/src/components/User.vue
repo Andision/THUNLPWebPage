@@ -203,7 +203,7 @@
             <el-table-column :label="language.leaderboard_dhjh" prop="dhjh" min-width="110" align="right"> </el-table-column>
             <el-table-column :label="language.leaderboard_dyy" prop="dyy" min-width="120" align="right"> </el-table-column>
             <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" min-width="110" align="right"> </el-table-column>
-            <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column>
+            <!-- <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column> -->
             <el-table-column :label="language.user_operation" min-width="290" align="center">
               <template slot-scope="scope">
                 <el-button
@@ -433,13 +433,13 @@ export default {
               // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
               // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
               // score: r.智源指数[0],
-              sxtl: r.数学推理能力[0] === null ? '0' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
-              dyy: r.多语言能力[0] === null ? '0' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
-              dhjh: r.对话交互能力[0] === null ? '0' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
-              yysc: r.语言生成能力[0] === null ? '0' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
-              xxhq: r.信息获取及问答能力[0] === null ? '0' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
-              yyljpj: r['语言理解能力-篇章级'][0] === null ? '0' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
-              yyljcy: r['语言理解能力-词句级'][0] === null ? '0' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
+              sxtl: r.数学推理能力[0] === undefined ? '-' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
+              dyy: r.多语言能力[0] === undefined ? '-' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
+              dhjh: r.对话交互能力[0] === undefined ? '-' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
+              yysc: r.语言生成能力[0] === undefined ? '-' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
+              xxhq: r.信息获取及问答能力[0] === undefined ? '-' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
+              yyljpj: r['语言理解能力-篇章级'][0] === undefined ? '-' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
+              yyljcy: r['语言理解能力-词句级'][0] === undefined ? '-' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
               paras: r.paras,
               sxtl_dataset: r.detail_score.数学推理能力.dataset_score_list,
               dyy_dataset: r.detail_score.多语言能力.dataset_score_list,
@@ -451,7 +451,7 @@ export default {
               show1: r.detail_score.多语言能力.dataset_score_list,
               show2: r.detail_score.多语言能力.dataset_score_list,
               // score: r.智源指数[0] + ' (' + r.智源指数[1] + ')',
-              score: r.智源指数[1],
+              // score: r.智源指数[1],
               sxtl_sub: r.数学推理能力[1],
               dyy_sub: r.多语言能力[1],
               dhjh_sub: r.对话交互能力[1],
@@ -459,7 +459,7 @@ export default {
               xxhq_sub: r.信息获取及问答能力[1],
               yyljpj_sub: r['语言理解能力-篇章级'][1],
               yyljcy_sub: r['语言理解能力-词句级'][1],
-              score_sub: r.智源指数[1],
+              // score_sub: r.智源指数[1],
               sxtl_all: r.数学推理能力,
               dyy_all: r.多语言能力,
               dhjh_all: r.对话交互能力,
@@ -467,7 +467,7 @@ export default {
               xxhq_all: r.信息获取及问答能力,
               yyljpj_all: r['语言理解能力-篇章级'],
               yyljcy_all: r['语言理解能力-词句级'],
-              score_all: r.智源指数,
+              // score_all: r.智源指数,
               time: r.commit_time,
               description: r.description,
               public: r.public,

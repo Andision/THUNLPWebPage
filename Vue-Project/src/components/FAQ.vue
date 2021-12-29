@@ -89,3 +89,10 @@ export default {
   margin-top: 50px;
 } */
 </style>
+<style>
+pre{
+  white-space: normal;
+  /* font-weight: bold; */
+  font-family: "Microsoft YaHei","PingFang SC","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","Hiragino Sans GB","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+</style>
