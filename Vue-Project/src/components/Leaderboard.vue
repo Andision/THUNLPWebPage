@@ -85,7 +85,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
                             <el-button type="text" :style="ability_bold[0]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[0]=true;scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?scope.row.yyljcy_dataset[scope.row.yyljcy_first].dataset_score_list:scope.row.yyljcy_dataset">
-                              {{language.leaderboard_yyljcy}}
+                              <span :style="ability_bold[0]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_yyljcy}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -94,7 +96,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
                             <el-button type="text" :style="ability_bold[1]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[1]=true;scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?scope.row.yyljpj_dataset[scope.row.yyljpj_first].dataset_score_list:scope.row.yyljpj_dataset">
-                              {{language.leaderboard_yyljpj}}
+                              <span :style="ability_bold[1]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_yyljpj}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -103,7 +107,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
                             <el-button type="text" :style="ability_bold[2]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[2]=true;scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?scope.row.xxhq_dataset[scope.row.xxhq_first].dataset_score_list:scope.row.xxhq_dataset">
-                              {{language.leaderboard_xxhq}}
+                              <span :style="ability_bold[2]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_xxhq}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -112,7 +118,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
                             <el-button type="text" :style="ability_bold[3]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[3]=true;scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?scope.row.yysc_dataset[scope.row.yysc_first].dataset_score_list:scope.row.yysc_dataset">
-                              {{language.leaderboard_yysc}}
+                              <span :style="ability_bold[3]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_yysc}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -121,7 +129,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
                             <el-button type="text" :style="ability_bold[4]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[4]=true;scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?scope.row.dhjh_dataset[scope.row.dhjh_first].dataset_score_list:scope.row.dhjh_dataset">
-                              {{language.leaderboard_dhjh}}
+                              <span :style="ability_bold[4]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_dhjh}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -130,7 +140,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
                             <el-button type="text" :style="ability_bold[5]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[5]=true;scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?scope.row.dyy_dataset[scope.row.dyy_first].dataset_score_list:scope.row.dyy_dataset">
-                              {{language.leaderboard_dyy}}
+                              <span :style="ability_bold[5]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_dyy}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -139,7 +151,9 @@
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
                             <el-button type="text" :style="ability_bold[6]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[6]=true;scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?scope.row.sxtl_dataset[scope.row.sxtl_first].dataset_score_list:scope.row.sxtl_dataset">
-                              {{language.leaderboard_sxtl}}
+                              <span :style="ability_bold[6]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_sxtl}}
+                              </span>
                             </el-button>
                           </el-tooltip>
                         </div>
@@ -517,6 +531,8 @@ export default {
     },
     handleDefaultSelect () {
       // this.expand_ability_show = [true, true, true, true, true, true, true]
+      this.handleAbilityBoldInit()
+      this.ability_bold[0] = true
       this.isSelecting = false
       this.showLines = [true, true, true, true, true, true, true]
       this.checkedKeys = []
@@ -609,8 +625,8 @@ export default {
               // szjsd: r.数值计算能力.dataset_score_list,
               // scd: r.生成能力.dataset_score_list,
               // dyyd: r.多语言能力.dataset_score_list,
-              show1: r.多语言能力.dataset_score_list,
-              show2: r.多语言能力.dataset_score_list
+              show1: r['语言理解能力-词句级'].dataset_score_list,
+              show2: r['语言理解能力-词句级'].dataset_score_list
             }
             if (i === 0) {
               toAppend.rank = 'Baseline'
@@ -622,6 +638,7 @@ export default {
       })
     },
     handleTreeSelect () {
+      this.handleAbilityBoldInit()
       this.isSelecting = true
       this.showLines = [true, true, true, true, true, true, true]
       this.showLines = [false, false, false, false, false, false, false]
