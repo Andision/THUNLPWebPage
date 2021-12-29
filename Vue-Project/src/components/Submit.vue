@@ -217,6 +217,7 @@ export default {
         setTimeout(() => {
           loading.close()
         }, 120000)
+        let tthat = this
         this.$axios.post(config.API + config.toSubmit, formData, myConfig).then(res => {
           if (config.debug === 'true') {
             console.log('handleClickSubmit', res, res.status)
@@ -226,7 +227,7 @@ export default {
             this.check = false
             loading.close()
             this.$message({
-              message: '上传成功！评测中......',
+              message: tthat.language.submit_finish_upload,
               type: 'info',
               showClose: true,
               duration: '5000'
@@ -241,14 +242,14 @@ export default {
               }
               if (res1.status === 200) {
                 that.$message({
-                  message: '评测完成待审核！即将跳转至评测报告。',
+                  message: tthat.language.submit_finish_eval,
                   type: 'success',
                   showClose: true,
                   duration: '5000'
                 })
-                setTimeout(function () {
-                  that.$router.push({path: '/report?id=' + res.data.fileid})
-                }, 4 * 1000)
+                // setTimeout(function () {
+                //   that.$router.push({path: '/report?id=' + res.data.fileid})
+                // }, 4 * 1000)
               }
             })
             // this.$alert('评测完成！', {

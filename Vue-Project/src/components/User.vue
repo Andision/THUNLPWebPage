@@ -36,7 +36,7 @@
                       <el-col :span="6" v-if="showLines[0]&&scope.row.yyljcy!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[0]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=true;scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?scope.row.yyljcy_dataset[scope.row.yyljcy_first].dataset_score_list:scope.row.yyljcy_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[0]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[0]=true;scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?scope.row.yyljcy_dataset[scope.row.yyljcy_first].dataset_score_list:scope.row.yyljcy_dataset">
                               <span :style="scope.row.single_ability_bold[0]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_yyljcy}}
                               </span>
@@ -47,7 +47,7 @@
                       <el-col :span="6" v-if="showLines[1]&&scope.row.yyljpj!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[1]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[1]=true;scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?scope.row.yyljpj_dataset[scope.row.yyljpj_first].dataset_score_list:scope.row.yyljpj_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[1]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[1]=true;scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?scope.row.yyljpj_dataset[scope.row.yyljpj_first].dataset_score_list:scope.row.yyljpj_dataset">
                               <span :style="scope.row.single_ability_bold[1]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_yyljpj}}
                               </span>
@@ -58,7 +58,7 @@
                       <el-col :span="6" v-if="showLines[2]&&scope.row.xxhq!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[2]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[2]=true;scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?scope.row.xxhq_dataset[scope.row.xxhq_first].dataset_score_list:scope.row.xxhq_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[2]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[2]=true;scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?scope.row.xxhq_dataset[scope.row.xxhq_first].dataset_score_list:scope.row.xxhq_dataset">
                               <span :style="scope.row.single_ability_bold[2]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_xxhq}}
                               </span>
@@ -69,7 +69,7 @@
                       <el-col :span="6" v-if="showLines[3]&&scope.row.yysc!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[3]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[3]=true;scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?scope.row.yysc_dataset[scope.row.yysc_first].dataset_score_list:scope.row.yysc_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[3]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[3]=true;scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?scope.row.yysc_dataset[scope.row.yysc_first].dataset_score_list:scope.row.yysc_dataset">
                               <span :style="scope.row.single_ability_bold[3]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_yysc}}
                               </span>
@@ -80,7 +80,7 @@
                       <el-col :span="6" v-if="showLines[4]&&scope.row.dhjh!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[4]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[4]=true;scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?scope.row.dhjh_dataset[scope.row.dhjh_first].dataset_score_list:scope.row.dhjh_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[4]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[4]=true;scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?scope.row.dhjh_dataset[scope.row.dhjh_first].dataset_score_list:scope.row.dhjh_dataset">
                               <span :style="scope.row.single_ability_bold[4]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_dhjh}}
                               </span>
@@ -91,7 +91,7 @@
                       <el-col :span="6" v-if="showLines[5]&&scope.row.dyy!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[5]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[5]=true;scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?scope.row.dyy_dataset[scope.row.dyy_first].dataset_score_list:scope.row.dyy_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[5]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[5]=true;scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?scope.row.dyy_dataset[scope.row.dyy_first].dataset_score_list:scope.row.dyy_dataset">
                               <span :style="scope.row.single_ability_bold[5]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_dyy}}
                               </span>
@@ -102,7 +102,7 @@
                       <el-col :span="6" v-if="showLines[6]&&scope.row.sxtl!='—'">
                         <div class="">
                           <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
-                            <el-button type="text" :style="scope.row.single_ability_bold[6]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[6]=true;scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?scope.row.sxtl_dataset[scope.row.sxtl_first].dataset_score_list:scope.row.sxtl_dataset">
+                            <el-button type="text" :style="scope.row.single_ability_bold[6]?'font-weight: bolder;':'font-weight: normal;'" @click="scope.row.single_ability_bold[0]=false;scope.row.single_ability_bold[1]=false;scope.row.single_ability_bold[2]=false;scope.row.single_ability_bold[3]=false;scope.row.single_ability_bold[4]=false;scope.row.single_ability_bold[5]=false;scope.row.single_ability_bold[6]=false;scope.row.single_ability_bold[6]=true;scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?scope.row.sxtl_dataset[scope.row.sxtl_first].dataset_score_list:scope.row.sxtl_dataset">
                               <span :style="scope.row.single_ability_bold[6]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
                                 {{language.leaderboard_sxtl}}
                               </span>
@@ -416,7 +416,7 @@ export default {
     var that = this.$parent.$parent.$parent
     var tthis = this
     setTimeout(function () {
-      console.log('In User Mount:', this.app.isLogin)
+      // console.log('In User Mount:', this.app.isLogin)
       if (!that.isLogin) {
         tthis.$router.push({path: '/'})
       } else {
@@ -461,13 +461,17 @@ export default {
       }
     },
     handleInitData () {
-      console.log('User Init', this.isReady)
+      if (config.debug === 'true') {
+        console.log('User Init', this.isReady)
+      }
       this.isReady = true
       this.tableData = []
       this.$axios.post(config.API + config.getSubmitlist).then(res => {
-        console.log(res)
-        if (res.status === 200) {
+        if (config.debug === 'true') {
           console.log(res)
+        }
+        if (res.status === 200) {
+          // console.log(res)
           var t = res.data.record_list
           for (var i = 0; i < t.length; i++) {
             var r = t[i]
@@ -602,7 +606,9 @@ export default {
               }
             }
             this.tableData.push(toAppend)
-            console.log(toAppend)
+            if (config.debug === 'true') {
+              console.log(toAppend)
+            }
           }
         }
       })
@@ -610,11 +616,15 @@ export default {
     handleDelete (a, b) {
       let that = this
       this.deleteLoading = true
-      console.log('delete', a, b.fileid)
+      if (config.debug === 'true') {
+        console.log('delete', a, b.fileid)
+      }
       let formData = new FormData()
       formData.append('fileid', b.fileid)
       this.$axios.post(config.API + config.toDelete, formData).then(res => {
-        console.log(res)
+        if (config.debug === 'true') {
+          console.log(res)
+        }
         if (res.status === 200) {
           // console.log(res)
           if (res.data.re_code === '0') {
@@ -631,15 +641,21 @@ export default {
     handleAdd (a, b) {
       this.visible = true
       this.tb = b
-      console.log('add', a, b, this.tb)
+      if (config.debug === 'true') {
+        console.log('add', a, b, this.tb)
+      }
     },
     handlePublic (a, b) {
-      console.log('public', a, b.fileid, b)
+      if (config.debug === 'true') {
+        console.log('public', a, b.fileid, b)
+      }
       let formData = new FormData()
       formData.append('fileid', b.fileid)
       this.$axios.post(config.API + config.toCheck, formData).then(res => {
         if (res.status === 200) {
-          console.log('public', res)
+          if (config.debug === 'true') {
+            console.log('public', res)
+          }
           location.reload()
         }
       })
@@ -652,7 +668,9 @@ export default {
       formData.append('fileid', this.tb.fileid)
       this.$axios.post(config.API + config.toEditLink, formData).then(res => {
         if (res.status === 200) {
-          console.log('paper', res)
+          if (config.debug === 'true') {
+            console.log('paper', res)
+          }
           location.reload()
         }
       })
@@ -667,7 +685,9 @@ export default {
       // })
     },
     handleRowClick (row, column, event) {
-      console.log(column)
+      if (config.debug === 'true') {
+        console.log(column)
+      }
       // this.drawerInfo.rank = row.rank
       // this.drawerInfo.name = row.name
       // this.drawerInfo.link = row.link
