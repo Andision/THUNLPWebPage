@@ -84,6 +84,11 @@
     "user_accepted": "Accepted",
     "user_rejected": "Rejected",
     "user_pending": "Pending...",
+    "user_sqgk": "Make Public",
+    "user_shz": "In Review",
+    "user_shtg": "Accepted",
+    "user_bh": "On Hold",
+    "user_bhyy": "On Hold Reason",
     "moreinfo_org": "Organization",
     "moreinfo_author": "Author",
     "faq_content": [

@@ -22,78 +22,92 @@
               <el-main>
                 <el-row>
                   <el-row>
-                    <!-- <el-col
-                      v-for="(i, index) in ads"
-                      :key="index"
-                      :span="Math.floor(24 / taskData.length)"
-                      ><div class="">
-                        <el-button type="text">{{ i.name }}</el-button>
-                      </div></el-col
-                    > -->
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=scope.row.yyljcy_dataset">
-                            {{language.leaderboard_yyljcy}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=scope.row.yyljpj_dataset">
-                            {{language.leaderboard_yyljpj}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=scope.row.xxhq_dataset">
-                            {{language.leaderboard_xxhq}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.yysc_dataset;scope.row.show2=scope.row.yysc_dataset">
-                            {{language.leaderboard_yysc}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=scope.row.dhjh_dataset">
-                            {{language.leaderboard_dhjh}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.dyy_dataset;scope.row.show2=scope.row.dyy_dataset">
-                            {{language.leaderboard_dyy}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                    <el-col :span="6">
-                      <div class="">
-                        <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
-                          <el-button type="text" @click="scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=scope.row.sxtl_dataset">
-                            {{language.leaderboard_sxtl}}
-                          </el-button>
-                        </el-tooltip>
-                      </div>
-                    </el-col>
-                  </el-row>
+                      <!-- <el-col
+                        v-for="(i, index) in ads"
+                        :key="index"
+                        :span="Math.floor(24 / taskData.length)"
+                        ><div class="">
+                          <el-button type="text">{{ i.name }}</el-button>
+                        </div></el-col
+                      > -->
+                      <el-col :span="6" v-if="showLines[0]&&scope.row.yyljcy!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljcy_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[0]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[0]=true;scope.row.show1=scope.row.yyljcy_dataset;scope.row.show2=isSelecting?scope.row.yyljcy_dataset[scope.row.yyljcy_first].dataset_score_list:scope.row.yyljcy_dataset">
+                              <span :style="ability_bold[0]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_yyljcy}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6" v-if="showLines[1]&&scope.row.yyljpj!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yyljpj_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[1]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[1]=true;scope.row.show1=scope.row.yyljpj_dataset;scope.row.show2=isSelecting?scope.row.yyljpj_dataset[scope.row.yyljpj_first].dataset_score_list:scope.row.yyljpj_dataset">
+                              <span :style="ability_bold[1]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_yyljpj}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6" v-if="showLines[2]&&scope.row.xxhq!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_xxhq_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[2]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[2]=true;scope.row.show1=scope.row.xxhq_dataset;scope.row.show2=isSelecting?scope.row.xxhq_dataset[scope.row.xxhq_first].dataset_score_list:scope.row.xxhq_dataset">
+                              <span :style="ability_bold[2]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_xxhq}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6" v-if="showLines[3]&&scope.row.yysc!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_yysc_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[3]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[3]=true;scope.row.show1=scope.row.yysc_dataset;scope.row.show2=isSelecting?scope.row.yysc_dataset[scope.row.yysc_first].dataset_score_list:scope.row.yysc_dataset">
+                              <span :style="ability_bold[3]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_yysc}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6" v-if="showLines[4]&&scope.row.dhjh!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_dhjh_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[4]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[4]=true;scope.row.show1=scope.row.dhjh_dataset;scope.row.show2=isSelecting?scope.row.dhjh_dataset[scope.row.dhjh_first].dataset_score_list:scope.row.dhjh_dataset">
+                              <span :style="ability_bold[4]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_dhjh}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6" v-if="showLines[5]&&scope.row.dyy!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_dyy_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[5]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[5]=true;scope.row.show1=scope.row.dyy_dataset;scope.row.show2=isSelecting?scope.row.dyy_dataset[scope.row.dyy_first].dataset_score_list:scope.row.dyy_dataset">
+                              <span :style="ability_bold[5]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_dyy}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                      <el-col :span="6" v-if="showLines[6]&&scope.row.sxtl!='—'">
+                        <div class="">
+                          <el-tooltip class="item" effect="dark" :content="language.leaderboard_sxtl_hint" placement="top">
+                            <el-button type="text" :style="ability_bold[6]?'font-weight: bolder;':'font-weight: normal;'" @click="handleAbilityBoldInit();ability_bold[6]=true;scope.row.show1=scope.row.sxtl_dataset;scope.row.show2=isSelecting?scope.row.sxtl_dataset[scope.row.sxtl_first].dataset_score_list:scope.row.sxtl_dataset">
+                              <span :style="ability_bold[6]?'padding-bottom: 2px; border-bottom: 1px solid #64438d;':''">
+                                {{language.leaderboard_sxtl}}
+                              </span>
+                            </el-button>
+                          </el-tooltip>
+                        </div>
+                      </el-col>
+                    </el-row>
                   <hr class="inner-hr"/>
                   <el-row>
                     <el-col
@@ -206,7 +220,7 @@
             <el-table-column :label="language.leaderboard_dyy" prop="dyy" min-width="120" align="right"> </el-table-column>
             <el-table-column :label="language.leaderboard_sxtl" prop="sxtl" min-width="110" align="right"> </el-table-column>
             <!-- <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column> -->
-            <el-table-column :label="language.user_operation" min-width="290" align="center">
+            <el-table-column :label="language.user_operation" min-width="300" align="center">
               <template slot-scope="scope">
                 <div v-show="scope.row.is_evaluate">
                   <el-button
@@ -369,6 +383,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      ability_bold: [false, false, false, false, false, false, false],
+      showLines: [true, true, true, true, true, true, true],
       isReady: false,
       deleteLoading: false,
       activeName: 'first',
@@ -433,6 +449,11 @@ export default {
     // })
   },
   methods: {
+    handleAbilityBoldInit () {
+      for (let i = 0; i < 7; i++) {
+        this.ability_bold[i] = false
+      }
+    },
     handleInitData () {
       console.log('User Init', this.isReady)
       this.isReady = true
@@ -447,13 +468,13 @@ export default {
             var toAppend = {}
             var checkShow = ''
             if (r.check === 1) {
-              checkShow = '审核通过'
+              checkShow = this.language.user_shtg
             } else if (r.check === -1) {
-              checkShow = '驳回'
+              checkShow = this.language.user_bh
             } else if (r.public && r.check === 0) {
-              checkShow = '审核中'
+              checkShow = this.language.user_shz
             } else if (!r.public) {
-              checkShow = '提交审核'
+              checkShow = this.language.user_sqgk
             } else {
               checkShow = '　'
             }
