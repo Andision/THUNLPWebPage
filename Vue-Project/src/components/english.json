@@ -83,6 +83,7 @@
     "user_public": "Disclosure",
     "user_accepted": "Accepted",
     "user_rejected": "Rejected",
+    "user_pending": "Pending...",
     "moreinfo_org": "Organization",
     "moreinfo_author": "Author",
     "faq_content": [

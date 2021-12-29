@@ -84,6 +84,7 @@
     "user_public": "申请公开",
     "user_accepted": "审核通过",
     "user_rejected": "审核失败",
+    "user_pending": "正在评测...",
     "moreinfo_org": "机构",
     "moreinfo_author": "作者",
     "faq_content": [

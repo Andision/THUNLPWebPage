@@ -1,5 +1,5 @@
 <template>
-  <div class="all">
+  <div class="all" v-show="isReady">
     <h1 class="title">{{language.user_submitRecord}}</h1>
     <el-tabs v-model="activeName" class="main">
       <!-- <el-tab-pane label="全榜" name="first">
@@ -8,7 +8,9 @@
         <!-- <div slot="header">
         </div> -->
         <div class="main-content">
-          <el-table :data="tableData" style="width: 100%"
+          <el-table
+            :data="tableData" style="width: 100%"
+            v-loading="deleteLoading"
             :header-row-style="{'color': '#ffffff','font-size':'17px'}"
             :header-cell-style="{background:'#64438D'}"
             :cell-style="function(){return 'font-weight: 700; color: black; '}"
@@ -206,20 +208,25 @@
             <!-- <el-table-column :label="language.leaderboard_zyzs" prop="score" min-width="120" align="center"> </el-table-column> -->
             <el-table-column :label="language.user_operation" min-width="290" align="center">
               <template slot-scope="scope">
-                <el-button
-                  size="mini"
-                  type="danger"
-                  @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
-                <el-button
-                  size="mini"
-                  type="primary"
-                  @click="handleAdd(scope.$index, scope.row)">{{language.user_edit}}</el-button>
-                <el-button
-                  size="mini"
-                  type="primary"
-                  :disabled="scope.row.public || scope.row.check === 1"
-                  @click="handlePublic(scope.$index, scope.row)">{{scope.row.checkShow}}</el-button>
-                  <!-- {{scope.row.check == 1 ? language.user_accepted : scope.row.check == -1 ? language.user_rejected : scope.row.public ? language.user_check : language.user_public}} -->
+                <div v-show="scope.row.is_evaluate">
+                  <el-button
+                    size="mini"
+                    type="danger"
+                    @click="handleDelete(scope.$index, scope.row)">{{language.user_delete}}</el-button>
+                  <el-button
+                    size="mini"
+                    type="primary"
+                    @click="handleAdd(scope.$index, scope.row)">{{language.user_edit}}</el-button>
+                  <el-button
+                    size="mini"
+                    type="primary"
+                    :disabled="scope.row.public || scope.row.check === 1"
+                    @click="handlePublic(scope.$index, scope.row)">{{scope.row.checkShow}}</el-button>
+                    <!-- {{scope.row.check == 1 ? language.user_accepted : scope.row.check == -1 ? language.user_rejected : scope.row.public ? language.user_check : language.user_public}} -->
+                </div>
+                <div v-show="!scope.row.is_evaluate">
+                  {{language.user_pending}}
+                </div>
               </template>
             </el-table-column>
             <!-- <el-table-column label="总分" prop="score"> </el-table-column> -->
@@ -362,6 +369,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      isReady: false,
+      deleteLoading: false,
       activeName: 'first',
       tableData: [],
       tb: {},
@@ -382,32 +391,51 @@ export default {
     app: Object
   },
   mounted: function () {
-    // var that = this.$parent.$parent.$parent
-    // var tthis = this
+    var that = this.$parent.$parent.$parent
+    var tthis = this
+    setTimeout(function () {
+      console.log('In User Mount:', this.app.isLogin)
+      if (!that.isLogin) {
+        tthis.$router.push({path: '/'})
+      } else {
+        tthis.handleInitData()
 
-    console.log('In User Mount:', this.app.isLogin)
-    if (!this.app.isLogin) {
-      this.$router.push({path: '/'})
-      // this.$alert(this.language.notlogin + ' ' + this.language.gologin, '', {
-      //   confirmButtonText: 'OK'
-      //   // cancelButtonText: tthis.language.Cancel
-      // }).then(() => {
-      //   this.$router.push({path: '/'})
-      //   // console.log('Submit Mount LOGIN')
-      //   // this.app.handleLoginStatus(true)
-      // }).catch(() => {
-      //   this.$router.push({path: '/'})
-      //   // this.$message({
-      //   //   type: 'info',
-      //   //   message: '已取消删除'
-      //   // })
-      // })
-    } else {
-      this.handleInitData()
-    }
+      // console.log('In User Mount:', that.isLogin)
+      // if (!that.isLogin) {
+      //   tthis.$alert(tthis.language.notlogin + ' ' + tthis.language.gologin, '', {
+      //     confirmButtonText: 'OK'
+      //     // cancelButtonText: tthis.language.Cancel
+      //   }).then(() => {
+      //     console.log('Submit Mount LOGIN')
+      //     that.handleLoginStatus(true)
+      //   }).catch(() => {
+      //     tthis.$router.push({path: '/'})
+      //     // this.$message({
+      //     //   type: 'info',
+      //     //   message: '已取消删除'
+      //     // })
+      //   })
+      }
+    }, 1 * 1000)
+    // this.$alert(this.language.notlogin + ' ' + this.language.gologin, '', {
+    //   confirmButtonText: 'OK'
+    //   // cancelButtonText: tthis.language.Cancel
+    // }).then(() => {
+    //   this.$router.push({path: '/'})
+    //   // console.log('Submit Mount LOGIN')
+    //   // this.app.handleLoginStatus(true)
+    // }).catch(() => {
+    //   this.$router.push({path: '/'})
+    //   // this.$message({
+    //   //   type: 'info',
+    //   //   message: '已取消删除'
+    //   // })
+    // })
   },
   methods: {
     handleInitData () {
+      console.log('User Init', this.isReady)
+      this.isReady = true
       this.tableData = []
       this.$axios.post(config.API + config.getSubmitlist).then(res => {
         console.log(res)
@@ -460,13 +488,13 @@ export default {
                 // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
                 // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
                 // score: r.智源指数[0],
-                sxtl: r.数学推理能力[0] === undefined ? '-' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
-                dyy: r.多语言能力[0] === undefined ? '-' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
-                dhjh: r.对话交互能力[0] === undefined ? '-' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
-                yysc: r.语言生成能力[0] === undefined ? '-' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
-                xxhq: r.信息获取及问答能力[0] === undefined ? '-' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
-                yyljpj: r['语言理解能力-篇章级'][0] === undefined ? '-' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
-                yyljcy: r['语言理解能力-词句级'][0] === undefined ? '-' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
+                sxtl: r.数学推理能力 === -1 ? '—' : r.数学推理能力,
+                dyy: r.多语言能力 === -1 ? '—' : r.多语言能力,
+                dhjh: r.对话交互能力 === -1 ? '—' : r.对话交互能力,
+                yysc: r.语言生成能力 === -1 ? '—' : r.语言生成能力,
+                xxhq: r.信息获取及问答能力 === -1 ? '—' : r.信息获取及问答能力,
+                yyljpj: r['语言理解能力-篇章级'] === -1 ? '—' : r['语言理解能力-篇章级'],
+                yyljcy: r['语言理解能力-词句级'] === -1 ? '—' : r['语言理解能力-词句级'],
                 paras: r.paras,
                 sxtl_dataset: r.detail_score.数学推理能力.dataset_score_list,
                 dyy_dataset: r.detail_score.多语言能力.dataset_score_list,
@@ -504,7 +532,8 @@ export default {
                 fileid: r.fileid,
                 stime: r.simple_commit_time.split(' '),
                 check: r.check,
-                message: r.message
+                message: r.message,
+                is_evaluate: r.is_evaluate
               }
             } else {
               toAppend = {
@@ -523,20 +552,23 @@ export default {
     },
     handleDelete (a, b) {
       let that = this
+      this.deleteLoading = true
       console.log('delete', a, b.fileid)
       let formData = new FormData()
       formData.append('fileid', b.fileid)
       this.$axios.post(config.API + config.toDelete, formData).then(res => {
         console.log(res)
         if (res.status === 200) {
-          console.log(res)
+          // console.log(res)
           if (res.data.re_code === '0') {
             if (that.tableData.length === 1) {
               that.tableData = []
+            } else {
+              that.tableData.splice(a, 1)
             }
-            that.tableData.splice(a, a)
           }
         }
+        that.deleteLoading = false
       })
     },
     handleAdd (a, b) {
