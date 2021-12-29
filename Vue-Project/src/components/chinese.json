@@ -47,6 +47,7 @@
     "leaderboard_jjb": "精简榜",
     "leaderboard_jjb_hint": "精简榜",
     "leaderboard_select_score": "得分",
+    "leaderboard_select_hint": "定制排行榜，显示完成所选能力或任务下所有数据集的评测提交。",
     "hint_taskboard": "智源指数单数据集榜提供单个数据集的各项指标得分，并根据各项指标得分的平均值计算模型在该数据集的总分。",
     "submit_org": "机构",
     "about_title": "关于我们",

@@ -47,6 +47,7 @@
     "leaderboard_jjb": "Liteboard",
     "leaderboard_jjb_hint": "Lite Leaderboard",
     "leaderboard_select_score": "Score",
+    "leaderboard_select_hint": "Customize the leaderboard to display the evaluation submissions of all datasets under the selected ability or task.",
     "submit_org": "Organization",
     "about_title": "ABOUT US",
     "about_title1": "About Us",

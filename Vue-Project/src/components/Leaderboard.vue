@@ -46,6 +46,11 @@
               <el-button size="mini" type="success" style="float:right; margin-right:30px;" @click="handleTreeSelect">
                 {{language.leaderboard_queren}}
               </el-button>
+              <div style="float:right; margin-right:20px;">
+                <el-tooltip effect="dark" :content="language.leaderboard_select_hint" placement="top">
+                  <el-button size="mini" type="primary" icon="el-icon-question" circle></el-button>
+                </el-tooltip>
+              </div>
             </el-row>
         </el-row>
       </div>
