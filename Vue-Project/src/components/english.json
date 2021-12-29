@@ -89,6 +89,7 @@
     "user_shtg": "Accepted",
     "user_bh": "On Hold",
     "user_bhyy": "On Hold Reason",
+    "user_title_hint": "According to the data set contained in submission, the personal center calculates the corresponding task and ability scores layer by layer from bottom to top. The sidebar evaluation report records detailed scores for each indicator of the data set.",
     "moreinfo_org": "Organization",
     "moreinfo_author": "Author",
     "faq_content": [

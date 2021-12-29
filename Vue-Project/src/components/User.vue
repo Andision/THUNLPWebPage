@@ -1,6 +1,9 @@
 <template>
   <div class="all" v-show="isReady">
     <h1 class="title">{{language.user_submitRecord}}</h1>
+    <h2 style="margin: 50px; text-align:left;">
+      {{language.user_title_hint}}
+    </h2>
     <el-tabs v-model="activeName" class="main">
       <!-- <el-tab-pane label="全榜" name="first">
       </el-tab-pane> -->
@@ -110,17 +113,19 @@
                     </el-row>
                   <hr class="inner-hr"/>
                   <el-row>
-                    <el-col
-                      v-for="(i, index) in scope.row.show1"
-                      :key="index"
-                      :span="Math.floor(24 / scope.row.show1.length)"
-                    >
-                      <div class="">
-                        <el-button type="text">
-                          {{ i.task }}
-                        </el-button>
-                      </div>
-                    </el-col>
+                    <el-row>
+                      <el-col
+                        v-for="(i, name, index) in scope.row.show1"
+                        :key="index"
+                        :span="Math.floor(24 / Object.keys(scope.row.show1).length)"
+                      >
+                        <div class="">
+                          <el-button type="text" @click="isSelecting?scope.row.show2=i.dataset_score_list:isSelecting=isSelecting">
+                            {{ isSelecting? name : i.task }}
+                          </el-button>
+                        </div>
+                      </el-col>
+                    </el-row>
                   </el-row>
                   <hr class="inner-hr"/>
                   <el-row>
@@ -385,6 +390,7 @@ export default {
     return {
       ability_bold: [false, false, false, false, false, false, false],
       showLines: [true, true, true, true, true, true, true],
+      isSelecting: false,
       isReady: false,
       deleteLoading: false,
       activeName: 'first',
@@ -555,6 +561,28 @@ export default {
                 check: r.check,
                 message: r.message,
                 is_evaluate: r.is_evaluate
+              }
+              if (toAppend.yyljcy !== '—') {
+                toAppend.show1 = toAppend.yyljcy_dataset
+                toAppend.show2 = toAppend.yyljcy_dataset
+              } else if (toAppend.yyljpj !== '—') {
+                toAppend.show1 = toAppend.yyljpj_dataset
+                toAppend.show2 = toAppend.yyljpj_dataset
+              } else if (toAppend.xxhq !== '—') {
+                toAppend.show1 = toAppend.xxhq_dataset
+                toAppend.show2 = toAppend.xxhq_dataset
+              } else if (toAppend.yysc !== '—') {
+                toAppend.show1 = toAppend.yysc_dataset
+                toAppend.show2 = toAppend.yysc_dataset
+              } else if (toAppend.dhjh !== '—') {
+                toAppend.show1 = toAppend.dhjh_dataset
+                toAppend.show2 = toAppend.dhjh_dataset
+              } else if (toAppend.dyy !== '—') {
+                toAppend.show1 = toAppend.dyy_dataset
+                toAppend.show2 = toAppend.dyy_dataset
+              } else if (toAppend.sxtl !== '—') {
+                toAppend.show1 = toAppend.sxtl_dataset
+                toAppend.show2 = toAppend.sxtl_dataset
               }
             } else {
               toAppend = {

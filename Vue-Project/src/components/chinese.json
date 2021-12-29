@@ -90,6 +90,7 @@
     "user_shtg": "审核通过",
     "user_bh": "驳回",
     "user_bhyy": "驳回原因",
+    "user_title_hint": "个人中心根据提交中包含的数据集，自底向上逐层平均计算相应任务和能力得分。侧边栏评测报告记录数据集各指标详细得分。",
     "moreinfo_org": "机构",
     "moreinfo_author": "作者",
     "faq_content": [
