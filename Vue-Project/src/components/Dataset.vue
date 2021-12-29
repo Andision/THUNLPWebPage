@@ -139,7 +139,7 @@
               </div>
             </div>
           </el-tab-pane>
-          <el-tab-pane :label="language.dataset_rank" name="second">
+          <el-tab-pane :label="show.title+' '+language.dataset_rank" name="second">
             <div class="content-board" style="margin-top:70px;margin-bottom:70px">
               <el-table :data="tableData" style="width: 100%"
                 :header-row-style="{'color': '#ffffff','font-size':'17px','text-align':'center'}"
