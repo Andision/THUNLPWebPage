@@ -197,7 +197,10 @@
                     color: white;
                     text-align:right;
                   "
-                  >{{ language.app_contactus }}</a
+                  >
+                  {{ language.app_contactus }}
+                  <i class="el-icon-link"></i>
+                  </a
                 >
             </el-col>
           </el-row>
