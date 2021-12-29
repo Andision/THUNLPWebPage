@@ -326,25 +326,26 @@ export default {
         message: '登出成功',
         type: 'success'
       })
+      this.isLogin = false
       // this.$router.push({ path: '/' })
       location.reload()
-      // let formData = new FormData()
-      // this.$axios.get(config.API + config.toLogout, formData).then((res) => {
-      //   if (res.status === 200) {
-      //     if (res.data.re_code === '0') {
-      //       this.isLogin = false
-      //       // document.cookie = 'null'
-      //       // console.log('In toLogout in App', document.cookie)
-      //       localStorage.setItem('token', '')
-      //       this.$message({
-      //         message: '登出成功',
-      //         type: 'success'
-      //       })
-      //       this.$router.push({ path: '/' })
-      //       // location.reload()
-      //     }
-      //   }
-      // })
+      let formData = new FormData()
+      this.$axios.get(config.API + config.toLogout, formData).then((res) => {
+        if (res.status === 200) {
+          if (res.data.re_code === '0') {
+            this.isLogin = false
+            // document.cookie = 'null'
+            // console.log('In toLogout in App', document.cookie)
+            // localStorage.setItem('token', '')
+            // this.$message({
+            //   message: '登出成功',
+            //   type: 'success'
+            // })
+            // this.$router.push({ path: '/' })
+            // location.reload()
+          }
+        }
+      })
     },
     handleContactIcon (w) {
       if (w === 'github') {
