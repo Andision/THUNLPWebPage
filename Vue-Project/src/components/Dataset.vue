@@ -40,7 +40,7 @@
                     {{item.name}}
                   </el-link> -->
                   <div class="section-title"  v-show="show.author!=theNull">
-                    {{language.moreinfo_author}}
+                    {{show.title == 'YACLC' ? language.language == 'zh' ? '主要项目负责人':'Principal Project Leader' :language.moreinfo_author}}
                     <i class="el-icon-s-custom"></i>
                   </div>
                   <pre class="section-content" v-html="show.author">
