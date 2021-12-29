@@ -378,123 +378,149 @@ export default {
     }
   },
   props: {
-    language: Object
+    language: Object,
+    app: Object
   },
   mounted: function () {
-    this.tableData = []
-    this.$axios.post(config.API + config.getSubmitlist).then(res => {
-      console.log(res)
-      if (res.status === 200) {
-        console.log(res)
-        var t = res.data.record_list
-        for (var i = 0; i < t.length; i++) {
-          var r = t[i]
-          var toAppend = {}
-          var checkShow = ''
-          if (r.check === 1) {
-            checkShow = '审核通过'
-          } else if (r.check === -1) {
-            checkShow = '驳回'
-          } else if (r.public && r.check === 0) {
-            checkShow = '审核中'
-          } else if (!r.public) {
-            checkShow = '提交审核'
-          } else {
-            checkShow = '　'
-          }
-          let aadss = true
-          if (aadss) {
-            toAppend = {
-              checkShow: checkShow,
-              rank: i + 1,
-              name: r.模型名,
-              org: 'Test',
-              plink: r.论文链接,
-              clink: r.代码链接,
-              // sj_list: r.识记能力,
-              // lj_list: r.理解能力,
-              // js_list: r.检索能力,
-              // szjs_list: r.数值计算能力,
-              // sc_list: r.生成能力,
-              // dyy_list: r.多语言能力,
-              // sj: r.识记能力[0],
-              // lj: r.理解能力[0],
-              // js: r.检索能力[0],
-              // szjs: r.数值计算能力[0],
-              // sc: r.生成能力[0],
-              // dyy: r.多语言能力[0],
-              // zy_list: r.智源指数,
-              // zy: r.智源指数[0],
-              // sxtl: r.数学推理能力.ability_sum[0],
-              // dyy: r.多语言能力.ability_sum[0],
-              // dhjh: r.对话交互能力.ability_sum[0],
-              // yysc: r.语言生成能力.ability_sum[0],
-              // xxhq: r.信息获取及问答能力.ability_sum[0],
-              // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
-              // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
-              // score: r.智源指数[0],
-              sxtl: r.数学推理能力[0] === undefined ? '-' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
-              dyy: r.多语言能力[0] === undefined ? '-' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
-              dhjh: r.对话交互能力[0] === undefined ? '-' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
-              yysc: r.语言生成能力[0] === undefined ? '-' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
-              xxhq: r.信息获取及问答能力[0] === undefined ? '-' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
-              yyljpj: r['语言理解能力-篇章级'][0] === undefined ? '-' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
-              yyljcy: r['语言理解能力-词句级'][0] === undefined ? '-' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
-              paras: r.paras,
-              sxtl_dataset: r.detail_score.数学推理能力.dataset_score_list,
-              dyy_dataset: r.detail_score.多语言能力.dataset_score_list,
-              dhjh_dataset: r.detail_score.对话交互能力.dataset_score_list,
-              yysc_dataset: r.detail_score.语言生成能力.dataset_score_list,
-              xxhq_dataset: r.detail_score.信息获取及问答能力.dataset_score_list,
-              yyljpj_dataset: r.detail_score['语言理解能力-篇章级'].dataset_score_list,
-              yyljcy_dataset: r.detail_score['语言理解能力-词句级'].dataset_score_list,
-              show1: r.detail_score.多语言能力.dataset_score_list,
-              show2: r.detail_score.多语言能力.dataset_score_list,
-              // score: r.智源指数[0] + ' (' + r.智源指数[1] + ')',
-              // score: r.智源指数[1],
-              sxtl_sub: r.数学推理能力[1],
-              dyy_sub: r.多语言能力[1],
-              dhjh_sub: r.对话交互能力[1],
-              yysc_sub: r.语言生成能力[1],
-              xxhq_sub: r.信息获取及问答能力[1],
-              yyljpj_sub: r['语言理解能力-篇章级'][1],
-              yyljcy_sub: r['语言理解能力-词句级'][1],
-              // score_sub: r.智源指数[1],
-              sxtl_all: r.数学推理能力,
-              dyy_all: r.多语言能力,
-              dhjh_all: r.对话交互能力,
-              yysc_all: r.语言生成能力,
-              xxhq_all: r.信息获取及问答能力,
-              yyljpj_all: r['语言理解能力-篇章级'],
-              yyljcy_all: r['语言理解能力-词句级'],
-              // score_all: r.智源指数,
-              time: r.commit_time,
-              description: r.description,
-              public: r.public,
-              multiple: r.multiple,
-              integrate: r.integrate,
-              pre_train: r.pre_train,
-              fileid: r.fileid,
-              stime: r.simple_commit_time.split(' '),
-              check: r.check,
-              message: r.message
-            }
-          } else {
-            toAppend = {
-              rank: i + 1,
-              name: r.模型名,
-              org: 'Test',
-              plink: r.论文链接,
-              clink: r.代码链接
-            }
-          }
-          this.tableData.push(toAppend)
-          console.log(toAppend)
-        }
-      }
-    })
+    // var that = this.$parent.$parent.$parent
+    // var tthis = this
+
+    console.log('In User Mount:', this.app.isLogin)
+    if (!this.app.isLogin) {
+      this.$router.push({path: '/'})
+      // this.$alert(this.language.notlogin + ' ' + this.language.gologin, '', {
+      //   confirmButtonText: 'OK'
+      //   // cancelButtonText: tthis.language.Cancel
+      // }).then(() => {
+      //   this.$router.push({path: '/'})
+      //   // console.log('Submit Mount LOGIN')
+      //   // this.app.handleLoginStatus(true)
+      // }).catch(() => {
+      //   this.$router.push({path: '/'})
+      //   // this.$message({
+      //   //   type: 'info',
+      //   //   message: '已取消删除'
+      //   // })
+      // })
+    } else {
+      this.handleInitData()
+    }
   },
   methods: {
+    handleInitData () {
+      this.tableData = []
+      this.$axios.post(config.API + config.getSubmitlist).then(res => {
+        console.log(res)
+        if (res.status === 200) {
+          console.log(res)
+          var t = res.data.record_list
+          for (var i = 0; i < t.length; i++) {
+            var r = t[i]
+            var toAppend = {}
+            var checkShow = ''
+            if (r.check === 1) {
+              checkShow = '审核通过'
+            } else if (r.check === -1) {
+              checkShow = '驳回'
+            } else if (r.public && r.check === 0) {
+              checkShow = '审核中'
+            } else if (!r.public) {
+              checkShow = '提交审核'
+            } else {
+              checkShow = '　'
+            }
+            let aadss = true
+            if (aadss) {
+              toAppend = {
+                checkShow: checkShow,
+                rank: i + 1,
+                name: r.模型名,
+                org: 'Test',
+                plink: r.论文链接,
+                clink: r.代码链接,
+                // sj_list: r.识记能力,
+                // lj_list: r.理解能力,
+                // js_list: r.检索能力,
+                // szjs_list: r.数值计算能力,
+                // sc_list: r.生成能力,
+                // dyy_list: r.多语言能力,
+                // sj: r.识记能力[0],
+                // lj: r.理解能力[0],
+                // js: r.检索能力[0],
+                // szjs: r.数值计算能力[0],
+                // sc: r.生成能力[0],
+                // dyy: r.多语言能力[0],
+                // zy_list: r.智源指数,
+                // zy: r.智源指数[0],
+                // sxtl: r.数学推理能力.ability_sum[0],
+                // dyy: r.多语言能力.ability_sum[0],
+                // dhjh: r.对话交互能力.ability_sum[0],
+                // yysc: r.语言生成能力.ability_sum[0],
+                // xxhq: r.信息获取及问答能力.ability_sum[0],
+                // yyljpj: r['语言理解能力-篇章级'].ability_sum[0],
+                // yyljcy: r['语言理解能力-词语级'].ability_sum[0],
+                // score: r.智源指数[0],
+                sxtl: r.数学推理能力[0] === undefined ? '-' : r.数学推理能力[0] + ' (' + r.数学推理能力[1] + ')',
+                dyy: r.多语言能力[0] === undefined ? '-' : r.多语言能力[0] + ' (' + r.多语言能力[1] + ')',
+                dhjh: r.对话交互能力[0] === undefined ? '-' : r.对话交互能力[0] + ' (' + r.对话交互能力[1] + ')',
+                yysc: r.语言生成能力[0] === undefined ? '-' : r.语言生成能力[0] + ' (' + r.语言生成能力[1] + ')',
+                xxhq: r.信息获取及问答能力[0] === undefined ? '-' : r.信息获取及问答能力[0] + ' (' + r.信息获取及问答能力[1] + ')',
+                yyljpj: r['语言理解能力-篇章级'][0] === undefined ? '-' : r['语言理解能力-篇章级'][0] + ' (' + r['语言理解能力-篇章级'][1] + ')',
+                yyljcy: r['语言理解能力-词句级'][0] === undefined ? '-' : r['语言理解能力-词句级'][0] + ' (' + r['语言理解能力-词句级'][1] + ')',
+                paras: r.paras,
+                sxtl_dataset: r.detail_score.数学推理能力.dataset_score_list,
+                dyy_dataset: r.detail_score.多语言能力.dataset_score_list,
+                dhjh_dataset: r.detail_score.对话交互能力.dataset_score_list,
+                yysc_dataset: r.detail_score.语言生成能力.dataset_score_list,
+                xxhq_dataset: r.detail_score.信息获取及问答能力.dataset_score_list,
+                yyljpj_dataset: r.detail_score['语言理解能力-篇章级'].dataset_score_list,
+                yyljcy_dataset: r.detail_score['语言理解能力-词句级'].dataset_score_list,
+                show1: r.detail_score.多语言能力.dataset_score_list,
+                show2: r.detail_score.多语言能力.dataset_score_list,
+                // score: r.智源指数[0] + ' (' + r.智源指数[1] + ')',
+                // score: r.智源指数[1],
+                sxtl_sub: r.数学推理能力[1],
+                dyy_sub: r.多语言能力[1],
+                dhjh_sub: r.对话交互能力[1],
+                yysc_sub: r.语言生成能力[1],
+                xxhq_sub: r.信息获取及问答能力[1],
+                yyljpj_sub: r['语言理解能力-篇章级'][1],
+                yyljcy_sub: r['语言理解能力-词句级'][1],
+                // score_sub: r.智源指数[1],
+                sxtl_all: r.数学推理能力,
+                dyy_all: r.多语言能力,
+                dhjh_all: r.对话交互能力,
+                yysc_all: r.语言生成能力,
+                xxhq_all: r.信息获取及问答能力,
+                yyljpj_all: r['语言理解能力-篇章级'],
+                yyljcy_all: r['语言理解能力-词句级'],
+                // score_all: r.智源指数,
+                time: r.commit_time,
+                description: r.description,
+                public: r.public,
+                multiple: r.multiple,
+                integrate: r.integrate,
+                pre_train: r.pre_train,
+                fileid: r.fileid,
+                stime: r.simple_commit_time.split(' '),
+                check: r.check,
+                message: r.message
+              }
+            } else {
+              toAppend = {
+                rank: i + 1,
+                name: r.模型名,
+                org: 'Test',
+                plink: r.论文链接,
+                clink: r.代码链接
+              }
+            }
+            this.tableData.push(toAppend)
+            console.log(toAppend)
+          }
+        }
+      })
+    },
     handleDelete (a, b) {
       let that = this
       console.log('delete', a, b.fileid)
